@@ -54,16 +54,28 @@ app.use("/api/content", contentRouter);
 app.use(notFound);
 app.use(errorHandler);
 
-async function start() {
-  await migrate();
-  await ensureBootstrapAdmin();
+async function withRetry(fn: () => Promise<void>, label: string, tries = 6): Promise<void> {
+  for (let i = 1; i <= tries; i++) {
+    try {
+      await fn();
+      return;
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      console.warn(`[cm-backend] ${label} attempt ${i}/${tries} failed: ${msg}`);
+      if (i < tries) await new Promise((r) => setTimeout(r, 2500));
+    }
+  }
+  console.warn(`[cm-backend] ${label}: giving up after ${tries} attempts (server still running).`);
+}
+
+function start() {
+  // Listen immediately so the server is healthy even if the first DB
+  // connection is slow; migrations are idempotent and retry in the background.
   app.listen(env.port, () => {
     console.log(`[cm-backend] listening on http://localhost:${env.port} (${env.nodeEnv})`);
     console.log(`[cm-backend] cloudinary: ${cloudinaryEnabled ? "enabled" : "disabled"}`);
   });
+  withRetry(migrate, "migrate").then(() => withRetry(ensureBootstrapAdmin, "ensureBootstrapAdmin"));
 }
 
-start().catch((err) => {
-  console.error("[cm-backend] failed to start:", err);
-  process.exit(1);
-});
+start();

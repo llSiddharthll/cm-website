@@ -10,9 +10,9 @@ type Size = "sm" | "md" | "icon";
 
 const VARIANTS: Record<Variant, string> = {
   primary: "bg-orange text-on-orange hover:bg-orange-press",
-  secondary: "bg-zinc-900 text-white hover:bg-zinc-800",
-  outline: "border border-zinc-300 bg-white text-zinc-800 hover:bg-zinc-50",
-  ghost: "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900",
+  secondary: "bg-zinc-800 text-white hover:bg-zinc-700",
+  outline: "border border-zinc-700 bg-zinc-900 text-zinc-100 hover:bg-zinc-800",
+  ghost: "text-zinc-400 hover:bg-zinc-800 hover:text-zinc-100",
   danger: "bg-red-600 text-white hover:bg-red-700",
 };
 const SIZES: Record<Size, string> = {
@@ -52,7 +52,7 @@ export const Button = forwardRef<
 
 /* ── Input / Textarea ── */
 export const inputClass =
-  "w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-900 placeholder:text-zinc-400 transition-colors focus:border-orange focus:outline-none focus:ring-2 focus:ring-orange/20 disabled:bg-zinc-50";
+  "w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-zinc-100 placeholder:text-zinc-500 transition-colors focus:border-orange focus:outline-none focus:ring-2 focus:ring-orange/20 disabled:bg-zinc-800";
 
 export const Input = forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(
   function Input({ className, ...props }, ref) {
@@ -80,7 +80,7 @@ export function Label({
   htmlFor?: string;
 }) {
   return (
-    <label htmlFor={htmlFor} className={cn("block text-sm font-medium text-zinc-700", className)}>
+    <label htmlFor={htmlFor} className={cn("block text-sm font-medium text-zinc-300", className)}>
       {children}
       {required && <span className="ml-0.5 text-orange">*</span>}
     </label>
@@ -89,14 +89,14 @@ export function Label({
 
 /* ── Badge ── */
 const BADGE: Record<string, string> = {
-  new: "bg-orange/15 text-orange",
-  contacted: "bg-blue-100 text-blue-700",
-  qualified: "bg-violet-100 text-violet-700",
-  won: "bg-emerald-100 text-emerald-700",
-  lost: "bg-zinc-200 text-zinc-600",
-  published: "bg-emerald-100 text-emerald-700",
-  draft: "bg-amber-100 text-amber-700",
-  default: "bg-zinc-100 text-zinc-700",
+  new: "bg-orange/20 text-orange",
+  contacted: "bg-blue-500/15 text-blue-300",
+  qualified: "bg-violet-500/15 text-violet-300",
+  won: "bg-emerald-500/15 text-emerald-300",
+  lost: "bg-zinc-700 text-zinc-300",
+  published: "bg-emerald-500/15 text-emerald-300",
+  draft: "bg-amber-500/15 text-amber-300",
+  default: "bg-zinc-800 text-zinc-300",
 };
 export function Badge({ children, tone }: { children: React.ReactNode; tone?: string }) {
   const cls = (tone && BADGE[tone]) || BADGE.default;
@@ -108,11 +108,11 @@ export function Badge({ children, tone }: { children: React.ReactNode; tone?: st
 }
 
 export function Spinner({ className }: { className?: string }) {
-  return <Loader2 className={cn("size-5 animate-spin text-zinc-400", className)} />;
+  return <Loader2 className={cn("size-5 animate-spin text-zinc-500", className)} />;
 }
 
 export function Card({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
-    <div className={cn("rounded-xl border border-zinc-200 bg-white", className)}>{children}</div>
+    <div className={cn("rounded-xl border border-zinc-800 bg-zinc-900", className)}>{children}</div>
   );
 }

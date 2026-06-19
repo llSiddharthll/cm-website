@@ -102,7 +102,7 @@ export function EntrySheet({
       <div className="space-y-5">
         {!isSingleton && (
           <div className="space-y-1.5">
-            <label className="block text-sm font-medium text-zinc-700">Status</label>
+            <label className="block text-sm font-medium text-zinc-300">Status</label>
             <Select
               value={status}
               onValueChange={setStatus}

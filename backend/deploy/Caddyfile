@@ -1,0 +1,6 @@
+# Caddy auto-provisions a Let's Encrypt TLS cert for this domain.
+# The domain comes from API_DOMAIN in deploy/.env (e.g. api.thecreativemonk.in).
+{$API_DOMAIN} {
+	reverse_proxy backend:4000
+	encode gzip
+}

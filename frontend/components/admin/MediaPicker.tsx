@@ -37,7 +37,7 @@ export function MediaPicker({
 
   return (
     <div className="flex items-center gap-3">
-      <div className="relative size-16 shrink-0 overflow-hidden rounded-lg border border-zinc-200 bg-zinc-50">
+      <div className="relative size-16 shrink-0 overflow-hidden rounded-lg border border-zinc-800 bg-zinc-800/50">
         {value ? (
           kind === "video" ? (
             // eslint-disable-next-line jsx-a11y/media-has-caption
@@ -47,7 +47,7 @@ export function MediaPicker({
             <img src={value} alt="" className="size-full object-cover" />
           )
         ) : (
-          <div className="flex size-full items-center justify-center text-zinc-300">
+          <div className="flex size-full items-center justify-center text-zinc-600">
             <ImagePlus className="size-6" />
           </div>
         )}
@@ -108,20 +108,20 @@ function LibraryDialog({
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-[110] bg-zinc-900/40 backdrop-blur-sm" />
-        <Dialog.Content className="fixed left-1/2 top-1/2 z-[111] w-[min(48rem,92vw)] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-zinc-200 bg-white p-6 shadow-2xl">
+        <Dialog.Overlay className="fixed inset-0 z-[110] bg-black/60 backdrop-blur-sm" />
+        <Dialog.Content className="fixed left-1/2 top-1/2 z-[111] w-[min(48rem,92vw)] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-zinc-800 bg-zinc-900 p-6 shadow-2xl">
           <div className="mb-4 flex items-center justify-between">
-            <Dialog.Title className="text-base font-semibold text-zinc-900">Media library</Dialog.Title>
-            <Dialog.Close className="rounded-lg p-1.5 text-zinc-400 hover:bg-zinc-100">
+            <Dialog.Title className="text-base font-semibold text-zinc-100">Media library</Dialog.Title>
+            <Dialog.Close className="rounded-lg p-1.5 text-zinc-500 hover:bg-zinc-800">
               <X className="size-5" />
             </Dialog.Close>
           </div>
           {loading ? (
             <div className="flex h-48 items-center justify-center">
-              <Loader2 className="size-6 animate-spin text-zinc-400" />
+              <Loader2 className="size-6 animate-spin text-zinc-500" />
             </div>
           ) : items.length === 0 ? (
-            <p className="flex h-48 items-center justify-center text-sm text-zinc-500">
+            <p className="flex h-48 items-center justify-center text-sm text-zinc-400">
               No uploads yet — use the Upload button.
             </p>
           ) : (
@@ -131,7 +131,7 @@ function LibraryDialog({
                   key={a.id}
                   type="button"
                   onClick={() => onPick(a.url)}
-                  className="group relative aspect-square overflow-hidden rounded-lg border border-zinc-200 hover:border-orange"
+                  className="group relative aspect-square overflow-hidden rounded-lg border border-zinc-800 hover:border-orange"
                 >
                   {a.resource_type === "video" ? (
                     // eslint-disable-next-line jsx-a11y/media-has-caption

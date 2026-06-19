@@ -1,0 +1,41 @@
+# Render Blueprint — deploy the Creative Monk API for free.
+# In Render: New → Blueprint → pick this repo. It reads this file.
+# Fill the `sync: false` vars in the dashboard (they are secrets, not committed).
+services:
+  - type: web
+    name: cm-backend
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Your Vercel site origin(s). Any *.vercel.app origin is also allowed automatically.
+      - key: CORS_ORIGINS
+        value: https://cm-website-five.vercel.app
+      - key: CLOUDINARY_FOLDER
+        value: creative-monk
+      - key: JWT_EXPIRES_IN
+        value: "7d"
+      - key: ADMIN_NAME
+        value: Creative Monk Admin
+      # Auto-generated strong secret:
+      - key: JWT_SECRET
+        generateValue: true
+      # Secrets — paste these in the Render dashboard (kept out of git):
+      - key: TURSO_DATABASE_URL
+        sync: false
+      - key: TURSO_AUTH_TOKEN
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false

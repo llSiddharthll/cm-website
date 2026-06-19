@@ -7,17 +7,17 @@ import { Badge, Button } from "./ui";
 
 function FieldValue({ field, value }: { field: Field; value: unknown }) {
   if (value === undefined || value === null || value === "")
-    return <span className="text-sm text-zinc-400">—</span>;
+    return <span className="text-sm text-zinc-500">—</span>;
 
   switch (field.type) {
     case "boolean":
       return <Badge tone={value ? "won" : "default"}>{value ? "Yes" : "No"}</Badge>;
     case "image":
       // eslint-disable-next-line @next/next/no-img-element
-      return <img src={String(value)} alt="" className="mt-1 h-28 w-auto rounded-lg border border-zinc-200 object-cover" />;
+      return <img src={String(value)} alt="" className="mt-1 h-28 w-auto rounded-lg border border-zinc-800 object-cover" />;
     case "video":
       // eslint-disable-next-line jsx-a11y/media-has-caption
-      return <video src={String(value)} className="mt-1 h-28 w-auto rounded-lg border border-zinc-200" controls />;
+      return <video src={String(value)} className="mt-1 h-28 w-auto rounded-lg border border-zinc-800" controls />;
     case "tags":
       return (
         <div className="flex flex-wrap gap-1.5">
@@ -30,16 +30,16 @@ function FieldValue({ field, value }: { field: Field; value: unknown }) {
       return (
         <div className="space-y-2">
           {(value as string[]).map((p, i) => (
-            <p key={i} className="text-sm text-zinc-600">{p}</p>
+            <p key={i} className="text-sm text-zinc-400">{p}</p>
           ))}
         </div>
       );
     case "object":
       return (
-        <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-2 text-sm text-zinc-700">
+        <div className="rounded-lg border border-zinc-800 bg-zinc-800/50 p-2 text-sm text-zinc-300">
           {(field.fields ?? []).map((sub) => (
             <div key={sub.name} className="flex gap-2">
-              <span className="text-zinc-400">{sub.label}:</span>
+              <span className="text-zinc-500">{sub.label}:</span>
               <span>{String((value as Record<string, unknown>)?.[sub.name] ?? "—")}</span>
             </div>
           ))}
@@ -49,14 +49,14 @@ function FieldValue({ field, value }: { field: Field; value: unknown }) {
       return (
         <div className="space-y-1.5">
           {(value as Record<string, unknown>[]).map((row, i) => (
-            <div key={i} className="rounded-md border border-zinc-200 bg-zinc-50 px-2 py-1 text-xs text-zinc-600">
+            <div key={i} className="rounded-md border border-zinc-800 bg-zinc-800/50 px-2 py-1 text-xs text-zinc-400">
               {(field.fields ?? []).map((sub) => String(row?.[sub.name] ?? "")).filter(Boolean).join(" · ")}
             </div>
           ))}
         </div>
       );
     default:
-      return <span className="text-sm text-zinc-700">{String(value)}</span>;
+      return <span className="text-sm text-zinc-300">{String(value)}</span>;
   }
 }
 
@@ -96,7 +96,7 @@ export function DetailSheet({
           )}
           {collection.fields.map((field) => (
             <div key={field.name}>
-              <dt className="mb-1 text-xs font-medium uppercase tracking-wide text-zinc-400">{field.label}</dt>
+              <dt className="mb-1 text-xs font-medium uppercase tracking-wide text-zinc-500">{field.label}</dt>
               <dd>
                 <FieldValue field={field} value={entry[field.name]} />
               </dd>

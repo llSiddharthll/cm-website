@@ -24,9 +24,9 @@ function TagsInput({ value, onChange }: { value: string[]; onChange: (v: string[
   return (
     <div className={cn(inputClass, "flex flex-wrap items-center gap-1.5 py-1.5")}>
       {tags.map((t, i) => (
-        <span key={i} className="inline-flex items-center gap-1 rounded-md bg-zinc-100 px-2 py-0.5 text-xs text-zinc-700">
+        <span key={i} className="inline-flex items-center gap-1 rounded-md bg-zinc-800 px-2 py-0.5 text-xs text-zinc-300">
           {t}
-          <button type="button" onClick={() => onChange(tags.filter((_, j) => j !== i))} className="text-zinc-400 hover:text-red-500">
+          <button type="button" onClick={() => onChange(tags.filter((_, j) => j !== i))} className="text-zinc-500 hover:text-red-500">
             <X className="size-3" />
           </button>
         </span>
@@ -44,7 +44,7 @@ function TagsInput({ value, onChange }: { value: string[]; onChange: (v: string[
         }}
         onBlur={add}
         placeholder="Type and press Enter…"
-        className="min-w-[8rem] flex-1 bg-transparent text-sm outline-none placeholder:text-zinc-400"
+        className="min-w-[8rem] flex-1 bg-transparent text-sm outline-none placeholder:text-zinc-500"
       />
     </div>
   );
@@ -75,7 +75,7 @@ function ParagraphsInput({ value, onChange }: { value: string[]; onChange: (v: s
 function ObjectInput({ field, value, onChange }: { field: Field; value: Record<string, unknown>; onChange: OnChange }) {
   const obj = (value && typeof value === "object" ? value : {}) as Record<string, unknown>;
   return (
-    <div className="space-y-3 rounded-lg border border-zinc-200 bg-zinc-50 p-3">
+    <div className="space-y-3 rounded-lg border border-zinc-800 bg-zinc-800/50 p-3">
       {(field.fields ?? []).map((sub) => (
         <FieldInput
           key={sub.name}
@@ -102,14 +102,14 @@ function ObjectListInput({ field, value, onChange }: { field: Field; value: Reco
   return (
     <div className="space-y-3">
       {rows.map((row, i) => (
-        <div key={i} className="rounded-lg border border-zinc-200 bg-zinc-50 p-3">
+        <div key={i} className="rounded-lg border border-zinc-800 bg-zinc-800/50 p-3">
           <div className="mb-2 flex items-center justify-between">
-            <span className="text-xs font-medium text-zinc-400">#{i + 1}</span>
+            <span className="text-xs font-medium text-zinc-500">#{i + 1}</span>
             <div className="flex items-center gap-1">
-              <button type="button" onClick={() => move(i, -1)} className="rounded p-1 text-zinc-400 hover:bg-zinc-200" aria-label="Move up">
+              <button type="button" onClick={() => move(i, -1)} className="rounded p-1 text-zinc-500 hover:bg-zinc-700" aria-label="Move up">
                 <GripVertical className="size-3.5" />
               </button>
-              <button type="button" onClick={() => onChange(rows.filter((_, j) => j !== i))} className="rounded p-1 text-zinc-400 hover:bg-red-100 hover:text-red-500" aria-label="Remove">
+              <button type="button" onClick={() => onChange(rows.filter((_, j) => j !== i))} className="rounded p-1 text-zinc-500 hover:bg-red-100 hover:text-red-500" aria-label="Remove">
                 <X className="size-4" />
               </button>
             </div>
@@ -183,7 +183,7 @@ export function FieldInput({ field, value, onChange }: { field: Field; value: Va
       <div className="flex items-center justify-between gap-4">
         <div>
           <Label htmlFor={id} required={field.required}>{field.label}</Label>
-          {field.help && <p className="mt-0.5 text-xs text-zinc-400">{field.help}</p>}
+          {field.help && <p className="mt-0.5 text-xs text-zinc-500">{field.help}</p>}
         </div>
         {control}
       </div>
@@ -194,7 +194,7 @@ export function FieldInput({ field, value, onChange }: { field: Field; value: Va
     <div className="space-y-1.5">
       <Label htmlFor={id} required={field.required}>{field.label}</Label>
       {control}
-      {field.help && <p className="text-xs text-zinc-400">{field.help}</p>}
+      {field.help && <p className="text-xs text-zinc-500">{field.help}</p>}
     </div>
   );
 }

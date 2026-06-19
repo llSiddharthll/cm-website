@@ -12,7 +12,7 @@ import { DetailSheet } from "./DetailSheet";
 
 function cellValue(field: Field, value: unknown) {
   if (value === undefined || value === null || value === "")
-    return <span className="text-zinc-300">—</span>;
+    return <span className="text-zinc-600">—</span>;
   switch (field.type) {
     case "boolean":
       return <Badge tone={value ? "won" : "default"}>{value ? "Yes" : "No"}</Badge>;
@@ -31,7 +31,7 @@ function cellValue(field: Field, value: unknown) {
       return <Badge tone={String(value)}>{String(value)}</Badge>;
     default: {
       const s = String(value);
-      return <span className="line-clamp-1 text-zinc-700">{s.length > 80 ? s.slice(0, 80) + "…" : s}</span>;
+      return <span className="line-clamp-1 text-zinc-300">{s.length > 80 ? s.slice(0, 80) + "…" : s}</span>;
     }
   }
 }
@@ -154,8 +154,8 @@ export function CollectionView({ collection }: { collection: Collection }) {
             <dl className="space-y-3">
               {collection.fields.slice(0, 6).map((f) => (
                 <div key={f.name} className="flex gap-3 text-sm">
-                  <dt className="w-40 shrink-0 text-zinc-400">{f.label}</dt>
-                  <dd className="line-clamp-1 text-zinc-700">
+                  <dt className="w-40 shrink-0 text-zinc-500">{f.label}</dt>
+                  <dd className="line-clamp-1 text-zinc-300">
                     {Array.isArray(singleton?.[f.name])
                       ? (singleton?.[f.name] as unknown[]).length + " items"
                       : String(singleton?.[f.name] ?? "—")}
@@ -183,7 +183,7 @@ export function CollectionView({ collection }: { collection: Collection }) {
       {/* toolbar */}
       <div className="mt-5 flex flex-wrap items-center gap-3">
         <div className="relative min-w-[14rem] flex-1">
-          <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-zinc-400" />
+          <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-zinc-500" />
           <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder={`Search ${collection.pluralName.toLowerCase()}…`} className="pl-9" />
         </div>
         {filterFields.map((f) => (
@@ -205,7 +205,7 @@ export function CollectionView({ collection }: { collection: Collection }) {
         {loading ? (
           <div className="flex h-48 items-center justify-center"><Spinner /></div>
         ) : rows.length === 0 ? (
-          <div className="flex h-48 flex-col items-center justify-center gap-3 text-sm text-zinc-500">
+          <div className="flex h-48 flex-col items-center justify-center gap-3 text-sm text-zinc-400">
             {all.length === 0 ? `No ${collection.pluralName.toLowerCase()} yet.` : "No matches."}
             {!collection.intakeOnly && all.length === 0 && (
               <Button size="sm" onClick={openNew}><Plus className="size-3.5" /> Add the first one</Button>
@@ -215,7 +215,7 @@ export function CollectionView({ collection }: { collection: Collection }) {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-zinc-200 text-left text-xs uppercase tracking-wide text-zinc-400">
+                <tr className="border-b border-zinc-800 text-left text-xs uppercase tracking-wide text-zinc-500">
                   {listColumns.map((f) => (
                     <th key={f.name} className="px-4 py-3 font-medium">{f.label}</th>
                   ))}
@@ -223,12 +223,12 @@ export function CollectionView({ collection }: { collection: Collection }) {
                   <th className="px-4 py-3" />
                 </tr>
               </thead>
-              <tbody className="divide-y divide-zinc-100">
+              <tbody className="divide-y divide-zinc-800">
                 {rows.map((entry) => (
                   <tr
                     key={entry._id}
                     onClick={() => openDetail(entry)}
-                    className="cursor-pointer transition-colors hover:bg-zinc-50"
+                    className="cursor-pointer transition-colors hover:bg-zinc-800"
                   >
                     {listColumns.map((f) => (
                       <td key={f.name} className="max-w-[20rem] px-4 py-3 align-middle">{cellValue(f, entry[f.name])}</td>
@@ -258,9 +258,9 @@ function Header({ collection, count, onNew }: { collection: Collection; count?: 
   return (
     <div className="flex items-end justify-between gap-4">
       <div>
-        <h1 className="text-xl font-semibold text-zinc-900">{collection.pluralName}</h1>
-        {collection.description && <p className="mt-1 text-sm text-zinc-500">{collection.description}</p>}
-        {count !== undefined && <p className="mt-1 text-xs text-zinc-400">{count} {count === 1 ? "item" : "items"}</p>}
+        <h1 className="text-xl font-semibold text-zinc-100">{collection.pluralName}</h1>
+        {collection.description && <p className="mt-1 text-sm text-zinc-400">{collection.description}</p>}
+        {count !== undefined && <p className="mt-1 text-xs text-zinc-500">{count} {count === 1 ? "item" : "items"}</p>}
       </div>
       {onNew && (
         <Button onClick={onNew}><Plus className="size-4" /> New {collection.name.toLowerCase()}</Button>

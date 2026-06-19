@@ -24,34 +24,34 @@ export function Sheet({
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-[100] bg-zinc-900/40 backdrop-blur-sm data-[state=open]:animate-[fadeIn_.2s_ease]" />
+        <Dialog.Overlay className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm data-[state=open]:animate-[fadeIn_.2s_ease]" />
         <Dialog.Content
           className={cn(
-            "fixed inset-y-0 right-0 z-[101] flex w-full flex-col bg-white shadow-2xl outline-none",
+            "fixed inset-y-0 right-0 z-[101] flex w-full flex-col border-l border-zinc-800 bg-zinc-950 shadow-2xl outline-none",
             "data-[state=open]:animate-[slideIn_.28s_cubic-bezier(0.16,1,0.3,1)]",
             width,
           )}
         >
-          <div className="flex items-start justify-between gap-4 border-b border-zinc-200 px-6 py-4">
+          <div className="flex items-start justify-between gap-4 border-b border-zinc-800 px-6 py-4">
             <div className="min-w-0">
-              <Dialog.Title className="truncate text-base font-semibold text-zinc-900">
+              <Dialog.Title className="truncate text-base font-semibold text-zinc-100">
                 {title}
               </Dialog.Title>
               {description && (
-                <Dialog.Description className="mt-0.5 truncate text-sm text-zinc-500">
+                <Dialog.Description className="mt-0.5 truncate text-sm text-zinc-400">
                   {description}
                 </Dialog.Description>
               )}
             </div>
-            <Dialog.Close className="rounded-lg p-1.5 text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-700">
+            <Dialog.Close className="rounded-lg p-1.5 text-zinc-500 transition-colors hover:bg-zinc-800 hover:text-zinc-200">
               <X className="size-5" />
             </Dialog.Close>
           </div>
 
-          <div className="flex-1 overflow-y-auto px-6 py-5">{children}</div>
+          <div className="flex-1 overflow-y-auto px-6 py-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">{children}</div>
 
           {footer && (
-            <div className="flex items-center justify-end gap-3 border-t border-zinc-200 bg-zinc-50 px-6 py-4">
+            <div className="flex items-center justify-end gap-3 border-t border-zinc-800 bg-zinc-800/50 px-6 py-4">
               {footer}
             </div>
           )}

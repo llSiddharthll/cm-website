@@ -6,12 +6,29 @@ export const db: Client = createClient({
   authToken: env.turso.authToken,
 });
 
+/** Retry transient network errors (connect timeouts / fetch failed). */
+async function exec(stmt: { sql: string; args: InValue[] }, tries = 3) {
+  let lastErr: unknown;
+  for (let i = 0; i < tries; i++) {
+    try {
+      return await db.execute(stmt);
+    } catch (err) {
+      lastErr = err;
+      const msg = String((err as Error)?.message || err);
+      const transient = /fetch failed|timeout|ECONN|ENOTFOUND|EAI_AGAIN|UND_ERR|socket/i.test(msg);
+      if (!transient || i === tries - 1) throw err;
+      await new Promise((r) => setTimeout(r, 400 * (i + 1)));
+    }
+  }
+  throw lastErr;
+}
+
 /** Run a query and return typed rows as plain objects. */
 export async function query<T = Record<string, unknown>>(
   sql: string,
   args: InValue[] = [],
 ): Promise<T[]> {
-  const rs = await db.execute({ sql, args });
+  const rs = await exec({ sql, args });
   return rs.rows as unknown as T[];
 }
 
@@ -24,7 +41,7 @@ export async function get<T = Record<string, unknown>>(
 }
 
 export async function run(sql: string, args: InValue[] = []): Promise<void> {
-  await db.execute({ sql, args });
+  await exec({ sql, args });
 }
 
 const MIGRATIONS: string[] = [
