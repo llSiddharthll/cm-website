@@ -9,22 +9,52 @@ running the existing Dockerfile via docker-compose.
 
 ---
 
-## 1. Create the VM
+## 0. Sign up for Oracle Cloud (once)
 
-OCI Console → **Compute → Instances → Create instance**:
+1. Go to **https://www.oracle.com/cloud/free/** → **Start for free**.
+2. You'll need: an email, a mobile number (SMS code), and a **credit/debit card** for
+   identity verification only — the Always Free tier is never charged (a small temporary
+   hold may appear and is refunded).
+3. **Home region is permanent** — pick one close to you. From India choose **India West
+   (Mumbai)** or **India South (Hyderabad)** (also the lowest latency to the Turso DB).
+4. Finish sign-up (provisioning takes a few minutes), then open the console at
+   **https://cloud.oracle.com**.
 
-- **Image:** Canonical **Ubuntu 22.04**
-- **Shape:** **VM.Standard.A1.Flex** (the *Always Free* ARM shape) — 1 OCPU / 6 GB is plenty
-  (free allowance is 4 OCPU / 24 GB total).
-- **SSH:** upload your public key (so you can `ssh ubuntu@<ip>`).
-- Create.
+**Make an SSH key on your computer** (you paste the public half into Oracle):
+
+```bash
+ssh-keygen -t ed25519 -C "oracle" -f ~/.ssh/cm_oracle
+cat ~/.ssh/cm_oracle.pub      # copy this whole line
+```
+
+---
+
+## 1. Create the free VM
+
+In the console (**https://cloud.oracle.com**):
+
+1. Top-left **☰ menu → Compute → Instances → Create instance**.
+2. **Name:** `cm-backend`.
+3. **Image and shape → Edit:**
+   - **Image:** Change image → **Canonical Ubuntu 22.04** → Select.
+   - **Shape:** Change shape → **Ampere** tab → **VM.Standard.A1.Flex** →
+     set **1 OCPU / 6 GB** (free allows up to 4 OCPU / 24 GB). Look for the green
+     **"Always Free-eligible"** label.
+4. **Networking:** keep *Create new VCN* and **Assign a public IPv4 address = Yes**.
+5. **Add SSH keys:** choose **Paste public keys** and paste the `cm_oracle.pub` line from
+   above (or *Generate a key pair for me* and download the private key).
+6. **Create.** Wait ~1 min until the instance shows **RUNNING**.
 
 > **"Out of host capacity"?** The free ARM shape is in high demand. Retry the create a
 > few times, switch the Availability Domain, or pick a quieter home region. (The AMD
 > `VM.Standard.E2.1.Micro` is always available and still runs this app, just with 1 GB RAM.)
 
-**Grab the public IP:** Instance details → **Public IP address**. That's the IP for your
-DNS record below.
+**Grab the public IP:** on the instance details page copy the **Public IP address**
+(e.g. `140.x.x.x`) — that's the IP for your DNS record below. Connect with:
+
+```bash
+ssh -i ~/.ssh/cm_oracle ubuntu@<public-ip>
+```
 
 ---
 
