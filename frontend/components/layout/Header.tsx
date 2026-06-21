@@ -188,7 +188,7 @@ export function Header({ dark = true }: { dark?: boolean }) {
                       {cat.items.map((it) => (
                         <li key={it.slug}>
                           <Link
-                            href={`/services/${cat.slug}#${it.slug}`}
+                            href={`/services/${cat.slug}/${it.slug}`}
                             onClick={() => setServices(false)}
                             className="text-sm text-on-ink-2 transition-colors hover:text-orange"
                           >

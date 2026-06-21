@@ -7,6 +7,7 @@ import { db, migrate } from "./db";
 import { ensureBootstrapAdmin } from "./lib/auth";
 import { getCollection } from "./schema";
 import { createEntry, putSingleton, countEntries } from "./store";
+import { SERVICE_PAGES } from "./data/service-pages";
 
 const force = process.argv.includes("--force");
 
@@ -360,6 +361,7 @@ const COLLECTIONS: Record<string, Record<string, unknown>[]> = {
   services: SERVICES,
   service_categories: SERVICE_CATEGORIES,
   services_grid: SERVICES_GRID,
+  service_pages: SERVICE_PAGES as unknown as Record<string, unknown>[],
   cases: CASES,
   reels: REELS,
   video_projects: VIDEO_PROJECTS,

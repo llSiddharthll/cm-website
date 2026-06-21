@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import {
   getServiceCategories,
   getServiceCategory,
+  getServicePagesByCategory,
   getProcess,
   getServicesGrid,
   getSite,
@@ -40,9 +41,10 @@ export default async function ServiceCategoryPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const [cat, categories, process, servicesGrid, site] = await Promise.all([
+  const [cat, categories, pages, process, servicesGrid, site] = await Promise.all([
     getServiceCategory(slug),
     getServiceCategories(),
+    getServicePagesByCategory(slug),
     getProcess(),
     getServicesGrid(),
     getSite(),
@@ -70,22 +72,23 @@ export default async function ServiceCategoryPage({
               <Eyebrow invert>What&rsquo;s included</Eyebrow>
             </Reveal>
             <ul className="mt-10 border-t border-line-invert">
-              {cat.items.map((it, i) => (
+              {pages.map((it, i) => (
                 <Reveal as="li" key={it.slug} delay={i * 0.05}>
-                  <div
-                    id={it.slug}
-                    className="grid12 scroll-mt-28 items-baseline gap-y-3 border-b border-line-invert py-[clamp(1.4rem,2.6vw,2.4rem)]"
+                  <Link
+                    href={`/services/${cat.slug}/${it.slug}`}
+                    className="group grid12 items-baseline gap-y-3 border-b border-line-invert py-[clamp(1.4rem,2.6vw,2.4rem)]"
                   >
-                    <span className="mono col-span-1 text-on-ink-3">
+                    <span className="mono col-span-1 text-on-ink-3 transition-colors group-hover:text-orange">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <h2 className="display col-span-5 col-start-2 text-[length:var(--text-h3)] text-on-ink md:col-span-5">
+                    <h2 className="display col-span-11 col-start-2 flex items-center gap-3 text-[length:var(--text-h3)] text-on-ink transition-colors group-hover:text-orange md:col-span-5">
                       {it.name}
+                      <ArrowUpRight className="size-5 shrink-0 text-orange opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100" />
                     </h2>
-                    <p className="col-span-6 col-start-1 text-on-ink-2 md:col-span-5 md:col-start-8">
-                      {it.desc}
+                    <p className="col-span-11 col-start-2 text-on-ink-2 md:col-span-5 md:col-start-8">
+                      {it.tagline || it.intro}
                     </p>
-                  </div>
+                  </Link>
                 </Reveal>
               ))}
             </ul>

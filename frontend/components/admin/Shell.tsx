@@ -12,7 +12,7 @@ import type { Collection } from "@/lib/admin/types";
 /** Content collections grouped by the page they belong to (in display order). */
 const PAGE_GROUPS: { label: string; slugs: string[] }[] = [
   { label: "Home", slugs: ["home_hero", "stats", "tools", "certs", "marquee"] },
-  { label: "Services", slugs: ["services", "service_categories", "services_grid", "process", "pricing"] },
+  { label: "Services", slugs: ["services", "service_categories", "service_pages", "services_grid", "process", "pricing"] },
   { label: "Work", slugs: ["cases", "reels", "video_projects"] },
   { label: "Blog", slugs: ["posts"] },
   { label: "About", slugs: ["story", "team", "values", "industries", "awards"] },

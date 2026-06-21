@@ -251,6 +251,74 @@ export const SCHEMA: Collection[] = [
       { name: "desc", label: "Description", type: "textarea" },
     ],
   },
+  {
+    slug: "service_pages",
+    name: "Service page",
+    pluralName: "Service pages",
+    kind: "collection",
+    group: "Services",
+    icon: "FileText",
+    description: "Dedicated internal page for each sub-service (e.g. /services/content/content-strategy).",
+    titleField: "name",
+    subtitleField: "category",
+    slugField: "slug",
+    defaultSort: "position",
+    fields: [
+      {
+        name: "category",
+        label: "Category",
+        type: "select",
+        options: ["content", "creatives", "marketing", "development"],
+        required: true,
+        listColumn: true,
+        filterable: true,
+      },
+      { name: "slug", label: "Slug", type: "slug", required: true, listColumn: true },
+      { name: "name", label: "Name", type: "text", required: true, listColumn: true },
+      { name: "tagline", label: "Tagline", type: "text", listColumn: true },
+      { name: "intro", label: "Intro", type: "textarea" },
+      { name: "cover", label: "Cover image", type: "image" },
+      { name: "overview", label: "Overview", type: "paragraphs", help: "Each entry is a paragraph." },
+      { name: "deliverables", label: "What's included", type: "tags" },
+      {
+        name: "highlights",
+        label: "Highlights",
+        type: "objectList",
+        fields: [
+          { name: "title", label: "Title", type: "text" },
+          { name: "desc", label: "Description", type: "textarea" },
+        ],
+      },
+      {
+        name: "process",
+        label: "Process",
+        type: "objectList",
+        fields: [
+          { name: "step", label: "Step", type: "text" },
+          { name: "title", label: "Title", type: "text" },
+          { name: "body", label: "Body", type: "textarea" },
+        ],
+      },
+      {
+        name: "metric",
+        label: "Headline metric",
+        type: "object",
+        fields: [
+          { name: "value", label: "Value", type: "text" },
+          { name: "label", label: "Label", type: "text" },
+        ],
+      },
+      {
+        name: "faqs",
+        label: "FAQs",
+        type: "objectList",
+        fields: [
+          { name: "q", label: "Question", type: "text" },
+          { name: "a", label: "Answer", type: "textarea" },
+        ],
+      },
+    ],
+  },
 
   /* ───────────────────────── WORK ───────────────────────── */
   {

@@ -153,6 +153,50 @@ export const getTools = () => nameList("tools", TOOLS);
 export const getCerts = () => nameList("certs", CERTS);
 export const getBenefits = () => nameList("benefits", BENEFITS);
 
+/* ───────────── Service pages (per sub-service internal pages) ───────────── */
+
+export type ServicePage = {
+  category: string;
+  slug: string;
+  name: string;
+  tagline?: string;
+  intro?: string;
+  cover?: string;
+  overview?: string[];
+  deliverables?: string[];
+  highlights?: { title: string; desc: string }[];
+  process?: { step: string; title: string; body: string }[];
+  metric?: { value: string; label: string };
+  faqs?: { q: string; a: string }[];
+};
+
+// Minimal fallback derived from the bundled categories, so pages still render
+// (intro only) if the backend isn't reachable.
+const SERVICE_PAGES_FALLBACK: ServicePage[] = SERVICE_CATEGORIES.flatMap((c) =>
+  c.items.map((it) => ({
+    category: c.slug,
+    slug: it.slug,
+    name: it.name,
+    tagline: it.desc,
+    intro: it.desc,
+  })),
+);
+
+export const getServicePages = () => collection<ServicePage>("service_pages", SERVICE_PAGES_FALLBACK);
+
+export async function getServicePagesByCategory(category: string): Promise<(ServicePage & Meta)[]> {
+  const all = await getServicePages();
+  return all.filter((p) => p.category === category);
+}
+
+export async function getServicePage(
+  category: string,
+  slug: string,
+): Promise<(ServicePage & Meta) | null> {
+  const all = await getServicePages();
+  return all.find((p) => p.category === category && p.slug === slug) ?? null;
+}
+
 /* single lookups */
 export async function getServiceCategory(slug: string): Promise<(ServiceCategory & Meta) | null> {
   const all = await getServiceCategories();
