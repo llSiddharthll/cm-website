@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { getCases, getCase, getSite, getServicesGrid } from "@/lib/cms";
+import { getCases, getCase, getCaseSectionsFor, getSite, getServicesGrid } from "@/lib/cms";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { ContactForm } from "@/components/agency/ContactForm";
 import { Reveal, RevealLines } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ReelPlaceholder } from "@/components/fx/ReelPlaceholder";
+import { CaseSections } from "@/components/work/CaseSections";
 
 export const revalidate = 60;
 export const dynamicParams = true;
@@ -42,6 +43,7 @@ export default async function CasePage({
   const num = String(index + 1).padStart(2, "0");
   const site = await getSite();
   const servicesGrid = await getServicesGrid();
+  const sections = await getCaseSectionsFor(c.id);
 
   return (
     <>
@@ -153,9 +155,24 @@ export default async function CasePage({
                   .
                 </p>
               </Reveal>
+              {sections.length > 0 && (
+                <Reveal className="mt-10">
+                  <ul className="flex flex-wrap gap-x-6 gap-y-2">
+                    {sections.map((s, i) => (
+                      <li key={i} className="mono flex items-center gap-2 text-on-ink-3">
+                        <span className="size-1.5 bg-orange" />
+                        {s.discipline || s.kind}
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              )}
             </div>
           </div>
         </section>
+
+        {/* ── Discipline showcase (modular, admin-managed) ── */}
+        <CaseSections sections={sections} client={c.client} />
 
         {/* ── Next case ── */}
         <section className="bg-dark-2 pb-[var(--section-pad)]">

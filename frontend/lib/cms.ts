@@ -132,6 +132,27 @@ export const getServiceCategories = () => collection<ServiceCategory>("service_c
 export const getServicesGrid = () => collection<GridService>("services_grid", SERVICES_12);
 export const getCases = () => collection<CaseStudy>("cases", CASES);
 export const getReels = () => collection<Reel>("reels", REELS);
+
+export type CaseSection = {
+  case: string;
+  kind: "gallery" | "website" | "marketing" | "seo" | "content" | "quote";
+  discipline?: string;
+  title?: string;
+  intro?: string;
+  body?: string[];
+  images?: { image: string; caption?: string }[];
+  screenshot?: string;
+  url?: string;
+  stats?: { label: string; value: string; suffix?: string }[];
+  keywords?: string[];
+  quote?: string;
+  author?: string;
+};
+export const getCaseSections = () => collection<CaseSection>("case_sections", []);
+export async function getCaseSectionsFor(caseId: string): Promise<(CaseSection & Meta)[]> {
+  const all = await getCaseSections();
+  return all.filter((s) => s.case === caseId);
+}
 export const getVideoProjects = () => collection<VideoProject>("video_projects", VIDEO_PROJECTS);
 export const getPosts = () => collection<Post>("posts", POSTS);
 export const getTeam = () => collection<Member>("team", TEAM);

@@ -8,6 +8,7 @@ import {
   getServicePagesByCategory,
   getServiceCategory,
   getServicesGrid,
+  getCases,
   getSite,
 } from "@/lib/cms";
 import { Header } from "@/components/layout/Header";
@@ -15,6 +16,7 @@ import { Footer } from "@/components/agency/Footer";
 import { ContactForm } from "@/components/agency/ContactForm";
 import { Reveal, RevealLines } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { ReelPlaceholder } from "@/components/fx/ReelPlaceholder";
 
 export const revalidate = 60;
 export const dynamicParams = true;
@@ -43,16 +45,18 @@ export default async function ServicePageView({
   params: Promise<{ slug: string; sub: string }>;
 }) {
   const { slug, sub } = await params;
-  const [page, cat, siblings, servicesGrid, site] = await Promise.all([
+  const [page, cat, siblings, cases, servicesGrid, site] = await Promise.all([
     getServicePage(slug, sub),
     getServiceCategory(slug),
     getServicePagesByCategory(slug),
+    getCases(),
     getServicesGrid(),
     getSite(),
   ]);
   if (!page || !cat) notFound();
 
   const related = siblings.filter((p) => p.slug !== page.slug).slice(0, 3);
+  const work = cases.slice(0, 3);
   const overview = page.overview?.length ? page.overview : page.intro ? [page.intro] : [];
 
   return (
@@ -122,6 +126,28 @@ export default async function ServicePageView({
             </Reveal>
           </div>
         </section>
+
+        {/* ── Hero visual ── */}
+        {page.cover && (
+          <section className="bg-dark pb-[var(--section-pad)]">
+            <div className="shell">
+              <Reveal y={40}>
+                <div className="relative overflow-hidden rounded-xl border border-line-invert">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={page.cover}
+                    alt={page.name}
+                    className="aspect-[21/9] w-full object-cover"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent" />
+                  <span className="mono absolute bottom-4 left-5 text-on-ink-2">
+                    {cat.name} · {page.name}
+                  </span>
+                </div>
+              </Reveal>
+            </div>
+          </section>
+        )}
 
         {/* ── Overview + deliverables ── */}
         {(overview.length > 0 || page.deliverables?.length) && (
@@ -264,6 +290,39 @@ export default async function ServicePageView({
                         <h3 className="display text-[length:var(--text-h3)] text-on-ink">{o.name}</h3>
                         <p className="mt-2 text-sm text-on-ink-2">{o.tagline}</p>
                       </div>
+                    </Link>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ── Selected work ── */}
+        {work.length > 0 && (
+          <section className="bg-dark-2 section">
+            <div className="shell">
+              <div className="flex items-end justify-between gap-6">
+                <Reveal>
+                  <Eyebrow invert>Selected work</Eyebrow>
+                </Reveal>
+                <Link href="/work" className="group label hidden items-center gap-1.5 text-on-ink transition-colors hover:text-orange sm:inline-flex">
+                  All work
+                  <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </Link>
+              </div>
+              <div className="grid12 mt-10 gap-x-6 gap-y-10">
+                {work.map((w, i) => (
+                  <Reveal key={w.id} delay={i * 0.06} className="col-span-12 md:col-span-4">
+                    <Link href={`/work/${w.id}`} className="group block">
+                      <ReelPlaceholder title={w.client} category={w.category[0]} index={String(i + 1).padStart(2, "0")} ratio="16/9" />
+                      <div className="mt-4 flex items-baseline justify-between gap-4">
+                        <h3 className="display text-[length:var(--text-h3)] text-on-ink transition-colors group-hover:text-orange">
+                          {w.client}
+                        </h3>
+                        <span className="mono shrink-0 text-orange">{w.metric.value}</span>
+                      </div>
+                      <p className="mt-1 text-sm text-on-ink-2">{w.title}</p>
                     </Link>
                   </Reveal>
                 ))}

@@ -385,6 +385,61 @@ export const SCHEMA: Collection[] = [
       { name: "category", label: "Category", type: "text", listColumn: true, filterable: true },
     ],
   },
+  {
+    slug: "case_sections",
+    name: "Case section",
+    pluralName: "Case sections",
+    kind: "collection",
+    group: "Work",
+    icon: "LayoutPanelTop",
+    description:
+      "Modular showcase blocks on a case study page. Pick a kind and fill the fields that apply: gallery → images; website → screenshot + url; marketing/seo → stats (+ keywords); content → body; quote → quote + author.",
+    titleField: "title",
+    subtitleField: "case",
+    defaultSort: "position",
+    fields: [
+      { name: "case", label: "Case (id)", type: "text", required: true, listColumn: true, filterable: true, help: "The case study id, e.g. sunburst." },
+      {
+        name: "kind",
+        label: "Kind",
+        type: "select",
+        options: ["gallery", "website", "marketing", "seo", "content", "quote"],
+        required: true,
+        listColumn: true,
+        filterable: true,
+      },
+      { name: "discipline", label: "Discipline label", type: "text", listColumn: true, help: "e.g. Creatives, Development, Marketing." },
+      { name: "title", label: "Title", type: "text", listColumn: true },
+      { name: "intro", label: "Intro", type: "textarea" },
+      { name: "body", label: "Body (content)", type: "paragraphs", help: "For the 'content' kind." },
+      {
+        name: "images",
+        label: "Gallery images",
+        type: "objectList",
+        help: "For the 'gallery' kind.",
+        fields: [
+          { name: "image", label: "Image", type: "image" },
+          { name: "caption", label: "Caption", type: "text" },
+        ],
+      },
+      { name: "screenshot", label: "Screenshot (tall)", type: "image", help: "For the 'website' kind — a full-page screenshot. Left blank shows a mock site." },
+      { name: "url", label: "Live URL", type: "text", help: "For the 'website' kind." },
+      {
+        name: "stats",
+        label: "Stats",
+        type: "objectList",
+        help: "For 'marketing' / 'seo' kinds — also rendered as a bar graph.",
+        fields: [
+          { name: "label", label: "Label", type: "text" },
+          { name: "value", label: "Value", type: "text" },
+          { name: "suffix", label: "Suffix", type: "text" },
+        ],
+      },
+      { name: "keywords", label: "Keywords / tags", type: "tags", help: "For the 'seo' kind." },
+      { name: "quote", label: "Quote", type: "textarea", help: "For the 'quote' kind." },
+      { name: "author", label: "Quote author", type: "text" },
+    ],
+  },
 
   /* ───────────────────────── BLOG ───────────────────────── */
   {
