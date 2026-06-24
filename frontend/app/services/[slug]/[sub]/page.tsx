@@ -17,6 +17,9 @@ import { ContactForm } from "@/components/agency/ContactForm";
 import { Reveal, RevealLines } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ReelPlaceholder } from "@/components/fx/ReelPlaceholder";
+import { Magnetic } from "@/components/fx/Magnetic";
+import { Tilt } from "@/components/fx/Tilt";
+import { Parallax } from "@/components/fx/Parallax";
 
 export const revalidate = 60;
 export const dynamicParams = true;
@@ -109,20 +112,24 @@ export default async function ServicePageView({
             )}
 
             <Reveal delay={0.24} className="mt-10 flex flex-wrap items-center gap-4">
-              <Link
-                href="/contact"
-                className="group label inline-flex h-12 items-center gap-2 bg-orange px-6 text-on-orange transition-colors hover:bg-orange-press"
-              >
-                Book a strategy call
-                <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-              </Link>
-              <Link
-                href="/work"
-                className="group label inline-flex h-12 items-center gap-2 border border-line-invert px-6 text-on-ink transition-colors hover:border-orange/60"
-              >
-                See the work
-                <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </Link>
+              <Magnetic>
+                <Link
+                  href="/contact"
+                  className="group label inline-flex h-12 items-center gap-2 bg-orange px-6 text-on-orange transition-colors hover:bg-orange-press"
+                >
+                  Book a strategy call
+                  <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                </Link>
+              </Magnetic>
+              <Magnetic>
+                <Link
+                  href="/work"
+                  className="group label inline-flex h-12 items-center gap-2 border border-line-invert px-6 text-on-ink transition-colors hover:border-orange/60"
+                >
+                  See the work
+                  <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </Link>
+              </Magnetic>
             </Reveal>
           </div>
         </section>
@@ -132,15 +139,17 @@ export default async function ServicePageView({
           <section className="bg-dark pb-[var(--section-pad)]">
             <div className="shell">
               <Reveal y={40}>
-                <div className="relative overflow-hidden rounded-xl border border-line-invert">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={page.cover}
-                    alt={page.name}
-                    className="aspect-[21/9] w-full object-cover"
-                  />
+                <div className="relative aspect-[21/9] overflow-hidden rounded-xl border border-line-invert">
+                  <Parallax className="absolute inset-x-0 -top-[10%] h-[120%]" speed={8}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={page.cover}
+                      alt={page.name}
+                      className="size-full object-cover"
+                    />
+                  </Parallax>
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent" />
-                  <span className="mono absolute bottom-4 left-5 text-on-ink-2">
+                  <span className="mono absolute bottom-4 left-5 z-10 text-on-ink-2">
                     {cat.name} · {page.name}
                   </span>
                 </div>
@@ -278,19 +287,21 @@ export default async function ServicePageView({
               <div className="grid12 mt-10 gap-5">
                 {related.map((o, i) => (
                   <Reveal key={o.slug} delay={i * 0.06} className="col-span-12 md:col-span-4">
-                    <Link
-                      href={`/services/${cat.slug}/${o.slug}`}
-                      className="group flex h-full flex-col justify-between gap-10 border border-line-invert-2 bg-dark p-7 transition-all duration-300 hover:-translate-y-1 hover:border-orange/50"
-                    >
-                      <div className="flex items-start justify-between">
-                        <span className="mono text-on-ink-3 group-hover:text-orange">{String(i + 1).padStart(2, "0")}</span>
-                        <ArrowUpRight className="size-5 text-on-ink-3 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-orange" />
-                      </div>
-                      <div>
-                        <h3 className="display text-[length:var(--text-h3)] text-on-ink">{o.name}</h3>
-                        <p className="mt-2 text-sm text-on-ink-2">{o.tagline}</p>
-                      </div>
-                    </Link>
+                    <Tilt className="h-full">
+                      <Link
+                        href={`/services/${cat.slug}/${o.slug}`}
+                        className="group flex h-full flex-col justify-between gap-10 border border-line-invert-2 bg-dark p-7 transition-all duration-300 hover:-translate-y-1 hover:border-orange/50"
+                      >
+                        <div className="flex items-start justify-between">
+                          <span className="mono text-on-ink-3 group-hover:text-orange">{String(i + 1).padStart(2, "0")}</span>
+                          <ArrowUpRight className="size-5 text-on-ink-3 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-orange" />
+                        </div>
+                        <div>
+                          <h3 className="display text-[length:var(--text-h3)] text-on-ink">{o.name}</h3>
+                          <p className="mt-2 text-sm text-on-ink-2">{o.tagline}</p>
+                        </div>
+                      </Link>
+                    </Tilt>
                   </Reveal>
                 ))}
               </div>
@@ -314,16 +325,18 @@ export default async function ServicePageView({
               <div className="grid12 mt-10 gap-x-6 gap-y-10">
                 {work.map((w, i) => (
                   <Reveal key={w.id} delay={i * 0.06} className="col-span-12 md:col-span-4">
-                    <Link href={`/work/${w.id}`} className="group block">
-                      <ReelPlaceholder title={w.client} category={w.category[0]} index={String(i + 1).padStart(2, "0")} ratio="16/9" />
-                      <div className="mt-4 flex items-baseline justify-between gap-4">
-                        <h3 className="display text-[length:var(--text-h3)] text-on-ink transition-colors group-hover:text-orange">
-                          {w.client}
-                        </h3>
-                        <span className="mono shrink-0 text-orange">{w.metric.value}</span>
-                      </div>
-                      <p className="mt-1 text-sm text-on-ink-2">{w.title}</p>
-                    </Link>
+                    <Tilt>
+                      <Link href={`/work/${w.id}`} className="group block">
+                        <ReelPlaceholder title={w.client} category={w.category[0]} index={String(i + 1).padStart(2, "0")} ratio="16/9" />
+                        <div className="mt-4 flex items-baseline justify-between gap-4">
+                          <h3 className="display text-[length:var(--text-h3)] text-on-ink transition-colors group-hover:text-orange">
+                            {w.client}
+                          </h3>
+                          <span className="mono shrink-0 text-orange">{w.metric.value}</span>
+                        </div>
+                        <p className="mt-1 text-sm text-on-ink-2">{w.title}</p>
+                      </Link>
+                    </Tilt>
                   </Reveal>
                 ))}
               </div>

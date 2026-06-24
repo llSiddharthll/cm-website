@@ -9,6 +9,7 @@ import { EASE, DUR } from "@/lib/motion";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ReelPlaceholder } from "@/components/fx/ReelPlaceholder";
+import { Tilt } from "@/components/fx/Tilt";
 
 const ALL = "All";
 
@@ -116,6 +117,7 @@ export function WorkGrid({ cases = CASES }: { cases?: typeof CASES }) {
                   i % 2 === 1 ? "md:mt-24" : "",
                 ].join(" ")}
               >
+                <Tilt>
                 <Link
                   href={`/work/${c.id}`}
                   className="block focus:outline-none"
@@ -177,6 +179,7 @@ export function WorkGrid({ cases = CASES }: { cases?: typeof CASES }) {
                     />
                   </span>
                 </Link>
+                </Tilt>
               </motion.article>
             ))}
           </AnimatePresence>

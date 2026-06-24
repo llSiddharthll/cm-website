@@ -6,6 +6,7 @@ import { IMG } from "@/lib/media";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
+import { Magnetic } from "@/components/fx/Magnetic";
 
 /**
  * Full-bleed dark CTA moment — the last big push before the contact form.
@@ -53,9 +54,11 @@ export function BigCTA({
 
         <Reveal delay={0.24}>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Button href={`mailto:${site.email}`} variant="primary" size="lg">
-              Book a strategy call
-            </Button>
+            <Magnetic>
+              <Button href={`mailto:${site.email}`} variant="primary" size="lg">
+                Book a strategy call
+              </Button>
+            </Magnetic>
             <Button href={site.whatsapp} variant="invert" size="lg" arrow={false}>
               WhatsApp
             </Button>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUp } from "lucide-react";
 import { getSite, getFooterGroups, getLocations } from "@/lib/cms";
 import { Logo } from "@/components/layout/Logo";
+import { Magnetic } from "@/components/fx/Magnetic";
 import { NewsletterForm } from "./NewsletterForm";
 
 const YEAR = 2026;
@@ -33,13 +34,15 @@ export async function Footer() {
             >
               {SITE.email}
             </a>
-            <Link
-              href="/contact"
-              className="group label inline-flex h-12 items-center gap-2 bg-orange px-6 text-on-orange transition-colors hover:bg-orange-press"
-            >
-              Book a strategy call
-              <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-            </Link>
+            <Magnetic>
+              <Link
+                href="/contact"
+                className="group label inline-flex h-12 items-center gap-2 bg-orange px-6 text-on-orange transition-colors hover:bg-orange-press"
+              >
+                Book a strategy call
+                <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+              </Link>
+            </Magnetic>
           </div>
         </div>
 

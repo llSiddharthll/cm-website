@@ -3,6 +3,7 @@
 import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
+import { Tilt } from "@/components/fx/Tilt";
 
 type Img = { image: string; caption?: string };
 
@@ -23,8 +24,8 @@ export function Gallery({ images }: { images: Img[] }) {
     <>
       <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
         {valid.map((img, idx) => (
+          <Tilt key={idx} max={5}>
           <button
-            key={idx}
             onClick={() => show(idx)}
             aria-label={`Open image ${idx + 1}${img.caption ? `: ${img.caption}` : ""}`}
             className={`group relative overflow-hidden rounded-lg bg-dark-2 ${
@@ -47,6 +48,7 @@ export function Gallery({ images }: { images: Img[] }) {
               <Maximize2 className="size-4 shrink-0 text-orange" />
             </div>
           </button>
+          </Tilt>
         ))}
       </div>
 

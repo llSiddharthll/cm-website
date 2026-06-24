@@ -3,6 +3,7 @@ import { VIDEO } from "@/lib/media";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { MoveRight } from "lucide-react";
+import { Tilt } from "@/components/fx/Tilt";
 
 /** Horizontal scroll-snap rail of proof. CSS-only — safe as a server component. */
 export function CaseStudies({
@@ -39,8 +40,8 @@ export function CaseStudies({
 
         <div className="mt-12 flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {cases.map((c, i) => (
+            <Tilt key={c.id}>
             <article
-              key={c.id}
               className="group snap-start shrink-0 w-[82vw] sm:w-[46vw] lg:w-[31vw] bg-dark border border-line-invert-2"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-dark-3">
@@ -84,6 +85,7 @@ export function CaseStudies({
                 </div>
               </div>
             </article>
+            </Tilt>
           ))}
         </div>
       </div>

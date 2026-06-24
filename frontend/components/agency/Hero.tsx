@@ -6,6 +6,7 @@ import { SITE } from "@/lib/content";
 import { VIDEO } from "@/lib/media";
 import { EASE } from "@/lib/motion";
 import { Button } from "@/components/ui/Button";
+import { Magnetic } from "@/components/fx/Magnetic";
 import { AutoVideo } from "./AutoVideo";
 
 export function Hero({
@@ -91,17 +92,21 @@ export function Hero({
             {hero.sub}
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Button href={hero.ctaPrimary.href} variant="primary" size="lg">
-              {hero.ctaPrimary.label}
-            </Button>
-            <Button
-              href={hero.ctaSecondary.href}
-              variant="invert"
-              size="lg"
-              arrow={false}
-            >
-              {hero.ctaSecondary.label}
-            </Button>
+            <Magnetic>
+              <Button href={hero.ctaPrimary.href} variant="primary" size="lg">
+                {hero.ctaPrimary.label}
+              </Button>
+            </Magnetic>
+            <Magnetic>
+              <Button
+                href={hero.ctaSecondary.href}
+                variant="invert"
+                size="lg"
+                arrow={false}
+              >
+                {hero.ctaSecondary.label}
+              </Button>
+            </Magnetic>
           </div>
         </motion.div>
       </div>

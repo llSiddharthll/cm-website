@@ -6,6 +6,7 @@ import { SITE } from "@/lib/content";
 import { SERVICES_12 } from "@/lib/agency";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { Magnetic } from "@/components/fx/Magnetic";
 
 const inputCls =
   "w-full bg-dark-2 border border-line-invert px-4 py-3 text-on-ink placeholder:text-on-ink-3 focus:border-orange focus:outline-none transition-colors";
@@ -241,14 +242,16 @@ export function ContactForm({
                   />
                 </div>
                 <div className="sm:col-span-2 flex items-center gap-4">
-                  <button
-                    type="submit"
-                    disabled={status === "loading"}
-                    className="flex h-13 items-center justify-center gap-2 bg-orange px-7 text-on-orange hover:bg-orange-press transition-colors disabled:opacity-60"
-                  >
-                    {status === "loading" && <Loader2 className="size-4 animate-spin" />}
-                    {status === "loading" ? "Sending…" : "Send message"}
-                  </button>
+                  <Magnetic>
+                    <button
+                      type="submit"
+                      disabled={status === "loading"}
+                      className="flex h-13 items-center justify-center gap-2 bg-orange px-7 text-on-orange hover:bg-orange-press transition-colors disabled:opacity-60"
+                    >
+                      {status === "loading" && <Loader2 className="size-4 animate-spin" />}
+                      {status === "loading" ? "Sending…" : "Send message"}
+                    </button>
+                  </Magnetic>
                   {status === "error" && (
                     <span className="mono text-sm text-red-400">{error}</span>
                   )}

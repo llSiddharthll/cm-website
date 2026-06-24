@@ -3,6 +3,7 @@ import { Archivo, Inter, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
+import { Cursor } from "@/components/fx/Cursor";
 import { cn } from "@/lib/utils";
 
 const archivo = Archivo({
@@ -66,6 +67,7 @@ export default function RootLayout({
       <body>
         <SmoothScroll>{children}</SmoothScroll>
         <ScrollToTop />
+        <Cursor />
       </body>
     </html>
   );
