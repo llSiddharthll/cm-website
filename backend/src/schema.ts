@@ -505,6 +505,25 @@ export const SCHEMA: Collection[] = [
 
   /* ───────────────────────── SOCIAL PROOF ───────────────────────── */
   {
+    slug: "clients",
+    name: "Client",
+    pluralName: "Clients",
+    kind: "collection",
+    group: "Social proof",
+    icon: "Handshake",
+    description: "Brands we've worked with — shown in the 'trusted by' showcase.",
+    titleField: "name",
+    subtitleField: "sector",
+    fields: [
+      { name: "name", label: "Name", type: "text", required: true, listColumn: true },
+      { name: "sector", label: "Sector", type: "text", listColumn: true, filterable: true },
+      { name: "works", label: "Work delivered", type: "tags" },
+      { name: "url", label: "Website", type: "url" },
+      { name: "logo", label: "Logo", type: "image" },
+      { name: "featured", label: "Featured", type: "boolean", listColumn: true },
+    ],
+  },
+  {
     slug: "reviews",
     name: "Review",
     pluralName: "Reviews",

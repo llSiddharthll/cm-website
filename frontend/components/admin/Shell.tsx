@@ -17,7 +17,7 @@ const PAGE_GROUPS: { label: string; slugs: string[] }[] = [
   { label: "Blog", slugs: ["posts"] },
   { label: "About", slugs: ["story", "team", "values", "industries", "awards"] },
   { label: "Careers", slugs: ["roles", "benefits"] },
-  { label: "Reviews & FAQ", slugs: ["reviews", "faqs"] },
+  { label: "Social proof", slugs: ["clients", "reviews", "faqs"] },
   { label: "Global", slugs: ["site", "footer_groups", "locations", "review_summary"] },
 ];
 const INBOX_SLUGS = ["leads", "subscribers"];

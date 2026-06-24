@@ -1,0 +1,27 @@
+/* Real Creative Monk clients (Tricity), extracted from the client deck.
+   Logos can be uploaded per client in the admin (logo field). */
+export const CLIENTS = [
+  { name: "Tvisva", sector: "Jewellery", works: ["Branding", "Website", "Social Media", "Print"], featured: true },
+  { name: "White Wolf", sector: "Men's Grooming", works: ["Logo", "Packaging", "Social Media"], featured: true },
+  { name: "Veloire", sector: "Beauty & Fashion", works: ["Logo", "Social Media"], featured: false },
+  { name: "Inaysha", sector: "Beauty & Fashion", works: ["Logo", "Social Media", "Print Ads"], featured: false },
+  { name: "Fabie", sector: "Beauty Salon", works: ["Website", "Social Media"], featured: false },
+  { name: "Avenry", sector: "Restaurant & Café", works: ["Social Media", "Menu Design", "Story Creatives"], featured: true },
+  { name: "Al Palm", sector: "Restaurant & Café", works: ["Menu Design", "Table Tent"], featured: false },
+  { name: "Binny's Kitchen", sector: "Restaurant & Café", works: ["Social Media", "Menu Design"], featured: false },
+  { name: "Café Zoya", sector: "Café", works: ["Menu Design", "Social Media"], featured: false },
+  { name: "Zafraan", sector: "Restaurant", works: ["Social Media", "Menu Design"], featured: false },
+  { name: "Skyeline", sector: "Food & Beverage", works: ["Social Media"], featured: false },
+  { name: "Best Western Plus Mohali", sector: "Hospitality", works: ["Social Media", "Branding"], featured: true },
+  { name: "Chatha Foods", sector: "Processed & Frozen Food", works: ["Website"], featured: true },
+  { name: "Ascure", sector: "Real Estate", works: ["Social Media"], featured: false },
+  { name: "CP.67 Offices", sector: "Real Estate", works: ["Social Media"], featured: false },
+  { name: "Felicity Adobe", sector: "Real Estate", works: ["Website", "Social Media"], featured: false },
+  { name: "Felix Plaza", sector: "Real Estate", works: ["Social Media"], featured: false },
+  { name: "IBC — Indian Business Centre", sector: "Real Estate", works: ["Ad Campaign"], featured: true },
+  { name: "Trix", sector: "Lighting", works: ["Packaging", "Social Media"], featured: false },
+  { name: "Export House", sector: "Handloom & Retail", works: ["Website", "Retail Branding"], featured: false },
+  { name: "CII Coolex", sector: "Events & Exhibition", works: ["Social Media", "PR", "Standee"], featured: false },
+  { name: "Yukti Herbs", sector: "Ayurveda & Wellness", works: ["Packaging"], featured: false },
+  { name: "Ayutrust Ayurveda", sector: "Ayurveda & Healthcare", works: ["Social Media"], featured: false },
+] as const;

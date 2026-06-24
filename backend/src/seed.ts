@@ -9,6 +9,7 @@ import { getCollection } from "./schema";
 import { createEntry, putSingleton, countEntries } from "./store";
 import { SERVICE_PAGES } from "./data/service-pages";
 import { CASE_SECTIONS } from "./data/case-sections";
+import { CLIENTS } from "./data/clients";
 
 const force = process.argv.includes("--force");
 
@@ -370,6 +371,7 @@ const COLLECTIONS: Record<string, Record<string, unknown>[]> = {
   posts: POSTS,
   team: TEAM,
   roles: ROLES,
+  clients: CLIENTS as unknown as Record<string, unknown>[],
   reviews: REVIEWS,
   faqs: FAQS,
   industries: INDUSTRIES,

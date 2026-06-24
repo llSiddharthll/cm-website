@@ -5,7 +5,7 @@ import {
   FolderTree, Grid3x3, Briefcase, Film, Clapperboard, Newspaper, Users,
   BriefcaseBusiness, MessageSquareQuote, HelpCircle, Building2, Gem,
   ListOrdered, BarChart3, Wallet, Trophy, Wrench, BadgeCheck, Megaphone,
-  HeartHandshake, Inbox, Mail, FileText, LayoutPanelTop, Circle, type LucideIcon,
+  HeartHandshake, Inbox, Mail, FileText, LayoutPanelTop, Handshake, Circle, type LucideIcon,
 } from "lucide-react";
 
 const MAP: Record<string, LucideIcon> = {
@@ -13,7 +13,7 @@ const MAP: Record<string, LucideIcon> = {
   FolderTree, Grid3x3, Briefcase, Film, Clapperboard, Newspaper, Users,
   BriefcaseBusiness, MessageSquareQuote, HelpCircle, Building2, Gem,
   ListOrdered, BarChart3, Wallet, Trophy, Wrench, BadgeCheck, Megaphone,
-  HeartHandshake, Inbox, Mail, FileText, LayoutPanelTop,
+  HeartHandshake, Inbox, Mail, FileText, LayoutPanelTop, Handshake,
 };
 
 export function Icon({ name, className }: { name: string; className?: string }) {

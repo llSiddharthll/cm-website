@@ -158,6 +158,34 @@ export const getPosts = () => collection<Post>("posts", POSTS);
 export const getTeam = () => collection<Member>("team", TEAM);
 export const getRoles = () => collection<Role>("roles", ROLES);
 export const getReviews = () => collection<Review>("reviews", REVIEWS);
+
+export type Client = { name: string; sector?: string; works?: string[]; url?: string; logo?: string; featured?: boolean };
+const CLIENTS_FALLBACK: Client[] = [
+  { name: "Tvisva", sector: "Jewellery", featured: true },
+  { name: "White Wolf", sector: "Men's Grooming", featured: true },
+  { name: "Avenry", sector: "Restaurant & Café", featured: true },
+  { name: "Best Western Plus Mohali", sector: "Hospitality", featured: true },
+  { name: "Chatha Foods", sector: "Processed & Frozen Food", featured: true },
+  { name: "IBC — Indian Business Centre", sector: "Real Estate", featured: true },
+  { name: "Veloire", sector: "Beauty & Fashion" },
+  { name: "Inaysha", sector: "Beauty & Fashion" },
+  { name: "Fabie", sector: "Beauty Salon" },
+  { name: "Al Palm", sector: "Restaurant & Café" },
+  { name: "Binny's Kitchen", sector: "Restaurant & Café" },
+  { name: "Café Zoya", sector: "Café" },
+  { name: "Zafraan", sector: "Restaurant" },
+  { name: "Ascure", sector: "Real Estate" },
+  { name: "CP.67 Offices", sector: "Real Estate" },
+  { name: "Felicity Adobe", sector: "Real Estate" },
+  { name: "Felix Plaza", sector: "Real Estate" },
+  { name: "Trix", sector: "Lighting" },
+  { name: "Export House", sector: "Handloom & Retail" },
+  { name: "CII Coolex", sector: "Events & Exhibition" },
+  { name: "Yukti Herbs", sector: "Ayurveda & Wellness" },
+  { name: "Ayutrust Ayurveda", sector: "Ayurveda & Healthcare" },
+  { name: "Skyeline", sector: "Food & Beverage" },
+];
+export const getClients = () => collection<Client>("clients", CLIENTS_FALLBACK);
 export const getFaqs = () => collection<{ q: string; a: string }>("faqs", FAQS);
 export const getIndustries = () => collection<{ name: string; blurb: string }>("industries", INDUSTRIES);
 export const getValues = () => collection<{ no: string; title: string; body: string }>("values", VALUES);

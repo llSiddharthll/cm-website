@@ -9,7 +9,8 @@ import { VideoWork } from "@/components/agency/VideoWork";
 import { Certs } from "@/components/agency/Certs";
 import { CaseStudies } from "@/components/agency/CaseStudies";
 import { Process } from "@/components/agency/Process";
-import { Showreel } from "@/components/agency/Showreel";
+import { ReelShowcase } from "@/components/agency/ReelShowcase";
+import { Clients } from "@/components/agency/Clients";
 import { Reviews } from "@/components/agency/Reviews";
 import { Culture } from "@/components/agency/Culture";
 import { FAQ } from "@/components/agency/FAQ";
@@ -29,6 +30,7 @@ import {
   getCerts,
   getCases,
   getProcess,
+  getClients,
   getReviews,
   getReviewSummary,
   getBenefits,
@@ -50,6 +52,7 @@ export default async function HomePage() {
     certs,
     cases,
     process,
+    clients,
     reviews,
     reviewSummary,
     benefits,
@@ -68,6 +71,7 @@ export default async function HomePage() {
     getCerts(),
     getCases(),
     getProcess(),
+    getClients(),
     getReviews(),
     getReviewSummary(),
     getBenefits(),
@@ -93,9 +97,10 @@ export default async function HomePage() {
         <HorizontalShowcase categories={serviceCategories} />
         <Certs certs={certs} />
         <CaseStudies cases={cases} />
+        <Clients clients={clients} />
         <SkewMarquee />
         <Process process={process} />
-        <Showreel statBar={statBar} />
+        <ReelShowcase />
         <Reviews reviews={reviews} summary={reviewSummary} />
         <Culture benefits={benefits} cultureStats={cultureStats} />
         <FAQ faqs={faqs} />
