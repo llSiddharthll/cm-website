@@ -162,11 +162,11 @@ export type Reel = {
 };
 
 export const REELS: Reel[] = [
-  { id: "r1", title: "Sunburst — Launch Film", category: "Brand Film", ratio: "9/16", accent: "0deg" },
-  { id: "r2", title: "Aether — Product Reel", category: "Social / Reels", ratio: "9/16", accent: "40deg" },
-  { id: "r3", title: "Kettle & Co.", category: "E-commerce", ratio: "1/1", accent: "20deg" },
-  { id: "r4", title: "Meridian Realty", category: "Campaign", ratio: "9/16", accent: "60deg" },
-  { id: "r5", title: "Pulse Fitness", category: "Motion", ratio: "1/1", accent: "10deg" },
+  { id: "r1", title: "Tvisva — Festival Edit", category: "Jewellery / Social", ratio: "9/16", accent: "0deg" },
+  { id: "r2", title: "The Avenry — Plated", category: "F&B / Reels", ratio: "9/16", accent: "40deg" },
+  { id: "r3", title: "White Wolf — Unboxing", category: "Grooming", ratio: "1/1", accent: "20deg" },
+  { id: "r4", title: "IBC — Prelaunch", category: "Real Estate", ratio: "9/16", accent: "60deg" },
+  { id: "r5", title: "Café Zoya — Daily Brew", category: "Café", ratio: "1/1", accent: "10deg" },
 ];
 
 export type CaseStudy = {
@@ -178,69 +178,19 @@ export type CaseStudy = {
   result: string;
   metric: { value: string; label: string };
   accent: string;
+  cover?: string;
 };
 
+// Real Creative Monk clients (from the Tricity deck). Images in /public/work.
 export const CASES: CaseStudy[] = [
-  {
-    id: "sunburst",
-    client: "Sunburst Foods",
-    title: "A heritage FMCG brand, re-lit for the feed",
-    category: ["Brand", "Social", "Motion"],
-    year: "2025",
-    result: "Rebuilt identity + always-on social engine.",
-    metric: { value: "3.4×", label: "engagement lift" },
-    accent: "8deg",
-  },
-  {
-    id: "aether",
-    client: "Aether Skincare",
-    title: "D2C launch from zero to shelf-fame",
-    category: ["E-commerce", "Performance", "Web"],
-    year: "2025",
-    result: "Shopify build + paid acquisition, profitable in 90 days.",
-    metric: { value: "4.1", label: "blended ROAS" },
-    accent: "44deg",
-  },
-  {
-    id: "meridian",
-    client: "Meridian Realty",
-    title: "Premium real-estate, sold before launch",
-    category: ["Web", "Lead Gen", "SEO"],
-    year: "2024",
-    result: "Microsite + lead funnel for a flagship project.",
-    metric: { value: "1,200+", label: "qualified leads" },
-    accent: "24deg",
-  },
-  {
-    id: "kettle",
-    client: "Kettle & Co.",
-    title: "Specialty coffee with a cult following",
-    category: ["Brand", "E-commerce", "Reels"],
-    year: "2024",
-    result: "Identity, packaging and a reel series that travels.",
-    metric: { value: "+212%", label: "organic reach" },
-    accent: "16deg",
-  },
-  {
-    id: "pulse",
-    client: "Pulse Fitness",
-    title: "Local gyms, national-grade presence",
-    category: ["Local SEO", "Social", "Motion"],
-    year: "2024",
-    result: "Local marketing system across 6 locations.",
-    metric: { value: "#1", label: "map rank, 6 cities" },
-    accent: "58deg",
-  },
-  {
-    id: "northwind",
-    client: "Northwind Travel",
-    title: "Wanderlust, engineered into bookings",
-    category: ["Web", "Content", "PPC"],
-    year: "2023",
-    result: "Content engine + performance for a travel brand.",
-    metric: { value: "62%", label: "lower cost / lead" },
-    accent: "36deg",
-  },
+  { id: "tvisva", client: "Tvisva Jewels", title: "A jewellery house, dressed for every surface", category: ["Branding", "Social", "Print", "Website"], year: "2025", result: "A complete brand identity and collateral system — social, print, in-store signage, packaging and website.", metric: { value: "20+", label: "brand assets" }, accent: "8deg", cover: "/work/tvisva-014.jpg" },
+  { id: "white-wolf", client: "White Wolf", title: "A men's grooming identity with bite", category: ["Branding", "Packaging", "Social", "Logo"], year: "2024", result: "A full identity for a men's grooming brand — logo system, palette, social templates and a packaging line.", metric: { value: "Identity", label: "+ packaging line" }, accent: "44deg", cover: "/work/white-wolf-049.jpg" },
+  { id: "avenry", client: "The Avenry", title: "Café, kitchen & bar — one identity", category: ["Branding", "Social", "Menu", "Print"], year: "2025", result: "A script-led identity with social, story creatives and a full suite of printed menus.", metric: { value: "3 menus", label: "+ brand & social" }, accent: "24deg", cover: "/work/avenry-059.jpg" },
+  { id: "cafe-zoya", client: "Café Zoya", title: "A café brand with a friendly bite", category: ["Branding", "Social", "Menu", "Packaging"], year: "2024", result: "Brand identity, logo system, social content and printed menu and packaging.", metric: { value: "Brand", label: "+ menu & packaging" }, accent: "16deg", cover: "/work/cafe-zoya-076.jpg" },
+  { id: "best-western", client: "Best Western Plus Mohali", title: "Hospitality, always-on and on-brand", category: ["Social", "Branding", "Hospitality"], year: "2025", result: "Always-on social content and print-ready branding collateral for the hotel.", metric: { value: "Always-on", label: "social + collateral" }, accent: "58deg", cover: "/work/best-western-083.jpg" },
+  { id: "chatha-foods", client: "Chatha Foods", title: "A frozen-food brand, served responsive", category: ["Website", "Web Design", "Branding"], year: "2025", result: "Website design and ongoing management, shown across desktop, tablet and mobile.", metric: { value: "Website", label: "design + management" }, accent: "36deg", cover: "/work/chatha-foods-088.jpg" },
+  { id: "ibc", client: "IBC — Indian Business Centre", title: "Selling real estate before launch", category: ["Real Estate", "Advertising", "Social"], year: "2025", result: "A four-piece vertical ad campaign for a commercial real-estate prelaunch.", metric: { value: "Campaign", label: "prelaunch ad set" }, accent: "0deg", cover: "/work/ibc-100.jpg" },
+  { id: "trix", client: "Trix", title: "A lighting brand, boxed and broadcast", category: ["Branding", "Packaging", "Social", "Product"], year: "2024", result: "Brand identity, a multi-SKU packaging system and an Instagram social grid.", metric: { value: "4 SKUs", label: "packaging system" }, accent: "20deg", cover: "/work/trix-102.jpg" },
 ];
 
 export const STATS = [

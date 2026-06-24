@@ -44,11 +44,19 @@ export function CaseStudies({
               <article className="flex h-full flex-col border border-line-invert-2 bg-dark transition-colors duration-300 group-hover:border-orange/40">
                 <div className="relative aspect-[4/3] overflow-hidden bg-dark-3">
                   <img
-                    src={VIDEO.posters[i % VIDEO.posters.length]}
-                    alt=""
-                    className="size-full object-cover opacity-50 transition duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 group-hover:opacity-70"
+                    src={c.cover ?? VIDEO.posters[i % VIDEO.posters.length]}
+                    alt={c.cover ? `${c.client} — ${c.title}` : ""}
+                    className={`size-full object-cover transition duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 ${
+                      c.cover ? "opacity-95 group-hover:opacity-100" : "opacity-50 group-hover:opacity-70"
+                    }`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent" />
+                  <div
+                    className={`absolute inset-0 ${
+                      c.cover
+                        ? "bg-gradient-to-t from-dark/80 via-dark/10 to-transparent"
+                        : "bg-gradient-to-t from-dark via-dark/30 to-transparent"
+                    }`}
+                  />
                   <span className="label absolute left-4 top-4 text-on-ink-2">
                     {c.category[0]}
                   </span>

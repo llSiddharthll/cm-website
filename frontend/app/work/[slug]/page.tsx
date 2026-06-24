@@ -116,12 +116,23 @@ export default async function CasePage({
         <section className="bg-dark pb-[var(--section-pad)]">
           <div className="shell">
             <Reveal y={40}>
-              <ReelPlaceholder
-                title={c.client}
-                category={c.category[0]}
-                index={num}
-                ratio="16/9"
-              />
+              {c.cover ? (
+                <div className="relative aspect-[3/2] overflow-hidden border border-line-invert-2 bg-dark-3">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={c.cover}
+                    alt={`${c.client} — ${c.title}`}
+                    className="size-full object-cover"
+                  />
+                </div>
+              ) : (
+                <ReelPlaceholder
+                  title={c.client}
+                  category={c.category[0]}
+                  index={num}
+                  ratio="16/9"
+                />
+              )}
             </Reveal>
           </div>
         </section>
@@ -147,10 +158,10 @@ export default async function CasePage({
               <Reveal y={16} delay={0.1}>
                 <p className="mt-8 max-w-xl leading-relaxed text-on-ink-2">
                   We ran our four-step process — listen, shape, make, compound —
-                  pairing strategy with in-house design, code and content. The
-                  result: {c.result.toLowerCase()} And the numbers followed:{" "}
+                  pairing strategy with in-house design, content and code. The
+                  work spanned{" "}
                   <span className="font-medium text-on-ink">
-                    {c.metric.value} {c.metric.label}
+                    {c.category.join(", ").toLowerCase()}
                   </span>
                   .
                 </p>

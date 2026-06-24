@@ -125,12 +125,23 @@ export function WorkGrid({ cases = CASES }: { cases?: typeof CASES }) {
                 >
                   {/* Visual + caption share one elevated dark card, crisp lift on hover */}
                   <div className="border border-line-invert-2 bg-dark-2 p-3 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1.5 group-hover:border-orange/50">
-                    <ReelPlaceholder
-                      title={c.client}
-                      category={c.category[0]}
-                      index={String(i + 1).padStart(2, "0")}
-                      ratio="16/9"
-                    />
+                    {c.cover ? (
+                      <div className="relative aspect-[3/2] overflow-hidden bg-dark-3">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={c.cover}
+                          alt={`${c.client} — ${c.title}`}
+                          className="size-full object-cover transition duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+                        />
+                      </div>
+                    ) : (
+                      <ReelPlaceholder
+                        title={c.client}
+                        category={c.category[0]}
+                        index={String(i + 1).padStart(2, "0")}
+                        ratio="16/9"
+                      />
+                    )}
 
                     {/* Caption — hairline rule, internal grid */}
                     <div className="mt-6 grid12 gap-y-6 border-t border-line-invert-2 px-1 pb-1 pt-6">

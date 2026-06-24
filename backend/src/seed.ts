@@ -8,7 +8,7 @@ import { ensureBootstrapAdmin } from "./lib/auth";
 import { getCollection } from "./schema";
 import { createEntry, putSingleton, countEntries } from "./store";
 import { SERVICE_PAGES } from "./data/service-pages";
-import { CASE_SECTIONS } from "./data/case-sections";
+import { REAL_CASES, REAL_CASE_SECTIONS, REAL_REELS, REAL_VIDEO_PROJECTS } from "./data/work";
 import { CLIENTS } from "./data/clients";
 
 const force = process.argv.includes("--force");
@@ -186,32 +186,6 @@ const SERVICES_GRID = [
   { no: "12", title: "Analytics & CRO", desc: "Measure, learn, reinvest — month after month." },
 ];
 
-const CASES = [
-  { id: "sunburst", client: "Sunburst Foods", title: "A heritage FMCG brand, re-lit for the feed", category: ["Brand", "Social", "Motion"], year: "2025", result: "Rebuilt identity + always-on social engine.", metric: { value: "3.4×", label: "engagement lift" }, accent: "8deg" },
-  { id: "aether", client: "Aether Skincare", title: "D2C launch from zero to shelf-fame", category: ["E-commerce", "Performance", "Web"], year: "2025", result: "Shopify build + paid acquisition, profitable in 90 days.", metric: { value: "4.1", label: "blended ROAS" }, accent: "44deg" },
-  { id: "meridian", client: "Meridian Realty", title: "Premium real-estate, sold before launch", category: ["Web", "Lead Gen", "SEO"], year: "2024", result: "Microsite + lead funnel for a flagship project.", metric: { value: "1,200+", label: "qualified leads" }, accent: "24deg" },
-  { id: "kettle", client: "Kettle & Co.", title: "Specialty coffee with a cult following", category: ["Brand", "E-commerce", "Reels"], year: "2024", result: "Identity, packaging and a reel series that travels.", metric: { value: "+212%", label: "organic reach" }, accent: "16deg" },
-  { id: "pulse", client: "Pulse Fitness", title: "Local gyms, national-grade presence", category: ["Local SEO", "Social", "Motion"], year: "2024", result: "Local marketing system across 6 locations.", metric: { value: "#1", label: "map rank, 6 cities" }, accent: "58deg" },
-  { id: "northwind", client: "Northwind Travel", title: "Wanderlust, engineered into bookings", category: ["Web", "Content", "PPC"], year: "2023", result: "Content engine + performance for a travel brand.", metric: { value: "62%", label: "lower cost / lead" }, accent: "36deg" },
-];
-
-const REELS = [
-  { id: "r1", title: "Sunburst — Launch Film", category: "Brand Film", ratio: "9/16", accent: "0deg" },
-  { id: "r2", title: "Aether — Product Reel", category: "Social / Reels", ratio: "9/16", accent: "40deg" },
-  { id: "r3", title: "Kettle & Co.", category: "E-commerce", ratio: "1/1", accent: "20deg" },
-  { id: "r4", title: "Meridian Realty", category: "Campaign", ratio: "9/16", accent: "60deg" },
-  { id: "r5", title: "Pulse Fitness", category: "Motion", ratio: "1/1", accent: "10deg" },
-];
-
-const VIDEO_PROJECTS = [
-  { id: "v1", title: "Luxe Retail — Brand Film", category: "Brand Film" },
-  { id: "v2", title: "Nova — Product Reel", category: "Social" },
-  { id: "v3", title: "Meridian — Launch", category: "Real Estate" },
-  { id: "v4", title: "Kettle & Co. — Series", category: "E-commerce" },
-  { id: "v5", title: "Pulse — Motion", category: "Fitness" },
-  { id: "v6", title: "Aether — Cinematic Ad", category: "Beauty" },
-];
-
 const POSTS = [
   {
     slug: "rent-vs-own-marketing", title: "Stop renting attention. Start owning it.",
@@ -364,10 +338,10 @@ const COLLECTIONS: Record<string, Record<string, unknown>[]> = {
   service_categories: SERVICE_CATEGORIES,
   services_grid: SERVICES_GRID,
   service_pages: SERVICE_PAGES as unknown as Record<string, unknown>[],
-  cases: CASES,
-  case_sections: CASE_SECTIONS as unknown as Record<string, unknown>[],
-  reels: REELS,
-  video_projects: VIDEO_PROJECTS,
+  cases: REAL_CASES as unknown as Record<string, unknown>[],
+  case_sections: REAL_CASE_SECTIONS as unknown as Record<string, unknown>[],
+  reels: REAL_REELS as unknown as Record<string, unknown>[],
+  video_projects: REAL_VIDEO_PROJECTS as unknown as Record<string, unknown>[],
   posts: POSTS,
   team: TEAM,
   roles: ROLES,

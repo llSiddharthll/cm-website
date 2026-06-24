@@ -78,12 +78,12 @@ export type VideoProject = {
 };
 
 export const VIDEO_PROJECTS: VideoProject[] = [
-  { id: "v1", title: "Luxe Retail — Brand Film", category: "Brand Film" },
-  { id: "v2", title: "Nova — Product Reel", category: "Social" },
-  { id: "v3", title: "Meridian — Launch", category: "Real Estate" },
-  { id: "v4", title: "Kettle & Co. — Series", category: "E-commerce" },
-  { id: "v5", title: "Pulse — Motion", category: "Fitness" },
-  { id: "v6", title: "Aether — Cinematic Ad", category: "Beauty" },
+  { id: "v1", title: "Tvisva — Brand Film", category: "Jewellery" },
+  { id: "v2", title: "The Avenry — Food Reel", category: "F&B" },
+  { id: "v3", title: "White Wolf — Product Reel", category: "Grooming" },
+  { id: "v4", title: "Best Western Plus — Property Film", category: "Hospitality" },
+  { id: "v5", title: "IBC — Launch Campaign", category: "Real Estate" },
+  { id: "v6", title: "Trix — Product Reel", category: "Lighting" },
 ];
 
 export const CERTS = [
