@@ -3,6 +3,7 @@ import { REVIEWS, REVIEW_SUMMARY, type Review } from "@/lib/agency";
 import { IMG } from "@/lib/media";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { Tilt } from "@/components/fx/Tilt";
 
 export function Reviews({
   reviews = REVIEWS,
@@ -49,7 +50,9 @@ export function Reviews({
               delay={i * 0.06}
               className="col-span-12 md:col-span-4"
             >
-              <article className="flex h-full flex-col bg-dark-2 border border-line-invert-2 p-6">
+              <Tilt className="h-full" max={5}>
+              <article className="group relative flex h-full flex-col overflow-hidden border border-line-invert-2 bg-dark-2 p-6 transition-colors duration-300 hover:border-orange/40">
+                <span aria-hidden className="pointer-events-none absolute -right-1 -top-5 select-none font-serif text-[6rem] leading-none text-on-ink/[0.06]">&rdquo;</span>
                 <div className="flex items-center gap-1">
                   {Array.from({ length: Math.round(r.rating) }).map((_, s) => (
                     <Star
@@ -80,6 +83,7 @@ export function Reviews({
                   {r.service}
                 </div>
               </article>
+              </Tilt>
             </Reveal>
           ))}
         </div>

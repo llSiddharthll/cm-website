@@ -6,7 +6,7 @@ import { Aurora } from "@/components/fx/Aurora";
 import { Spotlight } from "@/components/fx/Spotlight";
 
 const glass =
-  "rounded-2xl border border-on-ink/10 bg-on-ink/[0.04] backdrop-blur-xl transition-colors duration-300 hover:border-orange/40";
+  "rounded-2xl border border-on-ink/10 bg-on-ink/[0.04] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-orange/40";
 
 type Stat = { value: string; suffix?: string; label: string };
 type Cat = { slug: string; index: string; name: string; tagline?: string };
@@ -129,20 +129,34 @@ export function Capabilities({
             </div>
           </Reveal>
 
-          {/* stack (wide) */}
+          {/* stack (wide) — living marquee */}
           <Reveal delay={0.14} className="col-span-2 md:col-span-2">
-            <div className={`${glass} flex h-full flex-col justify-between p-7`}>
+            <div className={`${glass} flex h-full flex-col justify-between gap-5 overflow-hidden p-7`}>
               <span className="label text-on-ink-3">The stack we wield</span>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {tools.slice(0, 10).map((t) => (
-                  <span
-                    key={t}
-                    className="mono rounded-full border border-on-ink/10 bg-on-ink/[0.03] px-3 py-1.5 text-[length:var(--text-mono)] text-on-ink-2"
-                  >
-                    {t}
-                  </span>
+              <div className="space-y-2.5">
+                {[tools, [...tools].reverse()].map((row, r) => (
+                  <div key={r} className="cm-stack-mask overflow-hidden">
+                    <div className={`flex w-max gap-2.5 ${r === 0 ? "cm-stack-a" : "cm-stack-b"}`}>
+                      {[...row, ...row].map((t, j) => (
+                        <span
+                          key={`${t}-${j}`}
+                          className="mono shrink-0 rounded-full border border-on-ink/10 bg-on-ink/[0.03] px-3 py-1.5 text-[length:var(--text-mono)] text-on-ink-2"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
+              <style>{`
+                .cm-stack-mask { -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent); }
+                @keyframes cm-stack-a { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+                @keyframes cm-stack-b { from { transform: translate3d(-50%,0,0); } to { transform: translate3d(0,0,0); } }
+                .cm-stack-a { animation: cm-stack-a 28s linear infinite; will-change: transform; }
+                .cm-stack-b { animation: cm-stack-b 34s linear infinite; will-change: transform; }
+                @media (prefers-reduced-motion: reduce) { .cm-stack-a, .cm-stack-b { animation: none; } }
+              `}</style>
             </div>
           </Reveal>
         </div>
