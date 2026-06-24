@@ -2,7 +2,9 @@ import { Header } from "@/components/layout/Header";
 import { Hero } from "@/components/agency/Hero";
 import { Tools } from "@/components/agency/Tools";
 import { Story } from "@/components/agency/Story";
-import { ServicesGrid } from "@/components/agency/ServicesGrid";
+import { Capabilities } from "@/components/agency/Capabilities";
+import { HorizontalShowcase } from "@/components/agency/HorizontalShowcase";
+import { SkewMarquee } from "@/components/agency/SkewMarquee";
 import { VideoWork } from "@/components/agency/VideoWork";
 import { Certs } from "@/components/agency/Certs";
 import { CaseStudies } from "@/components/agency/CaseStudies";
@@ -21,6 +23,7 @@ import {
   getTools,
   getStory,
   getTimeline,
+  getServiceCategories,
   getServicesGrid,
   getVideoProjects,
   getCerts,
@@ -41,6 +44,7 @@ export default async function HomePage() {
     tools,
     story,
     timeline,
+    serviceCategories,
     servicesGrid,
     videoProjects,
     certs,
@@ -58,6 +62,7 @@ export default async function HomePage() {
     getTools(),
     getStory(),
     getTimeline(),
+    getServiceCategories(),
     getServicesGrid(),
     getVideoProjects(),
     getCerts(),
@@ -78,10 +83,17 @@ export default async function HomePage() {
         <Hero hero={hero} statBar={statBar} />
         <Tools tools={tools} />
         <Story story={story} timeline={timeline} />
-        <ServicesGrid services={servicesGrid} />
+        <Capabilities
+          stats={statBar}
+          tools={tools}
+          categories={serviceCategories}
+          founded={site.founded}
+        />
         <VideoWork projects={videoProjects} />
+        <HorizontalShowcase categories={serviceCategories} />
         <Certs certs={certs} />
         <CaseStudies cases={cases} />
+        <SkewMarquee />
         <Process process={process} />
         <Showreel statBar={statBar} />
         <Reviews reviews={reviews} summary={reviewSummary} />
