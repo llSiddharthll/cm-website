@@ -171,8 +171,8 @@ export function WorkGrid({ cases = CASES }: { cases?: typeof CASES }) {
                       </div>
 
                       {/* Metric callout — the single bold orange moment */}
-                      <div className="col-span-6 md:col-span-4 md:text-right">
-                        <span className="display block text-[length:var(--text-h2)] leading-none text-orange">
+                      <div className="col-span-6 min-w-0 md:col-span-4 md:text-right">
+                        <span className="display block text-[clamp(1.6rem,2.6vw,2.4rem)] leading-[0.95] text-orange [overflow-wrap:anywhere] [hyphens:none]">
                           {c.metric.value}
                         </span>
                         <span className="label mt-3 block">{c.metric.label}</span>

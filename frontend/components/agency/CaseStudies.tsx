@@ -73,8 +73,8 @@ export function CaseStudies({
                   <h3 className="display mt-2 text-[length:var(--text-h3)] text-on-ink">
                     {c.title}
                   </h3>
-                  <div className="mt-4 flex items-baseline gap-3">
-                    <span className="display text-2xl leading-none text-orange">
+                  <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <span className="display text-2xl leading-none text-orange [overflow-wrap:anywhere]">
                       {c.metric.value}
                     </span>
                     <span className="label text-on-ink-3">{c.metric.label}</span>

@@ -87,8 +87,8 @@ export default async function CasePage({
               >
                 {c.result}
               </Reveal>
-              <Reveal className="col-span-6 md:col-span-3 md:col-start-10 md:text-right">
-                <span className="display block text-[length:var(--text-h2)] leading-none text-orange">
+              <Reveal className="col-span-6 min-w-0 md:col-span-3 md:col-start-10 md:text-right">
+                <span className="display block text-[clamp(1.6rem,2.6vw,2.4rem)] leading-[0.95] text-orange [overflow-wrap:anywhere] [hyphens:none]">
                   {c.metric.value}
                 </span>
                 <span className="mono mt-2 block text-on-ink-3">
