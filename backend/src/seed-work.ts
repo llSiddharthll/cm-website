@@ -10,6 +10,7 @@ import {
   REAL_REELS,
   REAL_VIDEO_PROJECTS,
   SERVICE_COVERS,
+  CLIENT_LOGOS,
 } from "./data/work";
 
 const clone = (x: unknown) => JSON.parse(JSON.stringify(x)) as Record<string, unknown>;
@@ -50,6 +51,24 @@ async function run() {
       updated++;
     }
     console.log(`[seed:work] service_pages covers updated: ${updated}`);
+  }
+
+  // client logos → set on matching clients
+  const cl = getCollection("clients");
+  if (cl) {
+    const rs = await db.execute(
+      "SELECT id, data FROM entries WHERE collection = 'clients'",
+    );
+    let logos = 0;
+    for (const row of rs.rows as unknown as { id: string; data: string }[]) {
+      const data = JSON.parse(row.data);
+      const logo = CLIENT_LOGOS[String(data.name)];
+      if (!logo || data.logo === logo) continue;
+      data.logo = logo;
+      await updateEntry(cl, String(row.id), data);
+      logos++;
+    }
+    console.log(`[seed:work] client logos set: ${logos}`);
   }
 
   console.log("[seed:work] done");
