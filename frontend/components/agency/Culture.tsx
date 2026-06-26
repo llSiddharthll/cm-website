@@ -31,6 +31,8 @@ export function Culture({
               <img
                 src={IMG.culture[0]}
                 alt="Creative Monk studio life"
+                loading="lazy"
+                decoding="async"
                 className="col-span-2 aspect-[16/10] w-full rounded-[var(--radius-sm)] border border-line-invert-2 object-cover"
               />
               {IMG.culture.slice(1, 3).map((src, i) => (
@@ -38,6 +40,8 @@ export function Culture({
                   key={i}
                   src={src}
                   alt="Creative Monk team"
+                  loading="lazy"
+                  decoding="async"
                   className="aspect-square w-full rounded-[var(--radius-sm)] border border-line-invert-2 object-cover"
                 />
               ))}

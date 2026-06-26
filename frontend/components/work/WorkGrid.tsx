@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { CASES } from "@/lib/content";
@@ -127,11 +128,12 @@ export function WorkGrid({ cases = CASES }: { cases?: typeof CASES }) {
                   <div className="border border-line-invert-2 bg-dark-2 p-3 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1.5 group-hover:border-orange/50">
                     {c.cover ? (
                       <div className="relative aspect-[3/2] overflow-hidden bg-dark-3">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
+                        <Image
                           src={c.cover}
                           alt={`${c.client} — ${c.title}`}
-                          className="size-full object-cover transition duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+                          fill
+                          sizes="(min-width: 768px) 46vw, 92vw"
+                          className="object-cover transition duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
                         />
                       </div>
                     ) : (

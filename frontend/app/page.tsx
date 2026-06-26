@@ -5,7 +5,6 @@ import { Story } from "@/components/agency/Story";
 import { Capabilities } from "@/components/agency/Capabilities";
 import { HorizontalShowcase } from "@/components/agency/HorizontalShowcase";
 import { SkewMarquee } from "@/components/agency/SkewMarquee";
-import { VideoWork } from "@/components/agency/VideoWork";
 import { Certs } from "@/components/agency/Certs";
 import { CaseStudies } from "@/components/agency/CaseStudies";
 import { Process } from "@/components/agency/Process";
@@ -26,7 +25,6 @@ import {
   getTimeline,
   getServiceCategories,
   getServicesGrid,
-  getVideoProjects,
   getCerts,
   getCases,
   getProcess,
@@ -48,7 +46,6 @@ export default async function HomePage() {
     timeline,
     serviceCategories,
     servicesGrid,
-    videoProjects,
     certs,
     cases,
     process,
@@ -67,7 +64,6 @@ export default async function HomePage() {
     getTimeline(),
     getServiceCategories(),
     getServicesGrid(),
-    getVideoProjects(),
     getCerts(),
     getCases(),
     getProcess(),
@@ -93,14 +89,13 @@ export default async function HomePage() {
           categories={serviceCategories}
           founded={site.founded}
         />
-        <VideoWork projects={videoProjects} />
+        <ReelShowcase />
         <HorizontalShowcase categories={serviceCategories} />
         <Certs certs={certs} />
         <CaseStudies cases={cases} />
         <Clients clients={clients} />
         <SkewMarquee />
         <Process process={process} />
-        <ReelShowcase />
         <Reviews reviews={reviews} summary={reviewSummary} />
         <Culture benefits={benefits} cultureStats={cultureStats} />
         <FAQ faqs={faqs} />

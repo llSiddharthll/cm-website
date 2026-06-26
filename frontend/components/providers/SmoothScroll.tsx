@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { MotionConfig } from "motion/react";
 import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -76,5 +77,6 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     };
   }, [isAdmin]);
 
-  return <>{children}</>;
+  // Honour prefers-reduced-motion across all Framer Motion animations.
+  return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
 }

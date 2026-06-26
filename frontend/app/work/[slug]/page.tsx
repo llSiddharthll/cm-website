@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { getCases, getCase, getCaseSectionsFor, getSite, getServicesGrid } from "@/lib/cms";
@@ -118,11 +119,13 @@ export default async function CasePage({
             <Reveal y={40}>
               {c.cover ? (
                 <div className="relative aspect-[3/2] overflow-hidden border border-line-invert-2 bg-dark-3">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={c.cover}
                     alt={`${c.client} — ${c.title}`}
-                    className="size-full object-cover"
+                    fill
+                    priority
+                    sizes="(min-width: 1280px) 1100px, 100vw"
+                    className="object-cover"
                   />
                 </div>
               ) : (

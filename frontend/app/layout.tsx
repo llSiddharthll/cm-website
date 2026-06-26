@@ -5,6 +5,7 @@ import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { Cursor } from "@/components/fx/Cursor";
 import { cn } from "@/lib/utils";
+import { SITE_URL } from "@/lib/site";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -27,7 +28,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://thecreativemonk.in"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Creative Monk — Growth, with intention.",
     template: "%s · Creative Monk",
@@ -52,8 +53,36 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FCFCFB",
-  colorScheme: "light",
+  themeColor: "#1c1c1e",
+  colorScheme: "dark",
+};
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Creative Monk",
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo-mark.png`,
+  description:
+    "A full-service creative & digital growth studio from Chandigarh, India — brand, web, performance marketing and motion under one roof.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Zirakpur",
+    addressRegion: "Punjab",
+    addressCountry: "IN",
+  },
+  sameAs: [
+    "https://instagram.com/creativemonkindia",
+    "https://facebook.com/creativemonkindia",
+    "https://youtube.com/creativemonkindia",
+  ],
+};
+
+const siteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Creative Monk",
+  url: SITE_URL,
 };
 
 export default function RootLayout({
@@ -65,6 +94,10 @@ export default function RootLayout({
       className={cn(archivo.variable, inter.variable, spaceMono.variable)}
     >
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([orgJsonLd, siteJsonLd]) }}
+        />
         <SmoothScroll>{children}</SmoothScroll>
         <ScrollToTop />
         <Cursor />

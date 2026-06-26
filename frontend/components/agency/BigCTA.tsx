@@ -25,6 +25,8 @@ export function BigCTA({
       <img
         src={IMG.bigCta}
         alt=""
+        loading="lazy"
+        decoding="async"
         className="pointer-events-none absolute inset-0 size-full object-cover opacity-20"
       />
       <div className="absolute inset-0 bg-dark/60" />

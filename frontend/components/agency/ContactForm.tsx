@@ -141,7 +141,7 @@ export function ContactForm({
             className="col-span-12 md:col-span-7 md:col-start-6"
           >
             {status === "done" ? (
-              <div className="flex flex-col items-start gap-5 border border-line-invert bg-dark-2 p-8 md:p-12">
+              <div role="status" className="flex flex-col items-start gap-5 border border-line-invert bg-dark-2 p-8 md:p-12">
                 <Check className="size-10 text-orange" strokeWidth={2} />
                 <p className="display text-[length:var(--text-h3)] text-on-ink">
                   Thanks — we&rsquo;ll be in touch within one business day.
@@ -160,7 +160,7 @@ export function ContactForm({
               >
                 <div>
                   <label htmlFor="cf-name" className={labelCls}>
-                    Name
+                    Name <span className="text-orange" aria-hidden="true">*</span>
                   </label>
                   <input
                     id="cf-name"
@@ -173,7 +173,7 @@ export function ContactForm({
                 </div>
                 <div>
                   <label htmlFor="cf-email" className={labelCls}>
-                    Email
+                    Email <span className="text-orange" aria-hidden="true">*</span>
                   </label>
                   <input
                     id="cf-email"
@@ -230,7 +230,7 @@ export function ContactForm({
                 </div>
                 <div className="sm:col-span-2">
                   <label htmlFor="cf-message" className={labelCls}>
-                    Message
+                    Message <span className="text-orange" aria-hidden="true">*</span>
                   </label>
                   <textarea
                     id="cf-message"
@@ -246,6 +246,7 @@ export function ContactForm({
                     <button
                       type="submit"
                       disabled={status === "loading"}
+                      aria-busy={status === "loading"}
                       className="flex h-13 items-center justify-center gap-2 bg-orange px-7 text-on-orange hover:bg-orange-press transition-colors disabled:opacity-60"
                     >
                       {status === "loading" && <Loader2 className="size-4 animate-spin" />}
@@ -253,7 +254,7 @@ export function ContactForm({
                     </button>
                   </Magnetic>
                   {status === "error" && (
-                    <span className="mono text-sm text-red-400">{error}</span>
+                    <span role="alert" className="mono text-sm text-red-400">{error}</span>
                   )}
                 </div>
               </form>

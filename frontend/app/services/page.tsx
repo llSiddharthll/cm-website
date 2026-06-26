@@ -101,18 +101,12 @@ export default async function ServicesPage() {
                     <span className="mono col-span-1 text-on-ink-3 transition-colors duration-300 group-hover:text-orange">
                       {s.no}
                     </span>
-                    <h3 className="display col-span-5 text-[length:var(--text-h3)] text-on-ink transition-[color,transform] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-2 group-hover:text-orange md:col-span-6">
+                    <h3 className="display col-span-5 text-[length:var(--text-h3)] text-on-ink transition-colors duration-300 group-hover:text-orange md:col-span-6">
                       {s.title}
                     </h3>
-                    <p className="col-span-5 text-on-ink-2 md:col-span-4">
+                    <p className="col-span-6 text-on-ink-2 md:col-span-5">
                       {s.desc}
                     </p>
-                    <span className="col-span-1 flex justify-end self-center">
-                      <ArrowUpRight
-                        className="size-5 text-on-ink-3 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-orange"
-                        aria-hidden
-                      />
-                    </span>
                   </div>
                 </Reveal>
               ))}

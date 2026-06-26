@@ -149,12 +149,12 @@ export async function Footer() {
           </p>
           <p className="hidden sm:block">Crafted in Chandigarh, India</p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <a href="#" className="transition-colors hover:text-on-ink">
+            <Link href="/privacy" className="transition-colors hover:text-on-ink">
               Privacy
-            </a>
-            <a href="#" className="transition-colors hover:text-on-ink">
+            </Link>
+            <Link href="/terms" className="transition-colors hover:text-on-ink">
               Terms
-            </a>
+            </Link>
             <Link
               href="#top"
               className="group inline-flex items-center gap-1.5 transition-colors hover:text-orange"

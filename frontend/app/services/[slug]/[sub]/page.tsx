@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowUpRight, ArrowRight, Check } from "lucide-react";
 import {
@@ -141,11 +142,12 @@ export default async function ServicePageView({
               <Reveal y={40}>
                 <div className="relative aspect-[21/9] overflow-hidden rounded-xl border border-line-invert">
                   <Parallax className="absolute inset-x-0 -top-[10%] h-[120%]" speed={8}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                       src={page.cover}
                       alt={page.name}
-                      className="size-full object-cover"
+                      fill
+                      sizes="100vw"
+                      className="object-cover"
                     />
                   </Parallax>
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent" />

@@ -66,7 +66,7 @@ export function ScreenshotScroll({
         <div ref={innerRef} className="will-change-transform">
           {screenshot ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={screenshot} alt={`${title} website`} className="block w-full" />
+            <img src={screenshot} alt={`${title} website`} loading="lazy" decoding="async" className="block w-full" />
           ) : (
             <MockSitePage title={title} />
           )}

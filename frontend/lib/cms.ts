@@ -63,10 +63,16 @@ async function cmsFetch<T>(path: string): Promise<T | null> {
   try {
     const res = await fetch(`${API_URL}/api${path}`, {
       next: { revalidate: REVALIDATE, tags: ["cms"] },
+      // don't let a cold/hung backend stall SSR — fall back to static content
+      signal: AbortSignal.timeout(Number(process.env.CMS_TIMEOUT_MS || 4000)),
     });
-    if (!res.ok) return null;
+    if (!res.ok) {
+      console.warn(`[cms] ${path} → ${res.status}; using static fallback`);
+      return null;
+    }
     return (await res.json()) as T;
-  } catch {
+  } catch (err) {
+    console.warn(`[cms] ${path} failed (${(err as Error).name}); using static fallback`);
     return null;
   }
 }

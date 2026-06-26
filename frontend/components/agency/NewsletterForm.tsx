@@ -9,24 +9,31 @@ export function NewsletterForm() {
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email) return;
     setLoading(true);
-    if (API) {
-      try {
-        await fetch(`${API}/api/intake/subscribe`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, source: "footer" }),
-        });
-      } catch {
-        /* swallow — show success either way for a friendly UX */
-      }
+    setError("");
+    if (!API) {
+      setLoading(false);
+      setDone(true);
+      return;
     }
-    setLoading(false);
-    setDone(true);
+    try {
+      const res = await fetch(`${API}/api/intake/subscribe`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, source: "footer" }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      setDone(true);
+    } catch {
+      setError("Couldn't subscribe just now — please try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (done) {
@@ -38,6 +45,7 @@ export function NewsletterForm() {
   }
 
   return (
+    <>
     <form
       onSubmit={onSubmit}
       className="mt-7 flex max-w-xs items-center border border-line-invert focus-within:border-orange"
@@ -60,5 +68,11 @@ export function NewsletterForm() {
         <ArrowRight className="size-4" />
       </button>
     </form>
+    {error && (
+      <p role="alert" className="mono mt-2 max-w-xs text-xs text-red-400">
+        {error}
+      </p>
+    )}
+    </>
   );
 }

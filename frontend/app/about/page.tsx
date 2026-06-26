@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { PageHero } from "@/components/agency/PageHero";
@@ -178,12 +179,15 @@ export default async function AboutPage() {
                   className="col-span-6 md:col-span-4"
                 >
                   <article className="border border-line-invert-2 bg-dark">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={m.photo || IMG.avatars[i % IMG.avatars.length]}
-                      alt={m.name}
-                      className="aspect-square w-full object-cover grayscale"
-                    />
+                    <div className="relative aspect-square overflow-hidden">
+                      <Image
+                        src={m.photo || IMG.avatars[i % IMG.avatars.length]}
+                        alt={m.name}
+                        fill
+                        sizes="(min-width: 768px) 33vw, 50vw"
+                        className="object-cover grayscale"
+                      />
+                    </div>
                     <div className="p-5">
                       <h3 className="display text-[length:var(--text-h3)] leading-tight text-on-ink">
                         {m.name}

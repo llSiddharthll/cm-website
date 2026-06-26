@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import * as Dialog from "@radix-ui/react-dialog";
 import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import { Tilt } from "@/components/fx/Tilt";
@@ -32,12 +33,12 @@ export function Gallery({ images }: { images: Img[] }) {
               idx % 5 === 0 ? "col-span-2 aspect-[16/10] md:aspect-[16/9]" : "aspect-square"
             }`}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={img.image}
               alt={img.caption || ""}
-              loading="lazy"
-              className="size-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+              fill
+              sizes="(min-width: 768px) 33vw, 50vw"
+              className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
             />
             <div className="absolute inset-0 flex items-end justify-between gap-2 bg-gradient-to-t from-dark/80 via-transparent to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               {img.caption ? (

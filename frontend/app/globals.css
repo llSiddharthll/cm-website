@@ -47,6 +47,7 @@
   --text-lead: clamp(1.15rem, 1rem + 0.7vw, 1.6rem);
   --text-h3: clamp(1.4rem, 1.1rem + 1.5vw, 2.4rem);
   --text-h2: clamp(2rem, 1.2rem + 3.6vw, 4.5rem);
+  --text-h1: clamp(2.6rem, 1.4rem + 5vw, 6rem);
   --text-display: clamp(2.4rem, 0.6rem + 8vw, 9.5rem);
   --text-mega: clamp(4rem, 0rem + 18vw, 20rem);
 
@@ -83,12 +84,12 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: auto; /* Lenis owns scrolling */
-  background: var(--color-paper);
+  background: var(--color-dark); /* site is dark — avoids white flash + light overscroll */
 }
 
 body {
-  background: var(--color-paper);
-  color: var(--color-ink);
+  background: var(--color-dark);
+  color: var(--color-on-ink);
   font-family: var(--font-body);
   font-size: var(--text-body);
   line-height: 1.55;

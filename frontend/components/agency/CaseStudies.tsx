@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CASES, type CaseStudy } from "@/lib/content";
 import { VIDEO } from "@/lib/media";
 import { Reveal } from "@/components/ui/Reveal";
@@ -43,10 +44,12 @@ export function CaseStudies({
             <Tilt key={c.id} className="group w-[82vw] shrink-0 snap-start sm:w-[46vw] lg:w-[31vw]">
               <article className="flex h-full flex-col border border-line-invert-2 bg-dark transition-colors duration-300 group-hover:border-orange/40">
                 <div className="relative aspect-[4/3] overflow-hidden bg-dark-3">
-                  <img
+                  <Image
                     src={c.cover ?? VIDEO.posters[i % VIDEO.posters.length]}
                     alt={c.cover ? `${c.client} — ${c.title}` : ""}
-                    className={`size-full object-cover transition duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 ${
+                    fill
+                    sizes="(min-width: 1024px) 31vw, (min-width: 640px) 46vw, 82vw"
+                    className={`object-cover transition duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 ${
                       c.cover ? "opacity-95 group-hover:opacity-100" : "opacity-50 group-hover:opacity-70"
                     }`}
                   />
