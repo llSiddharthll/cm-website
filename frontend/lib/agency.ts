@@ -283,7 +283,7 @@ export const FOOTER_LINKS: Record<string, { label: string; href: string }[]> = {
 };
 
 /* ---- Team ---- */
-export type Member = { name: string; role: string };
+export type Member = { name: string; role: string; photo?: string };
 export const TEAM: Member[] = [
   { name: "Aarav Khanna", role: "Founder & Creative Director" },
   { name: "Ishita Verma", role: "Head of Strategy" },

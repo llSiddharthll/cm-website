@@ -178,9 +178,10 @@ export default async function AboutPage() {
                   className="col-span-6 md:col-span-4"
                 >
                   <article className="border border-line-invert-2 bg-dark">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={IMG.avatars[i % IMG.avatars.length]}
-                      alt=""
+                      src={m.photo || IMG.avatars[i % IMG.avatars.length]}
+                      alt={m.name}
                       className="aspect-square w-full object-cover grayscale"
                     />
                     <div className="p-5">
