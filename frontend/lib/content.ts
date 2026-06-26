@@ -209,10 +209,10 @@ export const CASES: CaseStudy[] = [
 ];
 
 export const STATS = [
-  { value: 480, suffix: "+", label: "Projects shipped" },
+  { value: 100, suffix: "+", label: "Businesses grown" },
   { value: 9, suffix: "yrs", label: "Crafting growth" },
-  { value: 27, suffix: "+", label: "Industries served" },
-  { value: 96, suffix: "%", label: "Retained clients" },
+  { value: 10, suffix: "+", label: "Industries served" },
+  { value: 33, suffix: "+", label: "Google reviews" },
 ] as const;
 
 export const PROCESS = [
@@ -238,12 +238,9 @@ export const PROCESS = [
   },
 ] as const;
 
-export const AWARDS = [
-  { title: "Best Marketing & Advertising Firm of the Year", org: "Global 100 Awards", year: "2026" },
-  { title: "Top Digital Marketing Agency — India", org: "Industry Recognition", year: "2025" },
-  { title: "Excellence in Brand Design", org: "Creative Index", year: "2024" },
-  { title: "Performance Marketing — Finalist", org: "Growth Summit", year: "2024" },
-] as const;
+export const AWARDS: { title: string; org: string; year: string }[] = [
+  { title: "Best Marketing & Advertising Firm of the Year — India", org: "Global 100 Awards", year: "2026" },
+];
 
 export const TESTIMONIALS = [
   {

@@ -117,7 +117,7 @@ export async function Footer() {
 
           {/* locations */}
           <div className="col-span-6 md:col-span-2">
-            <span className="label mb-5 block text-on-ink-3">Studios</span>
+            <span className="label mb-5 block text-on-ink-3">Based in</span>
             <ul className="space-y-3">
               {[...LOCATIONS.india.slice(0, 3), ...LOCATIONS.global.slice(0, 3)].map(
                 (c) => (

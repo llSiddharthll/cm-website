@@ -13,17 +13,17 @@ export const AGENCY_HERO = {
 };
 
 export const STAT_BAR = [
-  { value: "480", suffix: "+", label: "Brands scaled" },
+  { value: "100", suffix: "+", label: "Businesses grown" },
   { value: "9", suffix: " yrs", label: "In the game" },
-  { value: "96", suffix: "%", label: "Client retention" },
-  { value: "4.9", suffix: "/5", label: "Average rating" },
+  { value: "20", suffix: "+", label: "In-house specialists" },
+  { value: "33", suffix: "+", label: "Google reviews" },
 ] as const;
 
 export const TIMELINE = [
-  { value: "2016", label: "Founded in Chandigarh" },
-  { value: "40", suffix: "+", label: "In-house specialists" },
-  { value: "12", suffix: "+", label: "Industries served" },
-  { value: "27", suffix: " countries", label: "Clients shipped to" },
+  { value: "2016", label: "Founded near Chandigarh" },
+  { value: "20", suffix: "+", label: "In-house specialists" },
+  { value: "10", suffix: "+", label: "Industries served" },
+  { value: "7", suffix: " countries", label: "Clients shipped to" },
 ] as const;
 
 export const AGENCY_STORY = {
@@ -87,10 +87,7 @@ export const VIDEO_PROJECTS: VideoProject[] = [
 ];
 
 export const CERTS = [
-  "Global 100 — Firm of the Year '26",
-  "Top Digital Marketing — India",
-  "ISO 9001",
-  "ISO 27001",
+  "Global 100 — Best Marketing Firm '26",
   "Google Partner",
   "Meta Business Partner",
 ] as const;
@@ -157,58 +154,17 @@ export type Review = {
   service: string;
 };
 
+// Real, attributed Google reviews from Creative Monk's Google Business Profile.
 export const REVIEWS: Review[] = [
-  {
-    name: "Rhea Malhotra",
-    role: "Founder, Aether Skincare",
-    rating: 5,
-    quote:
-      "They didn't just make us look good — they made us make sense. Sharp strategy, relentless execution.",
-    service: "Brand · Performance",
-  },
-  {
-    name: "Arjun Sethi",
-    role: "Director, Meridian Realty",
-    rating: 5,
-    quote:
-      "The only team we've worked with that treats our P&L like their own. Calm people, loud results.",
-    service: "Web · Lead Gen",
-  },
-  {
-    name: "Karan Bedi",
-    role: "CMO, Sunburst Foods",
-    rating: 5,
-    quote:
-      "Our reels finally feel like us. Reach tripled and it still feels effortless on their side.",
-    service: "Social · Motion",
-  },
-  {
-    name: "Nadia Khan",
-    role: "Founder, Kettle & Co.",
-    rating: 5,
-    quote:
-      "From packaging to paid, everything matched. Organic reach is up triple digits and climbing.",
-    service: "Brand · E-commerce",
-  },
-  {
-    name: "Vikram Rao",
-    role: "GM, Northwind Travel",
-    rating: 4.9,
-    quote:
-      "A content engine that actually books trips. Cost per lead fell while volume went up.",
-    service: "Content · PPC",
-  },
-  {
-    name: "Simran Gill",
-    role: "Owner, Pulse Fitness",
-    rating: 5,
-    quote:
-      "Ranked #1 on the map across six cities. They make local feel national.",
-    service: "Local SEO · Social",
-  },
+  { name: "Sachin D.", role: "Google review", rating: 5, quote: "A wonderful experience working with Creative Monk — the best digital marketing agency in Zirakpur. The team provided exceptional service.", service: "Digital Marketing" },
+  { name: "Kanika S.", role: "Google review", rating: 5, quote: "The go-to team for digital marketing. Their strategies are result-driven and tailored to the business.", service: "Strategy" },
+  { name: "Amisha R.", role: "Google review", rating: 5, quote: "I really appreciate how transparent and friendly the team is — no hidden charges, no jargon.", service: "Branding" },
+  { name: "Laxman S.", role: "Google review", rating: 5, quote: "If you want real business growth — not just fancy reports — go with Creative Monk.", service: "Growth" },
+  { name: "Shivani M.", role: "Google review", rating: 5, quote: "Very reliable and professional people. They improved my website's ranking faster than I expected.", service: "SEO" },
+  { name: "Ashpreet K.", role: "Google review", rating: 5, quote: "An exceptional digital agency. The team is highly skilled and dedicated to delivering top-notch results.", service: "Web · Social" },
 ];
 
-export const REVIEW_SUMMARY = { rating: "4.9", count: "350+", platforms: "Google · Clutch" };
+export const REVIEW_SUMMARY = { rating: "4.4", count: "33", platforms: "Google" };
 
 export const FAQS = [
   {
@@ -249,20 +205,18 @@ export const BENEFITS = [
 ] as const;
 
 export const CULTURE_STATS = [
-  { value: "40", suffix: "+", label: "In the studio" },
-  { value: "92", suffix: "%", label: "Team retention" },
+  { value: "20", suffix: "+", label: "In the studio" },
+  { value: "100", suffix: "+", label: "Businesses grown" },
 ] as const;
 
 export const RATINGS = [
-  { source: "Glassdoor", value: "4.8" },
-  { source: "Google", value: "4.9" },
-  { source: "Clutch", value: "5.0" },
+  { source: "Google", value: "4.4" },
 ] as const;
 
-/** Footer location columns (placeholder reach). */
+/** Footer location — real HQ (Zirakpur / Tricity) + reach. */
 export const LOCATIONS = {
-  india: ["Chandigarh", "Delhi", "Mumbai", "Bangalore", "Pune", "Hyderabad"],
-  global: ["Dubai", "London", "New York", "Sydney", "Auckland", "Singapore"],
+  india: ["Zirakpur, Punjab", "Chandigarh", "Mohali"],
+  global: ["Clients across 7 countries"],
 };
 
 export const FOOTER_LINKS: Record<string, { label: string; href: string }[]> = {
@@ -285,11 +239,11 @@ export const FOOTER_LINKS: Record<string, { label: string; href: string }[]> = {
 /* ---- Team ---- */
 export type Member = { name: string; role: string; photo?: string };
 export const TEAM: Member[] = [
-  { name: "Aarav Khanna", role: "Founder & Creative Director" },
-  { name: "Ishita Verma", role: "Head of Strategy" },
-  { name: "Rohan Mehta", role: "Design Lead" },
-  { name: "Priya Nair", role: "Head of Growth" },
-  { name: "Dev Arora", role: "Lead Engineer" },
+  { name: "Sahil Sehgal", role: "Founder & Creative Director" },
+  { name: "Tanik", role: "Developer" },
+  { name: "Siddharth Tiwari", role: "Lead Developer" },
+  { name: "Rajwant Singh", role: "Team" },
+  { name: "Anku", role: "Team" },
 ];
 
 /* ---- Values / principles ---- */

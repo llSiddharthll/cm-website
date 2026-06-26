@@ -11,6 +11,7 @@
     "seed": "tsx src/seed.ts",
     "seed:force": "tsx src/seed.ts --force",
     "seed:work": "tsx src/seed-work.ts",
+    "seed:content": "tsx src/seed-content.ts",
     "migrate": "tsx src/migrate.ts"
   },
   "dependencies": {

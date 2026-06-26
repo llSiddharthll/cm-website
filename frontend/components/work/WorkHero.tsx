@@ -15,8 +15,8 @@ const fadeUp = (delay: number) => ({
 
 /* Stat strip — display figure over mono caption (Swiss "data" texture). */
 const STAT_STRIP = [
-  { value: 480, suffix: "+", label: "Projects" },
-  { value: 27, suffix: "+", label: "Industries" },
+  { value: 100, suffix: "+", label: "Businesses" },
+  { value: 10, suffix: "+", label: "Industries" },
   { value: 9, suffix: "yrs", label: "In craft" },
 ] as const;
 
