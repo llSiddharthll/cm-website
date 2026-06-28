@@ -148,6 +148,18 @@ body {
   filter: invert(1) brightness(0.8);
 }
 
+/* Full wordmark logo: dark-surface (white text) by default, light-surface
+   (black text) under the light theme. Both kept in the markup; CSS swaps. */
+.logo-cm--light {
+  display: none;
+}
+:root[data-theme="light"] .logo-cm--dark {
+  display: none;
+}
+:root[data-theme="light"] .logo-cm--light {
+  display: inline-block;
+}
+
 /* ---- Rich-text prose (blog body, case content, the admin editor) ---- */
 .cm-prose {
   font-size: var(--text-body);
