@@ -98,52 +98,46 @@ export default async function CasePage({
               />
             </h1>
 
-            <div className="grid12 mt-10 items-end gap-y-8">
+            <div className="mt-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <Reveal
                 as="span"
-                className="col-span-6 block text-[length:var(--text-lead)] leading-snug text-on-ink-2 md:col-span-6"
+                className="block max-w-xl text-[length:var(--text-lead)] leading-snug text-on-ink-2"
               >
                 {c.result}
               </Reveal>
-              <Reveal className="col-span-6 min-w-0 md:col-span-3 md:col-start-10 md:text-right">
-                <span className="display block text-[clamp(1.6rem,2.6vw,2.4rem)] leading-[0.95] text-orange [overflow-wrap:anywhere] [hyphens:none]">
-                  {c.metric.value}
-                </span>
-                <span className="mono mt-2 block text-on-ink-3">
-                  {c.metric.label}
-                </span>
+              <Reveal>
+                <ul className="flex flex-wrap gap-2">
+                  {c.category.map((tag) => (
+                    <li
+                      key={tag}
+                      className="mono rounded-full border border-line-invert px-3.5 py-1.5 text-on-ink-2"
+                    >
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
               </Reveal>
             </div>
 
-            <Reveal className="mt-8">
-              <ul className="flex flex-wrap gap-2">
-                {c.category.map((tag) => (
-                  <li
-                    key={tag}
-                    className="mono border border-line-invert px-3 py-1.5 text-on-ink-2"
-                  >
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* ── Hero visual ── */}
-        <section className="bg-dark pb-[var(--section-pad)]">
-          <div className="shell">
-            <Reveal y={40}>
+            {/* hero visual — integrated, framed, deck watermark muted by the scrim */}
+            <Reveal y={40} className="mt-12 block">
               {c.cover ? (
-                <div className="relative aspect-[3/2] overflow-hidden border border-line-invert-2 bg-dark-3">
+                <div className="group relative aspect-[16/9] overflow-hidden rounded-2xl border border-line-invert-2 bg-dark-3">
                   <Image
                     src={c.cover}
                     alt={`${c.client} — ${c.title}`}
                     fill
                     priority
-                    sizes="(min-width: 1280px) 1100px, 100vw"
-                    className="object-cover"
+                    sizes="(min-width: 1280px) 1200px, 100vw"
+                    className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]"
                   />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-dark/10" />
+                  <div className="absolute bottom-5 left-5 flex items-baseline gap-2.5 rounded-full bg-dark/70 px-4 py-2 backdrop-blur">
+                    <span className="display text-[length:var(--text-h3)] leading-none text-orange">
+                      {c.metric.value}
+                    </span>
+                    <span className="mono text-on-ink-2">{c.metric.label}</span>
+                  </div>
                 </div>
               ) : (
                 <ReelPlaceholder
@@ -160,84 +154,83 @@ export default async function CasePage({
         {/* ── Overview: brief · approach · results ── */}
         <section className="bg-dark-2 section">
           <div className="shell">
-            <div className="grid12 gap-y-14">
-              {/* The brief */}
+            {/* The brief — a single big statement */}
+            <div className="grid12 gap-y-4">
               <Reveal className="col-span-12 md:col-span-3">
                 <Eyebrow index="01" invert>
                   The brief
                 </Eyebrow>
               </Reveal>
-              <div className="col-span-12 md:col-span-8 md:col-start-5">
+              <div className="col-span-12 md:col-span-9">
                 {brief.map((p, i) =>
                   i === 0 ? (
                     <Reveal key={i} y={20}>
-                      <p className="display text-[length:var(--text-h3)] leading-[1.18] text-on-ink">
+                      <p className="display text-[length:var(--text-h3)] leading-[1.2] text-on-ink">
                         {p}
                       </p>
                     </Reveal>
                   ) : (
                     <Reveal key={i} y={16} delay={0.06 * i}>
-                      <p className="mt-6 max-w-2xl leading-relaxed text-on-ink-2">{p}</p>
+                      <p className="mt-6 max-w-3xl leading-relaxed text-on-ink-2">{p}</p>
                     </Reveal>
                   ),
                 )}
               </div>
+            </div>
 
-              {/* Our approach */}
-              <Reveal className="col-span-12 md:col-span-3 md:mt-4">
-                <Eyebrow index="02" invert>
-                  Our approach
-                </Eyebrow>
-              </Reveal>
-              <div className="col-span-12 md:col-span-8 md:col-start-5">
-                {approach.map((p, i) => (
-                  <Reveal key={i} y={16} delay={0.06 * i}>
-                    <p
+            {/* Our approach + Results — balanced two-up */}
+            <div className="grid12 mt-16 gap-y-12 border-t border-line-invert pt-14">
+              <div className="col-span-12 md:col-span-7">
+                <Reveal>
+                  <Eyebrow index="02" invert>
+                    Our approach
+                  </Eyebrow>
+                </Reveal>
+                <div className="mt-7 space-y-5">
+                  {approach.map((p, i) => (
+                    <Reveal
+                      key={i}
+                      as="span"
+                      y={16}
+                      delay={0.06 * i}
                       className={
                         i === 0
-                          ? "max-w-2xl text-[length:var(--text-lead)] leading-snug text-on-ink-2"
-                          : "mt-5 max-w-2xl leading-relaxed text-on-ink-2"
+                          ? "block max-w-xl text-[length:var(--text-lead)] leading-snug text-on-ink-2"
+                          : "block max-w-xl leading-relaxed text-on-ink-2"
                       }
                     >
                       {p}
-                    </p>
-                  </Reveal>
-                ))}
-                <Reveal className="mt-8">
-                  <ul className="flex flex-wrap gap-2">
-                    {c.category.map((cat) => (
-                      <li key={cat} className="mono border border-line-invert px-3 py-1.5 text-on-ink-2">
-                        {cat}
-                      </li>
-                    ))}
-                  </ul>
-                </Reveal>
+                    </Reveal>
+                  ))}
+                </div>
               </div>
 
-              {/* Results */}
               {results.length > 0 && (
-                <>
-                  <Reveal className="col-span-12 md:col-span-3 md:mt-4">
+                <div className="col-span-12 md:col-span-4 md:col-start-9">
+                  <Reveal>
                     <Eyebrow index="03" invert>
                       Results
                     </Eyebrow>
                   </Reveal>
-                  <div className="col-span-12 md:col-span-8 md:col-start-5">
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3">
-                      {results.map((r, i) => (
-                        <Reveal key={i} delay={0.06 * i}>
-                          <div>
-                            <span className="display block text-[length:var(--text-h1)] leading-none text-orange [overflow-wrap:anywhere]">
-                              {r.value}
-                              <span className="text-orange/70">{r.suffix}</span>
-                            </span>
-                            <p className="label mt-3 text-on-ink-3">{r.label}</p>
-                          </div>
-                        </Reveal>
-                      ))}
-                    </div>
-                  </div>
-                </>
+                  <dl className="mt-7 border-t border-line-invert">
+                    {results.map((r, i) => (
+                      <Reveal
+                        as="div"
+                        key={i}
+                        delay={0.06 * i}
+                        className="flex items-baseline justify-between gap-4 border-b border-line-invert py-5"
+                      >
+                        <dt className="display text-[length:var(--text-h2)] leading-none text-orange [overflow-wrap:anywhere]">
+                          {r.value}
+                          <span className="text-orange/70">{r.suffix}</span>
+                        </dt>
+                        <dd className="label max-w-[9rem] text-right text-on-ink-3">
+                          {r.label}
+                        </dd>
+                      </Reveal>
+                    ))}
+                  </dl>
+                </div>
               )}
             </div>
           </div>
