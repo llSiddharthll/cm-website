@@ -247,6 +247,38 @@ export const REAL_VIDEO_PROJECTS = [
   { id: "v6", title: "Trix — Product Reel", category: "Lighting" },
 ] as const;
 
+/* Portfolio gallery items (visual work) — image-based; "Website" items can take
+   a tall `screenshot` to auto-scroll. */
+const pf = (title: string, category: string, image: string, client: string) => ({ title, category, image, client, featured: false });
+export const PORTFOLIO = [
+  pf("Jewellery social system", "Social Media", "/work/tvisva-014.jpg", "Tvisva"),
+  pf("Festival campaign", "Creatives", "/work/tvisva-016.jpg", "Tvisva"),
+  pf("Rebrand system", "Branding", "/work/tvisva-026.jpg", "Tvisva"),
+  pf("Wolf monogram identity", "Branding", "/work/white-wolf-049.jpg", "White Wolf"),
+  pf("Grooming social templates", "Social Media", "/work/white-wolf-050.jpg", "White Wolf"),
+  pf("Grooming packaging", "Packaging", "/work/white-wolf-051.jpg", "White Wolf"),
+  pf("Café & bar identity", "Branding", "/work/avenry-057.jpg", "The Avenry"),
+  pf("Food social grid", "Social Media", "/work/avenry-058.jpg", "The Avenry"),
+  pf("Dine-in menu", "Print", "/work/avenry-060.jpg", "The Avenry"),
+  pf("Drinks & bar menu", "Print", "/work/avenry-061.jpg", "The Avenry"),
+  pf("Café Zoya brand board", "Branding", "/work/cafe-zoya-075.jpg", "Café Zoya"),
+  pf("Café content grid", "Social Media", "/work/cafe-zoya-076.jpg", "Café Zoya"),
+  pf("Comet trackspot packaging", "Packaging", "/work/trix-102.jpg", "Trix"),
+  pf("Delta downlight packaging", "Packaging", "/work/trix-103.jpg", "Trix"),
+  pf("Tubus-D packaging", "Packaging", "/work/trix-104.jpg", "Trix"),
+  pf("Prelaunch ad campaign", "Creatives", "/work/ibc-100.jpg", "IBC"),
+  pf("Hotel social feed", "Social Media", "/work/best-western-083.jpg", "Best Western Plus"),
+  pf("Yukti Herbs packaging", "Packaging", "/work/yukti-herbs-121.jpg", "Yukti Herbs"),
+  pf("Veloire identity", "Branding", "/work/veloire-040.jpg", "Veloire"),
+  pf("Inaysha brand identity", "Branding", "/work/inaysha-044.jpg", "Inaysha"),
+  pf("Festival table tents", "Print", "/work/tvisva-024.jpg", "Tvisva"),
+  pf("Grand-launch hoarding", "Print", "/work/tvisva-038.jpg", "Tvisva"),
+  pf("Tvisva website", "Website", "/work/tvisva-030.jpg", "Tvisva"),
+  pf("Chatha Foods website", "Website", "/work/chatha-foods-088.jpg", "Chatha Foods"),
+  pf("Felicity Adobe website", "Website", "/work/felicity-adobe-096.jpg", "Felicity Adobe"),
+  pf("Export House website", "Website", "/work/export-house-110.jpg", "Export House"),
+] as const;
+
 /* Real client logos (white-on-dark, rendered via mix-blend-screen on the wall),
    keyed by the client NAME as stored in the `clients` collection. */
 export const CLIENT_LOGOS: Record<string, string> = {

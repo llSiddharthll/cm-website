@@ -20,6 +20,7 @@ function cellValue(field: Field, value: unknown) {
       // eslint-disable-next-line @next/next/no-img-element
       return <img src={String(value)} alt="" className="size-9 rounded object-cover" />;
     case "tags":
+    case "multiselect":
       return (
         <div className="flex flex-wrap gap-1">
           {(value as string[]).slice(0, 3).map((t, i) => (

@@ -141,6 +141,7 @@ export const getReels = () => collection<Reel>("reels", REELS);
 
 export type CaseSection = {
   case: string;
+  category?: string;
   kind: "gallery" | "website" | "marketing" | "seo" | "content" | "quote";
   discipline?: string;
   title?: string;
@@ -153,8 +154,43 @@ export type CaseSection = {
   keywords?: string[];
   quote?: string;
   author?: string;
+  attachments?: { label: string; url: string }[];
 };
 export const getCaseSections = () => collection<CaseSection>("case_sections", []);
+
+export type Portfolio = {
+  title: string;
+  client?: string;
+  category: string;
+  image?: string;
+  screenshot?: string;
+  url?: string;
+  featured?: boolean;
+};
+const P = (title: string, category: string, image: string, client?: string): Portfolio => ({ title, category, image, client });
+const PORTFOLIO_FALLBACK: Portfolio[] = [
+  P("Jewellery social system", "Social Media", "/work/tvisva-014.jpg", "Tvisva"),
+  P("Festival campaign", "Creatives", "/work/tvisva-016.jpg", "Tvisva"),
+  P("Rebrand system", "Branding", "/work/tvisva-026.jpg", "Tvisva"),
+  P("Wolf monogram identity", "Branding", "/work/white-wolf-049.jpg", "White Wolf"),
+  P("Grooming social templates", "Social Media", "/work/white-wolf-050.jpg", "White Wolf"),
+  P("Grooming packaging", "Packaging", "/work/white-wolf-051.jpg", "White Wolf"),
+  P("Café & bar identity", "Branding", "/work/avenry-057.jpg", "The Avenry"),
+  P("Food social grid", "Social Media", "/work/avenry-058.jpg", "The Avenry"),
+  P("Dine-in menu", "Print", "/work/avenry-060.jpg", "The Avenry"),
+  P("Café Zoya brand board", "Branding", "/work/cafe-zoya-075.jpg", "Café Zoya"),
+  P("Café content grid", "Social Media", "/work/cafe-zoya-076.jpg", "Café Zoya"),
+  P("Comet trackspot packaging", "Packaging", "/work/trix-102.jpg", "Trix"),
+  P("Delta downlight packaging", "Packaging", "/work/trix-103.jpg", "Trix"),
+  P("Prelaunch ad campaign", "Creatives", "/work/ibc-100.jpg", "IBC"),
+  P("Hotel social feed", "Social Media", "/work/best-western-083.jpg", "Best Western Plus"),
+  P("Yukti Herbs packaging", "Packaging", "/work/yukti-herbs-121.jpg", "Yukti Herbs"),
+  P("Veloire identity", "Branding", "/work/veloire-040.jpg", "Veloire"),
+  { title: "Tvisva — website", category: "Website", image: "/work/tvisva-030.jpg", client: "Tvisva" },
+  { title: "Chatha Foods — website", category: "Website", image: "/work/chatha-foods-088.jpg", client: "Chatha Foods" },
+  { title: "Felicity Adobe — website", category: "Website", image: "/work/felicity-adobe-096.jpg", client: "Felicity Adobe" },
+];
+export const getPortfolio = () => collection<Portfolio>("portfolio", PORTFOLIO_FALLBACK);
 export async function getCaseSectionsFor(caseId: string): Promise<(CaseSection & Meta)[]> {
   const all = await getCaseSections();
   return all.filter((s) => s.case === caseId);

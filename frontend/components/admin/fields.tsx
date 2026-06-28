@@ -50,6 +50,37 @@ function TagsInput({ value, onChange }: { value: string[]; onChange: (v: string[
   );
 }
 
+/* ── Multi-select (toggle chips from defined options) ── */
+function MultiSelectInput({ options, value, onChange }: { options: string[]; value: string[]; onChange: (v: string[]) => void }) {
+  const sel = Array.isArray(value) ? value : [];
+  // include any already-selected values that aren't in the option list
+  const all = [...options, ...sel.filter((s) => !options.includes(s))];
+  const toggle = (o: string) => onChange(sel.includes(o) ? sel.filter((x) => x !== o) : [...sel, o]);
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {all.map((o) => {
+        const on = sel.includes(o);
+        return (
+          <button
+            key={o}
+            type="button"
+            onClick={() => toggle(o)}
+            aria-pressed={on}
+            className={cn(
+              "rounded-md border px-2.5 py-1 text-xs transition-colors",
+              on
+                ? "border-orange/50 bg-orange/15 text-orange"
+                : "border-zinc-700 text-zinc-400 hover:border-zinc-600 hover:text-zinc-200",
+            )}
+          >
+            {o}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
 /* ── Paragraphs (list of textareas) ── */
 function ParagraphsInput({ value, onChange }: { value: string[]; onChange: (v: string[]) => void }) {
   const items = Array.isArray(value) ? value : [];
@@ -161,6 +192,8 @@ export function FieldInput({ field, value, onChange }: { field: Field; value: Va
             placeholder={field.placeholder || "Select…"}
           />
         );
+      case "multiselect":
+        return <MultiSelectInput options={field.options ?? []} value={value as string[]} onChange={onChange} />;
       case "tags":
         return <TagsInput value={value as string[]} onChange={onChange} />;
       case "paragraphs":

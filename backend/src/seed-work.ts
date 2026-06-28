@@ -11,6 +11,7 @@ import {
   REAL_VIDEO_PROJECTS,
   SERVICE_COVERS,
   CLIENT_LOGOS,
+  PORTFOLIO,
 } from "./data/work";
 
 const clone = (x: unknown) => JSON.parse(JSON.stringify(x)) as Record<string, unknown>;
@@ -28,6 +29,7 @@ async function run() {
 
   await reseed("cases", REAL_CASES);
   await reseed("case_sections", REAL_CASE_SECTIONS);
+  await reseed("portfolio", PORTFOLIO);
   await reseed("reels", REAL_REELS);
   await reseed("video_projects", REAL_VIDEO_PROJECTS);
 

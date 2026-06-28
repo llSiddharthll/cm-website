@@ -9,6 +9,7 @@ export type FieldType =
   | "url"
   | "date"
   | "select"
+  | "multiselect"
   | "tags"
   | "paragraphs"
   | "image"

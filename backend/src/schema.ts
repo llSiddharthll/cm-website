@@ -14,6 +14,7 @@ export type FieldType =
   | "url"
   | "date"
   | "select"
+  | "multiselect"
   | "tags"
   | "paragraphs"
   | "image"
@@ -62,6 +63,22 @@ const cta = (name: string, label: string): Field => ({
     { name: "href", label: "Link", type: "text" },
   ],
 });
+
+/** Shared discipline categories — drive case-study multi-select + per-category
+    content blocks, and the portfolio filter. */
+export const WORK_CATEGORIES = [
+  "Branding",
+  "Logo & Identity",
+  "Website",
+  "UI/UX",
+  "Social Media",
+  "Performance Marketing",
+  "SEO",
+  "Packaging",
+  "Print",
+  "Motion & Video",
+  "Content",
+];
 
 export const SCHEMA: Collection[] = [
   /* ───────────────────────── SITE (singletons) ───────────────────────── */
@@ -335,12 +352,33 @@ export const SCHEMA: Collection[] = [
       { name: "id", label: "Slug", type: "slug", required: true },
       { name: "client", label: "Client", type: "text", required: true, listColumn: true },
       { name: "title", label: "Title", type: "text", required: true, listColumn: true },
-      { name: "category", label: "Categories", type: "tags", listColumn: true, filterable: true },
+      {
+        name: "category",
+        label: "Categories",
+        type: "multiselect",
+        options: WORK_CATEGORIES,
+        listColumn: true,
+        filterable: true,
+        help: "Disciplines this case covers — these drive the per-category content sections.",
+      },
       { name: "year", label: "Year", type: "text", listColumn: true, filterable: true },
-      { name: "result", label: "Result", type: "textarea" },
+      { name: "result", label: "Result (one-line, for cards)", type: "textarea" },
+      { name: "brief", label: "The brief — client needs & requirements", type: "paragraphs", help: "What the client came to us for." },
+      { name: "approach", label: "Our approach — what we delivered", type: "paragraphs", help: "How we solved it." },
+      {
+        name: "results",
+        label: "Results / outcomes",
+        type: "objectList",
+        help: "Headline stats shown in the case (e.g. 3.4× / engagement).",
+        fields: [
+          { name: "value", label: "Value", type: "text" },
+          { name: "suffix", label: "Suffix", type: "text" },
+          { name: "label", label: "Label", type: "text" },
+        ],
+      },
       {
         name: "metric",
-        label: "Headline metric",
+        label: "Headline metric (card highlight)",
         type: "object",
         fields: [
           { name: "value", label: "Value", type: "text" },
@@ -349,6 +387,35 @@ export const SCHEMA: Collection[] = [
       },
       { name: "accent", label: "Accent (deg)", type: "text" },
       { name: "cover", label: "Cover image", type: "image" },
+    ],
+  },
+  {
+    slug: "portfolio",
+    name: "Portfolio item",
+    pluralName: "Portfolio",
+    kind: "collection",
+    group: "Work",
+    icon: "Grid3x3",
+    description: "Visual work for the /portfolio gallery — creatives, designs, UI shots and website screenshots.",
+    titleField: "title",
+    subtitleField: "category",
+    defaultSort: "position",
+    fields: [
+      { name: "title", label: "Title", type: "text", required: true, listColumn: true },
+      { name: "client", label: "Client", type: "text", listColumn: true },
+      {
+        name: "category",
+        label: "Category",
+        type: "select",
+        options: ["Creatives", "UI/UX", "Website", "Branding", "Social Media", "Packaging", "Print", "Motion & Video"],
+        required: true,
+        listColumn: true,
+        filterable: true,
+      },
+      { name: "image", label: "Image", type: "image", help: "For creatives / designs / UI shots." },
+      { name: "screenshot", label: "Full-page screenshot (tall)", type: "image", help: "For 'Website' items — auto-scrolls in a browser frame." },
+      { name: "url", label: "Live URL", type: "text", help: "For 'Website' items." },
+      { name: "featured", label: "Featured", type: "boolean", listColumn: true },
     ],
   },
   {
@@ -398,17 +465,27 @@ export const SCHEMA: Collection[] = [
     subtitleField: "case",
     defaultSort: "position",
     fields: [
-      { name: "case", label: "Case (id)", type: "text", required: true, listColumn: true, filterable: true, help: "The case study id, e.g. sunburst." },
+      { name: "case", label: "Case (id)", type: "text", required: true, listColumn: true, filterable: true, help: "The case study id, e.g. tvisva." },
+      {
+        name: "category",
+        label: "Category",
+        type: "select",
+        options: WORK_CATEGORIES,
+        listColumn: true,
+        filterable: true,
+        help: "Which discipline this block belongs to. Only categories selected on the case study are shown.",
+      },
       {
         name: "kind",
-        label: "Kind",
+        label: "Render as",
         type: "select",
         options: ["gallery", "website", "marketing", "seo", "content", "quote"],
         required: true,
         listColumn: true,
         filterable: true,
+        help: "How this block looks: gallery → images; website → screenshot + url; marketing/seo → stats (+ keywords); content → body; quote → quote.",
       },
-      { name: "discipline", label: "Discipline label", type: "text", listColumn: true, help: "e.g. Creatives, Development, Marketing." },
+      { name: "discipline", label: "Section heading", type: "text", listColumn: true, help: "e.g. Brand identity, The website, Social system." },
       { name: "title", label: "Title", type: "text", listColumn: true },
       { name: "intro", label: "Intro", type: "textarea" },
       { name: "body", label: "Body (content)", type: "paragraphs", help: "For the 'content' kind." },
@@ -438,6 +515,16 @@ export const SCHEMA: Collection[] = [
       { name: "keywords", label: "Keywords / tags", type: "tags", help: "For the 'seo' kind." },
       { name: "quote", label: "Quote", type: "textarea", help: "For the 'quote' kind." },
       { name: "author", label: "Quote author", type: "text" },
+      {
+        name: "attachments",
+        label: "Attachments / links",
+        type: "objectList",
+        help: "Downloadable files or external links for this block (e.g. brand guidelines, live link).",
+        fields: [
+          { name: "label", label: "Label", type: "text" },
+          { name: "url", label: "File or URL", type: "text" },
+        ],
+      },
     ],
   },
 

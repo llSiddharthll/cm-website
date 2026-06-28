@@ -179,6 +179,9 @@ export type CaseStudy = {
   metric: { value: string; label: string };
   accent: string;
   cover?: string;
+  brief?: string[];
+  approach?: string[];
+  results?: { value: string; suffix?: string; label: string }[];
 };
 
 // Real Creative Monk clients (from the Tricity deck). Images in /public/work.

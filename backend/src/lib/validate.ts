@@ -14,6 +14,7 @@ function coerce(field: Field, value: unknown, path: string): unknown {
     case "boolean":
       return Boolean(value);
     case "tags":
+    case "multiselect":
     case "paragraphs": {
       if (!Array.isArray(value)) throw new ApiError(422, `"${path}" must be a list`);
       return value.map((v) => String(v));

@@ -8,7 +8,7 @@ import { ensureBootstrapAdmin } from "./lib/auth";
 import { getCollection } from "./schema";
 import { createEntry, putSingleton, countEntries } from "./store";
 import { SERVICE_PAGES } from "./data/service-pages";
-import { REAL_CASES, REAL_CASE_SECTIONS, REAL_REELS, REAL_VIDEO_PROJECTS } from "./data/work";
+import { REAL_CASES, REAL_CASE_SECTIONS, REAL_REELS, REAL_VIDEO_PROJECTS, PORTFOLIO } from "./data/work";
 import { CLIENTS } from "./data/clients";
 
 const force = process.argv.includes("--force");
@@ -340,6 +340,7 @@ const COLLECTIONS: Record<string, Record<string, unknown>[]> = {
   service_pages: SERVICE_PAGES as unknown as Record<string, unknown>[],
   cases: REAL_CASES as unknown as Record<string, unknown>[],
   case_sections: REAL_CASE_SECTIONS as unknown as Record<string, unknown>[],
+  portfolio: PORTFOLIO as unknown as Record<string, unknown>[],
   reels: REAL_REELS as unknown as Record<string, unknown>[],
   video_projects: REAL_VIDEO_PROJECTS as unknown as Record<string, unknown>[],
   posts: POSTS,
