@@ -1,3 +1,4 @@
+import { Paperclip, ArrowUpRight } from "lucide-react";
 import type { CaseSection } from "@/lib/cms";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -27,7 +28,8 @@ export function CaseSections({
   return (
     <>
       {sections.map((s, i) => {
-        const label = s.discipline || KIND_LABEL[s.kind] || "Work";
+        const label = s.category || KIND_LABEL[s.kind] || "Work";
+        const heading = s.title || s.discipline;
         const bg = i % 2 === 0 ? "bg-dark" : "bg-dark-2";
 
         return (
@@ -39,9 +41,9 @@ export function CaseSections({
                   <Eyebrow index={String(i + 1).padStart(2, "0")} invert>
                     {label}
                   </Eyebrow>
-                  {s.title && (
+                  {heading && (
                     <h2 className="display mt-6 max-w-3xl text-[length:var(--text-h2)] leading-[1.05] text-on-ink">
-                      {s.title}
+                      {heading}
                     </h2>
                   )}
                 </Reveal>
@@ -109,6 +111,25 @@ export function CaseSections({
                   </Reveal>
                 ) : null}
               </div>
+
+              {s.attachments?.length ? (
+                <Reveal className="mt-8">
+                  <div className="flex flex-wrap gap-3">
+                    {s.attachments.map((a, j) => (
+                      <a
+                        key={j}
+                        href={a.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mono inline-flex items-center gap-2 border border-line-invert px-4 py-2 text-on-ink-2 transition-colors hover:border-orange/50 hover:text-orange"
+                      >
+                        <Paperclip className="size-3.5" /> {a.label || "Attachment"}
+                        <ArrowUpRight className="size-3.5" />
+                      </a>
+                    ))}
+                  </div>
+                </Reveal>
+              ) : null}
             </div>
           </section>
         );

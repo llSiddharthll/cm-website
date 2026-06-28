@@ -46,6 +46,23 @@ export default async function CasePage({
   const servicesGrid = await getServicesGrid();
   const sections = await getCaseSectionsFor(c.id);
 
+  // Use the real brief/approach/results when present; else graceful fallbacks.
+  const brief = c.brief?.length
+    ? c.brief
+    : [
+        `${c.client} came to us for ${c.category.join(", ").toLowerCase() || "a brand that works"} — a system that carries the brand across every surface and keeps compounding long after launch.`,
+      ];
+  const approach = c.approach?.length
+    ? c.approach
+    : [
+        `We ran our four-step process — listen, shape, make, compound — pairing strategy with in-house design, content and code. ${c.result}`,
+      ];
+  const results = c.results?.length
+    ? c.results
+    : c.metric?.value
+      ? [{ value: c.metric.value, label: c.metric.label }]
+      : [];
+
   return (
     <>
       <span id="top" className="absolute top-0" aria-hidden />
@@ -140,46 +157,87 @@ export default async function CasePage({
           </div>
         </section>
 
-        {/* ── Narrative ── */}
+        {/* ── Overview: brief · approach · results ── */}
         <section className="bg-dark-2 section">
-          <div className="shell grid12 gap-y-10">
-            <Reveal className="col-span-12 md:col-span-3">
-              <Eyebrow index="A" invert>
-                The brief
-              </Eyebrow>
-            </Reveal>
-            <div className="col-span-12 md:col-span-8 md:col-start-5">
-              <Reveal y={20}>
-                <p className="display text-[length:var(--text-h3)] leading-[1.15] text-on-ink-3">
-                  {c.client} needed more than a fresh coat of paint —{" "}
-                  <span className="text-on-ink">
-                    a system that carries the brand across every surface
-                  </span>{" "}
-                  and keeps compounding long after launch.
-                </p>
+          <div className="shell">
+            <div className="grid12 gap-y-14">
+              {/* The brief */}
+              <Reveal className="col-span-12 md:col-span-3">
+                <Eyebrow index="01" invert>
+                  The brief
+                </Eyebrow>
               </Reveal>
-              <Reveal y={16} delay={0.1}>
-                <p className="mt-8 max-w-xl leading-relaxed text-on-ink-2">
-                  We ran our four-step process — listen, shape, make, compound —
-                  pairing strategy with in-house design, content and code. The
-                  work spanned{" "}
-                  <span className="font-medium text-on-ink">
-                    {c.category.join(", ").toLowerCase()}
-                  </span>
-                  .
-                </p>
+              <div className="col-span-12 md:col-span-8 md:col-start-5">
+                {brief.map((p, i) =>
+                  i === 0 ? (
+                    <Reveal key={i} y={20}>
+                      <p className="display text-[length:var(--text-h3)] leading-[1.18] text-on-ink">
+                        {p}
+                      </p>
+                    </Reveal>
+                  ) : (
+                    <Reveal key={i} y={16} delay={0.06 * i}>
+                      <p className="mt-6 max-w-2xl leading-relaxed text-on-ink-2">{p}</p>
+                    </Reveal>
+                  ),
+                )}
+              </div>
+
+              {/* Our approach */}
+              <Reveal className="col-span-12 md:col-span-3 md:mt-4">
+                <Eyebrow index="02" invert>
+                  Our approach
+                </Eyebrow>
               </Reveal>
-              {sections.length > 0 && (
-                <Reveal className="mt-10">
-                  <ul className="flex flex-wrap gap-x-6 gap-y-2">
-                    {sections.map((s, i) => (
-                      <li key={i} className="mono flex items-center gap-2 text-on-ink-3">
-                        <span className="size-1.5 bg-orange" />
-                        {s.discipline || s.kind}
+              <div className="col-span-12 md:col-span-8 md:col-start-5">
+                {approach.map((p, i) => (
+                  <Reveal key={i} y={16} delay={0.06 * i}>
+                    <p
+                      className={
+                        i === 0
+                          ? "max-w-2xl text-[length:var(--text-lead)] leading-snug text-on-ink-2"
+                          : "mt-5 max-w-2xl leading-relaxed text-on-ink-2"
+                      }
+                    >
+                      {p}
+                    </p>
+                  </Reveal>
+                ))}
+                <Reveal className="mt-8">
+                  <ul className="flex flex-wrap gap-2">
+                    {c.category.map((cat) => (
+                      <li key={cat} className="mono border border-line-invert px-3 py-1.5 text-on-ink-2">
+                        {cat}
                       </li>
                     ))}
                   </ul>
                 </Reveal>
+              </div>
+
+              {/* Results */}
+              {results.length > 0 && (
+                <>
+                  <Reveal className="col-span-12 md:col-span-3 md:mt-4">
+                    <Eyebrow index="03" invert>
+                      Results
+                    </Eyebrow>
+                  </Reveal>
+                  <div className="col-span-12 md:col-span-8 md:col-start-5">
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3">
+                      {results.map((r, i) => (
+                        <Reveal key={i} delay={0.06 * i}>
+                          <div>
+                            <span className="display block text-[length:var(--text-h1)] leading-none text-orange [overflow-wrap:anywhere]">
+                              {r.value}
+                              <span className="text-orange/70">{r.suffix}</span>
+                            </span>
+                            <p className="label mt-3 text-on-ink-3">{r.label}</p>
+                          </div>
+                        </Reveal>
+                      ))}
+                    </div>
+                  </div>
+                </>
               )}
             </div>
           </div>
