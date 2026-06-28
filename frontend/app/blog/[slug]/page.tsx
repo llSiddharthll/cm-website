@@ -99,7 +99,9 @@ export default async function PostPage({
         <section className="bg-dark section pt-0">
           <div className="shell">
             <div className="mx-auto max-w-2xl border-t border-line-invert pt-10">
-              <Reveal y={20}>
+              {/* Article body renders immediately — a long body is taller than
+                  the viewport, so a scroll-reveal threshold would never fire. */}
+              <div>
                 {bodyHtml.trim() ? (
                   <Prose html={bodyHtml} className="text-on-ink-2" />
                 ) : (
@@ -120,7 +122,7 @@ export default async function PostPage({
                     )}
                   </div>
                 )}
-              </Reveal>
+              </div>
             </div>
           </div>
         </section>
