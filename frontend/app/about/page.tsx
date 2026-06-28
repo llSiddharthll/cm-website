@@ -58,7 +58,7 @@ export default async function AboutPage() {
           kicker="About the studio"
           titleLines={["The studio", "behind the work"]}
           lede="An in-house creative & growth studio from Chandigarh — brand, web, content and performance built under one roof and engineered to compound."
-          meta="Est. 2016 · Chandigarh"
+          meta="Est. 2017 · Chandigarh"
         />
 
         {/* ── 02 · Statement ── */}

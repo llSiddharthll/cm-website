@@ -17,6 +17,7 @@ export type FieldType =
   | "multiselect"
   | "tags"
   | "paragraphs"
+  | "richtext"
   | "image"
   | "video"
   | "color"
@@ -547,7 +548,8 @@ export const SCHEMA: Collection[] = [
       { name: "date", label: "Date", type: "date", listColumn: true },
       { name: "read", label: "Read time", type: "text" },
       { name: "cover", label: "Cover image", type: "image" },
-      { name: "body", label: "Body", type: "paragraphs", help: "Each entry is a paragraph." },
+      { name: "body", label: "Body", type: "richtext", help: "Full article — use the toolbar for headings, lists, links and quotes." },
+      { name: "source", label: "Original URL", type: "url", help: "If Body is empty, the post links out to the full article here." },
     ],
   },
 

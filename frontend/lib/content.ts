@@ -14,7 +14,7 @@ export const SITE = {
   whatsapp: "https://wa.me/919463445566",
   address: "Office 11–12, 9th Floor, Sushma Infinium, Zirakpur, Punjab 140603",
   city: "Chandigarh · India",
-  founded: 2016,
+  founded: 2017,
   socials: [
     { label: "Instagram", handle: "@creativemonkindia", href: "https://instagram.com/creativemonkindia" },
     { label: "Facebook", handle: "@creativemonkindia", href: "https://facebook.com/creativemonkindia" },

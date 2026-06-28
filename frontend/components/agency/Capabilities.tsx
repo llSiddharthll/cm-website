@@ -15,7 +15,7 @@ export function Capabilities({
   stats,
   tools,
   categories,
-  founded = 2016,
+  founded = 2017,
 }: {
   stats: readonly Stat[];
   tools: string[];

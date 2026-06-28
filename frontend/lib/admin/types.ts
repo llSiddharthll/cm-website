@@ -12,6 +12,7 @@ export type FieldType =
   | "multiselect"
   | "tags"
   | "paragraphs"
+  | "richtext"
   | "image"
   | "video"
   | "color"

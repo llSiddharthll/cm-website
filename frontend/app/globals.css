@@ -148,6 +148,76 @@ body {
   filter: invert(1) brightness(0.8);
 }
 
+/* ---- Rich-text prose (blog body, case content, the admin editor) ---- */
+.cm-prose {
+  font-size: var(--text-body);
+  line-height: 1.75;
+}
+.cm-prose > * + * {
+  margin-top: 1.15em;
+}
+.cm-prose h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-h3);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-top: 1.9em;
+}
+.cm-prose h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 1rem + 0.8vw, 1.6rem);
+  line-height: 1.2;
+  margin-top: 1.6em;
+}
+.cm-prose > :first-child {
+  margin-top: 0;
+}
+.cm-prose ul {
+  list-style: disc;
+  padding-left: 1.35em;
+}
+.cm-prose ol {
+  list-style: decimal;
+  padding-left: 1.35em;
+}
+.cm-prose li {
+  margin-top: 0.45em;
+  padding-left: 0.2em;
+}
+.cm-prose li::marker {
+  color: var(--color-orange);
+}
+.cm-prose a {
+  color: var(--color-orange);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.cm-prose strong {
+  font-weight: 700;
+}
+.cm-prose blockquote {
+  border-left: 2px solid var(--color-orange);
+  padding-left: 1.1em;
+  font-style: italic;
+  opacity: 0.92;
+}
+.cm-prose hr {
+  border: 0;
+  border-top: 1px solid var(--color-line-invert);
+  margin: 2em 0;
+}
+/* TipTap empty-editor placeholder */
+.cm-prose p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: var(--color-on-ink-3);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
 /* Lenis */
 html.lenis,
 html.lenis body {

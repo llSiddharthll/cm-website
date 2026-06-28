@@ -18,7 +18,7 @@ export const REAL_STATS = [
   { group: "stat_bar", value: "9", suffix: " yrs", label: "In the game" },
   { group: "stat_bar", value: "20", suffix: "+", label: "In-house specialists" },
   { group: "stat_bar", value: "33", suffix: "+", label: "Google reviews" },
-  { group: "timeline", value: "2016", suffix: "", label: "Founded near Chandigarh" },
+  { group: "timeline", value: "2017", suffix: "", label: "Founded near Chandigarh" },
   { group: "timeline", value: "20", suffix: "+", label: "In-house specialists" },
   { group: "timeline", value: "10", suffix: "+", label: "Industries served" },
   { group: "timeline", value: "7", suffix: " countries", label: "Clients shipped to" },

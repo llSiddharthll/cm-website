@@ -7,6 +7,7 @@ import { Button, Input, Label, Textarea, inputClass } from "./ui";
 import { Select } from "./Select";
 import { Switch } from "./Switch";
 import { MediaPicker } from "./MediaPicker";
+import { RichText } from "./RichText";
 import { cn } from "@/lib/utils";
 
 type Val = unknown;
@@ -198,6 +199,8 @@ export function FieldInput({ field, value, onChange }: { field: Field; value: Va
         return <TagsInput value={value as string[]} onChange={onChange} />;
       case "paragraphs":
         return <ParagraphsInput value={value as string[]} onChange={onChange} />;
+      case "richtext":
+        return <RichText value={value as string} onChange={onChange} placeholder={field.placeholder} />;
       case "image":
         return <MediaPicker value={(value as string) ?? ""} onChange={onChange} kind="image" />;
       case "video":

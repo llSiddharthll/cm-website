@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { getPosts, getPost, getSite, getServicesGrid } from "@/lib/cms";
+import { Prose } from "@/components/ui/Prose";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { ContactForm } from "@/components/agency/ContactForm";
@@ -38,6 +39,11 @@ export default async function PostPage({
   const post = POSTS[index];
   const next = POSTS[(index + 1) % POSTS.length];
   const site = await getSite();
+
+  // body may arrive as rich-text HTML (new) or a paragraph array (legacy data) — normalise.
+  const bodyHtml = Array.isArray(post.body)
+    ? (post.body as unknown as string[]).map((p) => `<p>${p}</p>`).join("")
+    : (post.body ?? "");
   const servicesGrid = await getServicesGrid();
 
   const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
@@ -93,19 +99,28 @@ export default async function PostPage({
         <section className="bg-dark section pt-0">
           <div className="shell">
             <div className="mx-auto max-w-2xl border-t border-line-invert pt-10">
-              {post.body.map((para, i) => (
-                <Reveal key={i} y={20} delay={i === 0 ? 0 : 0.04}>
-                  <p
-                    className={
-                      i === 0
-                        ? "text-[length:var(--text-lead)] leading-relaxed text-on-ink"
-                        : "text-[length:var(--text-lead)] leading-relaxed text-on-ink-2 mt-7"
-                    }
-                  >
-                    {para}
-                  </p>
-                </Reveal>
-              ))}
+              <Reveal y={20}>
+                {bodyHtml.trim() ? (
+                  <Prose html={bodyHtml} className="text-on-ink-2" />
+                ) : (
+                  <div className="space-y-7">
+                    <p className="text-[length:var(--text-lead)] leading-relaxed text-on-ink">
+                      {post.excerpt}
+                    </p>
+                    {post.source && (
+                      <a
+                        href={post.source}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/cta label inline-flex items-center gap-1.5 bg-orange px-4 py-2.5 text-on-orange transition-colors duration-200 hover:bg-orange-press"
+                      >
+                        Read the full article
+                        <ArrowRight className="size-4 transition-transform duration-200 group-hover/cta:translate-x-0.5" />
+                      </a>
+                    )}
+                  </div>
+                )}
+              </Reveal>
             </div>
           </div>
         </section>

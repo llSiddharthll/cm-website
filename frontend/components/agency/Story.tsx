@@ -57,8 +57,8 @@ export function Story({
                 >
                   <div>
                     <span className="display text-[length:var(--text-h2)] leading-none text-on-ink">
-                      {t.value === "2016" ? (
-                        "2016"
+                      {t.value === "2017" ? (
+                        "2017"
                       ) : (
                         <>
                           <AnimatedNumber value={Number(t.value)} />
