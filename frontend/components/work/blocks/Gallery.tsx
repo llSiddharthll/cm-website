@@ -24,13 +24,15 @@ export function Gallery({ images }: { images: Img[] }) {
   return (
     <>
       <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
-        {valid.map((img, idx) => (
-          <Tilt key={idx} max={5}>
+        {valid.map((img, idx) => {
+          const wide = idx % 5 === 0;
+          return (
+          <Tilt key={idx} max={5} className={wide ? "col-span-2" : undefined}>
           <button
             onClick={() => show(idx)}
             aria-label={`Open image ${idx + 1}${img.caption ? `: ${img.caption}` : ""}`}
-            className={`group relative overflow-hidden rounded-lg bg-dark-2 ${
-              idx % 5 === 0 ? "col-span-2 aspect-[16/10] md:aspect-[16/9]" : "aspect-square"
+            className={`group relative block w-full overflow-hidden rounded-lg bg-dark-2 ${
+              wide ? "aspect-[16/10] md:aspect-[16/9]" : "aspect-square"
             }`}
           >
             <Image
@@ -50,7 +52,8 @@ export function Gallery({ images }: { images: Img[] }) {
             </div>
           </button>
           </Tilt>
-        ))}
+          );
+        })}
       </div>
 
       <Dialog.Root open={open} onOpenChange={setOpen}>

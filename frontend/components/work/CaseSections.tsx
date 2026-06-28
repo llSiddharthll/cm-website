@@ -26,40 +26,42 @@ export function CaseSections({
   if (!sections.length) return null;
 
   return (
-    <>
-      {sections.map((s, i) => {
-        const label = s.category || KIND_LABEL[s.kind] || "Work";
-        const heading = s.title || s.discipline;
-        const bg = i % 2 === 0 ? "bg-dark" : "bg-dark-2";
+    <section className="bg-dark text-on-ink">
+      <div className="shell space-y-20 py-[clamp(4rem,9vh,7rem)] md:space-y-28">
+        {sections.map((s, i) => {
+          const label = s.category || KIND_LABEL[s.kind] || "Work";
+          const heading = s.title || s.discipline;
+          const isQuote = s.kind === "quote";
 
-        return (
-          <section key={i} className={`${bg} section`}>
-            <div className="shell">
-              {/* section header */}
-              <div className="grid12 items-end gap-y-4">
-                <Reveal className="col-span-12 md:col-span-8">
-                  <Eyebrow index={String(i + 1).padStart(2, "0")} invert>
-                    {label}
-                  </Eyebrow>
-                  {heading && (
-                    <h2 className="display mt-6 max-w-3xl text-[length:var(--text-h2)] leading-[1.05] text-on-ink">
-                      {heading}
-                    </h2>
-                  )}
-                </Reveal>
-                {s.intro && (
-                  <Reveal
-                    as="span"
-                    delay={0.1}
-                    className="col-span-12 block max-w-md text-on-ink-2 md:col-span-4 md:text-right"
-                  >
-                    {s.intro}
+          return (
+            <article key={i} className="border-t border-line-invert pt-8 md:pt-10">
+              {/* compact header — heading + intro close together */}
+              {!isQuote && (
+                <div className="grid12 items-end gap-y-3">
+                  <Reveal className="col-span-12 md:col-span-7">
+                    <Eyebrow index={String(i + 1).padStart(2, "0")} invert>
+                      {label}
+                    </Eyebrow>
+                    {heading && (
+                      <h2 className="display mt-4 text-[length:var(--text-h2)] leading-[1.02] text-on-ink">
+                        {heading}
+                      </h2>
+                    )}
                   </Reveal>
-                )}
-              </div>
+                  {s.intro && (
+                    <Reveal
+                      as="span"
+                      delay={0.08}
+                      className="col-span-12 block max-w-md text-on-ink-2 md:col-span-4 md:col-start-9 md:pb-1.5 md:text-right"
+                    >
+                      {s.intro}
+                    </Reveal>
+                  )}
+                </div>
+              )}
 
               {/* block */}
-              <div className="mt-12">
+              <div className={isQuote ? "" : "mt-9"}>
                 {s.kind === "gallery" && s.images?.length ? (
                   <Reveal y={30}>
                     <Gallery images={s.images} />
@@ -73,20 +75,21 @@ export function CaseSections({
                 ) : null}
 
                 {s.kind === "marketing" && s.stats?.length ? (
-                  <div className="grid12">
-                    <div className="col-span-12 lg:col-span-8">
-                      <StatsGraph stats={s.stats} />
-                    </div>
-                  </div>
+                  <StatsGraph stats={s.stats} />
                 ) : null}
 
                 {s.kind === "seo" ? <SeoBlock keywords={s.keywords} stats={s.stats} /> : null}
 
                 {s.kind === "content" && s.body?.length ? (
                   <div className="grid12">
-                    <div className="col-span-12 space-y-6 md:col-span-8 md:col-start-3">
+                    <div className="col-span-12 space-y-5 md:col-span-8">
                       {s.body.map((p, j) => (
-                        <Reveal as="span" key={j} delay={j * 0.06} className="block text-[length:var(--text-lead)] leading-relaxed text-on-ink-2">
+                        <Reveal
+                          as="span"
+                          key={j}
+                          delay={j * 0.06}
+                          className="block text-[length:var(--text-lead)] leading-relaxed text-on-ink-2"
+                        >
                           {p}
                         </Reveal>
                       ))}
@@ -94,16 +97,16 @@ export function CaseSections({
                   </div>
                 ) : null}
 
-                {s.kind === "quote" && s.quote ? (
+                {isQuote && s.quote ? (
                   <Reveal>
                     <figure className="grid12">
-                      <blockquote className="display-tight col-span-12 text-[length:var(--text-h2)] leading-[1.15] text-on-ink md:col-span-10 md:col-start-2">
+                      <blockquote className="display-tight col-span-12 text-[length:var(--text-h2)] leading-[1.12] text-on-ink md:col-span-10">
                         <span className="text-orange">&ldquo;</span>
                         {s.quote}
                         <span className="text-orange">&rdquo;</span>
                       </blockquote>
                       {s.author && (
-                        <figcaption className="mono col-span-12 mt-6 text-on-ink-3 md:col-start-2">
+                        <figcaption className="mono col-span-12 mt-6 text-on-ink-3">
                           — {s.author}
                         </figcaption>
                       )}
@@ -112,8 +115,9 @@ export function CaseSections({
                 ) : null}
               </div>
 
+              {/* attachments */}
               {s.attachments?.length ? (
-                <Reveal className="mt-8">
+                <Reveal className="mt-7">
                   <div className="flex flex-wrap gap-3">
                     {s.attachments.map((a, j) => (
                       <a
@@ -121,7 +125,7 @@ export function CaseSections({
                         href={a.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="mono inline-flex items-center gap-2 border border-line-invert px-4 py-2 text-on-ink-2 transition-colors hover:border-orange/50 hover:text-orange"
+                        className="mono inline-flex items-center gap-2 rounded-full border border-line-invert px-4 py-2 text-on-ink-2 transition-colors hover:border-orange/50 hover:text-orange"
                       >
                         <Paperclip className="size-3.5" /> {a.label || "Attachment"}
                         <ArrowUpRight className="size-3.5" />
@@ -130,10 +134,10 @@ export function CaseSections({
                   </div>
                 </Reveal>
               ) : null}
-            </div>
-          </section>
-        );
-      })}
-    </>
+            </article>
+          );
+        })}
+      </div>
+    </section>
   );
 }
