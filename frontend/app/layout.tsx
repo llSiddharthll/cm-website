@@ -53,9 +53,16 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1c1c1e",
-  colorScheme: "dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#1c1c1e" },
+    { media: "(prefers-color-scheme: light)", color: "#fcfcfb" },
+  ],
+  colorScheme: "dark light",
 };
+
+// Runs before paint — resolves the saved theme (default: system) and sets
+// data-theme on <html> so there's no flash of the wrong theme.
+const themeScript = `(function(){try{var p=new URLSearchParams(location.search).get('theme');if(p==='light'||p==='dark'||p==='system'){localStorage.setItem('cm-theme',p);}var t=localStorage.getItem('cm-theme')||'system';var d=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
 
 const orgJsonLd = {
   "@context": "https://schema.org",
@@ -94,6 +101,7 @@ export default function RootLayout({
       className={cn(archivo.variable, inter.variable, spaceMono.variable)}
     >
       <body>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify([orgJsonLd, siteJsonLd]) }}

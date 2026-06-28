@@ -44,7 +44,7 @@ export function Clients({ clients }: { clients: Client[] }) {
                   <img
                     src={c.logo}
                     alt={c.name}
-                    className="max-h-12 w-auto object-contain opacity-90 mix-blend-screen transition-opacity duration-300 group-hover:opacity-100"
+                    className="cm-logo max-h-12 w-auto object-contain opacity-90 transition-opacity duration-300 group-hover:opacity-100"
                   />
                 ) : (
                   <span className="display text-[clamp(1rem,1.5vw,1.45rem)] leading-tight text-on-ink transition-colors duration-300 group-hover:text-orange">

@@ -100,6 +100,54 @@ body {
   overflow-x: hidden;
 }
 
+/* ============================================================
+   THEME — dark by default; flips to light under [data-theme="light"].
+   The blocking script in layout sets data-theme before paint; the media
+   query below is a no-JS fallback for "system" preference.
+   The components use the dark-named tokens (bg-dark, text-on-ink, …) so we
+   just re-point those tokens to light values — no component changes needed.
+   ============================================================ */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-dark: oklch(0.992 0.0015 250);
+  --color-dark-2: oklch(0.966 0.0025 250);
+  --color-dark-3: oklch(0.935 0.004 250);
+  --color-on-ink: oklch(0.18 0.006 265);
+  --color-on-ink-2: oklch(0.4 0.006 265);
+  --color-on-ink-3: oklch(0.5 0.006 265);
+  --color-line-invert: oklch(0.17 0.006 265 / 0.14);
+  --color-line-invert-2: oklch(0.17 0.006 265 / 0.07);
+  --color-ink-block: oklch(0.96 0.0025 250);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]):not([data-theme="light"]) {
+    color-scheme: light;
+    --color-dark: oklch(0.992 0.0015 250);
+    --color-dark-2: oklch(0.966 0.0025 250);
+    --color-dark-3: oklch(0.935 0.004 250);
+    --color-on-ink: oklch(0.18 0.006 265);
+    --color-on-ink-2: oklch(0.4 0.006 265);
+    --color-on-ink-3: oklch(0.5 0.006 265);
+    --color-line-invert: oklch(0.17 0.006 265 / 0.14);
+    --color-line-invert-2: oklch(0.17 0.006 265 / 0.07);
+    --color-ink-block: oklch(0.96 0.0025 250);
+  }
+}
+
+/* white-on-dark client logos → dark-on-light when the theme is light */
+.cm-logo {
+  mix-blend-mode: screen;
+}
+:root[data-theme="light"] .cm-logo {
+  mix-blend-mode: multiply;
+  filter: invert(1) brightness(0.8);
+}
+
 /* Lenis */
 html.lenis,
 html.lenis body {

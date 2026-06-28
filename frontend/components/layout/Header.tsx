@@ -17,6 +17,7 @@ import { EASE } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { Magnetic } from "@/components/fx/Magnetic";
 import { Logo } from "./Logo";
+import { ThemeToggle } from "./ThemeToggle";
 
 const API = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "");
 
@@ -133,6 +134,7 @@ export function Header({ dark = true }: { dark?: boolean }) {
                 </div>
               );
             })}
+            <ThemeToggle />
             <Magnetic strength={0.5}>
               <Link
                 href="/contact"
@@ -145,18 +147,21 @@ export function Header({ dark = true }: { dark?: boolean }) {
             </Magnetic>
           </nav>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setOpen((v) => !v)}
-            className="relative z-50 flex size-10 items-center justify-center md:hidden"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-          >
-            <span className="relative block h-3 w-6">
-              <span className={cn("absolute left-0 top-0 h-0.5 w-6 transition-all duration-300", dark ? "bg-on-ink" : "bg-ink", open && "top-1.5 rotate-45")} />
-              <span className={cn("absolute bottom-0 left-0 h-0.5 w-6 transition-all duration-300", dark ? "bg-on-ink" : "bg-ink", open && "bottom-1.5 -rotate-45")} />
-            </span>
-          </button>
+          {/* Mobile: theme + menu */}
+          <div className="flex items-center gap-1.5 md:hidden">
+            <ThemeToggle />
+            <button
+              onClick={() => setOpen((v) => !v)}
+              className="relative z-50 flex size-10 items-center justify-center"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+            >
+              <span className="relative block h-3 w-6">
+                <span className={cn("absolute left-0 top-0 h-0.5 w-6 transition-all duration-300", dark ? "bg-on-ink" : "bg-ink", open && "top-1.5 rotate-45")} />
+                <span className={cn("absolute bottom-0 left-0 h-0.5 w-6 transition-all duration-300", dark ? "bg-on-ink" : "bg-ink", open && "bottom-1.5 -rotate-45")} />
+              </span>
+            </button>
+          </div>
         </div>
 
         {/* ── Services mega-menu ── */}
