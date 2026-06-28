@@ -273,8 +273,8 @@ export const PORTFOLIO = [
   pf("Inaysha brand identity", "Branding", "/work/inaysha-044.jpg", "Inaysha"),
   pf("Festival table tents", "Print", "/work/tvisva-024.jpg", "Tvisva"),
   pf("Grand-launch hoarding", "Print", "/work/tvisva-038.jpg", "Tvisva"),
-  pf("Tvisva website", "Website", "/work/tvisva-030.jpg", "Tvisva"),
-  pf("Chatha Foods website", "Website", "/work/chatha-foods-088.jpg", "Chatha Foods"),
+  { title: "Tvisva Jewels — live website", category: "Website", image: "/work/tvisva-030.jpg", client: "Tvisva", screenshot: "/work/screenshots/tvisva-site.jpg", url: "https://tvisvajewels.com", featured: true },
+  { title: "Chatha Foods — live website", category: "Website", image: "/work/chatha-foods-088.jpg", client: "Chatha Foods", screenshot: "/work/screenshots/chatha-site.jpg", url: "https://cfpl.net.in", featured: true },
   pf("Felicity Adobe website", "Website", "/work/felicity-adobe-096.jpg", "Felicity Adobe"),
   pf("Export House website", "Website", "/work/export-house-110.jpg", "Export House"),
 ] as const;

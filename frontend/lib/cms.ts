@@ -186,8 +186,8 @@ const PORTFOLIO_FALLBACK: Portfolio[] = [
   P("Hotel social feed", "Social Media", "/work/best-western-083.jpg", "Best Western Plus"),
   P("Yukti Herbs packaging", "Packaging", "/work/yukti-herbs-121.jpg", "Yukti Herbs"),
   P("Veloire identity", "Branding", "/work/veloire-040.jpg", "Veloire"),
-  { title: "Tvisva — website", category: "Website", image: "/work/tvisva-030.jpg", client: "Tvisva" },
-  { title: "Chatha Foods — website", category: "Website", image: "/work/chatha-foods-088.jpg", client: "Chatha Foods" },
+  { title: "Tvisva Jewels — live website", category: "Website", image: "/work/tvisva-030.jpg", client: "Tvisva", screenshot: "/work/screenshots/tvisva-site.jpg", url: "https://tvisvajewels.com", featured: true },
+  { title: "Chatha Foods — live website", category: "Website", image: "/work/chatha-foods-088.jpg", client: "Chatha Foods", screenshot: "/work/screenshots/chatha-site.jpg", url: "https://cfpl.net.in", featured: true },
   { title: "Felicity Adobe — website", category: "Website", image: "/work/felicity-adobe-096.jpg", client: "Felicity Adobe" },
 ];
 export const getPortfolio = () => collection<Portfolio>("portfolio", PORTFOLIO_FALLBACK);
