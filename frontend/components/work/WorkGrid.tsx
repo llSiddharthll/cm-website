@@ -7,7 +7,9 @@ import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { CASES } from "@/lib/content";
 import { EASE, DUR } from "@/lib/motion";
+import { useInfiniteList } from "@/lib/useInfiniteList";
 import { Reveal } from "@/components/ui/Reveal";
+import { LoadMore } from "@/components/ui/LoadMore";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ReelPlaceholder } from "@/components/fx/ReelPlaceholder";
 import { Tilt } from "@/components/fx/Tilt";
@@ -24,13 +26,18 @@ export function WorkGrid({ cases = CASES }: { cases?: typeof CASES }) {
     return [ALL, ...seen];
   }, [cases]);
 
-  const visible = useMemo(
+  const filtered = useMemo(
     () =>
       filter === ALL
         ? cases
         : cases.filter((c) => c.category.includes(filter)),
     [filter, cases],
   );
+
+  const { visible, hasMore, shown, total, sentinelRef } = useInfiniteList(filtered, {
+    step: 8,
+    resetKey: filter,
+  });
 
   return (
     <section className="bg-dark text-on-ink section">
@@ -53,8 +60,8 @@ export function WorkGrid({ cases = CASES }: { cases?: typeof CASES }) {
           {/* Live count — mono data texture */}
           <Reveal delay={0.1} className="col-span-6 md:col-span-4 md:text-right">
             <span className="mono text-on-ink-3">
-              [ {String(visible.length).padStart(2, "0")} ] case
-              {visible.length === 1 ? "" : "s"} shown
+              [ {String(total).padStart(2, "0")} ] case
+              {total === 1 ? "" : "s"}
             </span>
           </Reveal>
         </div>
@@ -197,6 +204,14 @@ export function WorkGrid({ cases = CASES }: { cases?: typeof CASES }) {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        <LoadMore
+          sentinelRef={sentinelRef}
+          hasMore={hasMore}
+          shown={shown}
+          total={total}
+          noun="cases"
+        />
       </div>
     </section>
   );

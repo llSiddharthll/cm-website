@@ -7,7 +7,9 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { X, Maximize2, ArrowUpRight, Globe } from "lucide-react";
 import type { Portfolio } from "@/lib/cms";
 import { EASE, DUR } from "@/lib/motion";
+import { useInfiniteList } from "@/lib/useInfiniteList";
 import { Tilt } from "@/components/fx/Tilt";
+import { LoadMore } from "@/components/ui/LoadMore";
 import { ScreenshotScroll } from "@/components/work/blocks/ScreenshotScroll";
 
 export function PortfolioGallery({ items }: { items: Portfolio[] }) {
@@ -18,7 +20,11 @@ export function PortfolioGallery({ items }: { items: Portfolio[] }) {
   const [filter, setFilter] = useState("All");
   const [open, setOpen] = useState<Portfolio | null>(null);
 
-  const shown = filter === "All" ? items : items.filter((i) => i.category === filter);
+  const filtered = filter === "All" ? items : items.filter((i) => i.category === filter);
+  const { visible, hasMore, shown, total, sentinelRef } = useInfiniteList(filtered, {
+    step: 12,
+    resetKey: filter,
+  });
 
   return (
     <>
@@ -45,7 +51,7 @@ export function PortfolioGallery({ items }: { items: Portfolio[] }) {
       {/* grid */}
       <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
         <AnimatePresence mode="popLayout">
-          {shown.map((it, i) => {
+          {visible.map((it, i) => {
             const wide = i % 5 === 0;
             const isWeb = it.category === "Website";
             return (
@@ -105,6 +111,14 @@ export function PortfolioGallery({ items }: { items: Portfolio[] }) {
           })}
         </AnimatePresence>
       </div>
+
+      <LoadMore
+        sentinelRef={sentinelRef}
+        hasMore={hasMore}
+        shown={shown}
+        total={total}
+        noun="pieces"
+      />
 
       {/* lightbox */}
       <Dialog.Root open={!!open} onOpenChange={(o) => !o && setOpen(null)}>

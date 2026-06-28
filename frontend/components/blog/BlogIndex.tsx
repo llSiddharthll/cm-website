@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
 import type { Post } from "@/lib/agency";
+import { useInfiniteList } from "@/lib/useInfiniteList";
+import { LoadMore } from "@/components/ui/LoadMore";
 import { cn } from "@/lib/utils";
 
 const fmtDate = (iso: string) =>
@@ -43,7 +45,11 @@ export function BlogIndex({ posts }: { posts: Post[] }) {
   );
   const [active, setActive] = useState("All");
   const filtered = active === "All" ? sorted : sorted.filter((p) => p.category === active);
-  const [featured, ...rest] = filtered;
+  const { visible, hasMore, shown, total, sentinelRef } = useInfiniteList(filtered, {
+    step: 13,
+    resetKey: active,
+  });
+  const [featured, ...rest] = visible;
 
   return (
     <>
@@ -130,6 +136,14 @@ export function BlogIndex({ posts }: { posts: Post[] }) {
           </motion.div>
         ))}
       </motion.div>
+
+      <LoadMore
+        sentinelRef={sentinelRef}
+        hasMore={hasMore}
+        shown={shown}
+        total={total}
+        noun="articles"
+      />
     </>
   );
 }
