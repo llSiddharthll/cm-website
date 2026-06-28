@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useEditor, EditorContent, type Editor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Link from "@tiptap/extension-link";
+import Image from "@tiptap/extension-image";
 import Placeholder from "@tiptap/extension-placeholder";
 import {
   Bold,
@@ -14,6 +15,7 @@ import {
   ListOrdered,
   Quote,
   Link as LinkIcon,
+  Image as ImageIcon,
   Undo2,
   Redo2,
 } from "lucide-react";
@@ -67,6 +69,7 @@ export function RichText({
         openOnClick: false,
         HTMLAttributes: { rel: "noopener noreferrer", target: "_blank" },
       }),
+      Image.configure({ inline: false, HTMLAttributes: { loading: "lazy" } }),
       Placeholder.configure({ placeholder: placeholder || "Write the content…" }),
     ],
     content: value || "",
@@ -127,6 +130,15 @@ export function RichText({
         </Btn>
         <Btn onClick={() => setLink(editor)} active={editor.isActive("link")} label="Link">
           <LinkIcon className="size-4" />
+        </Btn>
+        <Btn
+          onClick={() => {
+            const url = window.prompt("Image URL");
+            if (url) editor.chain().focus().setImage({ src: url }).run();
+          }}
+          label="Image"
+        >
+          <ImageIcon className="size-4" />
         </Btn>
         <span className="mx-1 h-5 w-px bg-zinc-800" />
         <Btn onClick={() => editor.chain().focus().undo().run()} label="Undo">

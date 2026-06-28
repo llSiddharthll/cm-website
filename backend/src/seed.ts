@@ -10,6 +10,7 @@ import { createEntry, putSingleton, countEntries } from "./store";
 import { SERVICE_PAGES } from "./data/service-pages";
 import { REAL_CASES, REAL_CASE_SECTIONS, REAL_REELS, REAL_VIDEO_PROJECTS, PORTFOLIO } from "./data/work";
 import { CLIENTS } from "./data/clients";
+import BLOG_POSTS from "./data/blog-posts.json";
 
 const force = process.argv.includes("--force");
 // --only=<slug> replaces just one collection (delete + reinsert) — leaves the rest untouched.
@@ -188,76 +189,6 @@ const SERVICES_GRID = [
   { no: "12", title: "Analytics & CRO", desc: "Measure, learn, reinvest — month after month." },
 ];
 
-const INSTAGRAM_BODY = `
-<p>Most businesses think growth equals followers. But real growth is more engagement, more inquiries, more conversions and stronger brand recall. A page with 5,000 engaged followers is far more valuable than one with 50,000 inactive ones — and that shift in thinking is where most brands either grow or stay stuck.</p>
-<h2>Step 1 — Define your content direction</h2>
-<p>Before posting anything, get clarity on what your page stands for. Ask yourself what value you offer, who your audience is, and why someone should follow you. Your content shouldn't feel random; it should fall into clear categories:</p>
-<ul><li>Educational</li><li>Informational</li><li>Relatable</li><li>Promotional</li></ul>
-<h2>Step 2 — Focus on reels, but with strategy</h2>
-<p>Reels are still the biggest growth driver, but random reels won't work anymore. Yours should hook attention in the first 2–3 seconds, be easy to understand, deliver one clear message, and feel natural rather than forced. Trend-based content works only when it's aligned with your brand.</p>
-<h2>Step 3 — Make your profile conversion-ready</h2>
-<p>Your profile is your first impression — visitors decide within seconds whether to follow or leave. Treat it like a landing page: a clear bio, what you do and who you help, a simple call to action, relevant highlights and a consistent visual identity.</p>
-<h2>Step 4 — Create scroll-stopping visuals</h2>
-<p>Instagram is a visual platform; if your content doesn't stand out, it gets ignored. Focus on clean design, consistent colours, readable text and strong hooks. Good design doesn't just look nice — it improves engagement.</p>
-<h2>Step 5 — Be consistent, not random</h2>
-<p>Posting daily isn't the goal; posting consistently with quality is. A simple rhythm works well: three to five posts a week, a mix of reels and carousels, and stories for daily engagement. Consistency builds familiarity, and familiarity builds trust.</p>
-<h2>Step 6 — Write captions that add value</h2>
-<p>Captions are often ignored, but they matter. A good caption expands on the content, adds context and encourages engagement. Avoid generic lines — speak like you would to a real person.</p>
-<h2>Step 7 — Engage with your audience</h2>
-<p>Growth isn't one-way. Reply to comments, respond to DMs, engage with other accounts and join conversations. The more active you are, the more visible you become — engagement signals tell Instagram your content is worth showing.</p>
-<h2>Step 8 — Use hashtags smartly</h2>
-<p>Hashtags still work, but not the way they used to. Instead of random popular tags, focus on niche hashtags, location-based tags and industry-specific keywords like #ChandigarhBusiness or #DigitalMarketingChandigarh to reach a more relevant audience.</p>
-<h2>Step 9 — Track what works</h2>
-<p>Not every post performs equally. Track which posts get saves, which reels get reach and which content drives inquiries. Over time the patterns become clear, and strategy evolves from guesswork to clarity.</p>
-<h2>Step 10 — Build a brand, not just content</h2>
-<p>The biggest mistake businesses make is focusing only on content, not brand. A strong brand has a clear voice, looks consistent, feels relatable and builds trust over time. People don't follow content — they follow brands they connect with.</p>
-<h2>Final thought</h2>
-<p>Instagram in 2026 isn't about doing more. It's about doing it right. When your content is clear, your visuals are strong and your message is consistent, growth follows naturally. The goal isn't just to be seen — it's to be remembered.</p>
-`.trim();
-
-const SEO_BODY = `
-<p>Ranking on Google in 2026 isn't about tricks or shortcuts anymore — it's about being genuinely useful. Google no longer just scans keywords; it understands intent, behaviour and how users interact with your site. If your website actually helps people, you have a real chance of ranking.</p>
-<h2>How Google ranking works today</h2>
-<p>Google's job is simple: show the most relevant result for every search. To do that it evaluates the relevance of your content, its depth and usefulness, your website experience, and your trust and authority. So instead of trying to "beat the algorithm," focus on building something worth showing.</p>
-<h2>Step 1 — Start with the right keywords</h2>
-<p>Everything begins with understanding what your audience is searching for. In 2026, keyword research is less about volume and more about intent. "SEO tips" is broad; "SEO expert in Chandigarh" shows clear intent — and is far more likely to convert.</p>
-<h2>Step 2 — Create content that actually helps</h2>
-<p>Content is still the backbone of SEO, but the bar is higher. Google prefers content that solves real problems, is easy to understand, feels natural and keeps users engaged. If your content exists just to fill space, it won't perform.</p>
-<h2>Step 3 — Structure your pages properly</h2>
-<p>Even great content needs structure. Clear headings, well-written titles, meta descriptions, internal linking and natural keyword placement make it easy for both users and Google to understand your page. Clean, readable pages always beat keyword-heavy ones.</p>
-<h2>Step 4 — Improve website experience</h2>
-<p>A good website doesn't just look nice — it feels easy to use. Google now prioritises fast loading speed, mobile responsiveness, simple navigation and clean design. If a user lands and leaves within seconds, rankings drop over time.</p>
-<h2>Step 5 — Build trust through backlinks</h2>
-<p>Backlinks still play a major role. When other websites link to yours, it signals credibility — but quality matters. Relevant websites, genuine mentions and industry-specific platforms help; spammy links can even harm you.</p>
-<h2>Step 6 — Strengthen your local presence</h2>
-<p>For local businesses, local SEO isn't optional. Keep your Google Business Profile updated, collect genuine reviews, use location-based keywords and maintain consistent contact details. Local visibility often brings the most qualified leads.</p>
-<h2>Step 7 — Align content with user intent</h2>
-<p>Google understands <em>why</em> someone is searching. Match the three types of intent — informational, commercial and transactional — or your content won't rank well.</p>
-<h2>Step 8 — Fix the technical basics</h2>
-<p>Technical SEO isn't visible, but it matters. Make sure your site is properly indexed, has clean URLs, uses HTTPS, has no broken links and loads efficiently.</p>
-<h2>Step 9 — Keep improving over time</h2>
-<p>SEO isn't a one-time task. Instead of constantly creating new pages, improve what already exists — update old blogs, add new information, improve clarity and refresh keywords. Consistent updates signal that your website is active and relevant.</p>
-<h2>Step 10 — Track and refine</h2>
-<p>Without tracking, there's no direction. Monitor traffic, rankings, user behaviour and conversions. Over time you'll see what works and what doesn't — and that's where real, compounding growth comes from.</p>
-<h2>Final thought</h2>
-<p>Ranking on Google in 2026 is less about doing more and more about doing things right. When your website is helpful, easy to use and built with intent, results follow naturally.</p>
-`.trim();
-
-// Creative Monk's real published articles (thecreativemonk.in/our-blogs).
-const POSTS = [
-  { slug: "how-to-grow-your-business-on-instagram-in-2026", title: "How to Grow Your Business on Instagram in 2026", excerpt: "Instagram is no longer just a content platform — in 2026 it's a full business ecosystem. Here's how to actually grow.", category: "Social Media", date: "2026-04-30", read: "7 min", body: INSTAGRAM_BODY, source: "https://thecreativemonk.in/how-to-grow-your-business-on-instagram-in-2026/" },
-  { slug: "google-ranking-guide-2026-seo-tips-that-actually-work", title: "How to Rank Your Website on Google in 2026 (Complete Guide)", excerpt: "Ranking on Google in 2026 isn't about tricks or shortcuts anymore. It's about being genuinely useful.", category: "SEO", date: "2026-04-03", read: "8 min", body: SEO_BODY, source: "https://thecreativemonk.in/google-ranking-guide-2026-seo-tips-that-actually-work/" },
-  { slug: "start-your-first-google-ads-campaign-the-creative-monk-guide", title: "How to Set Up Your First Google Ads Campaign (Beginner Guide)", excerpt: "Running ads on Google can feel confusing at first — too many options, too many settings. A plain-English first campaign.", category: "Google Ads", date: "2026-04-12", read: "6 min", body: "", source: "https://thecreativemonk.in/start-your-first-google-ads-campaign-the-creative-monk-guide/" },
-  { slug: "best-digital-marketing-company-chandigarh", title: "The Secret Behind Becoming the Best Digital Marketing Agencies", excerpt: "What actually separates the best digital marketing agencies — beyond the pitch and the promises.", category: "Digital Marketing", date: "2026-03-11", read: "6 min", body: "", source: "https://thecreativemonk.in/best-digital-marketing-company-chandigarh/" },
-  { slug: "how-ppc-advertising-can-generate-instant-leads-for-chandigarh-businesses", title: "How PPC Advertising Can Generate Instant Leads for Chandigarh Businesses", excerpt: "How paid advertising generates fast, qualified leads for local businesses — without waiting months for results.", category: "PPC", date: "2026-02-27", read: "5 min", body: "", source: "https://thecreativemonk.in/how-ppc-advertising-can-generate-instant-leads-for-chandigarh-businesses/" },
-  { slug: "google-ads-success-guide-how-the-best-ppc-company-in-chandigarh-maximizes-your-ad-budget", title: "Google Ads Success Guide: Maximising Your Ad Budget", excerpt: "How the best PPC team in Chandigarh stretches every rupee of ad budget for maximum return.", category: "Google Ads", date: "2026-02-13", read: "6 min", body: "", source: "https://thecreativemonk.in/google-ads-success-guide-how-the-best-ppc-company-in-chandigarh-maximizes-your-ad-budget/" },
-  { slug: "best-ppc-company-in-chandigarh-how-creative-monk-drives-high-roi-ad-campaigns", title: "How Creative Monk Drives High-ROI Ad Campaigns", excerpt: "Why paid advertising is the fastest route to growth — and how to run campaigns that buy profit, not clicks.", category: "PPC", date: "2026-01-28", read: "5 min", body: "", source: "https://thecreativemonk.in/best-ppc-company-in-chandigarh-how-creative-monk-drives-high-roi-ad-campaigns/" },
-  { slug: "digital-marketing-strategies-that-work-for-local-businesses-in-chandigarh", title: "Digital Marketing Strategies That Work for Local Businesses", excerpt: "Local business marketing has changed. The strategies that actually move the needle in Chandigarh now.", category: "Digital Marketing", date: "2026-01-22", read: "6 min", body: "", source: "https://thecreativemonk.in/digital-marketing-strategies-that-work-for-local-businesses-in-chandigarh/" },
-  { slug: "aeo-vs-seo-simple-guide-to-understand-the-key-difference", title: "AEO vs SEO: A Simple Guide to the Key Difference", excerpt: "Answer Engine Optimisation vs traditional SEO — a plain-language guide to what's changing and why it matters.", category: "SEO", date: "2026-01-15", read: "5 min", body: "", source: "https://thecreativemonk.in/aeo-vs-seo-simple-guide-to-understand-the-key-difference/" },
-  { slug: "facebook-marketing-tips-2026-how-to-use-facebook-to-promote-your-business", title: "Facebook Marketing Tips 2026: How to Promote Your Business", excerpt: "Facebook is still a powerful business platform — far beyond casual scrolling. How to use it to grow in 2026.", category: "Social Media", date: "2026-01-07", read: "6 min", body: "", source: "https://thecreativemonk.in/facebook-marketing-tips-2026-how-to-use-facebook-to-promote-your-business/" },
-  { slug: "organic-search-vs-paid-search-simple-guide-for-beginners", title: "Organic Search vs Paid Search: A Simple Guide for Beginners", excerpt: "Organic vs paid search, explained simply — what each one is, and when to lean on which.", category: "SEO", date: "2026-01-03", read: "5 min", body: "", source: "https://thecreativemonk.in/organic-search-vs-paid-search-simple-guide-for-beginners/" },
-  { slug: "10-skills-required-for-digital-marketing-that-every-marketer-should-have-in-2026", title: "10 Skills Every Digital Marketer Should Have in 2026", excerpt: "The ten skills every marketer needs in 2026 — from data and strategy to creative and AI.", category: "Digital Marketing", date: "2025-11-13", read: "7 min", body: "", source: "https://thecreativemonk.in/10-skills-required-for-digital-marketing-that-every-marketer-should-have-in-2026/" },
-];
 
 const TEAM = [
   { name: "Aarav Khanna", role: "Founder & Creative Director" },
@@ -373,7 +304,7 @@ const COLLECTIONS: Record<string, Record<string, unknown>[]> = {
   portfolio: PORTFOLIO as unknown as Record<string, unknown>[],
   reels: REAL_REELS as unknown as Record<string, unknown>[],
   video_projects: REAL_VIDEO_PROJECTS as unknown as Record<string, unknown>[],
-  posts: POSTS,
+  posts: BLOG_POSTS as unknown as Record<string, unknown>[],
   team: TEAM,
   roles: ROLES,
   clients: CLIENTS as unknown as Record<string, unknown>[],

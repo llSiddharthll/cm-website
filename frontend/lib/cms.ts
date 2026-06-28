@@ -40,7 +40,6 @@ import {
   VALUES,
   INDUSTRIES,
   ROLES,
-  POSTS,
   SERVICE_CATEGORIES,
   type GridService,
   type VideoProject,
@@ -50,6 +49,11 @@ import {
   type Post,
   type ServiceCategory,
 } from "./agency";
+import POSTS_DATA from "./blog-posts.json";
+
+// All 102 real articles migrated from the old WordPress site — server-only fallback
+// when the CMS API is unreachable (kept out of agency.ts to avoid client-bundle bloat).
+export const POSTS: Post[] = POSTS_DATA as Post[];
 
 const API_URL = (process.env.API_URL || process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "");
 const REVALIDATE = Number(process.env.CMS_REVALIDATE || 60);

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { CASES } from "@/lib/content";
-import { POSTS, SERVICE_CATEGORIES } from "@/lib/agency";
+import { SERVICE_CATEGORIES } from "@/lib/agency";
+import { POSTS } from "@/lib/cms";
 import { SITE_URL as BASE } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
