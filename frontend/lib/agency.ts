@@ -306,6 +306,7 @@ export type Post = {
   read: string;
   body: string; // rich-text HTML (empty → falls back to the source link)
   source?: string; // original article on thecreativemonk.in
+  cover?: string; // featured/hero image (Cloudinary)
 };
 
 

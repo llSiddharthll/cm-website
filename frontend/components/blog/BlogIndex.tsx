@@ -80,6 +80,14 @@ export function BlogIndex({ posts }: { posts: Post[] }) {
               href={`/blog/${featured.slug}`}
               className="group flex h-full flex-col border border-line-invert-2 bg-dark-2 p-7 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-orange/50 md:p-10"
             >
+              {featured.cover && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={featured.cover}
+                  alt=""
+                  className="mb-7 aspect-[16/9] w-full rounded-lg bg-dark-3 object-cover md:aspect-[2.4/1]"
+                />
+              )}
               <Meta post={featured} />
               <h2 className="display mt-6 max-w-3xl text-[length:var(--text-h2)] leading-[0.95] text-on-ink transition-colors duration-200 group-hover:text-orange">
                 {featured.title}
@@ -101,6 +109,14 @@ export function BlogIndex({ posts }: { posts: Post[] }) {
               href={`/blog/${p.slug}`}
               className="group flex h-full flex-col border border-line-invert-2 bg-dark-2 p-7 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-orange/50"
             >
+              {p.cover && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={p.cover}
+                  alt=""
+                  className="mb-5 aspect-[16/10] w-full rounded-lg bg-dark-3 object-cover"
+                />
+              )}
               <Meta post={p} />
               <h3 className="display mt-5 text-[length:var(--text-h3)] leading-[1.05] text-on-ink transition-colors duration-200 group-hover:text-orange">
                 {p.title}

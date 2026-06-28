@@ -58,7 +58,7 @@ export default async function PostPage({
       <Header dark />
       <main className="bg-dark text-on-ink">
         {/* ── Article header ── */}
-        <section className="bg-dark section pt-[clamp(8rem,18vh,12rem)]">
+        <section className="bg-dark pt-[clamp(8rem,18vh,12rem)] pb-10 md:pb-12">
           <div className="shell">
             <Reveal>
               <Link
@@ -95,8 +95,20 @@ export default async function PostPage({
           </div>
         </section>
 
+        {/* ── Cover image ── */}
+        {post.cover && (
+          <div className="shell">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={post.cover}
+              alt={post.title}
+              className="aspect-[16/10] w-full rounded-xl bg-dark-2 object-cover md:aspect-[2.2/1]"
+            />
+          </div>
+        )}
+
         {/* ── Article body ── */}
-        <section className="bg-dark section pt-0">
+        <section className="bg-dark section pt-12 md:pt-16">
           <div className="shell">
             <div className="mx-auto max-w-2xl border-t border-line-invert pt-10">
               {/* Article body renders immediately — a long body is taller than
