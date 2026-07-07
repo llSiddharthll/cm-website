@@ -283,12 +283,25 @@ export const INDUSTRIES = [
 /* ---- Open roles (careers) ---- */
 export type Role = {
   title: string;
+  slug?: string;
   team: string;
   type: string;
   location: string;
-  description?: string;
+  experience?: string;
+  salary?: string;
+  image?: string;
+  summary?: string;
+  description?: string; // rich-text HTML job description
   applyUrl?: string;
 };
+
+/** URL-safe slug for a role (falls back to slugifying the title). */
+export const roleSlug = (r: Role) =>
+  r.slug ||
+  r.title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 
 export type Careers = {
   heroKicker: string;
@@ -331,12 +344,12 @@ export const CAREERS: Careers = {
   ctaButtonHref: "/contact",
 };
 export const ROLES: Role[] = [
-  { title: "Senior Brand Designer", team: "Design", type: "Full-time", location: "Chandigarh / Remote" },
-  { title: "Performance Marketing Manager", team: "Growth", type: "Full-time", location: "Chandigarh" },
-  { title: "Frontend Engineer (React/Next.js)", team: "Engineering", type: "Full-time", location: "Remote" },
-  { title: "Motion Designer", team: "Video", type: "Full-time", location: "Chandigarh / Remote" },
-  { title: "Content Strategist", team: "Content", type: "Full-time", location: "Remote" },
-  { title: "Account Lead", team: "Client Services", type: "Full-time", location: "Chandigarh" },
+  { title: "Senior Brand Designer", slug: "senior-brand-designer", team: "Design", type: "Full-time", location: "Chandigarh / Remote", experience: "3–6 years", salary: "₹9–16 LPA", summary: "Lead identity systems from strategy to the last pixel." },
+  { title: "Performance Marketing Manager", slug: "performance-marketing-manager", team: "Growth", type: "Full-time", location: "Chandigarh", experience: "2–5 years", salary: "₹7–14 LPA", summary: "Own paid growth across Google & Meta — profit, not vanity clicks." },
+  { title: "Frontend Engineer (React/Next.js)", slug: "frontend-engineer-react-nextjs", team: "Engineering", type: "Full-time", location: "Remote", experience: "2–5 years", salary: "₹10–20 LPA", summary: "Build fast, accessible, conversion-shaped sites with Next.js." },
+  { title: "Motion Designer", slug: "motion-designer", team: "Video", type: "Full-time", location: "Chandigarh / Remote", experience: "2–4 years", salary: "₹6–12 LPA", summary: "Cut reels, ads and brand films that travel." },
+  { title: "Content Strategist", slug: "content-strategist", team: "Content", type: "Full-time", location: "Remote", experience: "2–5 years", salary: "₹6–12 LPA", summary: "Words that rank and persuade; content that compounds." },
+  { title: "Account Lead", slug: "account-lead", team: "Client Services", type: "Full-time", location: "Chandigarh", experience: "3–6 years", salary: "₹8–15 LPA", summary: "The steady hand between client ambition and studio craft." },
 ];
 
 /* ---- Blog ---- */

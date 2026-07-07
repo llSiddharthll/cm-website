@@ -577,8 +577,11 @@ export const SCHEMA: Collection[] = [
     group: "People",
     icon: "BriefcaseBusiness",
     titleField: "title",
+    subtitleField: "team",
+    slugField: "slug",
     fields: [
       { name: "title", label: "Title", type: "text", required: true, listColumn: true },
+      { name: "slug", label: "Slug", type: "slug", help: "URL for the role page, e.g. senior-brand-designer." },
       { name: "team", label: "Team", type: "text", listColumn: true, filterable: true },
       {
         name: "type",
@@ -588,9 +591,13 @@ export const SCHEMA: Collection[] = [
         listColumn: true,
         filterable: true,
       },
-      { name: "location", label: "Location", type: "text", listColumn: true },
-      { name: "description", label: "Short description", type: "textarea", help: "Optional — a line or two shown under the role title." },
-      { name: "applyUrl", label: "Apply link", type: "url", help: "Optional — where 'Apply' goes. Defaults to the contact page." },
+      { name: "location", label: "Location", type: "text", listColumn: true, filterable: true },
+      { name: "experience", label: "Experience", type: "text", help: "e.g. 2–4 years." },
+      { name: "salary", label: "Compensation", type: "text", help: "e.g. ₹8–14 LPA (optional)." },
+      { name: "image", label: "Accent image", type: "image", help: "Optional — shown on the role card & detail hero." },
+      { name: "summary", label: "Summary", type: "textarea", help: "One line shown on the role card." },
+      { name: "description", label: "Job description", type: "richtext", help: "Full JD — about the role, what you'll do, what we're looking for. Use headings & lists." },
+      { name: "applyUrl", label: "External apply link", type: "url", help: "Optional — overrides the built-in application form." },
     ],
   },
   {
