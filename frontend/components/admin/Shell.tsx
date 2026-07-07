@@ -14,13 +14,15 @@ const PAGE_GROUPS: { label: string; slugs: string[] }[] = [
   { label: "Home", slugs: ["home_hero", "stats", "tools", "certs", "marquee"] },
   { label: "Services", slugs: ["services", "service_categories", "service_pages", "services_grid", "process", "pricing"] },
   { label: "Work", slugs: ["cases", "case_sections", "portfolio", "reels", "video_projects"] },
-  { label: "Blog", slugs: ["posts"] },
   { label: "About", slugs: ["story", "team", "values", "industries", "awards"] },
-  { label: "Careers", slugs: ["roles", "benefits"] },
   { label: "Social proof", slugs: ["clients", "reviews", "faqs"] },
   { label: "Global", slugs: ["site", "footer_groups", "locations", "review_summary"] },
 ];
-const INBOX_SLUGS = ["leads", "subscribers"];
+// Promoted to their own top-level sections (not nested under "Content").
+const INBOX_SLUGS = ["leads", "applications", "subscribers"];
+const BLOG_SLUGS = ["posts"];
+const CAREERS_SLUGS = ["roles", "careers", "benefits"];
+const PROMOTED = new Set([...INBOX_SLUGS, ...BLOG_SLUGS, ...CAREERS_SLUGS]);
 
 function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
   const { collections, collectionsBySlug, user, logout } = useAdmin();
@@ -28,7 +30,7 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
   const activeSlug = pathname.startsWith("/admin/") ? pathname.split("/")[2] : "";
 
   const groups = useMemo(() => {
-    const used = new Set<string>();
+    const used = new Set<string>(PROMOTED);
     const g = PAGE_GROUPS.map((pg) => {
       const items = pg.slugs
         .map((s) => collectionsBySlug[s])
@@ -36,14 +38,18 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
       items.forEach((c) => used.add(c.slug));
       return { label: pg.label, items };
     }).filter((x) => x.items.length > 0);
-    const leftovers = collections.filter(
-      (c) => !used.has(c.slug) && !INBOX_SLUGS.includes(c.slug),
-    );
+    const leftovers = collections.filter((c) => !used.has(c.slug));
     if (leftovers.length) g.push({ label: "More", items: leftovers });
     return g;
   }, [collections, collectionsBySlug]);
 
-  const inboxItems = INBOX_SLUGS.map((s) => collectionsBySlug[s]).filter(Boolean) as Collection[];
+  const pick = (slugs: string[]) =>
+    slugs.map((s) => collectionsBySlug[s]).filter(Boolean) as Collection[];
+  const promotedSections = [
+    { label: "Inbox", items: pick(INBOX_SLUGS) },
+    { label: "Blog", items: pick(BLOG_SLUGS) },
+    { label: "Careers", items: pick(CAREERS_SLUGS) },
+  ];
 
   const activeGroup = useMemo(
     () => groups.find((g) => g.items.some((c) => c.slug === activeSlug))?.label ?? null,
@@ -87,15 +93,19 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
           {topLink("/admin/media", pathname === "/admin/media", <Images className="size-4" />, "Media")}
         </div>
 
-        {inboxItems.length > 0 && (
-          <div className="mt-5">
-            <p className="px-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-zinc-600">Inbox</p>
-            <div className="space-y-0.5">
-              {inboxItems.map((c) =>
-                topLink(`/admin/${c.slug}`, activeSlug === c.slug, <Icon name={c.icon} className="size-4" />, c.pluralName),
-              )}
+        {promotedSections.map((sec) =>
+          sec.items.length > 0 ? (
+            <div key={sec.label} className="mt-5">
+              <p className="px-3 pb-1.5 text-[10px] font-semibold uppercase tracking-widest text-zinc-600">
+                {sec.label}
+              </p>
+              <div className="space-y-0.5">
+                {sec.items.map((c) =>
+                  topLink(`/admin/${c.slug}`, activeSlug === c.slug, <Icon name={c.icon} className="size-4" />, c.pluralName),
+                )}
+              </div>
             </div>
-          </div>
+          ) : null,
         )}
 
         <div className="mt-5">
