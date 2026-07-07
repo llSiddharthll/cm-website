@@ -40,12 +40,14 @@ import {
   VALUES,
   INDUSTRIES,
   ROLES,
+  CAREERS,
   SERVICE_CATEGORIES,
   type GridService,
   type VideoProject,
   type Review,
   type Member,
   type Role,
+  type Careers,
   type Post,
   type ServiceCategory,
 } from "./agency";
@@ -112,6 +114,8 @@ export const getReviewSummary = () => singleton<ReviewSummary>("review_summary",
 
 export type Locations = typeof LOCATIONS;
 export const getLocations = () => singleton<Locations>("locations", LOCATIONS);
+
+export const getCareers = () => singleton<Careers>("careers", CAREERS);
 
 /* footer columns → array of { title, links } */
 export type FooterGroup = { title: string; links: { label: string; href: string }[] };

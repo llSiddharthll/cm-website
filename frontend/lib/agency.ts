@@ -286,6 +286,49 @@ export type Role = {
   team: string;
   type: string;
   location: string;
+  description?: string;
+  applyUrl?: string;
+};
+
+export type Careers = {
+  heroKicker: string;
+  heroTitle1: string;
+  heroTitle2: string;
+  heroLede: string;
+  whyEyebrow: string;
+  whyLead: string;
+  whyMuted: string;
+  perksEyebrow: string;
+  perksHeading: string;
+  rolesEyebrow: string;
+  rolesIntro: string;
+  ctaLead: string;
+  ctaMuted: string;
+  ctaBody: string;
+  ctaButtonLabel: string;
+  ctaButtonHref: string;
+};
+
+export const CAREERS: Careers = {
+  heroKicker: "Careers",
+  heroTitle1: "Build things",
+  heroTitle2: "worth owning",
+  heroLede:
+    "We're a small, in-house team that values craft, ownership and the long game — people who'd rather build an asset than rent attention.",
+  whyEyebrow: "Why Creative Monk",
+  whyLead: "No hand-offs, no ego, no busywork —",
+  whyMuted: "just sharp people shipping work they're proud to sign.",
+  perksEyebrow: "Perks",
+  perksHeading: "The things that keep good people building.",
+  rolesEyebrow: "Open roles",
+  rolesIntro:
+    "Don't fit one neatly? Apply to the closest — we hire for craft, not checklists.",
+  ctaLead: "Don't see your role?",
+  ctaMuted: "Pitch us.",
+  ctaBody:
+    "If you're great at something we'll need, tell us what you'd build here. The best hires rarely come from a job post.",
+  ctaButtonLabel: "Get in touch",
+  ctaButtonHref: "/contact",
 };
 export const ROLES: Role[] = [
   { title: "Senior Brand Designer", team: "Design", type: "Full-time", location: "Chandigarh / Remote" },
