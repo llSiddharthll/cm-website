@@ -1,0 +1,53 @@
+name: Sync backend to deploy repo
+
+# The backend is deployed on Render from a separate repo (llSiddharthll/cm-backend).
+# This mirrors backend/ from this monorepo into that repo on every change, which
+# triggers Render's auto-deploy. Without this the two drift apart and Render never
+# picks up backend changes.
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "backend/**"
+      - ".github/workflows/sync-backend.yml"
+  workflow_dispatch: {}
+
+concurrency:
+  group: sync-backend
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout monorepo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Configure SSH (cm-backend deploy key)
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.CM_BACKEND_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H github.com >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Mirror backend/ into cm-backend
+        run: |
+          set -euo pipefail
+          git clone --depth 1 git@github.com:llSiddharthll/cm-backend.git /tmp/dst
+          # replace everything except .git with the current tracked backend files
+          find /tmp/dst -mindepth 1 -maxdepth 1 -not -name '.git' -exec rm -rf {} +
+          git archive HEAD:backend | tar -x -C /tmp/dst
+          cd /tmp/dst
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No backend changes to sync."
+            exit 0
+          fi
+          git -c user.name="cm-sync-bot" \
+              -c user.email="sync@thecreativemonk.in" \
+              commit -m "sync backend from cm-website@${GITHUB_SHA::7}"
+          git push origin main
+          echo "Pushed to cm-backend — Render will auto-deploy."
