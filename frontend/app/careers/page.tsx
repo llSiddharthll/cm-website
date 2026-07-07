@@ -144,7 +144,8 @@ export default async function CareersPage() {
 
             <ul className="mt-14">
               {ROLES.map((role, i) => {
-                const href = role.applyUrl || "/contact";
+                const href =
+                  role.applyUrl || `/careers/apply?role=${encodeURIComponent(role.title)}`;
                 const external = /^https?:\/\//.test(href);
                 return (
                   <Reveal as="li" key={role.title} delay={i * 0.05}>

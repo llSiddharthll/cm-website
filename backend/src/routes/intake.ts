@@ -27,6 +27,28 @@ intakeRouter.post(
   }),
 );
 
+const applySchema = z.object({
+  name: z.string().min(1).max(200),
+  email: z.string().email(),
+  phone: z.string().max(60).optional().or(z.literal("")),
+  role: z.string().max(200).optional().or(z.literal("")),
+  portfolio: z.string().max(500).optional().or(z.literal("")),
+  linkedin: z.string().max(500).optional().or(z.literal("")),
+  resume: z.string().max(500).optional().or(z.literal("")),
+  message: z.string().max(5000).optional().or(z.literal("")),
+  source: z.string().max(120).optional().or(z.literal("")),
+});
+
+intakeRouter.post(
+  "/apply",
+  asyncHandler(async (req, res) => {
+    const input = applySchema.parse(req.body);
+    const col = getCollection("applications")!;
+    const entry = await createEntry(col, { ...input, status: "new" });
+    res.status(201).json({ ok: true, id: entry._id });
+  }),
+);
+
 const subscribeSchema = z.object({
   email: z.string().email(),
   source: z.string().max(120).optional().or(z.literal("")),
