@@ -593,7 +593,7 @@ export const SCHEMA: Collection[] = [
       },
       { name: "location", label: "Location", type: "text", listColumn: true, filterable: true },
       { name: "experience", label: "Experience", type: "text", help: "e.g. 2–4 years." },
-      { name: "salary", label: "Compensation", type: "text", help: "e.g. ₹8–14 LPA (optional)." },
+      { name: "salary", label: "Compensation", type: "text", help: "e.g. ₹60k–1.1L/mo (optional)." },
       { name: "image", label: "Accent image", type: "image", help: "Optional — shown on the role card & detail hero." },
       { name: "summary", label: "Summary", type: "textarea", help: "One line shown on the role card." },
       { name: "description", label: "Job description", type: "richtext", help: "Full JD — about the role, what you'll do, what we're looking for. Use headings & lists." },

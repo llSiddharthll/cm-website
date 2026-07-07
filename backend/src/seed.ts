@@ -215,7 +215,7 @@ const ROLES = [
     type: "Full-time",
     location: "Chandigarh / Remote",
     experience: "3–6 years",
-    salary: "₹9–16 LPA",
+    salary: "₹75k–1.3L/mo",
     summary: "Lead identity systems from strategy to the last pixel — for brands that want to look like they mean it.",
     description: jd(
       "You'll own brand identity end-to-end — from the first sketch to a system a whole team can build on. This is a craft-first role for someone who sweats kerning and still thinks in strategy.",
@@ -242,7 +242,7 @@ const ROLES = [
     type: "Full-time",
     location: "Chandigarh",
     experience: "2–5 years",
-    salary: "₹7–14 LPA",
+    salary: "₹60k–1.1L/mo",
     summary: "Own paid growth across Google & Meta — campaigns that buy profit, not vanity clicks.",
     description: jd(
       "You'll run performance for a portfolio of brands — planning, launching and optimising paid campaigns that are judged on real business outcomes, not impressions.",
@@ -269,7 +269,7 @@ const ROLES = [
     type: "Full-time",
     location: "Remote",
     experience: "2–5 years",
-    salary: "₹10–20 LPA",
+    salary: "₹85k–1.7L/mo",
     summary: "Build fast, accessible, conversion-shaped websites with React, Next.js and a real eye for craft.",
     description: jd(
       "You'll turn ambitious designs into fast, accessible, delightful websites — the kind that win awards and convert. We care as much about the 60fps as the 200ms.",
@@ -296,7 +296,7 @@ const ROLES = [
     type: "Full-time",
     location: "Chandigarh / Remote",
     experience: "2–4 years",
-    salary: "₹6–12 LPA",
+    salary: "₹50k–1L/mo",
     summary: "Cut reels, ads and brand films that travel — motion that earns the second second.",
     description: jd(
       "You'll craft short-form and brand motion that stops the scroll — from snappy reels to polished brand films — with a storyteller's sense of pace.",
@@ -323,7 +323,7 @@ const ROLES = [
     type: "Full-time",
     location: "Remote",
     experience: "2–5 years",
-    salary: "₹6–12 LPA",
+    salary: "₹50k–1L/mo",
     summary: "Words that rank and persuade — strategy and copy that build authority and pull organic traffic.",
     description: jd(
       "You'll shape what brands say and where — from SEO-led articles to social hooks — so the content compounds into an asset instead of noise.",
@@ -350,7 +350,7 @@ const ROLES = [
     type: "Full-time",
     location: "Chandigarh",
     experience: "3–6 years",
-    salary: "₹8–15 LPA",
+    salary: "₹65k–1.25L/mo",
     summary: "The steady hand between client ambition and studio craft — trusted, organised, outcome-obsessed.",
     description: jd(
       "You'll be the owner of the client relationship — translating goals into briefs, keeping projects on the rails, and making sure the work ships and performs.",

@@ -20,7 +20,6 @@ import {
   getCultureStats,
   getCareers,
   getTeam,
-  getCases,
 } from "@/lib/cms";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
@@ -29,7 +28,6 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 import { Aurora } from "@/components/fx/Aurora";
-import { CultureGallery } from "@/components/careers/CultureGallery";
 import { RolesBoard } from "@/components/careers/RolesBoard";
 
 export const revalidate = 60;
@@ -54,19 +52,15 @@ const perkIcon = (label: string): LucideIcon => {
 };
 
 export default async function CareersPage() {
-  const [ROLES, BENEFITS, CULTURE_STATS, careers, team, cases] = await Promise.all([
+  const [ROLES, BENEFITS, CULTURE_STATS, careers, team] = await Promise.all([
     getRoles(),
     getBenefits(),
     getCultureStats(),
     getCareers(),
     getTeam(),
-    getCases(),
   ]);
 
-  const gallery = [
-    ...team.map((m) => m.photo).filter((x): x is string => Boolean(x)),
-    ...cases.map((c) => c.cover).filter((x): x is string => Boolean(x)),
-  ].slice(0, 14);
+  const people = team.filter((m) => m.photo).slice(0, 10);
 
   return (
     <>
@@ -111,10 +105,56 @@ export default async function CareersPage() {
           </div>
         </section>
 
-        {/* ── Culture gallery ── */}
-        {gallery.length >= 4 && (
-          <section className="bg-dark pb-6">
-            <CultureGallery images={gallery} />
+        {/* ── The team ── */}
+        {people.length >= 3 && (
+          <section className="bg-dark section pt-4">
+            <div className="shell">
+              <div className="grid12 items-end gap-y-6">
+                <Reveal className="col-span-12 md:col-span-7">
+                  <Eyebrow index="◆" invert>
+                    The team
+                  </Eyebrow>
+                  <h2 className="display mt-7 text-[length:var(--text-h2)] leading-[1.05] text-on-ink">
+                    The people you&rsquo;d build with
+                    <span className="text-orange">.</span>
+                  </h2>
+                </Reveal>
+                <Reveal
+                  as="span"
+                  delay={0.1}
+                  className="col-span-12 block max-w-sm text-on-ink-2 md:col-span-4 md:col-start-9 md:text-right"
+                >
+                  A tight, senior, in-house team — no juniors thrown at your work,
+                  no hand-offs.
+                </Reveal>
+              </div>
+
+              <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+                {people.map((m, i) => (
+                  <Reveal key={m.name} delay={(i % 5) * 0.06}>
+                    <figure className="group relative overflow-hidden rounded-2xl border border-line-invert-2 bg-dark-2">
+                      <div className="aspect-[4/5] overflow-hidden">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={m.photo}
+                          alt={m.name}
+                          loading="lazy"
+                          className="h-full w-full object-cover grayscale transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05] group-hover:grayscale-0"
+                        />
+                      </div>
+                      <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-dark via-dark/55 to-transparent p-4 pt-12">
+                        <span className="label block text-on-ink">{m.name}</span>
+                        <span className="mono block text-on-ink-3">{m.role}</span>
+                      </figcaption>
+                      <span
+                        aria-hidden
+                        className="pointer-events-none absolute left-3 top-3 size-2 rounded-full bg-orange opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                      />
+                    </figure>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
           </section>
         )}
 
