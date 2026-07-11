@@ -69,6 +69,7 @@ export const SERVICES_12: GridService[] = [
   { no: "10", title: "Video & Motion", desc: "Reels, films and motion built to travel." },
   { no: "11", title: "UI / UX", desc: "Product and site experiences people finish." },
   { no: "12", title: "Analytics & CRO", desc: "Measure, learn, reinvest — month after month." },
+  { no: "13", title: "AI & Automation", desc: "Assistants, generative content and automations wired into your funnel." },
 ];
 
 export type VideoProject = {

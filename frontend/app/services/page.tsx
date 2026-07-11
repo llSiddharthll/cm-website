@@ -48,7 +48,7 @@ export default async function ServicesPage() {
         <section className="bg-dark section">
           <div className="shell">
             <Reveal>
-              <Eyebrow invert>Four disciplines</Eyebrow>
+              <Eyebrow invert>Five disciplines</Eyebrow>
             </Reveal>
             <div className="grid12 mt-10 gap-5">
               {serviceCategories.map((cat, i) => (

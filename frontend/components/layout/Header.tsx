@@ -211,7 +211,7 @@ export function Header({ dark = true }: { dark?: boolean }) {
               <div className="border-t border-line-invert">
                 <div className="shell flex items-center justify-between py-4">
                   <span className="mono text-on-ink-3">
-                    Four disciplines · one studio
+                    Five disciplines · one studio
                   </span>
                   <Link
                     href="/services"
