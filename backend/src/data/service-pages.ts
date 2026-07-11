@@ -1768,5 +1768,449 @@ export const SERVICE_PAGES = [
         "a": "We agree on the metrics that matter — completion rate, drop-off, time-to-task, support volume — and baseline them before we start. After launch we read the funnel against that baseline. If a flow underperforms, we iterate. You get a number, not a vibe."
       }
     ]
+  },
+  {
+    "category": "ai",
+    "slug": "ai-strategy",
+    "name": "AI Strategy & Consulting",
+    "tagline": "Know where AI pays off before you spend a rupee on it.",
+    "intro": "AI strategy is the plan that comes before the tools: where AI actually moves your numbers, what to build first, and what to ignore. We cut through the hype and hand you a roadmap your team can act on.",
+    "overview": [
+      "Most businesses meet AI as a pile of pressure — a competitor's launch, a board's question, a hundred tools promising to change everything. So they buy a subscription, run a pilot that goes nowhere, and conclude AI is overrated. The problem was never the technology. It was starting with the tool instead of the decision.",
+      "We start with your P&L, not the model of the week. We map where your team actually loses hours, where slow response costs you deals, and where content or support can't keep up with demand, then rank those against what AI can reliably do today. The output is a prioritised roadmap: the two or three use-cases that pay back fastest, what each needs, and the ones worth deliberately skipping until they mature.",
+      "The point is leverage without the gamble. You walk away knowing exactly where AI earns its place, with a sequenced plan, a build-or-buy call on each piece, and honest numbers on cost, effort and payback, so the first thing you ship works and the wins fund the next step."
+    ],
+    "deliverables": [
+      "AI opportunity audit across marketing, sales, support and operations, scored by impact and effort",
+      "Prioritised AI roadmap: what to build first, next and never, with sequencing",
+      "Build-vs-buy and tool recommendation for each use-case, with realistic cost and effort",
+      "Data and readiness check: what you have, what's missing, and how to prepare it",
+      "ROI model and success metrics for each initiative, so wins are measurable",
+      "Team enablement plan: who runs what, and the guardrails to use AI safely"
+    ],
+    "highlights": [
+      {
+        "title": "Business case first, tools last",
+        "desc": "We start from where you lose money and time, not from a demo. Every recommendation is tied to a number it is meant to move, so AI spend is an investment with a payback, not a science project."
+      },
+      {
+        "title": "Honest about what AI can't do yet",
+        "desc": "We will tell you which ideas are ready to ship and which are hype that will waste a quarter. Knowing what to skip is half the value of the exercise."
+      },
+      {
+        "title": "A roadmap you own and run",
+        "desc": "You keep the audit, the roadmap and the models as files. Whether we build it or your team does, the plan does not live in a locked tool or in our heads."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Audit",
+        "body": "We map your workflows, funnel and tooling to find where hours leak, response is slow, and output can't keep up, the places AI has real leverage."
+      },
+      {
+        "step": "02",
+        "title": "Prioritise",
+        "body": "We score every opportunity by impact and effort and rank them into a sequence: quick wins that fund the bigger bets, and the ideas worth waiting on."
+      },
+      {
+        "step": "03",
+        "title": "Plan",
+        "body": "Each use-case gets a build-or-buy call, a tool and cost estimate, the data it needs, and the metric it is accountable for. Decisions, not a wish list."
+      },
+      {
+        "step": "04",
+        "title": "Enable",
+        "body": "We hand over the roadmap and set the guardrails, who runs what, how to use AI safely, and the review cadence that keeps the plan honest as the tech moves."
+      }
+    ],
+    "metric": {
+      "value": "40+ hrs",
+      "label": "of manual work a month freed up by the first use-cases we ship"
+    },
+    "faqs": [
+      {
+        "q": "Is our business too small for AI?",
+        "a": "Usually the opposite. Small teams feel the leverage most, because AI can cover work you can't yet afford to hire for, support replies, content volume, lead follow-up. The trick is picking the one or two use-cases that pay back now, which is exactly what the roadmap does."
+      },
+      {
+        "q": "Will you push tools we don't need?",
+        "a": "No. We are tool-agnostic and often recommend the cheapest thing that works, or nothing, if the idea isn't ready. We make money building what earns its place, not reselling subscriptions."
+      },
+      {
+        "q": "What do we actually walk away with?",
+        "a": "A prioritised roadmap, a build-or-buy call and cost estimate per use-case, a data-readiness check and an ROI model, all files you own. Enough to start, whether we build it or your team does."
+      }
+    ]
+  },
+  {
+    "category": "ai",
+    "slug": "generative-content",
+    "name": "Generative Content & Creative",
+    "tagline": "Ten times the output, still unmistakably your brand.",
+    "intro": "Generative content is AI-assisted production — copy, images, video and variations — run through a brand system so the volume goes up without the quality or the voice going down.",
+    "overview": [
+      "The demand for content is infinite and your team is not. Every channel wants more, every campaign wants variants, and 'just post more' quietly burns out the people who make the good stuff. Generative AI changes the maths, but raw, un-directed AI output is exactly the beige, on-nobody's-brand sludge flooding the internet. The difference is the system around it.",
+      "We wrap generation in your brand. We build the prompts, style references, tone guides and review gates so the model produces on-voice copy, on-palette visuals and on-format video, first draft, not fortieth. Then a human edits. You get the speed of AI with a craftsperson's taste on top, across social, ads, blog, product and email, in a fraction of the time and cost.",
+      "The output is leverage, not slop. A month of on-brand posts, ad variations worth testing, and image and video concepts by the dozen, produced fast enough to keep every channel fed and refined enough that no one can tell a machine helped. You own the prompt library and the system, so the engine keeps running."
+    ],
+    "deliverables": [
+      "Brand-tuned prompt library and style references for copy, image and video generation",
+      "On-brand content produced at volume: social, ads, blog, email and product copy",
+      "AI image and short-form video concepts, generated and human-finished",
+      "Ad and headline variations built for testing at the scale paid media needs",
+      "A generation and human-review workflow your team can run, with quality gates",
+      "Tone, do's-and-don'ts and guardrails so AI output never drifts off-brand"
+    ],
+    "highlights": [
+      {
+        "title": "A system, not a prompt",
+        "desc": "Anyone can paste into ChatGPT. We build the reference library, voice guide and review gates that make the output reliably yours, so volume never costs you the brand."
+      },
+      {
+        "title": "Human taste on top",
+        "desc": "AI drafts, a person decides. Every piece gets an editor's eye before it ships, so you get the speed without the tell-tale AI blandness."
+      },
+      {
+        "title": "Built to test",
+        "desc": "Generation shines where you need many good variants, ad angles, subject lines, hooks. We produce at the scale performance marketing actually needs to find winners."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Tune",
+        "body": "We distil your brand into prompts, style refs and a voice guide the models can follow, the difference between generic output and something recognisably you."
+      },
+      {
+        "step": "02",
+        "title": "Generate",
+        "body": "We produce at volume against real briefs, posts, variants, images, video concepts, using the system so first drafts land close, not miles off."
+      },
+      {
+        "step": "03",
+        "title": "Refine",
+        "body": "A human editor sharpens voice, fact-checks and kills anything that smells like a machine. Quality gates before anything reaches your feed."
+      },
+      {
+        "step": "04",
+        "title": "Scale",
+        "body": "We hand over the prompt library and workflow so your team can keep the engine running, and tune it as the brand and the models evolve."
+      }
+    ],
+    "metric": {
+      "value": "3×",
+      "label": "content output at the same cost, without losing the brand voice"
+    },
+    "faqs": [
+      {
+        "q": "Won't AI content hurt our brand or SEO?",
+        "a": "Un-edited, generic AI content can. That is the whole reason we wrap it in a brand system and a human edit. Google rewards useful, original content regardless of how it is made; what it punishes is thin, un-owned sludge, which is exactly what our process filters out."
+      },
+      {
+        "q": "Will it actually sound like us?",
+        "a": "That is the point of the tuning phase. We build the voice guide and references so the first draft lands close, and a human editor closes the gap. Most readers can't tell, and your brand stays intact."
+      },
+      {
+        "q": "Do you replace our writers and designers?",
+        "a": "No, we make them faster. AI handles volume and variations; your people (or ours) bring the taste, strategy and final call. The best results are human-directed, not human-free."
+      }
+    ]
+  },
+  {
+    "category": "ai",
+    "slug": "ai-chatbots",
+    "name": "AI Chatbots & Assistants",
+    "tagline": "A tireless first responder that answers, qualifies and books.",
+    "intro": "An AI assistant trained on your business, answering customers, qualifying leads and booking calls 24/7 on your site, WhatsApp or socials, in your voice, with a clean handoff to a human when it matters.",
+    "overview": [
+      "Most enquiries die in the gap between 'interested' and 'answered.' Someone lands at 11pm with a question, no one replies till morning, and they have already booked your competitor. Your team can't be everywhere at once, and a generic bot that loops 'I didn't understand that' is worse than nothing. The fix is an assistant that actually knows your business.",
+      "We build assistants grounded in your real content, your services, pricing logic, FAQs and docs, so answers are accurate, not hallucinated. It greets visitors, answers real questions, qualifies the serious ones, captures details, books the meeting, and hands off to a human with full context when a conversation needs one. On your website, WhatsApp, Instagram or all three, in your tone.",
+      "The result is a first responder that never sleeps and never tires of the same question. Faster replies turn more visitors into conversations, qualification saves your team from tyre-kickers, and every chat is logged so you learn what customers actually ask. You own the assistant and its knowledge base, and it gets smarter as you feed it."
+    ],
+    "deliverables": [
+      "Custom AI assistant trained on your services, pricing, FAQs and documents",
+      "Deployment on your website, plus WhatsApp / Instagram / Messenger as needed",
+      "Lead capture and qualification flow, with booking or CRM handoff built in",
+      "Human-handoff with full conversation context, so nothing gets lost",
+      "Guardrails and tone tuning so it stays on-brand and never invents answers",
+      "Analytics dashboard: top questions, drop-offs and captured leads"
+    ],
+    "highlights": [
+      {
+        "title": "Grounded, not guessing",
+        "desc": "The assistant answers from your actual content, with guardrails against making things up. It is a knowledgeable rep, not a bot that confidently invents a refund policy you don't have."
+      },
+      {
+        "title": "Qualifies while you sleep",
+        "desc": "It doesn't just answer, it asks the right questions, captures details, books the call and hands hot leads to your team with context. A 24/7 SDR on the front line."
+      },
+      {
+        "title": "Knows when to step aside",
+        "desc": "For anything sensitive or high-value it hands off to a human cleanly, passing the whole conversation so your team picks up mid-stride instead of starting over."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Feed",
+        "body": "We gather your services, pricing logic, FAQs and docs into a knowledge base the assistant answers from, so responses are yours, accurate and specific."
+      },
+      {
+        "step": "02",
+        "title": "Build",
+        "body": "We design the conversation, qualification and booking flows, tune the tone to your brand, and set guardrails on what it can and can't say."
+      },
+      {
+        "step": "03",
+        "title": "Deploy",
+        "body": "We ship it to your site and the channels your customers use, with lead capture wired to your CRM or inbox and a clean human handoff."
+      },
+      {
+        "step": "04",
+        "title": "Improve",
+        "body": "We watch the real conversations, close gaps in its knowledge and sharpen the flows, so it converts more and escalates less every month."
+      }
+    ],
+    "metric": {
+      "value": "24/7",
+      "label": "instant first response, most enquiries answered in seconds, any hour"
+    },
+    "faqs": [
+      {
+        "q": "Will it make things up?",
+        "a": "We build it to answer only from your approved content, with guardrails and a fallback to a human when it isn't sure. That grounding is the difference between a helpful assistant and a liability, and it is the core of how we build."
+      },
+      {
+        "q": "Which platforms can it live on?",
+        "a": "Your website is the usual home, but we deploy the same assistant to WhatsApp, Instagram DMs, Messenger and more, so it meets customers where they already are, with one shared brain behind all of them."
+      },
+      {
+        "q": "Does it replace our support or sales team?",
+        "a": "It handles the repetitive front line, the same questions, after-hours enquiries, first qualification, and hands the rest to your people with context. Your team spends its time on the conversations that actually need a human."
+      }
+    ]
+  },
+  {
+    "category": "ai",
+    "slug": "ai-automation",
+    "name": "AI Automation & Workflows",
+    "tagline": "Put the busywork on autopilot.",
+    "intro": "AI automation wires the repetitive glue-work of your business — replies, routing, data entry, reporting — into workflows that run themselves, so your team spends its hours on the work only people can do.",
+    "overview": [
+      "Every business runs on a hidden tax of manual glue-work: copying leads between tools, chasing the same follow-ups, formatting the same report, triaging the same inbox. It rarely shows up on a job description, but it quietly eats days a month and burns out good people on work a machine should do. AI automation is how you get those hours back.",
+      "We map the repetitive workflows across your marketing, sales and operations, then wire them together with automation platforms and AI in the loop, n8n, Make, Zapier and custom code where it is warranted. Leads route themselves and land in your CRM enriched. Enquiries get drafted replies. Reports build and send on schedule. Content gets repurposed across channels. AI handles the judgement calls that used to need a human; the automation handles the plumbing.",
+      "The result is a team that scales without headcount. The busywork runs quietly in the background, nothing falls through the cracks, and your people are freed for the strategy, relationships and craft that actually need them. You own the workflows and the documentation, so the machine keeps running whether or not we are in the room."
+    ],
+    "deliverables": [
+      "Workflow audit that surfaces the repetitive tasks worth automating first",
+      "Automations built across your stack (CRM, email, sheets, socials, support) with AI in the loop",
+      "Lead routing and enrichment: capture, qualify, enrich and assign, automatically",
+      "Auto-drafted replies, summaries and reports, triggered by real events",
+      "Content repurposing pipelines, one asset reshaped for every channel",
+      "Documentation and monitoring so workflows are transparent and yours to run"
+    ],
+    "highlights": [
+      {
+        "title": "AI where judgement is needed",
+        "desc": "Classic automation moves data; it can't decide. We add AI for the steps that need reading, summarising or drafting, so whole workflows run end-to-end instead of stalling at the human bit."
+      },
+      {
+        "title": "Wired into what you already use",
+        "desc": "We connect the tools you have, CRM, inbox, sheets, socials, rather than forcing a rip-and-replace. The automation fits your stack, not the other way round."
+      },
+      {
+        "title": "Hours back, every week",
+        "desc": "We target the tasks that eat the most time for the least thought. The payback shows up fast, in days returned to your team and things that stop slipping through the cracks."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Map",
+        "body": "We shadow your workflows to find the repetitive, rules-based and copy-paste tasks, the ones draining hours with no strategic value. Those are the targets."
+      },
+      {
+        "step": "02",
+        "title": "Design",
+        "body": "We design each automation end-to-end: the trigger, the steps, where AI makes a judgement call, and the safeguards for when something looks off."
+      },
+      {
+        "step": "03",
+        "title": "Build",
+        "body": "We wire it across your tools with the right platform for the job, test it on real data, and put a human check on anything high-stakes before it goes live."
+      },
+      {
+        "step": "04",
+        "title": "Hand over",
+        "body": "We document every workflow, set up monitoring and train your team to run and tweak them, so the system is transparent and yours, not a black box."
+      }
+    ],
+    "metric": {
+      "value": "40+ hrs",
+      "label": "of manual work removed per month across a typical automation set"
+    },
+    "faqs": [
+      {
+        "q": "What can actually be automated?",
+        "a": "Anything repetitive and rules-based: lead routing, data entry, follow-up emails, report building, content repurposing, inbox triage, review requests. If your team does it the same way every time, it is a candidate, and adding AI extends that to tasks that need light judgement, like summarising or drafting."
+      },
+      {
+        "q": "Is this reliable, or will it break?",
+        "a": "We build in checks, alerts and human approval on anything high-stakes, and we document everything. Automations are monitored, not fire-and-forget, so you will know if something needs attention before it becomes a problem."
+      },
+      {
+        "q": "Do we need to change our tools?",
+        "a": "Rarely. We connect the stack you already run. Only if a tool is actively blocking a high-value workflow will we suggest a swap, and always with the trade-off spelled out."
+      }
+    ]
+  },
+  {
+    "category": "ai",
+    "slug": "ai-search-aeo",
+    "name": "AI Search Optimisation (AEO)",
+    "tagline": "Be the answer AI gives, not just a blue link.",
+    "intro": "AEO — Answer Engine Optimisation — is SEO for the AI era: getting your brand cited and recommended inside ChatGPT, Perplexity, Gemini and Google's AI answers, where more and more buyers now start.",
+    "overview": [
+      "Search is splitting in two. A growing share of people no longer scroll ten blue links, they ask ChatGPT, Perplexity or Google's AI Overview and take the synthesised answer. If your brand isn't in that answer, you are invisible to them, no matter how well you rank on the old page. AEO is how you show up where the question actually gets answered now.",
+      "The rules are related to SEO but not the same. AI answer engines pull from content that is clear, well-structured, genuinely authoritative and easy to quote. We optimise for that: content shaped around the real questions buyers ask, structured so machines can extract it, marked up with schema, and backed by the mentions and citations across the web that teach an AI to trust and recommend you. We also track what these engines currently say about you, and fix it when it is wrong.",
+      "The result is presence in the new front door of the internet. When someone asks an AI for the best option in your category, or how to solve the problem you solve, your brand is in the answer, cited, recommended, linked. It compounds like SEO, it is an asset you own, and right now most of your competitors aren't even watching it."
+    ],
+    "deliverables": [
+      "AEO audit: what ChatGPT, Perplexity, Gemini and Google AI currently say about you and your category",
+      "Answer-shaped content built around the questions buyers ask AI, structured to be quoted",
+      "Schema and technical markup that helps engines extract and attribute your content",
+      "Entity and citation building, the mentions across the web that make AI trust you",
+      "Prompt and query tracking, so you can see and monitor your AI-search visibility",
+      "Fixes for wrong or outdated things AI currently says about your brand"
+    ],
+    "highlights": [
+      {
+        "title": "Optimised to be quoted, not just ranked",
+        "desc": "AI answers pull clear, structured, authoritative passages. We write and mark up content so engines can lift it cleanly and attribute it to you, the unit that wins in AI search."
+      },
+      {
+        "title": "We track what AI says about you",
+        "desc": "You can't fix what you can't see. We monitor how the major engines describe your brand and category, so you know where you stand and can correct the record."
+      },
+      {
+        "title": "Early to a channel still wide open",
+        "desc": "AEO is where SEO was fifteen years ago, huge upside, little competition. Moving now buys a lead most of your market hasn't realised it is already losing."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Diagnose",
+        "body": "We ask the AI engines the questions your buyers do, and record what they say, whether you are mentioned, what about you, and who is winning the answers instead."
+      },
+      {
+        "step": "02",
+        "title": "Shape",
+        "body": "We build content around those real questions, written and structured to be extracted and quoted, with schema that helps engines attribute it to you."
+      },
+      {
+        "step": "03",
+        "title": "Authority",
+        "body": "We build the entity signals and citations across the web, the mentions and references that teach an AI your brand is a credible answer worth recommending."
+      },
+      {
+        "step": "04",
+        "title": "Monitor",
+        "body": "We track your presence in AI answers over time, correct anything wrong, and keep shaping content as the engines and the questions evolve."
+      }
+    ],
+    "metric": {
+      "value": "Cited",
+      "label": "in AI answers for the questions your buyers ask, where competitors aren't"
+    },
+    "faqs": [
+      {
+        "q": "Is AEO just SEO with a new name?",
+        "a": "They overlap, and good SEO helps, but they are not identical. AI engines reward clear, quotable, well-structured, authoritative content and citations more than raw keywords and backlinks. Optimising for a synthesised answer is a different target than optimising for a ranked page, and we do both."
+      },
+      {
+        "q": "Can you really influence what ChatGPT says?",
+        "a": "Not overnight, and not by trickery, but yes. These engines learn from the content and citations across the web. By shaping authoritative, quotable content and building the right mentions, you measurably improve how and how often you show up. We track it so you can see the movement."
+      },
+      {
+        "q": "Why bother now?",
+        "a": "Because a real and growing share of buyers already start with AI, and almost none of your competitors are optimising for it. It is the rare window where moving early buys outsized visibility for a fraction of what the same lead costs in paid search."
+      }
+    ]
+  },
+  {
+    "category": "ai",
+    "slug": "custom-ai-solutions",
+    "name": "Custom AI Solutions",
+    "tagline": "AI built into your product, not bolted on.",
+    "intro": "When an off-the-shelf tool won't cut it, we build the custom thing — RAG assistants over your data, AI features inside your product, model integrations and internal tools — designed, built and wired into your stack.",
+    "overview": [
+      "Sometimes the use-case is yours alone. A support assistant that has to reason over ten thousand of your documents. An AI feature your users would pay for. An internal tool that turns a specialist's afternoon into a click. No SaaS subscription fits, because the value is in your data, your workflow, your product. That is where a custom build earns its keep.",
+      "We design and build AI solutions end-to-end. Retrieval-augmented (RAG) assistants that answer accurately over your private knowledge. AI features embedded in your app via the OpenAI, Anthropic and open-source model APIs. Internal tools that automate expert judgement. We handle the architecture, the prompt and retrieval engineering, the guardrails and evaluation, and the integration into the systems you already run, with the same taste for craft and performance we bring to everything.",
+      "The result is a durable asset, not a rented feature. It is built around your data and your workflow, owned by you, and designed to be maintained and extended as you grow. Because brand, web and AI sit under one roof here, the thing we build looks and feels like your product, not a grafted-on widget from a different world."
+    ],
+    "deliverables": [
+      "Solution design and technical scoping, with a build-or-buy call before a line of code",
+      "RAG assistant or AI feature built over your data, docs or product",
+      "Model integration (OpenAI, Anthropic, open-source) via secure, monitored APIs",
+      "Prompt, retrieval and guardrail engineering, with evaluation to keep answers reliable",
+      "Integration into your app, site or internal tools, and your data sources",
+      "Documentation, monitoring and a handover so your team can run and extend it"
+    ],
+    "highlights": [
+      {
+        "title": "Grounded in your data",
+        "desc": "RAG means the AI answers from your actual documents and data, with citations, accurate and specific, not a generic model guessing. The value no off-the-shelf tool can match is that it knows your world."
+      },
+      {
+        "title": "Engineered, not prompted",
+        "desc": "Real products need evaluation, guardrails, fallbacks and monitoring, not a clever prompt and hope. We build for reliability and cost, and test against real cases before it ships."
+      },
+      {
+        "title": "Looks like your product",
+        "desc": "Design and engineering under one roof means the AI feature feels native, your brand, your UX, your standards, instead of a bolted-on widget that breaks the experience."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Scope",
+        "body": "We pin down the use-case, the data it needs and what 'good' looks like, and give you an honest build-or-buy call before committing to a build."
+      },
+      {
+        "step": "02",
+        "title": "Prototype",
+        "body": "We build a working proof over your real data fast, so you can see quality and cost on your actual use-case before we invest in the full thing."
+      },
+      {
+        "step": "03",
+        "title": "Build",
+        "body": "We engineer the solution, retrieval, prompts, guardrails, evaluation, and integrate it into your product or tools, built for reliability and sane running costs."
+      },
+      {
+        "step": "04",
+        "title": "Ship & support",
+        "body": "We deploy with monitoring, document how it works, and hand it over, with the option to keep improving it as your data and needs grow."
+      }
+    ],
+    "metric": {
+      "value": "Yours",
+      "label": "a built-and-owned AI asset wired to your data, not a rented feature"
+    },
+    "faqs": [
+      {
+        "q": "What's RAG, and why does it matter?",
+        "a": "Retrieval-augmented generation lets an AI answer from your specific documents and data instead of only what it learned in training. It is the difference between an assistant that actually knows your product, policies and history, with citations, and a generic model that guesses. For most business use-cases it is the piece that makes AI trustworthy."
+      },
+      {
+        "q": "Which models do you build on?",
+        "a": "Whatever fits the job, OpenAI and Anthropic for capability, open-source models where privacy or cost demands it. We are model-agnostic and design so you are not locked to one provider if the landscape shifts."
+      },
+      {
+        "q": "Is our data safe?",
+        "a": "Yes, we architect for it. Your data stays in systems you control, we use providers' no-training options and secure APIs, and for sensitive cases we can build on models that run in your own environment. Security and privacy are part of the design, not an afterthought."
+      }
+    ]
   }
 ] as const;

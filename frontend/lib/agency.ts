@@ -445,4 +445,20 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       { slug: "ui-ux", name: "UI / UX Design", desc: "Product and site experiences people actually finish." },
     ],
   },
+  {
+    slug: "ai",
+    index: "05",
+    name: "AI",
+    tagline: "Intelligence, put to work",
+    intro:
+      "AI without the hype. We build the assistants, automations and AI-ready content that actually move your numbers — wired into the brand, site and funnel you already have.",
+    items: [
+      { slug: "ai-strategy", name: "AI Strategy & Consulting", desc: "Find where AI actually moves your numbers — and a roadmap to get there." },
+      { slug: "generative-content", name: "Generative Content & Creative", desc: "On-brand copy, images and video produced at a pace humans can't match." },
+      { slug: "ai-chatbots", name: "AI Chatbots & Assistants", desc: "Custom assistants that answer, qualify and convert around the clock." },
+      { slug: "ai-automation", name: "AI Automation & Workflows", desc: "Wire the busywork to AI — replies, routing and reporting on autopilot." },
+      { slug: "ai-search-aeo", name: "AI Search Optimisation (AEO)", desc: "Get cited by ChatGPT, Perplexity and Google's AI answers, not just ranked." },
+      { slug: "custom-ai-solutions", name: "Custom AI Solutions", desc: "RAG assistants, integrations and AI features built into your product." },
+    ],
+  },
 ];
