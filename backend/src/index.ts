@@ -21,10 +21,15 @@ app.use(
       // allow same-origin / curl / server-to-server (no Origin header)
       if (!origin) return cb(null, true);
       if (allowed.has(origin)) return cb(null, true);
-      // allow any Vercel preview/production domain
+      // allow any Vercel / Netlify preview/production domain
       try {
         const host = new URL(origin).hostname;
-        if (host.endsWith(".vercel.app") || host === "localhost" || host.endsWith(".localhost"))
+        if (
+          host.endsWith(".vercel.app") ||
+          host.endsWith(".netlify.app") ||
+          host === "localhost" ||
+          host.endsWith(".localhost")
+        )
           return cb(null, true);
       } catch {
         /* ignore */

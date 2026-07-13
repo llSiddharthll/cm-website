@@ -1,9 +1,5 @@
-/** Canonical site origin. Set NEXT_PUBLIC_SITE_URL to the real domain in prod;
-    falls back to the Vercel production URL, then the current deploy alias. */
+/** Canonical site origin. Override with NEXT_PUBLIC_SITE_URL if needed;
+    defaults to the production domain. */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "") ||
-  "https://cm-website-five.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://thecreativemonk.in"
 ).replace(/\/$/, "");

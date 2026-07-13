@@ -1,7 +1,17 @@
 import type { NextConfig } from "next";
+import legacyRedirects from "./lib/legacy-redirects.json";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // 301s from the old WordPress URLs (posts, pages, service pages) to the new
+  // structure — preserves SEO + old links after the domain moves to this site.
+  async redirects() {
+    return legacyRedirects as {
+      source: string;
+      destination: string;
+      permanent: boolean;
+    }[];
+  },
   // three / R3F ship modern ESM; transpiling keeps older bundler paths happy.
   transpilePackages: ["three"],
   images: {
