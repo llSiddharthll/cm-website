@@ -42,6 +42,8 @@ import {
   ROLES,
   CAREERS,
   SERVICE_CATEGORIES,
+  INDUSTRY_PAGES,
+  LOCATION_PAGES,
   type GridService,
   type VideoProject,
   type Review,
@@ -50,6 +52,8 @@ import {
   type Careers,
   type Post,
   type ServiceCategory,
+  type IndustryPage,
+  type LocationPage,
 } from "./agency";
 import POSTS_DATA from "./blog-posts.json";
 
@@ -294,6 +298,30 @@ export async function getServicePage(
 ): Promise<(ServicePage & Meta) | null> {
   const all = await getServicePages();
   return all.find((p) => p.category === category && p.slug === slug) ?? null;
+}
+
+/* ───────────── Industry pages ───────────── */
+
+export const getIndustryPages = () =>
+  collection<IndustryPage>("industry_pages", INDUSTRY_PAGES);
+
+export async function getIndustryPage(
+  slug: string,
+): Promise<(IndustryPage & Meta) | null> {
+  const all = await getIndustryPages();
+  return all.find((p) => p.slug === slug) ?? null;
+}
+
+/* ───────────── Location pages ───────────── */
+
+export const getLocationPages = () =>
+  collection<LocationPage>("location_pages", LOCATION_PAGES);
+
+export async function getLocationPage(
+  slug: string,
+): Promise<(LocationPage & Meta) | null> {
+  const all = await getLocationPages();
+  return all.find((p) => p.slug === slug) ?? null;
 }
 
 /* single lookups */

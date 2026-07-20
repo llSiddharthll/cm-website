@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { CASES } from "@/lib/content";
-import { SERVICE_CATEGORIES } from "@/lib/agency";
+import { SERVICE_CATEGORIES, INDUSTRY_PAGES, LOCATION_PAGES } from "@/lib/agency";
 import { POSTS } from "@/lib/cms";
 import { SITE_URL as BASE } from "@/lib/site";
 
@@ -9,6 +9,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/about",
     "/services",
+    "/industries",
+    "/locations",
     "/portfolio",
     "/work",
     "/blog",
@@ -29,6 +31,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ]);
 
+  const industries = INDUSTRY_PAGES.map((p) => ({
+    url: `${BASE}/industries/${p.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  const locations = LOCATION_PAGES.map((p) => ({
+    url: `${BASE}/locations/${p.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   const cases = CASES.map((c) => ({
     url: `${BASE}/work/${c.id}`,
     changeFrequency: "yearly" as const,
@@ -41,5 +55,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...services, ...cases, ...posts];
+  return [...staticRoutes, ...services, ...industries, ...locations, ...cases, ...posts];
 }

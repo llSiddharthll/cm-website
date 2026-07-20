@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUp } from "lucide-react";
-import { getSite, getFooterGroups, getLocations } from "@/lib/cms";
+import { getSite, getFooterGroups } from "@/lib/cms";
 import { Logo } from "@/components/layout/Logo";
 import { Magnetic } from "@/components/fx/Magnetic";
 import { NewsletterForm } from "./NewsletterForm";
@@ -8,10 +8,9 @@ import { NewsletterForm } from "./NewsletterForm";
 const YEAR = 2026;
 
 export async function Footer() {
-  const [SITE, footerGroups, LOCATIONS] = await Promise.all([
+  const [SITE, footerGroups] = await Promise.all([
     getSite(),
     getFooterGroups(),
-    getLocations(),
   ]);
   return (
     <footer className="relative isolate overflow-hidden bg-dark text-on-ink">
@@ -48,7 +47,7 @@ export async function Footer() {
 
         {/* ── Columns ── */}
         <div className="grid12 gap-x-8 gap-y-12 py-[clamp(3rem,5vw,4.5rem)]">
-          {/* brand + newsletter + socials */}
+          {/* brand + newsletter + socials + contact */}
           <div className="col-span-12 md:col-span-4">
             <Logo invert />
             <p className="mt-5 max-w-xs text-on-ink-2">
@@ -56,7 +55,29 @@ export async function Footer() {
               {SITE.city.split(" · ")[0]}.
             </p>
             <NewsletterForm />
-            <ul className="mt-7 flex flex-wrap gap-x-5 gap-y-2">
+
+            {/* contact */}
+            <ul className="mt-7 space-y-2 text-on-ink-2">
+              <li>
+                <a
+                  href={`mailto:${SITE.email}`}
+                  className="transition-colors hover:text-orange"
+                >
+                  {SITE.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`tel:${SITE.phoneHref}`}
+                  className="transition-colors hover:text-orange"
+                >
+                  {SITE.phone}
+                </a>
+              </li>
+              <li className="max-w-[26ch] text-on-ink-3">{SITE.address}</li>
+            </ul>
+
+            <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
               {SITE.socials.map((s) => (
                 <li key={s.label}>
                   <a
@@ -72,7 +93,7 @@ export async function Footer() {
             </ul>
           </div>
 
-          {/* link groups */}
+          {/* link groups — Company · Services · Industries · Locations */}
           {footerGroups.map((group) => (
             <div key={group.title} className="col-span-6 md:col-span-2">
               <span className="label mb-5 block text-on-ink-3">{group.title}</span>
@@ -90,44 +111,6 @@ export async function Footer() {
               </ul>
             </div>
           ))}
-
-          {/* contact */}
-          <div className="col-span-6 md:col-span-2">
-            <span className="label mb-5 block text-on-ink-3">Contact</span>
-            <ul className="space-y-3 text-on-ink-2">
-              <li>
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="transition-colors hover:text-orange"
-                >
-                  {SITE.email}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`tel:${SITE.phoneHref}`}
-                  className="transition-colors hover:text-orange"
-                >
-                  {SITE.phone}
-                </a>
-              </li>
-              <li className="max-w-[16ch] text-on-ink-3">{SITE.address}</li>
-            </ul>
-          </div>
-
-          {/* locations */}
-          <div className="col-span-6 md:col-span-2">
-            <span className="label mb-5 block text-on-ink-3">Based in</span>
-            <ul className="space-y-3">
-              {[...LOCATIONS.india.slice(0, 3), ...LOCATIONS.global.slice(0, 3)].map(
-                (c) => (
-                  <li key={c} className="text-on-ink-2">
-                    {c}
-                  </li>
-                ),
-              )}
-            </ul>
-          </div>
         </div>
       </div>
 

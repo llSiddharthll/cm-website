@@ -10,6 +10,9 @@ build/
 dist/
 next-env.d.ts
 
+# netlify (local build/deploy artifacts)
+.netlify/
+
 # misc
 .DS_Store
 *.pem
