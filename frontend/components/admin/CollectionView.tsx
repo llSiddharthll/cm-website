@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Plus, Search, Pencil, Trash2, ArrowUpDown } from "lucide-react";
 import { toast } from "sonner";
 import type { Collection, Entry, Field } from "@/lib/admin/types";
+import { stripHtml } from "@/lib/admin/html";
 import * as api from "@/lib/admin/api";
 import { Button, Badge, Input, Spinner, Card } from "./ui";
 import { Select } from "./Select";
@@ -31,7 +32,9 @@ function cellValue(field: Field, value: unknown) {
     case "select":
       return <Badge tone={String(value)}>{String(value)}</Badge>;
     default: {
-      const s = String(value);
+      // Rich text and legacy imported values carry markup — show readable text,
+      // never raw tags, in the table.
+      const s = stripHtml(value);
       return <span className="line-clamp-1 text-zinc-300">{s.length > 80 ? s.slice(0, 80) + "…" : s}</span>;
     }
   }
@@ -110,8 +113,10 @@ export function CollectionView({ collection }: { collection: Collection }) {
     }
     if (titleField) {
       out.sort((a, b) => {
-        const av = String(a[titleField] ?? "");
-        const bv = String(b[titleField] ?? "");
+        // sort on the readable text, so titles carrying stray markup
+        // (legacy imports) don't all clump under "<"
+        const av = stripHtml(a[titleField] ?? "");
+        const bv = stripHtml(b[titleField] ?? "");
         return sortAsc ? av.localeCompare(bv) : bv.localeCompare(av);
       });
     }
@@ -159,7 +164,7 @@ export function CollectionView({ collection }: { collection: Collection }) {
                   <dd className="line-clamp-1 text-zinc-300">
                     {Array.isArray(singleton?.[f.name])
                       ? (singleton?.[f.name] as unknown[]).length + " items"
-                      : String(singleton?.[f.name] ?? "—")}
+                      : stripHtml(singleton?.[f.name] ?? "") || "—"}
                   </dd>
                 </div>
               ))}

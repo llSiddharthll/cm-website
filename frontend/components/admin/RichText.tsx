@@ -103,8 +103,11 @@ export function RichText({
   }
 
   return (
-    <div className="overflow-hidden rounded-md border border-zinc-700 bg-zinc-900 transition-colors focus-within:border-orange/50">
-      <div className="flex flex-wrap items-center gap-0.5 border-b border-zinc-800 bg-zinc-950/60 p-1.5">
+    // Bounded height + internal scrolling: the body scrolls inside the editor
+    // instead of pushing the toolbar off-screen, so formatting controls stay
+    // reachable no matter how long the content gets.
+    <div className="flex max-h-[65vh] flex-col overflow-hidden rounded-md border border-zinc-700 bg-zinc-900 transition-colors focus-within:border-orange/50">
+      <div className="sticky top-0 z-10 flex shrink-0 flex-wrap items-center gap-0.5 border-b border-zinc-800 bg-zinc-950 p-1.5">
         <Btn onClick={() => editor.chain().focus().toggleBold().run()} active={editor.isActive("bold")} label="Bold">
           <Bold className="size-4" />
         </Btn>
@@ -148,7 +151,9 @@ export function RichText({
           <Redo2 className="size-4" />
         </Btn>
       </div>
-      <EditorContent editor={editor} />
+      <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+        <EditorContent editor={editor} />
+      </div>
     </div>
   );
 }

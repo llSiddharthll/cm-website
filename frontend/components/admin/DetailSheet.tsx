@@ -2,6 +2,7 @@
 
 import { Pencil } from "lucide-react";
 import type { Collection, Entry, Field } from "@/lib/admin/types";
+import { stripHtml, looksLikeHtml } from "@/lib/admin/html";
 import { Sheet } from "./Sheet";
 import { Badge, Button } from "./ui";
 
@@ -34,6 +35,20 @@ function FieldValue({ field, value }: { field: Field; value: unknown }) {
           ))}
         </div>
       );
+    case "richtext":
+      // Author-written markup — render it instead of printing the tags.
+      return (
+        <div
+          className="cm-prose max-h-80 max-w-none overflow-y-auto overscroll-contain rounded-lg border border-zinc-800 bg-zinc-800/40 px-3 py-2.5 text-sm text-zinc-300"
+          dangerouslySetInnerHTML={{ __html: String(value) }}
+        />
+      );
+    case "textarea":
+      return (
+        <p className="whitespace-pre-wrap text-sm text-zinc-300">
+          {stripHtml(value) || String(value)}
+        </p>
+      );
     case "object":
       return (
         <div className="rounded-lg border border-zinc-800 bg-zinc-800/50 p-2 text-sm text-zinc-300">
@@ -56,7 +71,13 @@ function FieldValue({ field, value }: { field: Field; value: unknown }) {
         </div>
       );
     default:
-      return <span className="text-sm text-zinc-300">{String(value)}</span>;
+      // Some legacy WordPress-imported values (e.g. titles) carry stray markup —
+      // show the readable text rather than the tags.
+      return (
+        <span className="text-sm text-zinc-300">
+          {looksLikeHtml(value) ? stripHtml(value) : String(value)}
+        </span>
+      );
   }
 }
 
@@ -73,7 +94,9 @@ export function DetailSheet({
   onOpenChange: (v: boolean) => void;
   onEdit: () => void;
 }) {
-  const title = entry ? String(entry[collection.titleField || "name"] ?? collection.name) : "";
+  const title = entry
+    ? stripHtml(entry[collection.titleField || "name"] ?? collection.name)
+    : "";
   return (
     <Sheet
       open={open}
