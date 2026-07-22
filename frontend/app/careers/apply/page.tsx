@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { getRoles } from "@/lib/cms";
+import { getCareers } from "@/lib/cms";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { Reveal } from "@/components/ui/Reveal";
@@ -15,14 +15,17 @@ export const metadata: Metadata = {
     "Apply to join Creative Monk — a short form to tell us who you are and what you'd build here.",
 };
 
-export default async function ApplyPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ role?: string }>;
-}) {
-  const { role } = await searchParams;
-  const ROLES = await getRoles();
-  const titles = ROLES.map((r) => r.title);
+/** Env fallbacks, so an embed can be set without touching the CMS. */
+const ENV_EMBED_URL = process.env.NEXT_PUBLIC_CAREERS_EMBED_URL || "";
+const ENV_EMBED_CODE = process.env.NEXT_PUBLIC_CAREERS_EMBED_CODE || "";
+
+export default async function ApplyPage() {
+  const careers = await getCareers();
+
+  // CMS wins; env is the fallback. Either replaces the built-in form.
+  const embedUrl = careers.applyEmbedUrl || ENV_EMBED_URL;
+  const embedCode = careers.applyEmbedCode || ENV_EMBED_CODE;
+  const embedHeight = careers.applyEmbedHeight || 1100;
 
   return (
     <>
@@ -38,7 +41,7 @@ export default async function ApplyPage({
                 className="label group/back inline-flex items-center gap-2 text-on-ink-2 transition-colors hover:text-orange"
               >
                 <ArrowLeft className="size-4 transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/back:-translate-x-1" />
-                All roles
+                Back to careers
               </Link>
             </Reveal>
             <Reveal delay={0.05}>
@@ -46,15 +49,7 @@ export default async function ApplyPage({
             </Reveal>
             <Reveal delay={0.08}>
               <h1 className="display-tight mt-4 max-w-[16ch] text-[length:var(--text-h2)] text-on-ink">
-                {role ? (
-                  <>
-                    Apply — <span className="text-orange">{role}</span>
-                  </>
-                ) : (
-                  <>
-                    Apply to Creative Monk<span className="text-orange">.</span>
-                  </>
-                )}
+                Apply to Creative Monk<span className="text-orange">.</span>
               </h1>
             </Reveal>
             <Reveal
@@ -68,11 +63,29 @@ export default async function ApplyPage({
           </div>
         </section>
 
-        {/* ── Form ── */}
+        {/* ── Form — embedded (external ATS / Google Form) or built-in ── */}
         <section className="bg-dark section pt-0">
           <div className="shell">
             <div className="mx-auto max-w-3xl border-t border-line-invert pt-12">
-              <ApplicationForm roles={titles} initialRole={role} />
+              {embedCode ? (
+                <div
+                  className="cm-embed [&_iframe]:w-full [&_iframe]:rounded-lg [&_iframe]:border-0"
+                  // Admin-authored embed snippet from the CMS — trusted content.
+                  dangerouslySetInnerHTML={{ __html: embedCode }}
+                />
+              ) : embedUrl ? (
+                <iframe
+                  src={embedUrl}
+                  title="Application form"
+                  loading="lazy"
+                  height={embedHeight}
+                  className="w-full rounded-lg border-0 bg-dark-2"
+                  sandbox="allow-forms allow-scripts allow-same-origin allow-popups"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
+              ) : (
+                <ApplicationForm />
+              )}
             </div>
           </div>
         </section>

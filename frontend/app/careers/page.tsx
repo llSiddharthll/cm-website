@@ -15,7 +15,6 @@ import {
 } from "lucide-react";
 import { RATINGS } from "@/lib/agency";
 import {
-  getRoles,
   getBenefits,
   getCultureStats,
   getCareers,
@@ -28,14 +27,13 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 import { Aurora } from "@/components/fx/Aurora";
-import { RolesBoard } from "@/components/careers/RolesBoard";
 
 export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join Creative Monk — a small, in-house studio in Chandigarh that values craft, ownership and the long game. See our open roles and apply.",
+    "Join Creative Monk — a small, in-house studio in Chandigarh that values craft, ownership and the long game. Send us an application.",
 };
 
 const perkIcon = (label: string): LucideIcon => {
@@ -52,8 +50,7 @@ const perkIcon = (label: string): LucideIcon => {
 };
 
 export default async function CareersPage() {
-  const [ROLES, BENEFITS, CULTURE_STATS, careers, team] = await Promise.all([
-    getRoles(),
+  const [BENEFITS, CULTURE_STATS, careers, team] = await Promise.all([
     getBenefits(),
     getCultureStats(),
     getCareers(),
@@ -74,7 +71,7 @@ export default async function CareersPage() {
             <Reveal>
               <span className="mono inline-flex items-center gap-2 text-on-ink-3">
                 <span className="size-1.5 animate-pulse rounded-full bg-orange" />
-                {careers.heroKicker} · {ROLES.length} open roles
+                {careers.heroKicker} · We&rsquo;re always listening
               </span>
             </Reveal>
             <Reveal delay={0.05}>
@@ -91,14 +88,14 @@ export default async function CareersPage() {
               {careers.heroLede}
             </Reveal>
             <Reveal delay={0.15} className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
-              <Button href="#roles" variant="primary" size="lg">
-                See open roles
+              <Button href="/careers/apply" variant="primary" size="lg">
+                Send an application
               </Button>
               <Link
-                href="/careers/apply"
+                href="/contact"
                 className="label group inline-flex items-center gap-2 text-on-ink-2 transition-colors hover:text-orange"
               >
-                Send an open application
+                Get in touch
                 <ArrowRight className="size-4 transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1" />
               </Link>
             </Reveal>
@@ -241,33 +238,6 @@ export default async function CareersPage() {
                   </Reveal>
                 );
               })}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Open roles ── */}
-        <section id="roles" className="bg-dark section scroll-mt-24">
-          <div className="shell">
-            <div className="grid12 items-end gap-y-6">
-              <Reveal className="col-span-12 md:col-span-6">
-                <Eyebrow index="C" invert>
-                  {careers.rolesEyebrow}
-                </Eyebrow>
-                <h2 className="display mt-7 text-[length:var(--text-h2)] leading-none text-on-ink">
-                  {ROLES.length} ways in
-                </h2>
-              </Reveal>
-              <Reveal
-                as="span"
-                delay={0.1}
-                className="col-span-12 block max-w-md text-on-ink-2 md:col-span-5 md:col-start-8 md:text-right"
-              >
-                {careers.rolesIntro}
-              </Reveal>
-            </div>
-
-            <div className="mt-14">
-              <RolesBoard roles={ROLES} />
             </div>
           </div>
         </section>

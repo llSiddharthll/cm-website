@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Check, Loader2 } from "lucide-react";
 import { Magnetic } from "@/components/fx/Magnetic";
+import { Turnstile, turnstileEnabled } from "@/components/ui/Turnstile";
 
 const API = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "");
 const inputCls =
@@ -11,23 +12,23 @@ const labelCls = "label text-on-ink-3 mb-2 block";
 
 const OPEN = "Open application";
 
-export function ApplicationForm({
-  roles,
-  initialRole,
-}: {
-  roles: string[];
-  initialRole?: string;
-}) {
+export function ApplicationForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [error, setError] = useState("");
+  const [token, setToken] = useState("");
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (turnstileEnabled && !token) {
+      setStatus("error");
+      setError("Please complete the verification check.");
+      return;
+    }
     setStatus("loading");
     setError("");
     const fd = new FormData(e.currentTarget);
     const get = (k: string) => String(fd.get(k) || "").trim();
-    const role = get("role") || OPEN;
+    const role = OPEN;
     const application = {
       name: get("name"),
       email: get("email"),
@@ -38,6 +39,7 @@ export function ApplicationForm({
       resume: get("resume"),
       message: get("message"),
       source: "careers-apply",
+      turnstileToken: token,
     };
 
     // No backend configured → succeed gracefully (demo mode).
@@ -123,19 +125,6 @@ export function ApplicationForm({
         <input id="af-phone" name="phone" type="tel" placeholder="+91 …" className={inputCls} />
       </div>
       <div>
-        <label htmlFor="af-role" className={labelCls}>
-          Role
-        </label>
-        <select id="af-role" name="role" defaultValue={initialRole || OPEN} className={inputCls}>
-          {roles.map((r) => (
-            <option key={r} value={r}>
-              {r}
-            </option>
-          ))}
-          <option value={OPEN}>{OPEN}</option>
-        </select>
-      </div>
-      <div>
         <label htmlFor="af-portfolio" className={labelCls}>
           Portfolio / website
         </label>
@@ -172,6 +161,7 @@ export function ApplicationForm({
           className={inputCls}
         />
       </div>
+      <Turnstile onVerify={setToken} action="careers-apply" className="sm:col-span-2" />
       <div className="flex items-center gap-4 sm:col-span-2">
         <Magnetic>
           <button

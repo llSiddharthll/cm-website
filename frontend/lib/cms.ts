@@ -39,7 +39,6 @@ import {
   TEAM,
   VALUES,
   INDUSTRIES,
-  ROLES,
   CAREERS,
   SERVICE_CATEGORIES,
   INDUSTRY_PAGES,
@@ -48,7 +47,6 @@ import {
   type VideoProject,
   type Review,
   type Member,
-  type Role,
   type Careers,
   type Post,
   type ServiceCategory,
@@ -210,7 +208,6 @@ export async function getCaseSectionsFor(caseId: string): Promise<(CaseSection &
 export const getVideoProjects = () => collection<VideoProject>("video_projects", VIDEO_PROJECTS);
 export const getPosts = () => collection<Post>("posts", POSTS);
 export const getTeam = () => collection<Member>("team", TEAM);
-export const getRoles = () => collection<Role>("roles", ROLES);
 export const getReviews = () => collection<Review>("reviews", REVIEWS);
 
 export type Client = { name: string; sector?: string; works?: string[]; url?: string; logo?: string; featured?: boolean };

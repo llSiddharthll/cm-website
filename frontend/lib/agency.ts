@@ -295,29 +295,7 @@ export const INDUSTRIES = [
   { name: "Healthcare", blurb: "Trust-first marketing for clinics and wellness brands." },
 ] as const;
 
-/* ---- Open roles (careers) ---- */
-export type Role = {
-  title: string;
-  slug?: string;
-  team: string;
-  type: string;
-  location: string;
-  experience?: string;
-  salary?: string;
-  image?: string;
-  summary?: string;
-  description?: string; // rich-text HTML job description
-  applyUrl?: string;
-};
-
-/** URL-safe slug for a role (falls back to slugifying the title). */
-export const roleSlug = (r: Role) =>
-  r.slug ||
-  r.title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-
+/* ---- Careers ---- */
 export type Careers = {
   heroKicker: string;
   heroTitle1: string;
@@ -328,13 +306,18 @@ export type Careers = {
   whyMuted: string;
   perksEyebrow: string;
   perksHeading: string;
-  rolesEyebrow: string;
-  rolesIntro: string;
   ctaLead: string;
   ctaMuted: string;
   ctaBody: string;
   ctaButtonLabel: string;
   ctaButtonHref: string;
+  /** Embedded application form (external ATS, Google Form, Typeform…).
+      `applyEmbedUrl` renders a sandboxed iframe; `applyEmbedCode` accepts a raw
+      <iframe>/script snippet. Either one replaces the built-in form. */
+  applyEmbedUrl?: string;
+  applyEmbedCode?: string;
+  /** Iframe height in px when using applyEmbedUrl (default 1100). */
+  applyEmbedHeight?: number;
 };
 
 export const CAREERS: Careers = {
@@ -348,24 +331,13 @@ export const CAREERS: Careers = {
   whyMuted: "just sharp people shipping work they're proud to sign.",
   perksEyebrow: "Perks",
   perksHeading: "The things that keep good people building.",
-  rolesEyebrow: "Open roles",
-  rolesIntro:
-    "Don't fit one neatly? Apply to the closest — we hire for craft, not checklists.",
-  ctaLead: "Don't see your role?",
+  ctaLead: "Think you belong here?",
   ctaMuted: "Pitch us.",
   ctaBody:
     "If you're great at something we'll need, tell us what you'd build here. The best hires rarely come from a job post.",
   ctaButtonLabel: "Get in touch",
   ctaButtonHref: "/contact",
 };
-export const ROLES: Role[] = [
-  { title: "Senior Brand Designer", slug: "senior-brand-designer", team: "Design", type: "Full-time", location: "Chandigarh / Remote", experience: "3–6 years", salary: "₹75k–1.3L/mo", summary: "Lead identity systems from strategy to the last pixel." },
-  { title: "Performance Marketing Manager", slug: "performance-marketing-manager", team: "Growth", type: "Full-time", location: "Chandigarh", experience: "2–5 years", salary: "₹60k–1.1L/mo", summary: "Own paid growth across Google & Meta — profit, not vanity clicks." },
-  { title: "Frontend Engineer (React/Next.js)", slug: "frontend-engineer-react-nextjs", team: "Engineering", type: "Full-time", location: "Remote", experience: "2–5 years", salary: "₹85k–1.7L/mo", summary: "Build fast, accessible, conversion-shaped sites with Next.js." },
-  { title: "Motion Designer", slug: "motion-designer", team: "Video", type: "Full-time", location: "Chandigarh / Remote", experience: "2–4 years", salary: "₹50k–1L/mo", summary: "Cut reels, ads and brand films that travel." },
-  { title: "Content Strategist", slug: "content-strategist", team: "Content", type: "Full-time", location: "Remote", experience: "2–5 years", salary: "₹50k–1L/mo", summary: "Words that rank and persuade; content that compounds." },
-  { title: "Account Lead", slug: "account-lead", team: "Client Services", type: "Full-time", location: "Chandigarh", experience: "3–6 years", salary: "₹65k–1.25L/mo", summary: "The steady hand between client ambition and studio craft." },
-];
 
 /* ---- Blog ---- */
 export type Post = {

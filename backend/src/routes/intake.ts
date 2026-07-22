@@ -3,8 +3,12 @@ import { z } from "zod";
 import { asyncHandler } from "../lib/http";
 import { getCollection } from "../schema";
 import { createEntry, listEntries } from "../store";
+import { verifyTurnstile } from "../lib/turnstile";
 
 export const intakeRouter = Router();
+
+/** Captcha token accompanying a public submission (stripped before storage). */
+const turnstileToken = z.string().max(4096).optional().or(z.literal(""));
 
 const contactSchema = z.object({
   name: z.string().min(1).max(200),
@@ -15,12 +19,15 @@ const contactSchema = z.object({
   service: z.string().max(200).optional().or(z.literal("")),
   message: z.string().max(5000).optional().or(z.literal("")),
   source: z.string().max(120).optional().or(z.literal("")),
+  turnstileToken,
 });
 
 intakeRouter.post(
   "/contact",
   asyncHandler(async (req, res) => {
-    const input = contactSchema.parse(req.body);
+    const { turnstileToken: token, ...input } = contactSchema.parse(req.body);
+    if (!(await verifyTurnstile(token, req.ip)))
+      return res.status(400).json({ error: "Captcha verification failed" });
     const col = getCollection("leads")!;
     const entry = await createEntry(col, { ...input, status: "new" });
     res.status(201).json({ ok: true, id: entry._id });
@@ -37,12 +44,15 @@ const applySchema = z.object({
   resume: z.string().max(500).optional().or(z.literal("")),
   message: z.string().max(5000).optional().or(z.literal("")),
   source: z.string().max(120).optional().or(z.literal("")),
+  turnstileToken,
 });
 
 intakeRouter.post(
   "/apply",
   asyncHandler(async (req, res) => {
-    const input = applySchema.parse(req.body);
+    const { turnstileToken: token, ...input } = applySchema.parse(req.body);
+    if (!(await verifyTurnstile(token, req.ip)))
+      return res.status(400).json({ error: "Captcha verification failed" });
     const col = getCollection("applications")!;
     const entry = await createEntry(col, { ...input, status: "new" });
     res.status(201).json({ ok: true, id: entry._id });

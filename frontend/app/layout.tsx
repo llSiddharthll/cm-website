@@ -4,8 +4,9 @@ import "./globals.css";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { Cursor } from "@/components/fx/Cursor";
+import { Analytics } from "@/components/analytics/Analytics";
 import { cn } from "@/lib/utils";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, GSC_VERIFICATION } from "@/lib/site";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -50,6 +51,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
   },
+  ...(GSC_VERIFICATION
+    ? { verification: { google: GSC_VERIFICATION } }
+    : {}),
 };
 
 export const viewport: Viewport = {
@@ -101,6 +105,7 @@ export default function RootLayout({
       className={cn(archivo.variable, inter.variable, spaceMono.variable)}
     >
       <body>
+        <Analytics />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script
           type="application/ld+json"

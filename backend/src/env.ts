@@ -40,7 +40,15 @@ export const env = {
     password: process.env.ADMIN_PASSWORD || "change-me",
     name: process.env.ADMIN_NAME || "Creative Monk Admin",
   },
+
+  turnstile: {
+    // Cloudflare Turnstile secret key. When unset, captcha verification is
+    // skipped so public forms keep working before the keys are configured.
+    secretKey: process.env.TURNSTILE_SECRET_KEY || "",
+  },
 };
+
+export const turnstileEnabled = Boolean(env.turnstile.secretKey);
 
 export const cloudinaryEnabled = Boolean(
   env.cloudinary.cloudName && env.cloudinary.apiKey && env.cloudinary.apiSecret,

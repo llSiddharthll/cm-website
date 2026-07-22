@@ -7,6 +7,7 @@ import { SERVICES_12 } from "@/lib/agency";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Magnetic } from "@/components/fx/Magnetic";
+import { Turnstile, turnstileEnabled } from "@/components/ui/Turnstile";
 
 const inputCls =
   "w-full bg-dark-2 border border-line-invert px-4 py-3 text-on-ink placeholder:text-on-ink-3 focus:border-orange focus:outline-none transition-colors";
@@ -31,9 +32,15 @@ export function ContactForm({
 }) {
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [error, setError] = useState("");
+  const [token, setToken] = useState("");
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (turnstileEnabled && !token) {
+      setStatus("error");
+      setError("Please complete the verification check.");
+      return;
+    }
     setStatus("loading");
     setError("");
     const fd = new FormData(e.currentTarget);
@@ -45,6 +52,7 @@ export function ContactForm({
       service: String(fd.get("service") || ""),
       message: String(fd.get("message") || ""),
       source: "website-contact",
+      turnstileToken: token,
     };
 
     // No backend configured → succeed gracefully (demo mode).
@@ -241,6 +249,11 @@ export function ContactForm({
                     className={inputCls}
                   />
                 </div>
+                <Turnstile
+                  onVerify={setToken}
+                  action="contact"
+                  className="sm:col-span-2"
+                />
                 <div className="sm:col-span-2 flex items-center gap-4">
                   <Magnetic>
                     <button
