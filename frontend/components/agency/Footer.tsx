@@ -7,7 +7,13 @@ import { NewsletterForm } from "./NewsletterForm";
 
 const YEAR = 2026;
 
-export async function Footer() {
+/**
+ * Site footer.
+ *
+ * `hideCta` drops the "Let's build something you own" band — use it on pages
+ * that already end with their own CTA, so the two don't stack (e.g. /careers).
+ */
+export async function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
   const [SITE, footerGroups] = await Promise.all([
     getSite(),
     getFooterGroups(),
@@ -16,34 +22,36 @@ export async function Footer() {
     <footer className="relative isolate overflow-hidden bg-dark text-on-ink">
       <div className="shell relative z-10">
         {/* ── CTA band ── */}
-        <div className="grid12 items-center gap-y-10 border-b border-line-invert py-[clamp(3.5rem,7vw,6rem)]">
-          <div className="col-span-12 md:col-span-7">
-            <span className="label text-on-ink-3">Let’s talk</span>
-            <h2 className="display-tight mt-4 text-[length:var(--text-h2)] text-on-ink">
-              Let’s build something
-              <br />
-              you own
-              <span className="ml-2 inline-block size-[0.4em] translate-y-[0.02em] bg-orange align-baseline" />
-            </h2>
-          </div>
-          <div className="col-span-12 flex flex-col gap-4 md:col-span-4 md:col-start-9 md:items-end">
-            <a
-              href={`mailto:${SITE.email}`}
-              className="display text-[length:var(--text-h3)] text-on-ink transition-colors hover:text-orange"
-            >
-              {SITE.email}
-            </a>
-            <Magnetic>
-              <Link
-                href="/contact"
-                className="group label inline-flex h-12 items-center gap-2 bg-orange px-6 text-on-orange transition-colors hover:bg-orange-press"
+        {!hideCta && (
+          <div className="grid12 items-center gap-y-10 border-b border-line-invert py-[clamp(3.5rem,7vw,6rem)]">
+            <div className="col-span-12 md:col-span-7">
+              <span className="label text-on-ink-3">Let’s talk</span>
+              <h2 className="display-tight mt-4 text-[length:var(--text-h2)] text-on-ink">
+                Let’s build something
+                <br />
+                you own
+                <span className="ml-2 inline-block size-[0.4em] translate-y-[0.02em] bg-orange align-baseline" />
+              </h2>
+            </div>
+            <div className="col-span-12 flex flex-col gap-4 md:col-span-4 md:col-start-9 md:items-end">
+              <a
+                href={`mailto:${SITE.email}`}
+                className="display text-[length:var(--text-h3)] text-on-ink transition-colors hover:text-orange"
               >
-                Book a strategy call
-                <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-              </Link>
-            </Magnetic>
+                {SITE.email}
+              </a>
+              <Magnetic>
+                <Link
+                  href="/contact"
+                  className="group label inline-flex h-12 items-center gap-2 bg-orange px-6 text-on-orange transition-colors hover:bg-orange-press"
+                >
+                  Book a strategy call
+                  <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                </Link>
+              </Magnetic>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* ── Columns ── */}
         <div className="grid12 gap-x-8 gap-y-12 py-[clamp(3rem,5vw,4.5rem)]">

@@ -260,7 +260,8 @@ export default async function CareersPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      {/* page already ends with its own CTA band — don't stack a second one */}
+      <Footer hideCta />
     </>
   );
 }
