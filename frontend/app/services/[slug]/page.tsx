@@ -10,10 +10,12 @@ import {
   getServicesGrid,
   getSite,
 } from "@/lib/cms";
+import { buildMetadata, breadcrumbSchema, serviceSchema } from "@/lib/seo";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { ContactForm } from "@/components/agency/ContactForm";
 import { PageHero } from "@/components/agency/PageHero";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
@@ -32,7 +34,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const cat = await getServiceCategory(slug);
   if (!cat) return { title: "Services" };
-  return { title: `${cat.name} — Services`, description: cat.intro };
+  return buildMetadata({
+    title: `${cat.name} — Services`,
+    description: cat.intro,
+    path: `/services/${cat.slug}`,
+  });
 }
 
 export default async function ServiceCategoryPage({
@@ -54,6 +60,20 @@ export default async function ServiceCategoryPage({
 
   return (
     <>
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: cat.name,
+            description: cat.intro,
+            path: `/services/${cat.slug}`,
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: cat.name, path: `/services/${cat.slug}` },
+          ]),
+        ]}
+      />
       <span id="top" className="absolute top-0" aria-hidden />
       <Header dark />
       <main className="bg-dark text-on-ink">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { getIndustryPages, getServicesGrid, getSite } from "@/lib/cms";
@@ -9,11 +10,12 @@ import { PageHero } from "@/components/agency/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Industries",
   description:
     "Brand, web, content and performance, tuned to the way your industry actually buys — real estate, D2C, hospitality, FMCG, healthcare and SaaS.",
-};
+  path: "/industries",
+});
 
 export default async function IndustriesPage() {
   const [industries, servicesGrid, site] = await Promise.all([

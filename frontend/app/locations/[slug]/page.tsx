@@ -8,9 +8,16 @@ import {
   getServicesGrid,
   getSite,
 } from "@/lib/cms";
+import {
+  buildMetadata,
+  breadcrumbSchema,
+  faqSchema,
+  localBusinessSchema,
+} from "@/lib/seo";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { ContactForm } from "@/components/agency/ContactForm";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Reveal, RevealLines } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Magnetic } from "@/components/fx/Magnetic";
@@ -30,10 +37,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const page = await getLocationPage(slug);
   if (!page) return { title: "Locations" };
-  return {
+  return buildMetadata({
     title: `Creative & Digital Marketing Agency in ${page.city}`,
     description: page.intro,
-  };
+    path: `/locations/${page.slug}`,
+  });
 }
 
 export default async function LocationPageView({
@@ -54,6 +62,21 @@ export default async function LocationPageView({
 
   return (
     <>
+      <JsonLd
+        data={[
+          localBusinessSchema({
+            city: page.city,
+            region: page.region,
+            path: `/locations/${page.slug}`,
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Locations", path: "/locations" },
+            { name: page.city, path: `/locations/${page.slug}` },
+          ]),
+          ...(page.faqs?.length ? [faqSchema(page.faqs)] : []),
+        ]}
+      />
       <span id="top" className="absolute top-0" aria-hidden />
       <Header dark />
       <main className="bg-dark text-on-ink">

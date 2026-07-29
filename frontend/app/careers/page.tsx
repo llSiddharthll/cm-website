@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -30,11 +31,12 @@ import { Aurora } from "@/components/fx/Aurora";
 
 export const revalidate = 60;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Careers",
   description:
     "Join Creative Monk — a small, in-house studio in Chandigarh that values craft, ownership and the long game. Send us an application.",
-};
+  path: "/careers",
+});
 
 const perkIcon = (label: string): LucideIcon => {
   const s = label.toLowerCase();

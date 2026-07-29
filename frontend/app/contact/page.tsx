@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { PageHero } from "@/components/agency/PageHero";
@@ -7,11 +8,12 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { getSite, getLocations, getServicesGrid } from "@/lib/cms";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Contact",
   description:
     "Tell us where you want to grow. We come back with a clear, honest next step — not a hard sell. Replies within one business day.",
-};
+  path: "/contact",
+});
 
 const NEXT_STEPS = [
   {

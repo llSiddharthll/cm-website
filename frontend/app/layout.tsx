@@ -5,8 +5,10 @@ import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { Cursor } from "@/components/fx/Cursor";
 import { Analytics } from "@/components/analytics/Analytics";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { cn } from "@/lib/utils";
 import { SITE_URL, GSC_VERIFICATION } from "@/lib/site";
+import { organizationSchema, websiteSchema } from "@/lib/seo";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -44,12 +46,28 @@ export const metadata: Metadata = {
     "performance marketing",
     "Creative Monk",
   ],
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Creative Monk — Growth, with intention.",
     description:
       "Brand, web, performance marketing and motion — engineered for compounding growth.",
     type: "website",
     locale: "en_IN",
+    url: SITE_URL,
+    siteName: "Creative Monk",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Creative Monk — Growth, with intention.",
+    description:
+      "Brand, web, performance marketing and motion — engineered for compounding growth.",
+    images: ["/opengraph-image"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
   ...(GSC_VERIFICATION
     ? { verification: { google: GSC_VERIFICATION } }
@@ -68,34 +86,6 @@ export const viewport: Viewport = {
 // data-theme on <html> so there's no flash of the wrong theme.
 const themeScript = `(function(){try{var p=new URLSearchParams(location.search).get('theme');if(p==='light'||p==='dark'||p==='system'){localStorage.setItem('cm-theme',p);}var t=localStorage.getItem('cm-theme')||'system';var d=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
 
-const orgJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Creative Monk",
-  url: SITE_URL,
-  logo: `${SITE_URL}/logo-mark.png`,
-  description:
-    "A full-service creative & digital growth studio from Chandigarh, India — brand, web, performance marketing and motion under one roof.",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Zirakpur",
-    addressRegion: "Punjab",
-    addressCountry: "IN",
-  },
-  sameAs: [
-    "https://instagram.com/creativemonkindia",
-    "https://facebook.com/creativemonkindia",
-    "https://youtube.com/creativemonkindia",
-  ],
-};
-
-const siteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Creative Monk",
-  url: SITE_URL,
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -107,10 +97,7 @@ export default function RootLayout({
       <body>
         <Analytics />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify([orgJsonLd, siteJsonLd]) }}
-        />
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <SmoothScroll>{children}</SmoothScroll>
         <ScrollToTop />
         <Cursor />

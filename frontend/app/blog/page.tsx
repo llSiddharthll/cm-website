@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import { getPosts } from "@/lib/cms";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { PageHero } from "@/components/agency/PageHero";
 import { BlogIndex } from "@/components/blog/BlogIndex";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Blog",
   description:
     "Guides on digital marketing, SEO, Google Ads, social media and growth — from the Creative Monk studio in Chandigarh.",
-};
+  path: "/blog",
+});
 
 export default async function BlogPage() {
   const POSTS = await getPosts();

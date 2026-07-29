@@ -9,9 +9,16 @@ import {
   getCases,
   getSite,
 } from "@/lib/cms";
+import {
+  buildMetadata,
+  breadcrumbSchema,
+  faqSchema,
+  serviceSchema,
+} from "@/lib/seo";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { ContactForm } from "@/components/agency/ContactForm";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Reveal, RevealLines } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Magnetic } from "@/components/fx/Magnetic";
@@ -33,10 +40,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const page = await getIndustryPage(slug);
   if (!page) return { title: "Industries" };
-  return {
+  return buildMetadata({
     title: `${page.name} — Creative & Growth Studio`,
     description: page.intro,
-  };
+    path: `/industries/${page.slug}`,
+  });
 }
 
 export default async function IndustryPageView({
@@ -59,6 +67,21 @@ export default async function IndustryPageView({
 
   return (
     <>
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: `${page.name} Marketing & Growth`,
+            description: page.intro,
+            path: `/industries/${page.slug}`,
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Industries", path: "/industries" },
+            { name: page.name, path: `/industries/${page.slug}` },
+          ]),
+          ...(page.faqs?.length ? [faqSchema(page.faqs)] : []),
+        ]}
+      />
       <span id="top" className="absolute top-0" aria-hidden />
       <Header dark />
       <main className="bg-dark text-on-ink">

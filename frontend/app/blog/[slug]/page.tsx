@@ -3,7 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { getPosts, getPost, getSite, getServicesGrid } from "@/lib/cms";
+import { buildMetadata, articleSchema, breadcrumbSchema } from "@/lib/seo";
+import { stripHtml } from "@/lib/admin/html";
 import { Prose } from "@/components/ui/Prose";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { ContactForm } from "@/components/agency/ContactForm";
@@ -24,7 +27,14 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) return { title: "Blog" };
-  return { title: post.title, description: post.excerpt };
+  return buildMetadata({
+    title: post.title,
+    description: post.excerpt,
+    path: `/blog/${post.slug}`,
+    image: post.cover,
+    type: "article",
+    publishedTime: new Date(post.date).toISOString(),
+  });
 }
 
 export default async function PostPage({
@@ -52,8 +62,20 @@ export default async function PostPage({
     day: "numeric",
   });
 
+  const cleanTitle = stripHtml(post.title);
+
   return (
     <>
+      <JsonLd
+        data={[
+          articleSchema(post),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Blog", path: "/blog" },
+            { name: cleanTitle, path: `/blog/${post.slug}` },
+          ]),
+        ]}
+      />
       <span id="top" className="absolute top-0" aria-hidden />
       <Header dark />
       <main className="bg-dark text-on-ink">
@@ -86,7 +108,7 @@ export default async function PostPage({
             </Reveal>
 
             <h1 className="display-tight mt-6 max-w-[16ch] text-[length:var(--text-h2)] text-on-ink">
-              <RevealLines lines={[post.title]} />
+              <RevealLines lines={[cleanTitle]} />
               <span
                 aria-hidden
                 className="ml-[0.1em] inline-block aspect-square w-[0.4em] bg-orange align-baseline"
@@ -101,7 +123,7 @@ export default async function PostPage({
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={post.cover}
-              alt={post.title}
+              alt={cleanTitle}
               className="aspect-[16/10] w-full rounded-xl bg-dark-2 object-cover md:aspect-[2.2/1]"
             />
           </div>

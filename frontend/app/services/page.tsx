@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import {
@@ -15,11 +16,12 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { PageHero } from "@/components/agency/PageHero";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Services",
   description:
     "Brand, web, content and performance — twelve disciplines, wired together to compound into an asset you own.",
-};
+  path: "/services",
+});
 
 export default async function ServicesPage() {
   const [servicesGrid, industries, serviceCategories, process, site] =

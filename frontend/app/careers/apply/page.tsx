@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { getCareers } from "@/lib/cms";
@@ -9,11 +10,12 @@ import { ApplicationForm } from "@/components/careers/ApplicationForm";
 
 export const revalidate = 60;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Apply",
   description:
     "Apply to join Creative Monk — a short form to tell us who you are and what you'd build here.",
-};
+  path: "/careers/apply",
+});
 
 /** Env fallbacks, so an embed can be set without touching the CMS. */
 const ENV_EMBED_URL = process.env.NEXT_PUBLIC_CAREERS_EMBED_URL || "";

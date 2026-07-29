@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
@@ -20,11 +21,12 @@ import {
   getServicesGrid,
 } from "@/lib/cms";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "About",
   description:
     "The in-house creative & growth studio from Chandigarh behind the work — our why, our team and how we think.",
-};
+  path: "/about",
+});
 
 export default async function AboutPage() {
   const [

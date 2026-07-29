@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { PageHero } from "@/components/agency/PageHero";
@@ -8,11 +9,12 @@ import { getPortfolio, getSite, getServicesGrid } from "@/lib/cms";
 
 export const revalidate = 60;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Portfolio",
   description:
     "Selected creative work by Creative Monk — branding, social, packaging, print, UI and full websites across industries.",
-};
+  path: "/portfolio",
+});
 
 export default async function PortfolioPage() {
   const [items, site, servicesGrid] = await Promise.all([

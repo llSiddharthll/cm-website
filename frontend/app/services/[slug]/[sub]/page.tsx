@@ -12,9 +12,11 @@ import {
   getCases,
   getSite,
 } from "@/lib/cms";
+import { buildMetadata, breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/seo";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { ContactForm } from "@/components/agency/ContactForm";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Reveal, RevealLines } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ReelPlaceholder } from "@/components/fx/ReelPlaceholder";
@@ -37,10 +39,12 @@ export async function generateMetadata({
   const { slug, sub } = await params;
   const page = await getServicePage(slug, sub);
   if (!page) return { title: "Services" };
-  return {
+  return buildMetadata({
     title: `${page.name} — Services`,
     description: page.intro || page.tagline,
-  };
+    path: `/services/${slug}/${sub}`,
+    image: page.cover,
+  });
 }
 
 export default async function ServicePageView({
@@ -65,6 +69,22 @@ export default async function ServicePageView({
 
   return (
     <>
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: page.name,
+            description: page.intro || page.tagline,
+            path: `/services/${slug}/${sub}`,
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: cat.name, path: `/services/${cat.slug}` },
+            { name: page.name, path: `/services/${slug}/${sub}` },
+          ]),
+          ...(page.faqs?.length ? [faqSchema(page.faqs)] : []),
+        ]}
+      />
       <span id="top" className="absolute top-0" aria-hidden />
       <Header dark />
       <main className="bg-dark text-on-ink">
