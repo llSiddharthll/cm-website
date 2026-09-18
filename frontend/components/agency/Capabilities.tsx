@@ -24,6 +24,19 @@ export function Capabilities({
 }) {
   const s = (i: number) => stats[i] ?? { value: "", label: "" };
 
+  // Marquee rows for the stack card — enough distinct rows (varied offset,
+  // direction and speed) to fill the card's full height with no dead space.
+  const rot = (arr: string[], n: number) => [...arr.slice(n), ...arr.slice(0, n)];
+  const rev = [...tools].reverse();
+  const stackRows: { data: string[]; cls: string }[] = [
+    { data: tools, cls: "cm-stack-a" },
+    { data: rev, cls: "cm-stack-b" },
+    { data: rot(tools, 3), cls: "cm-stack-c" },
+    { data: rot(rev, 3), cls: "cm-stack-d" },
+    { data: rot(tools, 6), cls: "cm-stack-a" },
+    { data: rot(rev, 6), cls: "cm-stack-b" },
+  ];
+
   return (
     <section className="relative isolate overflow-hidden bg-dark-2 section text-on-ink">
       <Aurora className="opacity-70" />
@@ -104,21 +117,33 @@ export function Capabilities({
             </div>
           </Reveal>
 
-          {/* disciplines (wide) */}
+          {/* growth outcomes (wide) */}
           <Reveal delay={0.1} className="col-span-2 md:col-span-2">
             <div className={`${glass} h-full p-7`}>
-              <span className="label text-on-ink-3">Four disciplines</span>
+              <div className="flex items-baseline justify-between gap-3">
+                <span className="label text-on-ink-3">The growth system</span>
+                <span className="mono text-on-ink-3">
+                  {categories.length} outcomes
+                </span>
+              </div>
               <ul className="mt-4 divide-y divide-on-ink/10">
-                {categories.slice(0, 4).map((c) => (
+                {categories.map((c) => (
                   <li key={c.slug}>
                     <Link
-                      href={`/services/${c.slug}`}
+                      href={(c as { href?: string }).href ?? `/services/${c.slug}`}
                       className="group flex items-center justify-between gap-3 py-2.5"
                     >
                       <span className="flex items-baseline gap-3">
                         <span className="mono text-orange">{c.index}</span>
-                        <span className="display text-[length:var(--text-h3)] text-on-ink transition-colors group-hover:text-orange">
-                          {c.name}
+                        <span className="flex flex-col">
+                          <span className="display text-[length:var(--text-h3)] leading-tight text-on-ink transition-colors group-hover:text-orange">
+                            {c.name}
+                          </span>
+                          {c.tagline && (
+                            <span className="mono text-[length:var(--text-mono)] text-on-ink-3">
+                              {c.tagline}
+                            </span>
+                          )}
                         </span>
                       </span>
                       <ArrowUpRight className="size-4 shrink-0 text-on-ink-3 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-orange" />
@@ -131,16 +156,23 @@ export function Capabilities({
 
           {/* stack (wide) — living marquee */}
           <Reveal delay={0.14} className="col-span-2 md:col-span-2">
-            <div className={`${glass} flex h-full flex-col justify-between gap-5 overflow-hidden p-7`}>
-              <span className="label text-on-ink-3">The stack we wield</span>
-              <div className="space-y-2.5">
-                {[tools, [...tools].reverse()].map((row, r) => (
+            <div className={`${glass} flex h-full flex-col overflow-hidden p-7`}>
+              <div className="flex items-baseline justify-between gap-3">
+                <span className="label text-on-ink-3">The stack we wield</span>
+                <span className="mono text-on-ink-3">{tools.length} tools</span>
+              </div>
+              <p className="mt-3 max-w-sm text-on-ink-2">
+                The platforms we design, build, ship and scale on — one team,
+                fluent across the whole stack.
+              </p>
+              <div className="mt-6 flex flex-1 flex-col justify-between gap-2.5">
+                {stackRows.map((row, r) => (
                   <div key={r} className="cm-stack-mask overflow-hidden">
-                    <div className={`flex w-max gap-2.5 ${r === 0 ? "cm-stack-a" : "cm-stack-b"}`}>
-                      {[...row, ...row].map((t, j) => (
+                    <div className={`flex w-max gap-2.5 ${row.cls}`}>
+                      {[...row.data, ...row.data].map((t, j) => (
                         <span
                           key={`${t}-${j}`}
-                          className="mono shrink-0 rounded-full border border-on-ink/10 bg-on-ink/[0.03] px-3 py-1.5 text-[length:var(--text-mono)] text-on-ink-2"
+                          className="mono shrink-0 rounded-full border border-on-ink/10 bg-on-ink/[0.03] px-3 py-1.5 text-[length:var(--text-mono)] text-on-ink-2 transition-colors hover:border-orange/40 hover:text-on-ink"
                         >
                           {t}
                         </span>
@@ -153,9 +185,11 @@ export function Capabilities({
                 .cm-stack-mask { -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent); }
                 @keyframes cm-stack-a { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
                 @keyframes cm-stack-b { from { transform: translate3d(-50%,0,0); } to { transform: translate3d(0,0,0); } }
-                .cm-stack-a { animation: cm-stack-a 28s linear infinite; will-change: transform; }
-                .cm-stack-b { animation: cm-stack-b 34s linear infinite; will-change: transform; }
-                @media (prefers-reduced-motion: reduce) { .cm-stack-a, .cm-stack-b { animation: none; } }
+                .cm-stack-a { animation: cm-stack-a 26s linear infinite; will-change: transform; }
+                .cm-stack-b { animation: cm-stack-b 32s linear infinite; will-change: transform; }
+                .cm-stack-c { animation: cm-stack-a 40s linear infinite; will-change: transform; }
+                .cm-stack-d { animation: cm-stack-b 46s linear infinite; will-change: transform; }
+                @media (prefers-reduced-motion: reduce) { .cm-stack-a, .cm-stack-b, .cm-stack-c, .cm-stack-d { animation: none; } }
               `}</style>
             </div>
           </Reveal>

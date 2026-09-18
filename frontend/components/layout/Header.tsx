@@ -16,6 +16,7 @@ import { SERVICE_CATEGORIES, type ServiceCategory } from "@/lib/agency";
 import { EASE } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { Magnetic } from "@/components/fx/Magnetic";
+import { BookingButton } from "@/components/booking/BookingButton";
 import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -136,14 +137,13 @@ export function Header({ dark = true }: { dark?: boolean }) {
             })}
             <ThemeToggle />
             <Magnetic strength={0.5}>
-              <Link
-                href="/contact"
+              <BookingButton
                 onMouseEnter={scheduleClose}
-                className="group/cta label flex h-9 items-center gap-1.5 bg-orange px-4 text-on-orange transition-colors duration-200 hover:bg-orange-press"
+                className="group/cta label flex h-9 cursor-pointer items-center gap-1.5 bg-orange px-4 text-on-orange transition-colors duration-200 hover:bg-orange-press"
               >
                 Free strategy call
                 <ArrowRight className="size-3.5 transition-transform duration-200 group-hover/cta:translate-x-0.5" />
-              </Link>
+              </BookingButton>
             </Magnetic>
           </nav>
 

@@ -16,6 +16,7 @@ import { FAQ } from "@/components/agency/FAQ";
 import { BigCTA } from "@/components/agency/BigCTA";
 import { ContactForm } from "@/components/agency/ContactForm";
 import { Footer } from "@/components/agency/Footer";
+import { GROWTH_PILLARS } from "@/lib/agency";
 import {
   getSite,
   getHomeHero,
@@ -23,7 +24,6 @@ import {
   getTools,
   getStory,
   getTimeline,
-  getServiceCategories,
   getServicesGrid,
   getCerts,
   getCases,
@@ -44,7 +44,6 @@ export default async function HomePage() {
     tools,
     story,
     timeline,
-    serviceCategories,
     servicesGrid,
     certs,
     cases,
@@ -62,7 +61,6 @@ export default async function HomePage() {
     getTools(),
     getStory(),
     getTimeline(),
-    getServiceCategories(),
     getServicesGrid(),
     getCerts(),
     getCases(),
@@ -86,11 +84,11 @@ export default async function HomePage() {
         <Capabilities
           stats={statBar}
           tools={tools}
-          categories={serviceCategories}
+          categories={GROWTH_PILLARS}
           founded={site.founded}
         />
         <ReelShowcase />
-        <HorizontalShowcase categories={serviceCategories} />
+        <HorizontalShowcase categories={GROWTH_PILLARS} />
         <Certs certs={certs} />
         <CaseStudies cases={cases} />
         <Clients clients={clients} />

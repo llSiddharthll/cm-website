@@ -13,6 +13,7 @@ type Cat = {
   name: string;
   tagline?: string;
   intro?: string;
+  href?: string;
   items?: { slug: string; name: string }[];
 };
 
@@ -60,16 +61,16 @@ export function HorizontalShowcase({ categories }: { categories: Cat[] }) {
         {/* intro panel */}
         <div className="flex w-full shrink-0 flex-col justify-center px-6 py-16 sm:px-12 md:h-screen md:w-[42vw] md:py-0">
           <Eyebrow index="03" invert>
-            Disciplines
+            The growth system
           </Eyebrow>
           <h2 className="display-tight mt-6 text-[length:var(--text-h1)] leading-[1.02] text-on-ink">
-            Four ways we
+            Six ways we
             <br />
             move the needle.
           </h2>
           <p className="mt-6 max-w-sm text-on-ink-2">
-            Each one is a craft in its own right — and they compound when they run
-            together.
+            Five à-la-carte outcomes — and one done-for-you tier that runs them
+            all. Each stands alone, and they compound when they run together.
           </p>
           <span className="mono mt-8 hidden items-center gap-2 text-on-ink-3 md:flex">
             Scroll to explore
@@ -78,7 +79,7 @@ export function HorizontalShowcase({ categories }: { categories: Cat[] }) {
         </div>
 
         {/* discipline panels */}
-        {categories.slice(0, 4).map((c) => (
+        {categories.slice(0, 6).map((c) => (
           <article
             key={c.slug}
             className="flex w-full shrink-0 flex-col justify-center border-t border-line-invert px-6 py-16 sm:px-12 md:h-screen md:w-[60vw] md:border-l md:border-t-0 md:py-0 md:pr-[6vw]"
@@ -104,10 +105,10 @@ export function HorizontalShowcase({ categories }: { categories: Cat[] }) {
               </ul>
             ) : null}
             <Link
-              href={`/services/${c.slug}`}
+              href={c.href ?? `/services/${c.slug}`}
               className="group label mt-8 inline-flex items-center gap-2 text-on-ink transition-colors hover:text-orange"
             >
-              Explore {c.name.toLowerCase()}
+              {c.href ? "Explore services" : `Explore ${c.name.toLowerCase()}`}
               <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </Link>
           </article>
