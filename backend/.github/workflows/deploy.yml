@@ -1,0 +1,43 @@
+name: Deploy to VM
+
+# Auto-deploy the API to the Google Cloud e2-micro VM on every push to main.
+# The VM runs the Docker Compose stack (backend + Caddy) with an embedded
+# libSQL file DB on a persistent volume — so redeploys never lose data.
+# Requires repo secrets: DEPLOY_HOST, DEPLOY_USER, DEPLOY_SSH_KEY.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-vm
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          command_timeout: 20m
+          script: |
+            set -e
+            cd ~/cm-backend
+            git fetch --quiet origin main
+            git reset --hard origin/main
+            cd deploy
+            sudo docker compose up -d --build
+            sudo docker image prune -f
+            echo "Deployed $(git rev-parse --short HEAD) — waiting for health…"
+            for i in $(seq 1 20); do
+              if sudo docker compose exec -T backend wget -qO- http://localhost:4000/api/health >/dev/null 2>&1; then
+                echo "Healthy ✓"; exit 0
+              fi
+              sleep 3
+            done
+            echo "Health check did not pass in time" >&2; exit 1
