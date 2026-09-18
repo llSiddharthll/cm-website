@@ -59,7 +59,7 @@ import POSTS_DATA from "./blog-posts.json";
 // when the CMS API is unreachable (kept out of agency.ts to avoid client-bundle bloat).
 export const POSTS: Post[] = POSTS_DATA as Post[];
 
-const API_URL = (process.env.API_URL || process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "");
+const API_URL = "https://34-172-180-194.nip.io".replace(/\/$/, "");
 const REVALIDATE = Number(process.env.CMS_REVALIDATE || 60);
 
 export const cmsEnabled = Boolean(API_URL);
@@ -337,4 +337,4 @@ export async function getCase(id: string): Promise<(CaseStudy & Meta) | null> {
 
 /* ───────────── Public intake (client-side POST) ───────────── */
 
-export const PUBLIC_API_URL = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "");
+export const PUBLIC_API_URL = "https://34-172-180-194.nip.io".replace(/\/$/, "");

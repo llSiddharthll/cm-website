@@ -13,7 +13,7 @@ const inputCls =
   "w-full bg-dark-2 border border-line-invert px-4 py-3 text-on-ink placeholder:text-on-ink-3 focus:border-orange focus:outline-none transition-colors";
 const labelCls = "label text-on-ink-3 mb-2 block";
 
-const API = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "");
+const API = "https://34-172-180-194.nip.io".replace(/\/$/, "");
 
 type ContactSite = {
   email: string;

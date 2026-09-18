@@ -1,6 +1,6 @@
 import type { Collection, Entry, MediaAsset, Overview, AdminUser } from "./types";
 
-export const API_BASE = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "");
+export const API_BASE = "https://34-172-180-194.nip.io".replace(/\/$/, "");
 
 const TOKEN_KEY = "cm_admin_token";
 
