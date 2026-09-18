@@ -286,7 +286,7 @@ export const SCHEMA: Collection[] = [
         name: "category",
         label: "Category",
         type: "select",
-        options: ["content", "creatives", "marketing", "development"],
+        options: ["design", "market", "develop", "growth", "ai"],
         required: true,
         listColumn: true,
         filterable: true,

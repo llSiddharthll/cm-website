@@ -1,2215 +1,1154 @@
-/* AUTO-GENERATED service sub-page content (24 pages). Edit in the admin after seeding. */
+/* AUTO-GENERATED service sub-page content (16 pages). Edit in the admin after seeding. */
 export const SERVICE_PAGES = [
   {
-    "category": "content",
-    "slug": "content-strategy",
-    "name": "Content Strategy",
-    "tagline": "Know what to say before you say it.",
-    "intro": "Content strategy is the plan that comes before a single word gets written: what you publish, who it is for, where it lives, and why it earns a click, a read, and a decision. We build that plan as an asset your team keeps and runs.",
+    "category": "design",
+    "slug": "brand-identity-systems",
+    "name": "Brand Identity & Systems",
+    "tagline": "Recognition that compounds, not a logo file.",
+    "intro": "Brand identity and systems is the work of defining how you look, sound and behave everywhere you show up, built as a system your team can run without us. The result is an asset you own that compounds recognition instead of a one-off logo file gathering dust in a folder.",
     "overview": [
-      "Most content fails quietly. Not because the writing is weak, but because nobody decided what it was for. Posts ship because the calendar says so, keywords get picked on a hunch, and a quarter later there is a pile of pages that rank for nothing and convince no one. A content strategy fixes the decision layer first, so every piece has a clear job and somewhere to land.",
-      "We start with the buyer, not the blog. We map the questions your customers actually search and ask before they buy, line them up against the terms that carry real search volume and real intent, then sort that demand into topic clusters with one page built to own each one. The output is a roadmap: what to publish, in what order, on which channel, and the keyword and conversion goal each piece is accountable for.",
-      "The point is compounding. A clear strategy turns content from a monthly cost into a library that keeps pulling traffic and warming buyers long after it is published. You own the roadmap, the research and the playbook outright, so the engine keeps running whether we write every word or your team takes the wheel."
+      "Most brand work stops at a logo and a colour palette, then falls apart the moment a real deliverable needs to ship. A social post looks nothing like the deck, the website drifts from the brochure, and every new hire reinvents the wheel because there is no rule to follow. We build the opposite: a system of decisions — type, colour, logo behaviour, layout, tone — codified so tightly that anyone can produce something on-brand without asking. Recognition is the payoff, and it only compounds when the brand looks like itself in a thousand small moments.",
+      "You leave with the identity and the system as files you own outright, not a rented template locked in someone else's account. That is the point: a one-off logo is a cost, a living identity system is an asset that makes every future piece of design cheaper, faster and more valuable. The more you use it, the harder it works, because each on-brand touchpoint reinforces the last. This is design that stops being a project and starts being infrastructure."
     ],
     "deliverables": [
-      "Content roadmap and 6-month editorial calendar, mapped to funnel stage",
-      "Keyword and topic-cluster map with primary, secondary and intent for every page",
-      "Audience and buyer-question research with search-intent grouping",
-      "Messaging and tone-of-voice guide writers can pick up and run with",
-      "Content audit of existing pages: keep, rewrite, merge or retire",
-      "Per-piece briefs with target keyword, angle, internal links and conversion goal"
+      "Full logo suite with responsive variants, clear-space rules and usage do's and don'ts",
+      "Colour system with primary, secondary and functional palettes plus accessibility-checked contrast",
+      "Typography system with a type scale, pairings and web and print specifications",
+      "Brand guidelines document covering voice, imagery, layout grids and component patterns",
+      "Editable master files and exported assets in every format your team actually needs"
     ],
     "highlights": [
       {
-        "title": "Intent before volume",
-        "desc": "We chase the keywords your buyers use when they are close to deciding, not the high-volume terms that bring traffic and no business. Every cluster is graded by intent, so the calendar is ranked by what actually converts."
+        "title": "A system, not a screenshot",
+        "desc": "We hand over rules, tokens and templates, not just pretty pictures. Your team can produce a landing page, a pitch deck or an ad and have it look unmistakably yours, without briefing us every time."
       },
       {
-        "title": "A roadmap you own and run",
-        "desc": "You walk away with the research, the briefs and the playbook as files you keep. The strategy does not live in our heads or a locked tool, so your team can execute it with or without us."
+        "title": "Recognition that stacks",
+        "desc": "Consistency is what turns attention into memory. When every touchpoint looks like the same brand, each one pays into the next, and recognition compounds instead of resetting."
       },
       {
-        "title": "Strategy wired to the rest of the funnel",
-        "desc": "Content, SEO, web and paid sit under one roof here. The plan is built to feed your landing pages, ad copy and email, so the words pull in the same direction instead of contradicting each other."
+        "title": "Owned outright, forever",
+        "desc": "You get the source files and the full system as your property. No subscription, no lock-in, no asking permission to use your own identity across new channels."
       }
     ],
     "process": [
       {
         "step": "01",
         "title": "Listen",
-        "body": "We dig into your market, margins and the job customers hire you for. We read your sales calls, your competitors and your current analytics to find what is already working and what is missing."
-      },
-      {
-        "step": "02",
-        "title": "Map",
-        "body": "We turn buyer questions into topic clusters and match them to keywords with real intent. Each cluster gets a pillar and a set of supporting pieces, ranked by how close they sit to a purchase."
-      },
-      {
-        "step": "03",
-        "title": "Plan",
-        "body": "The clusters become a dated editorial calendar with a brief per piece: target term, angle, format, channel, internal links and the conversion it is meant to drive. Decisions, not a wish list."
-      },
-      {
-        "step": "04",
-        "title": "Equip",
-        "body": "We hand over the roadmap, voice guide and briefs, and walk your team through running it. Then we set the review cadence so the plan adapts to what the data says, quarter after quarter."
-      }
-    ],
-    "metric": {
-      "value": "+212%",
-      "label": "organic traffic in 9 months on a strategy-led content engine"
-    },
-    "faqs": [
-      {
-        "q": "How is a content strategy different from just hiring a writer?",
-        "a": "A writer produces words. A strategy decides which words are worth producing, for whom, and in what order, so the writing has a target to hit. We do both, but the strategy is what stops you paying for content that ranks for nothing and persuades no one."
-      },
-      {
-        "q": "How long before content strategy shows results?",
-        "a": "Organic content compounds, so it is honest to expect movement over months, not weeks. Early clusters typically start ranking and pulling qualified traffic within a quarter, and the curve steepens as the library grows and pages reinforce each other."
-      },
-      {
-        "q": "Do you write the content too, or just the plan?",
-        "a": "Your call. The strategy stands on its own and your team can execute it. Most clients have us write the first clusters to set the bar, then keep us on for the high-value pieces while the roadmap guides the rest."
-      }
-    ]
-  },
-  {
-    "category": "content",
-    "slug": "seo-copywriting",
-    "name": "SEO Copywriting",
-    "tagline": "Words that rank, and still sell.",
-    "intro": "SEO copywriting is the craft of writing pages and posts that satisfy a search engine and a skeptical reader in the same breath. We build content that earns its ranking and earns the click after it.",
-    "overview": [
-      "Most SEO content fails one of two audiences. It either reads like it was assembled for a crawler — keyword-stuffed, thin, forgettable — or it reads beautifully and ranks nowhere because nobody mapped it to real search intent. SEO copywriting is the discipline of refusing that trade-off: matching what people actually type into Google with copy a human wants to finish.",
-      "We start from intent, not adjectives. For every page we look at who is searching, what they expect to find, and what the pages already ranking get wrong. Then we write to beat them — clear structure, the entities and questions Google associates with the topic, internal links that pass authority where it counts, and a point of view that sounds like your brand rather than a template. No filler to pad word count, no synonyms wedged in to hit a density target.",
-      "The outcome is content that compounds. A page that ranks keeps pulling qualified traffic long after it ships, without a media spend behind it — an asset you own, not attention you rent. We write for the reader who is ready to act, so the rankings turn into enquiries, signups and sales, not just impressions on a dashboard."
-    ],
-    "deliverables": [
-      "Keyword and intent map tying each target query to a specific page and funnel stage",
-      "SEO-optimised page copy or articles, structured with H1-H3 hierarchy, meta title and description",
-      "On-page SEO brief per piece: target keyword, secondary terms, entities, internal links, word-count target",
-      "Optimised drafts in your CMS or in clean handoff docs, formatted and ready to publish",
-      "Refresh recommendations for existing pages losing rank, with a prioritised rewrite list"
-    ],
-    "highlights": [
-      {
-        "title": "Intent before keywords",
-        "desc": "We reverse-engineer what a searcher actually wants before a single sentence is written, so the page answers the question instead of dancing around a keyword. Rankings follow relevance, not density."
-      },
-      {
-        "title": "Reads like a person, not a robot",
-        "desc": "Every brief is written by a strategist and the copy by a human who can hold a voice. The result passes Google's helpful-content bar and your brand's taste test at the same time."
-      },
-      {
-        "title": "Built to compound, not to churn",
-        "desc": "We prioritise pages by their traffic and revenue ceiling, then write to hold the position. One page that ranks for years beats ten that drift to page two by next quarter."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Intent and gap research",
-        "body": "We pull the queries your buyers actually use, cluster them by intent, and dissect the pages currently ranking. You get a map of what to write, what order to write it in, and where the existing results leave room to win."
-      },
-      {
-        "step": "02",
-        "title": "Brief and structure",
-        "body": "Before writing, we lock the angle: target and secondary keywords, the questions to answer, entities to cover, headings, internal links and a word count anchored to what the SERP rewards. The brief is the blueprint, agreed with you up front."
-      },
-      {
-        "step": "03",
-        "title": "Write and optimise",
-        "body": "A human writes the page in your voice, then we optimise on-page — title, meta, headers, schema-ready structure and links — without sanding the personality out of it. You review against the brief, not against guesswork."
-      },
-      {
-        "step": "04",
-        "title": "Publish, track, refresh",
-        "body": "We hand off clean, CMS-ready copy and watch how it ranks. When a page stalls or a competitor moves, we refresh it — because SEO copy is an asset to maintain, not a one-time deliverable."
-      }
-    ],
-    "metric": {
-      "value": "+212%",
-      "label": "organic traffic in 6 months"
-    },
-    "faqs": [
-      {
-        "q": "Will the copy still sound like our brand, or like generic SEO content?",
-        "a": "Like your brand. We brief and write to your voice, then optimise around it — never the other way round. Google's own guidance now rewards content written for people first, so writing well and ranking well point in the same direction."
-      },
-      {
-        "q": "How long until a page actually ranks?",
-        "a": "Honestly, weeks to a few months depending on your domain authority and how competitive the query is. New pages on an established site move faster than a young domain. We set realistic milestones up front and report against rankings and traffic, not vanity metrics."
-      },
-      {
-        "q": "Do you handle the technical SEO too, or just the words?",
-        "a": "Our scope here is the copy, structure and on-page optimisation. Technical and link-side work lives in our SEO service, and the two run together when you need both. Either way, the page we write you is yours to keep and republish however you like."
-      }
-    ]
-  },
-  {
-    "category": "content",
-    "slug": "blog-articles",
-    "name": "Blog & Articles",
-    "tagline": "Long-form that earns its rankings.",
-    "intro": "Blog and article content built to rank in search, read like a person wrote it, and turn casual readers into qualified pipeline. Authority you own, traffic that compounds.",
-    "overview": [
-      "Blog and articles are the long-form backbone of organic growth: in-depth pieces that answer the questions your buyers actually type, rank for them, and keep pulling traffic months after they ship. Done right, one strong article does the work of a hundred ad clicks because you stop paying for it after week one.",
-      "We start with intent, not topics. Every brief maps to a real search query, a stage in the buying journey, and a job the piece has to do — rank, convert, or build trust. Writers who understand your category draft it, an editor sharpens it, and we structure each post for both Google and the human skimming on their phone. No spun filler, no keyword stuffing, no thin posts padded to hit a word count.",
-      "The outcome is an asset library you own outright. A run of articles that climbs the rankings, earns backlinks, feeds your email and social, and lowers your blended cost per lead as the catalogue grows. We report on rankings, traffic and assisted conversions — not how many words we wrote."
-    ],
-    "deliverables": [
-      "Keyword and intent map tied to funnel stage and search volume",
-      "1,200-2,500 word articles, researched, written and edited by humans",
-      "On-page SEO: titles, meta, headers, internal links and schema",
-      "Original diagrams, pull quotes and formatting for skim-readers",
-      "Monthly performance report: rankings, organic traffic and assisted conversions",
-      "Editorial calendar and refresh plan for ageing posts"
-    ],
-    "highlights": [
-      {
-        "title": "Intent before keywords",
-        "desc": "We brief every piece against a real query and a buying stage, so the article ranks for terms your customers search and actually moves them toward a decision."
-      },
-      {
-        "title": "Written by people who get your category",
-        "desc": "Subject-matter writers and a human editor, not a model left on autopilot. The work reads like your brand and survives an expert's scrutiny."
-      },
-      {
-        "title": "We refresh, not just publish",
-        "desc": "Rankings decay. We track the catalogue and update ageing posts so traffic keeps climbing instead of quietly sliding off page one."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Map the demand",
-        "body": "We pull the queries your buyers search, score them by intent and difficulty, and build a topic map that prioritises winnable, revenue-relevant terms over vanity volume."
-      },
-      {
-        "step": "02",
-        "title": "Brief and draft",
-        "body": "Each article gets a tight brief — angle, target query, structure, sources. A category-fluent writer drafts it, grounded in research, not guesswork or recycled web copy."
-      },
-      {
-        "step": "03",
-        "title": "Edit and optimise",
-        "body": "An editor sharpens the argument and voice; we handle on-page SEO, internal links, schema and formatting so the piece is built to rank and easy to read."
-      },
-      {
-        "step": "04",
-        "title": "Publish, measure, refresh",
-        "body": "We ship on a steady cadence, track rankings and conversions, and update posts as they age so the library compounds instead of decaying."
-      }
-    ],
-    "metric": {
-      "value": "+212%",
-      "label": "organic traffic in 9 months"
-    },
-    "faqs": [
-      {
-        "q": "How long until articles start ranking and driving traffic?",
-        "a": "Most pieces take three to six months to settle into position, depending on domain authority and competition. Lower-difficulty terms move faster. We set honest milestones up front and report against rankings and traffic, not word count."
-      },
-      {
-        "q": "Do you use AI to write the articles?",
-        "a": "We use AI for research and outlining where it helps, but the writing and editing are done by people who understand your category. The result reads like your brand, holds up to expert scrutiny, and avoids the thin, generic copy that search engines increasingly penalise."
-      },
-      {
-        "q": "How many articles do we need to see results?",
-        "a": "Volume matters less than coverage and quality. We usually start with a focused cluster — six to twelve pieces around a core topic — so the content reinforces itself in search rather than scattering across unrelated terms."
-      }
-    ]
-  },
-  {
-    "category": "content",
-    "slug": "social-content",
-    "name": "Social Content",
-    "tagline": "Captions that earn the next swipe",
-    "intro": "Social Content is the writing layer of your feed — the hooks, captions and carousel scripts that turn a thumb-stop into a save, a follow, or a sale. We write for how each platform actually reads, not how it looks in a deck.",
-    "overview": [
-      "A scroll-stopping visual buys you a second. The words decide what happens next. Social Content is everything that carries that second forward — the first line that interrupts the scroll, the caption that gives the post a reason to exist, the carousel that earns a swipe-through, and the call that turns a passive viewer into a follower, a lead, or a buyer.",
-      "We start from your voice, not a template. Every brand gets a documented hook library and a tone guide, so an Instagram caption sounds like you and a LinkedIn post still sounds like you — just dressed for the room. We write to each platform's native logic: the way Instagram rewards saves and shares, the way LinkedIn rewards a strong opening line before the 'see more' fold, the way a carousel has to promise a payoff on slide one. No copy-paste across channels.",
-      "The outcome is a feed that does more than fill a calendar. Hooks tested against real saves and shares, captions that pull comments instead of crickets, and a body of content you own and can reuse. We treat every post as a small experiment — what gets watched, what gets shared — and feed those answers back into the next batch, so the writing gets sharper the longer we run it."
-    ],
-    "deliverables": [
-      "Platform-specific caption sets (Instagram, LinkedIn, X, Facebook)",
-      "Carousel scripts — slide-by-slide copy with a hook and payoff",
-      "A tested hook library, sorted by post type and goal",
-      "Voice & tone guide so the feed sounds consistent",
-      "Monthly content calendar mapped to formats and goals",
-      "Hashtag and keyword sets tuned per platform"
-    ],
-    "highlights": [
-      {
-        "title": "Hooks tested, not guessed",
-        "desc": "We track which opening lines actually earn saves and shares, then build your hook library from what works — so the first second of every post is doing real work, not filling space."
-      },
-      {
-        "title": "Native to each platform",
-        "desc": "A LinkedIn opener, an Instagram caption and an X thread are different jobs. We write each to its own rules — the fold, the swipe, the save — instead of resizing one caption across every channel."
-      },
-      {
-        "title": "Copy you keep and reuse",
-        "desc": "The hook library, voice guide and content bank are yours. Top-performing posts become templates and your team can run them long after the engagement ends. You own the asset, not just the month's posts."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Voice audit",
-        "body": "We read your last few months of posts, your best comments and your competitors' feeds to find the voice that already works — and the gaps no one is filling. The output is a documented tone guide."
-      },
-      {
-        "step": "02",
-        "title": "Hook bank",
-        "body": "We build a library of opening lines and angles by post type and goal, so writing starts from proven structures instead of a blank page. Every hook is mapped to a job: save, share, comment, or click."
-      },
-      {
-        "step": "03",
-        "title": "Write & ship",
-        "body": "Captions, carousels and hooks produced in-house against the calendar, written to each platform's native logic. You review in one place, we ship — no scattered hand-offs."
-      },
-      {
-        "step": "04",
-        "title": "Read & refine",
-        "body": "We watch saves, shares and comments — not just likes — and feed what wins back into the hook bank. The writing compounds, getting sharper every batch instead of resetting each month."
-      }
-    ],
-    "metric": {
-      "value": "+212%",
-      "label": "avg. saves & shares per post"
-    },
-    "faqs": [
-      {
-        "q": "Do you only write the words, or the visuals too?",
-        "a": "This service is the writing — hooks, captions and carousel scripts. We work hand-in-glove with our Social Creatives and Video teams under the same roof, so the words and the visuals are built together, not bolted on after."
-      },
-      {
-        "q": "Will the posts actually sound like us?",
-        "a": "Yes. We start with a voice audit and a documented tone guide, so the writing reads like your brand from day one. You sign off on the voice before we scale, and the guide is yours to keep."
-      },
-      {
-        "q": "How many posts do you write each month?",
-        "a": "It depends on your channels and cadence — most clients run between 12 and 30 pieces a month across platforms. We scope it against your goals and calendar up front, with no surprise add-ons."
-      }
-    ]
-  },
-  {
-    "category": "content",
-    "slug": "scriptwriting",
-    "name": "Scriptwriting",
-    "tagline": "Scripts that earn the next second",
-    "intro": "Most videos lose the viewer in the first three seconds. We write scripts for reels, ads and brand films that hook fast, hold attention, and move people toward a decision.",
-    "overview": [
-      "Scriptwriting is the spine of every video that performs. A great edit cannot rescue a weak idea, and a flashy hook means nothing if the next line gives the viewer a reason to scroll. We treat the script as the place where retention, message and intent are won or lost, before a single frame is shot or animated.",
-      "Creative Monk starts from the platform and the watcher, not the brand brief. A 15-second reel, a paid ad with a hard CTA, and a two-minute brand film are three different crafts with three different beats. We map the hook, the tension, the proof and the ask to how people actually watch on each surface, then write to the running time and the edit so words and visuals land together.",
-      "The outcome is video that holds. Higher average watch time, more completed views, and viewers who arrive at the end ready to act instead of bored. Because the script is built around your offer and audience, the same idea can be cut into variants, tested, and reused, so one strong script keeps returning value across campaigns."
-    ],
-    "deliverables": [
-      "Shoot-ready scripts with scene-by-scene direction, on-screen text and voiceover separated",
-      "Three to five hook variants per script for testing in the first three seconds",
-      "Time-coded breakdowns mapping lines to running time and edit beats",
-      "Caption and CTA copy written for each platform, including silent-autoplay versions",
-      "A reusable hook-and-structure framework documented in your brand voice"
-    ],
-    "highlights": [
-      {
-        "title": "Written for the scroll, not the page",
-        "desc": "We write to the platform and the silent autoplay reality. Hooks earn the first three seconds, on-screen text carries the message without sound, and every line buys the next one."
-      },
-      {
-        "title": "Retention is the brief",
-        "desc": "We design around watch time and drop-off, not word count. Tension is placed where viewers usually leave, so the curve flattens and more people reach the ask."
-      },
-      {
-        "title": "One idea, many cuts",
-        "desc": "Each script ships with hook and angle variants built in, so you can test what lands and recut the winner across reels, ads and longer films instead of starting over."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Brief",
-        "body": "We dig into the offer, the audience and the single action this video should drive. We define the platform, the running time and what counts as a win before we write a word."
-      },
-      {
-        "step": "02",
-        "title": "Hook",
-        "body": "We draft and pressure-test multiple openers, because the first three seconds decide everything. The strongest hooks survive; the rest become variants for testing."
-      },
-      {
-        "step": "03",
-        "title": "Script",
-        "body": "We write the full script to time, with scene direction, on-screen text, voiceover and CTA separated so the edit team can shoot and cut without guessing."
-      },
-      {
-        "step": "04",
-        "title": "Refine",
-        "body": "After it ships, we read the retention curve and comments, then sharpen hooks and pacing for the next round so each script outperforms the last."
-      }
-    ],
-    "metric": {
-      "value": "2.4x",
-      "label": "average watch time vs. previous scripts"
-    },
-    "faqs": [
-      {
-        "q": "Do you write scripts for video you are not producing?",
-        "a": "Yes. We deliver shoot-ready scripts with scene direction, on-screen text and CTA copy that your in-house team or another studio can produce. If you want it made too, our production team can take it from script to final cut under one roof."
-      },
-      {
-        "q": "How do you keep a script in our brand voice?",
-        "a": "We build a voice reference from your existing content, founder interviews and the way your customers actually talk, then write to it. You get a documented framework, so future scripts stay consistent whether we write them or you do."
-      },
-      {
-        "q": "How many revisions are included?",
-        "a": "Two rounds of revisions per script are standard, covering hook, structure and line-level edits. We share hook variants up front so most changes happen before the full draft, which keeps revisions fast and focused."
-      }
-    ]
-  },
-  {
-    "category": "content",
-    "slug": "email-newsletters",
-    "name": "Email & Newsletters",
-    "tagline": "The one channel you actually own",
-    "intro": "Email is the only audience a platform can't throttle or take away. We build the sequences and broadcasts that turn a quiet list into a predictable revenue line.",
-    "overview": [
-      "Email and newsletters are where attention you've already earned gets converted into revenue you can forecast. Ads rent reach; an inbox is a direct line you own outright. We treat your list as a balance-sheet asset and build the lifecycle around it: welcome flows, abandoned-cart and browse recovery, post-purchase nurture, win-back, and a broadcast rhythm that keeps you top of mind without burning the relationship.",
-      "Our approach starts with the math, not the template. We map your customer journey, find where revenue leaks, and write automations that plug those gaps first because flows pay before campaigns do. Copy is written by people, not generated and lightly edited: subject lines that earn the open, a single clear ask per email, and a voice that reads like your brand rather than a marketing department. Every send is designed deliverability-first, so it lands in the primary tab and not promotions.",
-      "The outcome is compounding. A tuned welcome and cart sequence works for every new subscriber automatically, a weekly newsletter builds a habit, and a clean, segmented list keeps your sender reputation strong as you scale. You keep the templates, the flows, the segments, and the list. When the engine is running, email becomes the cheapest, most reliable revenue you have."
-    ],
-    "deliverables": [
-      "Lifecycle map and audit covering deliverability, current flows, list health, and the revenue leaks worth fixing first",
-      "Core automated flows built and live in Klaviyo or Mailchimp: welcome, abandoned cart, browse abandon, post-purchase, and win-back",
-      "A reusable, on-brand email template system with modular blocks your team can edit without breaking the layout",
-      "Segmentation and list-hygiene setup, plus a sunset policy that protects sender reputation as you grow",
-      "A 90-day broadcast and newsletter calendar with written subject lines, angles, and a tested send cadence",
-      "Monthly performance report tied to revenue per recipient, flow revenue, and list growth, with the next round of A/B tests queued"
-    ],
-    "highlights": [
-      {
-        "title": "Flows before broadcasts",
-        "desc": "We build the automated sequences that earn money on autopilot first, then layer campaigns on top. Most of the lift shows up before you send a single newsletter."
-      },
-      {
-        "title": "Deliverability is the strategy",
-        "desc": "Authentication, list hygiene and a sunset policy are set up before volume scales, so your sends reach the primary inbox instead of the spam folder or promotions tab."
-      },
-      {
-        "title": "You keep the engine",
-        "desc": "Templates, flows, segments and the list itself stay yours, inside your account. We build an asset you own, not a dependency on us."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Audit and map",
-        "body": "We review your account, deliverability, existing flows and list health, then map the customer journey to find exactly where revenue is leaking and which automation closes the gap fastest."
-      },
-      {
-        "step": "02",
-        "title": "Build the flows",
-        "body": "We write and ship the core sequences — welcome, cart and browse recovery, post-purchase, win-back — with segmentation, branching and an on-brand template system behind them."
-      },
-      {
-        "step": "03",
-        "title": "Broadcast and test",
-        "body": "We set a sustainable newsletter cadence, write campaigns around real offers and stories, and A/B test subject lines, timing and structure so every send teaches us something."
-      },
-      {
-        "step": "04",
-        "title": "Report and compound",
-        "body": "Each month we report on revenue per recipient and flow performance, prune dead weight from the list, and reinvest what we learn into the next round of sends."
-      }
-    ],
-    "metric": {
-      "value": "34%",
-      "label": "of total revenue from email within 6 months"
-    },
-    "faqs": [
-      {
-        "q": "We already have a list but barely email it. Where do you start?",
-        "a": "With your flows and your deliverability. A list that's gone quiet often has reputation issues, so we clean it, set a sunset policy and warm it back up while building the automated sequences that recover revenue from people already on it."
-      },
-      {
-        "q": "Which platform do you build on?",
-        "a": "Usually Klaviyo for e-commerce and Mailchimp or similar for content and service brands, but we'll work in whatever you already pay for. Everything we build lives in your account and stays yours if we ever part ways."
-      },
-      {
-        "q": "How often should we actually send?",
-        "a": "Enough to stay a habit, not so much that you train people to ignore you. For most brands that's one well-made newsletter a week plus automated flows. We set the cadence from your engagement data, not a rule of thumb."
-      }
-    ]
-  },
-  {
-    "category": "creatives",
-    "slug": "logo-identity",
-    "name": "Logo & Identity",
-    "tagline": "A mark you own, a system that scales",
-    "intro": "Logo and identity work that gives you one unmistakable mark and the system around it — engineered to hold up at favicon size, on a billboard, and everywhere your brand shows up next.",
-    "overview": [
-      "A logo is the smallest, hardest-working asset a brand owns. We treat it that way. The work starts with the decision a mark has to carry — who you are, who you are not, and the gap in your category worth standing in — then we draw to that brief. No mood-board roulette, no fifty options to muddy the call. A tight set of considered directions, each one a real position you could build a business behind.",
-      "Identity is more than the logo. We design the system that surrounds it so the brand stays itself across every surface: a primary mark and the lockups it needs, a color and type pairing chosen for contrast and legibility, clear-space and minimum-size rules, and the supporting elements that make a layout look like you before anyone reads a word. Everything is drawn in vector, tested small, and built to survive real-world use.",
-      "The outcome is a brand that is recognisable, consistent, and yours outright. You leave with the source files, the fonts licensed in your name, and guidelines your team can actually follow — so the next designer, printer, or developer builds on the system instead of guessing at it. That is the asset: identity that compounds in recognition instead of being quietly redrawn every year."
-    ],
-    "deliverables": [
-      "Primary logo plus responsive variants — horizontal, stacked, icon-only and a single-color version",
-      "Full file package: vector source (AI/SVG), PNG and PDF exports, favicon and app-icon set",
-      "Color palette and type pairing with hex, RGB, CMYK and Pantone values, plus licensed font files",
-      "Identity guidelines covering clear space, minimum sizes, misuse rules and on-brand examples",
-      "Core supporting assets: business card, letterhead and email-signature templates",
-      "Editable master file and handover so your team owns and can extend the system"
-    ],
-    "highlights": [
-      {
-        "title": "Designed to the decision, not the mood board",
-        "desc": "Every direction we present answers a strategic question about your position. You choose a point of view, not a pretty picture, so the mark still makes sense in three years."
-      },
-      {
-        "title": "Stress-tested before you sign off",
-        "desc": "We proof each mark at favicon scale, in one color, embroidered, and on a dark and light background. If it breaks anywhere it matters, it does not leave the studio."
-      },
-      {
-        "title": "You own every file and font",
-        "desc": "Vector source, exports and fonts are licensed and handed over in your name. No vendor lock-in, no chasing us for a logo file two years later."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Brief",
-        "body": "We interrogate the brand before we draw a line — audience, competitors, the room you want to stand out in, and the surfaces the mark has to live on. The output is a one-page creative brief we both sign off on."
-      },
-      {
-        "step": "02",
-        "title": "Explore",
-        "body": "We sketch broadly, then narrow to two or three considered directions. Each is shown in context — on a sign, a screen, a package — so you judge the system, not an isolated logo on white."
-      },
-      {
-        "step": "03",
-        "title": "Refine",
-        "body": "We take the chosen direction into detail: optical spacing, curve corrections, the color and type pairing, and the variant set. Two structured rounds of feedback keep it sharp without design-by-committee drift."
-      },
-      {
-        "step": "04",
-        "title": "Build & hand over",
-        "body": "We produce the full file package, write the identity guidelines, and walk your team through the system. You leave with everything you need to roll it out and keep it consistent."
-      }
-    ],
-    "metric": {
-      "value": "100%",
-      "label": "source files & fonts owned by you"
-    },
-    "faqs": [
-      {
-        "q": "How many logo concepts do we get to choose from?",
-        "a": "Two to three fully resolved directions, not a wall of throwaway options. Each one is a deliberate strategic choice shown in real contexts. We would rather you decide between strong, distinct positions than pick a favourite from noise."
-      },
-      {
-        "q": "What files and rights do we actually receive?",
-        "a": "Editable vector source, plus PNG, PDF, SVG and favicon exports, the full color and type spec, and the fonts licensed in your name. You own the identity outright — there is no ongoing fee to use your own brand."
-      },
-      {
-        "q": "Do you do a full rebrand or just the logo?",
-        "a": "Both. Some clients need a single mark; others need the identity system, guidelines and rollout across web, packaging and social. We scope to what you need and can extend into brand systems and collateral when you are ready."
-      }
-    ]
-  },
-  {
-    "category": "creatives",
-    "slug": "brand-systems",
-    "name": "Brand Systems",
-    "tagline": "One brand, everywhere, without the drift.",
-    "intro": "A brand system is the operating manual for your identity — the rules, tokens and templates that let anyone on your team ship on-brand work without asking a designer first.",
-    "overview": [
-      "A logo is a starting point, not a brand. What keeps a brand recognisable across a website, a pitch deck, a packaging label and a hundred Instagram posts is the system underneath — the spacing rules, the colour values, the type scale and the templates that turn taste into something repeatable. Without it, every new asset is a fresh negotiation and the brand slowly drifts.",
-      "We build that system as a working toolkit, not a PDF that gets filed and forgotten. Colour, type, spacing and logo behaviour are defined as named tokens, then wired into editable templates inside Figma, Canva and your CMS. So the people who actually make day-to-day content — your marketer, your intern, your reseller — produce work that looks like you intended, on the first try.",
-      "The outcome is leverage. Your team ships faster because the decisions are already made, design reviews shrink because the guardrails are built in, and the brand compounds in value because it shows up consistently everywhere a customer meets it. You own the whole system outright — files, tokens and source — so it keeps working long after we hand it over."
-    ],
-    "deliverables": [
-      "Brand guidelines covering logo usage, colour, typography, spacing, imagery and tone of voice",
-      "Design tokens (colour, type scale, spacing, radii) as named values, exportable to code and design tools",
-      "Editable template kit — social posts, stories, decks, documents and email headers in Figma and Canva",
-      "Logo lock-up suite with clear-space and minimum-size rules, in every required format",
-      "A shared asset library with versioning, so the team always pulls the current files",
-      "Onboarding handover session plus a quick-start guide for non-designers"
-    ],
-    "highlights": [
-      {
-        "title": "Tokens, not just a PDF",
-        "desc": "We define the brand as named tokens that live in your tools and your code, so a colour or spacing change updates everywhere at once instead of being re-typed by hand on every file."
-      },
-      {
-        "title": "Built for non-designers",
-        "desc": "The templates are locked where they should be and editable where they need to be. Your marketing team ships on-brand work without a designer in the loop or a single licensing fight."
-      },
-      {
-        "title": "A system that holds under pressure",
-        "desc": "We pressure-test the rules against real surfaces — a cramped ad, a long deck, a tiny app icon — before sign-off, so the guidelines survive contact with actual work instead of breaking on day one."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Audit",
-        "body": "We gather every place your brand currently lives — site, socials, decks, packaging — and map where it holds together and where it has drifted. The inconsistencies become the brief."
-      },
-      {
-        "step": "02",
-        "title": "Define",
-        "body": "We set the core decisions as tokens: colour values, type scale, spacing, grid and logo behaviour. Each rule is written to be followed, with the reasoning behind it, not left to interpretation."
-      },
-      {
-        "step": "03",
-        "title": "Template",
-        "body": "We turn the system into editable kits for the surfaces you use most — social, decks, documents, email — built in Figma and Canva so the team can produce on-brand work without a designer."
-      },
-      {
-        "step": "04",
-        "title": "Roll out",
-        "body": "We hand over the guidelines, tokens and asset library, walk your team through them, and stay close through the first weeks so the system sticks instead of slipping back to old habits."
-      }
-    ],
-    "metric": {
-      "value": "70%",
-      "label": "less time to ship on-brand assets"
-    },
-    "faqs": [
-      {
-        "q": "We already have a logo and a few brand colours. Do we still need a system?",
-        "a": "Usually yes. A logo and a palette tell people what you look like in one place; a system tells your whole team how to apply it everywhere — across a deck, a label, an ad, a landing page. That gap is exactly where brands drift, and where a system pays for itself."
-      },
-      {
-        "q": "Will our non-designers actually be able to use it?",
-        "a": "That is the point. We build editable templates in Figma and Canva with the layout, type and colour locked, so a marketer or intern fills in the content and the result stays on-brand. The guidelines double as a plain-language quick-start, not a 60-page theory document."
-      },
-      {
-        "q": "What do we own at the end, and can we extend it later?",
-        "a": "Everything — guidelines, source files, tokens and the template library are yours outright. The system is built to grow, so when you add a new product line or channel you can extend the same tokens and templates rather than starting over. We can scale it with you, or you can run it in-house."
-      }
-    ]
-  },
-  {
-    "category": "creatives",
-    "slug": "packaging-print",
-    "name": "Packaging & Print",
-    "tagline": "Packaging that earns its shelf.",
-    "intro": "Packaging, stationery and collateral designed to feel premium in the hand and hold up at production scale. We design the physical surfaces of your brand so they sell as hard as the product inside.",
-    "overview": [
-      "Packaging and print is where a brand stops being a screen and becomes a thing people hold. We design the cartons, labels, pouches, boxes, business cards and brochures that carry your identity into the real world, built from the same brand system as your digital work so the unboxing matches the website and the website matches the shelf.",
-      "Our approach starts at the dieline, not the decoration. We design to real substrates, real print methods and real production budgets, then prove it with mockups and press-ready files your printer can run without guesswork. Material, finish, structure and copy are decided together, because a foil stamp on the wrong stock reads cheap and a smart fold can cut your unit cost.",
-      "The outcome is collateral that lifts perceived value and survives the supply chain. Packs that photograph well for the feed, hold up to handling, and stay consistent across every reorder and SKU. You own every working file, dieline and spec sheet, so the next run, the next flavour and the next printer all start from a finished asset instead of a fresh brief."
-    ],
-    "deliverables": [
-      "Production-ready dielines and print-ready artwork (CMYK, spot, bleed, crop marks)",
-      "Primary and secondary packaging design across your full SKU range",
-      "Stationery suite: business cards, letterhead, envelopes, invoices",
-      "Material, finish and print-method spec sheet for your printer",
-      "3D mockups and flat-lay renders for ecommerce and social",
-      "Packaged source files, fonts and a reorder-ready handover kit"
-    ],
-    "highlights": [
-      {
-        "title": "Designed to the dieline",
-        "desc": "We work from real structural templates and substrates, not flat decoration. Folds, panels, bleeds and barcodes are right before colour and type, so artwork goes to press without back-and-forth."
-      },
-      {
-        "title": "Press-checked, not just exported",
-        "desc": "We speak printer. Stock weights, spot colours, foil, emboss and varnish are specced and proofed against production tolerances, so what leaves the press matches what you approved on screen."
-      },
-      {
-        "title": "One system, every surface",
-        "desc": "Packaging shares the same tokens, type and palette as your logo, web and social work. Nothing is redrawn from scratch, so a new SKU or print run takes hours, not another full brief."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Audit & spec",
-        "body": "We map your SKU range, formats and print constraints, talk to your printer or ours, and lock the substrates, sizes and budget per unit before a single layout. Constraints first, so the design is buildable."
-      },
-      {
-        "step": "02",
-        "title": "Structure & concept",
-        "body": "We design the dieline and the look together, two or three directions on the actual pack shape. You see how it folds, stacks and reads on shelf, not a flat render that hides the seams."
-      },
-      {
-        "step": "03",
-        "title": "Refine & proof",
-        "body": "The chosen route is taken to finished artwork across every variant, then proofed: colour, finish, legal copy, barcodes and net weights. We resolve it on a physical or digital proof before it touches a plate."
-      },
-      {
-        "step": "04",
-        "title": "Handover & reorder",
-        "body": "You get press-ready files, dielines, spec sheets and source artwork, packaged so any printer can run it. Future runs and new variants build on the system instead of starting over."
-      }
-    ],
-    "metric": {
-      "value": "+38%",
-      "label": "avg. lift in perceived premium (shelf test)"
-    },
-    "faqs": [
-      {
-        "q": "Do you handle the printing, or just the design?",
-        "a": "We design and supply press-ready files, then either work with your printer or our trusted vendors in the Chandigarh and Delhi belt. We press-check the first run so colour and finish match what you approved, and you keep the files for any printer later."
-      },
-      {
-        "q": "Can you design packaging that matches our existing brand?",
-        "a": "Yes. If you have a brand system we design straight from it, so packs match your logo, web and social. If the identity is thin or inconsistent, we will flag it and can tighten the system as part of the work."
-      },
-      {
-        "q": "What do we actually receive at the end?",
-        "a": "Production-ready artwork and dielines, a spec sheet for materials and finishes, mockups for ecommerce and social, and packaged source files with fonts. Everything is yours outright, so reorders and new SKUs do not need us to start from zero."
-      }
-    ]
-  },
-  {
-    "category": "creatives",
-    "slug": "social-creatives",
-    "name": "Social Creatives",
-    "tagline": "Creative built to stop the scroll.",
-    "intro": "Posters, ad creative and carousels engineered for the half-second a thumb decides whether to stop. We design feed work that earns attention, then converts it.",
-    "overview": [
-      "Social creatives are the static and carousel assets that do the heavy lifting on Instagram, LinkedIn, Facebook and the rest of the feed — the launch poster, the offer ad, the educational carousel, the testimonial card. They are the most-seen, most-disposable part of a brand, which is exactly why most of them are forgettable. We treat each one as a tiny piece of conversion design, not decoration.",
-      "Our approach starts with the hook, not the layout. We map what each post is meant to do — stop, explain, or sell — then build the visual hierarchy backwards from that one job. Everything is produced in-house against your brand system, so the hundredth ad still looks like the first. We design in batches around a content calendar, ship editable source files, and feed performance data back into the next round so the work gets sharper, not just newer.",
-      "The outcome is a feed that compounds. Saves and shares climb because the carousels are genuinely useful, ad creative stops fatiguing because we rotate fresh angles before numbers dip, and the brand becomes recognisable at a glance. You own every file and template, so the asset keeps working long after the campaign is paid for."
-    ],
-    "deliverables": [
-      "Monthly batch of static posts, ad creatives and multi-slide carousels, sized per platform",
-      "Editable master files plus a reusable Canva or Figma template kit your team can run",
-      "Hook and headline variations for every ad concept, built for A/B testing",
-      "Platform-ready exports (1:1, 4:5, 9:16) with safe-zone and aspect-ratio checks",
-      "A creative style guide for social — grids, type scale, colour and motion rules"
-    ],
-    "highlights": [
-      {
-        "title": "Hook-first, not layout-first",
-        "desc": "We design every asset backwards from its single job — stop, teach or sell — so the first slide earns the second and the visual hierarchy never fights the message."
-      },
-      {
-        "title": "Built on your system, in-house",
-        "desc": "Templates and tokens keep the hundredth ad on-brand without a hand-off. One team owns it, so quality never drops between the brief and the export."
-      },
-      {
-        "title": "Creative that learns",
-        "desc": "We read saves, shares and ad fatigue, then rotate fresh angles before the numbers slip — so the feed gets sharper each month instead of just busier."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Brief & angle",
-        "body": "We pull your calendar, offers and brand system, then agree the job each asset must do — awareness, education or conversion — and the hooks worth testing."
-      },
-      {
-        "step": "02",
-        "title": "Design in batches",
-        "body": "Static posts, carousels and ad variants are produced together against shared templates, so the set feels coherent and the turnaround stays fast."
-      },
-      {
-        "step": "03",
-        "title": "Ship & test",
-        "body": "Platform-ready exports go out with headline and thumbnail variants, set up so paid and organic teams can A/B test without redrawing anything."
-      },
-      {
-        "step": "04",
-        "title": "Read & refine",
-        "body": "We track saves, shares, hold rate and ad fatigue, then carry what worked into the next batch and retire what didn't. The creative compounds."
-      }
-    ],
-    "metric": {
-      "value": "+212%",
-      "label": "avg. lift in saves & shares"
-    },
-    "faqs": [
-      {
-        "q": "How many creatives do I get each month?",
-        "a": "It depends on your calendar and channels, but a typical retainer runs 12 to 20 assets a month — a mix of static posts, carousels and ad variants. We scope the exact volume to your posting cadence before we start."
-      },
-      {
-        "q": "Do you write the copy or just design?",
-        "a": "Both. We design hook-first, so headlines and carousel copy are part of the work. If you have an in-house writer, we collaborate; if you don't, we handle the words and the visuals together."
-      },
-      {
-        "q": "Can our team edit the files after handover?",
-        "a": "Yes. You get editable master files and a Canva or Figma template kit, so your team can produce on-brand variations without coming back to us for every tweak. You own all of it outright."
-      }
-    ]
-  },
-  {
-    "category": "creatives",
-    "slug": "video-editing",
-    "name": "Video Editing",
-    "tagline": "Cut for the feed and the boardroom.",
-    "intro": "Video editing that turns raw footage into work that earns the second second on the feed and holds a room in the boardroom. Reels, ads and brand films, cut in-house with intent.",
-    "overview": [
-      "Video editing is where footage becomes a decision. We take what the camera captured — or what we shot, animated and sourced — and shape it into a cut with a clear job: stop the scroll, sell the product, or make an audience feel the brand. Pace, sound, captions, colour and the first frame all answer to that one outcome.",
-      "Our approach starts with the hook and the platform. A nine-second reel is cut differently from a ninety-second ad and a two-minute brand film, so we edit to the medium instead of resizing one master and hoping. Every project leaves you with a layered, organised project file and a set of cutdowns — the work is yours to reuse, not a single export you have to come back and pay for.",
-      "The outcome is short-form that travels and long-form that converts. Tighter openings lift watch-time, captions and clean sound carry the message with the volume off, and a library of variations gives your paid team something to test. One clean shoot can feed a month of content when it is edited with that in mind."
-    ],
-    "deliverables": [
-      "Platform-native reels and shorts in 9:16, cut for the hook with burned-in captions and sound design",
-      "Performance ad edits with multiple hook, length and aspect-ratio variations built for paid testing",
-      "Brand films and case-study videos with cinematic colour grade and licensed or original audio",
-      "Cutdowns and resizes — 9:16, 1:1, 16:6 and 6-second bumpers — from every master film",
-      "Organised, layered project files, captions and a source-clip library handed over for reuse"
-    ],
-    "highlights": [
-      {
-        "title": "Edited to the hook, not the timeline",
-        "desc": "We open on the strongest second and earn the next one. Cuts are paced for retention curves and built to loop, so the edit does the work the algorithm rewards instead of fighting it."
-      },
-      {
-        "title": "One shoot, a month of cuts",
-        "desc": "We plan the edit before the camera rolls, then mine a single shoot for reels, ads and bumpers. Variations multiply without re-shooting, so your spend stretches and your feed never runs dry."
-      },
-      {
-        "title": "The project file is yours",
-        "desc": "You get the layered timeline, captions and source clips — not just an MP4. Reuse a hook, re-cut for a new offer, or hand it to your team. The asset stays with you."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Brief & footage",
-        "body": "We start with the goal, the platform and the audience, then review raw footage, assets and references. The edit is mapped before a single clip lands on the timeline — hook, beats, message and call to action."
-      },
-      {
-        "step": "02",
-        "title": "First cut",
-        "body": "We build the structure: selects, pacing and the opening that has to earn attention. You see a rough cut early, while the story is still cheap to change, so feedback lands before we polish the wrong version."
-      },
-      {
-        "step": "03",
-        "title": "Finish",
-        "body": "Sound design, music, colour grade, motion titles and captions go on. We tune the first frame, the loop and the silence, then export clean masters and every cutdown the channels need."
-      },
-      {
-        "step": "04",
-        "title": "Handover & iterate",
-        "body": "You get the masters, variations and project files. For ad work we ship hook and length variants for testing, then re-cut around what the numbers say so the next batch performs harder."
-      }
-    ],
-    "metric": {
-      "value": "3.4×",
-      "label": "avg. watch-time on hook-first edits"
-    },
-    "faqs": [
-      {
-        "q": "What footage do you need from us?",
-        "a": "Whatever you have — phone clips, a professional shoot, screen recordings, product shots or stock. We work from raw files and a short brief on the goal and platform. If footage is thin, we can plug gaps with motion graphics, stock and on-screen text rather than waiting on a re-shoot."
-      },
-      {
-        "q": "How many revisions are included, and what's the turnaround?",
-        "a": "Two rounds of revisions are standard, structured as one on the rough cut and one on the finish so notes land at the right stage. A single reel typically turns around in three to five working days; brand films run one to two weeks depending on length and grade."
-      },
-      {
-        "q": "Do we get the project files, or just the final video?",
-        "a": "You get both. Every engagement ships the exported masters and cutdowns plus the layered project file, captions and source clips. You own the work outright and can re-cut or repurpose it later without coming back to us for every change."
-      }
-    ]
-  },
-  {
-    "category": "creatives",
-    "slug": "motion-animation",
-    "name": "Motion & Animation",
-    "tagline": "Motion that explains in seconds",
-    "intro": "2D motion graphics and animation that turn dense ideas into something people watch to the end. We build the kind of motion you reuse for years, not clips you post once and forget.",
-    "overview": [
-      "Motion and animation is how a brand moves: explainer videos, animated logos, kinetic type, UI walkthroughs, looping social cuts and data brought to life. We build 2D motion graphics that do a job, whether that job is explaining a product in forty seconds, opening a brand film, or stopping a thumb mid-scroll. Every frame earns its place.",
-      "We start with the message, not the software. A short script and a storyboard get signed off before a single keyframe moves, so you are never paying for animation that gets scrapped in review. Then our designers and animators work from one master file, so your colours, type and logo behave the same in a YouTube explainer and a six-second pre-roll. You own the project files and the system, not just the export.",
-      "The outcome is comprehension and recall. Motion holds attention longer than a static image and explains faster than a paragraph, so complex offers land and viewers stay to the call to action. Done as a system, one explainer becomes a launch asset, an ad set, a website hero and a sales-deck clip, which is how the cost per use keeps falling."
-    ],
-    "deliverables": [
-      "Approved script and frame-by-frame storyboard",
-      "Master explainer or brand animation in 1080p and 4K",
-      "Animated logo sting and lower-third / title pack",
-      "Aspect-ratio cutdowns (16:9, 1:1, 9:16) for every channel",
-      "Editable source files (After Effects / Lottie) and a motion style guide"
-    ],
-    "highlights": [
-      {
-        "title": "Script and storyboard before a single keyframe",
-        "desc": "We lock the story and the boards first. You sign off on what the video says and shows before animation starts, so revisions are cheap words on a page, not expensive reworked frames."
-      },
-      {
-        "title": "One master, every ratio",
-        "desc": "We animate from a single source built to flex. A 90-second explainer becomes square ads, vertical reels and a looping website hero without re-animating from scratch, so the asset works everywhere it lands."
-      },
-      {
-        "title": "Motion you keep and extend",
-        "desc": "You leave with the project files, a Lottie or component pack for your site, and a documented motion language. Your team can add a new card or update a price without coming back to us for every change."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Script and direction",
-        "body": "We pin down the one thing the video must land, write a tight script, and agree the visual direction, pace and runtime. This is where the hard decisions get made, on paper, before anything moves."
-      },
-      {
-        "step": "02",
-        "title": "Storyboard and style frames",
-        "body": "You see the full sequence as boards plus two or three fully designed style frames. Once you approve the look and the flow, there are no surprises in animation, only execution."
-      },
-      {
-        "step": "03",
-        "title": "Animate and sound",
-        "body": "Designers and animators build it from one master file, then we layer voiceover, music and sound design. You review on a shared timeline with timecoded comments, so feedback is precise and fast."
-      },
-      {
-        "step": "04",
-        "title": "Deliver and adapt",
-        "body": "We export every ratio and format you need, hand over editable source files and a short style guide, and cut the variants for launch, ads and social so the asset is ready to work everywhere."
-      }
-    ],
-    "metric": {
-      "value": "+38%",
-      "label": "average completion rate on explainers"
-    },
-    "faqs": [
-      {
-        "q": "How long does a motion graphics video take?",
-        "a": "A standard 60-to-90-second explainer runs about three to four weeks: roughly a week on script and storyboard, two on animation and sound, and a few days for revisions and exports. Short logo stings and social loops are faster; longer or more complex pieces take more."
-      },
-      {
-        "q": "Do we get the editable files, or just the final export?",
-        "a": "You get both. Final renders in every ratio you need, plus the editable source files (After Effects, and Lottie or components where it suits your site) and a short motion style guide. The work is yours to keep, reuse and extend."
-      },
-      {
-        "q": "Can you match our existing brand, and add voiceover or music?",
-        "a": "Yes. We animate inside your brand system so the motion feels like you, and we handle voiceover casting, licensed music and sound design in-house. If you have no motion guidelines yet, we build them as part of the project."
-      }
-    ]
-  },
-  {
-    "category": "marketing",
-    "slug": "seo",
-    "name": "SEO",
-    "tagline": "Rankings you keep, not rent",
-    "intro": "SEO that treats organic search as an asset you own — technical foundations, on-page craft and content that keep earning traffic long after the work is done.",
-    "overview": [
-      "SEO is the work that makes search engines, and the people using them, choose you. It splits into three jobs: a technical foundation that lets your site get crawled and indexed cleanly, on-page work that maps your pages to what people actually search, and content that answers those searches better than anyone else ranking. Done together, they compound — each ranking page lifts the ones around it.",
-      "We start with the audit, not the deliverable. Before touching a meta tag we map your crawl budget, index bloat, Core Web Vitals and the keywords already sending you money. Then we build to a topic-cluster model so your pages support each other instead of competing, fix the technical debt that caps your ceiling, and ship content on a calendar your team can keep running. Everything we make is documented and handed over — you own the pages, the briefs and the playbook.",
-      "The outcome is traffic that does not reset when you stop spending. Paid search rents attention; the bill resets every month. Organic positions, built right, hold and grow. We aim for qualified visits that convert, tracked against revenue rather than ranking screenshots, so six months in you have a channel that costs less per lead each quarter."
-    ],
-    "deliverables": [
-      "Technical SEO audit with prioritised fix roadmap",
-      "Keyword + topic-cluster map tied to search intent",
-      "On-page optimisation: titles, meta, schema, internal links",
-      "Monthly SEO content briefs and published, ranking-ready pages",
-      "Core Web Vitals and indexation fixes shipped to the site",
-      "Rank, traffic and conversion dashboard in Looker Studio"
-    ],
-    "highlights": [
-      {
-        "title": "Built around revenue, not rankings",
-        "desc": "We track keywords by the money they move, not the screenshot they make. Reporting ties positions to qualified traffic and conversions, so you can see SEO paying for itself."
-      },
-      {
-        "title": "Topic clusters, not scattered posts",
-        "desc": "Every page is part of a cluster that links and reinforces. Pillar pages earn authority, supporting pages feed it back. The site gets stronger as a whole, not one lucky post at a time."
-      },
-      {
-        "title": "You own the engine",
-        "desc": "Briefs, the keyword map, the technical playbook and every published page are documented and handed to you. If we part ways, the rankings and the system stay yours."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Audit and baseline",
-        "body": "We crawl the site, check indexation, Core Web Vitals and backlinks, and map the keywords already earning. You get a baseline and a fix list ranked by impact."
-      },
-      {
-        "step": "02",
-        "title": "Strategy and clusters",
-        "body": "We build the keyword and topic-cluster map against real search intent and your unit economics, then agree the targets that matter and the pages that will reach them."
-      },
-      {
-        "step": "03",
-        "title": "Fix and publish",
-        "body": "We ship technical fixes, optimise on-page elements and schema, and publish content on a steady calendar — pillar pages first, supporting pages feeding them."
-      },
-      {
-        "step": "04",
-        "title": "Measure and compound",
-        "body": "Monthly we report rankings, traffic and conversions, prune what underperforms, and reinvest in what climbs. The channel gets cheaper per lead each quarter."
-      }
-    ],
-    "metric": {
-      "value": "+212%",
-      "label": "organic traffic in 9 months"
-    },
-    "faqs": [
-      {
-        "q": "How long before SEO shows results?",
-        "a": "Technical fixes can lift things in weeks. Content and authority take longer — expect early movement by month three and meaningful, compounding traffic around months six to nine. We report progress monthly so you are never guessing."
-      },
-      {
-        "q": "How is this different from running Google Ads?",
-        "a": "Ads rent attention and the bill resets monthly. SEO builds positions you keep. We often run both early on, then let organic carry more of the load as it matures and cost-per-lead drops."
-      },
-      {
-        "q": "Do I keep the work if we stop?",
-        "a": "Yes. The pages, keyword map, content briefs and technical playbook are documented and handed to you. The rankings live on your domain and stay yours regardless of whether we keep working together."
-      }
-    ]
-  },
-  {
-    "category": "marketing",
-    "slug": "google-ads",
-    "name": "Google Ads / PPC",
-    "tagline": "Buy profit, not clicks.",
-    "intro": "Search and shopping campaigns built around your unit economics, so every rupee of spend is judged on the profit it returns, not the traffic it rents. We run Google Ads as a P&L line, not a vanity dashboard.",
-    "overview": [
-      "Google Ads is the fastest way to put your offer in front of people already trying to buy. But most accounts leak: budget burns on broad-match terms, smart bidding optimises toward cheap conversions that never close, and the agency reports clicks while the bank balance tells a different story. The intent is there. The structure usually is not.",
-      "We start from your numbers, not the platform's. Target CPA and ROAS are reverse-engineered from real margin and close rates, then we build tight campaign structure around them: high-intent search, branded defence, shopping feeds that actually merchandise, and negative-keyword discipline that stops you paying to learn the same lesson twice. Conversion tracking is rebuilt to count revenue, with offline imports so the algorithm optimises toward closed deals, not form fills.",
-      "The outcome is paid traffic that pays for itself and a clean account you keep. You own the conversion setup, the audiences, the feed and the data, so the compounding learning stays with your business when the engagement ends, instead of walking out the door with the agency."
-    ],
-    "deliverables": [
-      "Account audit and restructure with a margin-based CPA/ROAS target model",
-      "Search, Shopping and Performance Max campaigns with negative-keyword and search-term governance",
-      "Server-side conversion tracking with offline conversion imports tied to real revenue",
-      "Optimised Merchant Centre product feed and shopping titles",
-      "Responsive search ad and asset library with ongoing copy and creative testing",
-      "Monthly profit-first report and a 90-day scaling roadmap"
-    ],
-    "highlights": [
-      {
-        "title": "Margin in, bids out",
-        "desc": "Bid targets are built backward from your gross margin and close rate, not borrowed industry benchmarks. The algorithm chases profit, so spend scales only where the maths holds."
-      },
-      {
-        "title": "Tracking that counts revenue",
-        "desc": "We import offline and closed-deal data back into Google, so smart bidding learns from money in the bank, not cheap leads that never convert. No more optimising toward the wrong outcome."
-      },
-      {
-        "title": "The account is yours",
-        "desc": "You own the conversion setup, audiences, feed and search-term history from day one. Years of learning compound inside an asset you keep, not one you rent from us."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Model the economics",
-        "body": "We map your margins, close rates and customer value to set break-even and target ROAS. Before a single rupee is spent, we agree on what a profitable click is actually worth to you."
-      },
-      {
-        "step": "02",
-        "title": "Rebuild the foundation",
-        "body": "Conversion tracking is rebuilt to measure revenue, feeds are cleaned, and campaigns are restructured around intent. We strip out wasted spend and the terms quietly draining the budget."
-      },
-      {
-        "step": "03",
-        "title": "Launch and prove",
-        "body": "We go live on high-intent search and shopping, then read the data weekly. Negatives, bids and creative are tuned against the profit target, not the click count, until the unit economics are stable."
-      },
-      {
-        "step": "04",
-        "title": "Scale what pays",
-        "body": "Once a campaign clears its target consistently, we expand budget, broaden match types and add new ad groups. Growth follows proof, so spend rises only where it keeps returning."
-      }
-    ],
-    "metric": {
-      "value": "4.1x",
-      "label": "blended ROAS in 90 days"
-    },
-    "faqs": [
-      {
-        "q": "How much should we budget to start?",
-        "a": "Enough to gather real conversion data inside your target CPA, usually a few weeks of meaningful spend per campaign. We size the starting budget from your margins and sales cycle, then scale only after the account clears its profit target."
-      },
-      {
-        "q": "How soon will we see results?",
-        "a": "Search and shopping can move within weeks because the intent already exists. The first 30 days are about clean tracking and cutting waste, the next 60 about proving repeatable profit. We set honest milestones up front and report against them."
-      },
-      {
-        "q": "Do we keep the account if we stop working together?",
-        "a": "Yes. The Google Ads account, conversion setup, audiences and feed are yours throughout. Everything is built in your accounts so the data and learning stay with your business, not ours."
-      }
-    ]
-  },
-  {
-    "category": "marketing",
-    "slug": "meta-ads",
-    "name": "Meta Ads",
-    "tagline": "Paid social that earns its budget",
-    "intro": "Meta Ads is where most spend leaks. We treat Facebook and Instagram as a creative testing machine wired to your unit economics, so every rupee buys profit and a creative library you keep using.",
-    "overview": [
-      "Meta Ads is paid acquisition across Facebook, Instagram, Reels and Messenger. The platform rewards two things: creative that stops the scroll and an account structured to learn fast. Most brands get neither. They boost posts, chase cheap clicks, and watch a healthy ROAS quietly erode as the algorithm runs out of fresh angles.",
-      "We run it as a system. Clean account structure feeds Meta accurate conversion data, in-house creative supplies a steady stream of new angles to test, and budget flows to whatever the numbers prove. The point is not a lucky winning ad — it is a repeatable engine that lowers acquisition cost as it learns.",
-      "The outcome is profitable spend that scales. You get acquisition tied to contribution margin rather than vanity ROAS, a tested library of creative and audiences, and an ad account you own — so the work compounds instead of resetting when the campaign ends."
-    ],
-    "deliverables": [
-      "Account and campaign structure built for Advantage+ and broad targeting, with clean naming and budget logic",
-      "A monthly batch of 12 to 20 ad creatives — statics, carousels and hook-led Reels — produced in-house",
-      "Full conversions API and pixel setup with server-side events and deduplicated tracking",
-      "A creative testing matrix mapping hooks, angles and formats to performance",
-      "Weekly pacing checks plus a monthly ROAS, CAC and contribution-margin report tied to your numbers",
-      "A tagged, reusable library of winning creatives and audiences you own outright"
-    ],
-    "highlights": [
-      {
-        "title": "Creative is the targeting",
-        "desc": "Since iOS 14 broke granular audiences, the creative is what finds your buyer. We ship more angles, faster, and let spend flow to what actually converts instead of guessing at interest stacks."
-      },
-      {
-        "title": "Wired to unit economics",
-        "desc": "We optimise to contribution margin and blended CAC, not in-platform ROAS theatre. A 6x in Ads Manager means nothing if it cannibalises organic — we measure what the bank account sees."
-      },
-      {
-        "title": "You keep the engine",
-        "desc": "Ad account, pixel data, creative files and audience logic stay yours. When the engagement ends you walk away with a tested creative library and a structure that still runs."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Audit & wire-up",
-        "body": "We dig into your margins, past spend and offer, then fix the plumbing — conversions API, server-side events, clean account structure — so the data we optimise on is actually true."
-      },
-      {
-        "step": "02",
-        "title": "Angle research",
-        "body": "We map the hooks, pains and proof points your buyer responds to, then storyboard a first wave of statics, carousels and Reels built to test distinct ideas, not cosmetic variants."
-      },
-      {
-        "step": "03",
-        "title": "Launch & learn",
-        "body": "Campaigns go live in a broad, learning-friendly structure. We feed budget to winners, kill fatigue early, and read results at the creative level — what worked and why."
-      },
-      {
-        "step": "04",
-        "title": "Scale & compound",
-        "body": "Proven angles get scaled and iterated into new variations, while losers fund the next test. The creative library grows, CAC stabilises, and spend climbs without breaking ROAS."
-      }
-    ],
-    "metric": {
-      "value": "4.1x",
-      "label": "avg. blended ROAS at scale"
-    },
-    "faqs": [
-      {
-        "q": "What ad spend do I need before this makes sense?",
-        "a": "Meta needs roughly 50 conversions per ad set per week to exit learning and optimise well. For most brands that means a working media budget from around 2.5 lakh a month. Below that we will tell you honestly — sometimes the right move is fixing the offer or landing page first."
-      },
-      {
-        "q": "Do you make the creative, or do I supply it?",
-        "a": "We make it. Hooks, statics, carousels and Reels are produced in-house every month, because creative is where Meta performance is won or lost. If you have brand footage or product shots we will use them, but you are never waiting on us for assets."
-      },
-      {
-        "q": "How do you report — and what counts as a real result?",
-        "a": "We report blended CAC, contribution margin and revenue you can reconcile against your own numbers, not just the inflated ROAS Ads Manager shows. You see weekly pacing and a monthly review against the milestones we set up front."
-      }
-    ]
-  },
-  {
-    "category": "marketing",
-    "slug": "social-marketing",
-    "name": "Social Media Marketing",
-    "tagline": "An audience you own, not rent",
-    "intro": "Always-on social management that builds a real audience around your brand — not a follower count you have to keep paying to reach. We turn your feed into an asset that compounds.",
-    "overview": [
-      "Social media marketing is the work of showing up consistently, with a point of view, on the platforms where your buyers already spend their time. It is content planning, production, publishing, community management and measurement — run as one always-on system rather than a scramble of last-minute posts. Done right, it builds an owned audience that hears from you for free, long after a campaign ends.",
-      "Creative Monk runs your social in-house under one roof: strategists, writers, designers and editors on the same desk. We start from your positioning and your numbers, then build a monthly content engine tuned to each platform — Instagram, LinkedIn, YouTube, whichever earns attention for you. We reply, not just publish; we read the data weekly and feed what works back into the next batch.",
-      "The outcome is compounding reach and a warm audience that remembers you. Saves, shares and DMs that turn into pipeline. A feed that does the convincing before a sales call ever happens, so paid spend works harder and word of mouth has something to point at."
-    ],
-    "deliverables": [
-      "Monthly content calendar mapped to each platform and goal",
-      "12-20 finished posts per month — carousels, reels, statics, copy",
-      "Community management: comments, DMs and inbound replies within agreed hours",
-      "Platform-native short-form video, scripted and edited in-house",
-      "Monthly performance report with reach, saves, shares and follower quality",
-      "Quarterly content strategy refresh based on what the data proved"
-    ],
-    "highlights": [
-      {
-        "title": "Built on owned audience, not rented reach",
-        "desc": "We grow followers, subscribers and a content back-catalogue that keep working without ad spend. The asset stays yours — handles, files and all — even if we ever part ways."
-      },
-      {
-        "title": "One desk, not a freelancer relay",
-        "desc": "Strategy, copy, design and editing sit together in-house. No briefs lost between vendors, no off-brand posts slipping through. Faster turnaround and a consistent voice across every platform."
-      },
-      {
-        "title": "We manage the conversation, not just the calendar",
-        "desc": "Posting is half the job. We answer comments and DMs, surface buying signals to your team, and treat every reply as part of the brand — because that is where audiences actually decide to trust you."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Audit and positioning",
-        "body": "We review your current accounts, your competitors and your numbers. We define who we are talking to, the point of view that sets you apart, and the platforms worth your time. No spreading thin across six networks for the sake of it."
-      },
-      {
-        "step": "02",
-        "title": "Content engine setup",
-        "body": "We build a monthly calendar, content pillars and platform-specific formats. Hooks, scripts, design templates and a clear approval flow — so production stays fast and on-brand from the first batch onward."
-      },
-      {
-        "step": "03",
-        "title": "Publish and engage",
-        "body": "We ship on schedule, then stay in the comments and DMs. We manage the community, flag genuine leads to your team, and keep the feed alive between posts rather than going quiet."
-      },
-      {
-        "step": "04",
-        "title": "Measure and compound",
-        "body": "Every week we read what landed — saves, shares, watch time, follower quality — and feed it back into the next batch. Monthly reporting ties it to outcomes, not vanity likes, so the engine gets sharper each cycle."
-      }
-    ],
-    "metric": {
-      "value": "+212%",
-      "label": "organic reach in 6 months"
-    },
-    "faqs": [
-      {
-        "q": "Which platforms will you actually run for us?",
-        "a": "Only the ones where your buyers are. We usually recommend one or two to start — often Instagram plus LinkedIn or YouTube — and earn the right to expand. Running six accounts badly beats nobody. We would rather own two."
-      },
-      {
-        "q": "How long before we see real growth?",
-        "a": "Engagement and reach can lift within the first 60-90 days as the content engine finds its rhythm. A genuinely owned, compounding audience builds over months, not weeks. We set honest milestones up front and report against them every month."
-      },
-      {
-        "q": "Do you handle content production or do we supply it?",
-        "a": "We handle it end to end — strategy, copy, design and short-form editing, all in-house. We will pull on your raw footage, product shots or founder access where it helps, but you are never left writing captions or briefing a separate designer."
-      }
-    ]
-  },
-  {
-    "category": "marketing",
-    "slug": "lead-generation",
-    "name": "Lead Generation",
-    "tagline": "Pipeline that pays for itself",
-    "intro": "Lead generation built backwards from your unit economics — what a customer is worth, what you can pay to win one, and the funnel that turns spend into qualified pipeline your sales team actually closes.",
-    "overview": [
-      "Most lead gen optimises for the cheapest form fill, then wonders why sales hates the leads. We start from the other end. Before a single ad runs we map your numbers: average order value, close rate, sales-cycle length and how much margin a customer leaves behind. That gives us the one figure that governs everything — what you can profitably pay for a qualified lead.",
-      "From there we engineer the funnel as a system. Offer and message matched to intent, landing pages built to convert, lead capture that filters tyre-kickers from buyers, and routing that gets the hot ones to sales while they are still warm. Every stage is instrumented, so we know where leads come from, where they stall and what each one truly costs to acquire.",
-      "The outcome is pipeline you can forecast instead of hope for. Cost per qualified lead trends down as we kill what doesn't work and double on what does. And because the funnel, the data and the lists are yours, the engine keeps compounding long after a campaign ends — demand you own, not attention you rent."
-    ],
-    "deliverables": [
-      "Unit-economics model with target CPL, payback period and channel-level break-even thresholds",
-      "Conversion-built landing pages and lead-capture forms with qualifying logic",
-      "Multi-step nurture sequences (email and WhatsApp) that warm leads to sales-ready",
-      "Lead scoring and routing rules wired into your CRM, with source attribution",
-      "Live pipeline dashboard tracking CPL, lead-to-close rate and cost per acquisition",
-      "Monthly funnel report with what moved, what to cut and the next set of tests"
-    ],
-    "highlights": [
-      {
-        "title": "Costed before it's built",
-        "desc": "We model your margins first, so every target — cost per lead, payback, break-even — is grounded in real economics. No guessing, no vanity volume."
-      },
-      {
-        "title": "Qualified, not just captured",
-        "desc": "Forms and scoring filter for buying intent, so sales gets people ready to talk instead of a list of strangers. Fewer leads, more revenue."
-      },
-      {
-        "title": "The engine is yours to keep",
-        "desc": "Funnel, CRM logic, nurture flows and data live in your accounts. When the retainer ends, the pipeline doesn't — you own the asset outright."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Model",
-        "body": "We pull your sales data and margins to set the math: lifetime value, target cost per qualified lead, payback window and the break-even point each channel has to clear."
-      },
-      {
-        "step": "02",
-        "title": "Build",
-        "body": "Offer, landing pages, capture forms and CRM routing go live as one connected funnel — every step tagged so we can trace a lead from first click to closed deal."
-      },
-      {
-        "step": "03",
-        "title": "Feed",
-        "body": "We open the channels that fit your intent and economics — search, paid social, local — and run lead-quality tests, not just lead-volume ones."
-      },
-      {
-        "step": "04",
-        "title": "Compound",
-        "body": "We cut the sources that miss your CPL target, reinvest in the ones that beat it, and tighten nurture, so cost falls and qualified pipeline climbs month over month."
-      }
-    ],
-    "metric": {
-      "value": "62%",
-      "label": "lower cost per qualified lead in 6 months"
-    },
-    "faqs": [
-      {
-        "q": "What counts as a qualified lead?",
-        "a": "We define it with you up front, against your real buying criteria — budget, fit, intent and stage — then build the scoring and forms to enforce it. You set the bar; we make the funnel respect it instead of flooding sales with names that go nowhere."
-      },
-      {
-        "q": "How is this different from just running ads?",
-        "a": "Ads are one input. We build the whole system around your unit economics: the offer, the landing page, qualification, nurture, routing and the reporting that ties cost per lead to revenue. Ad platforms send traffic; this turns that traffic into forecastable, profitable pipeline."
-      },
-      {
-        "q": "How fast do leads start coming in?",
-        "a": "Paid channels can produce leads within the first few weeks. The first month or two is mostly learning — finding which sources clear your cost-per-lead target. Real compounding, where cost drops and quality climbs, shows over three to six months as the data sharpens."
-      }
-    ]
-  },
-  {
-    "category": "marketing",
-    "slug": "conversion-optimisation",
-    "name": "Conversion Optimisation",
-    "tagline": "Lift the numbers that actually pay.",
-    "intro": "Conversion optimisation is how we turn the traffic you already pay for into revenue you keep. We test, learn, and ship changes to the moments where buyers decide.",
-    "overview": [
-      "Most growth budgets pour money into the top of the funnel and quietly leak it at the bottom. Conversion optimisation fixes the part you already own: the page, the form, the checkout, the decision. We map where intent breaks down, form a hypothesis about why, and run controlled experiments until the lift is real and the data agrees.",
-      "Our approach is research first, opinion last. We watch session recordings, read heatmaps, pull funnel drop-off from your analytics, and talk to real customers before we touch a single button. Every test runs to statistical significance against a clear baseline, so a win is a win you can bank, not a fluke that fades next month. Losing variants teach us as much as winning ones.",
-      "The outcome is compounding. A higher conversion rate makes every existing channel cheaper to run and every future campaign worth more, because the same spend now returns more revenue. You keep the playbook, the data, and the wins. Nothing here is rented from us."
-    ],
-    "deliverables": [
-      "Conversion audit with prioritised, scored test backlog (ICE/PXL)",
-      "A/B and multivariate tests built, QA'd and shipped",
-      "Heatmaps, scroll maps and session-recording analysis",
-      "Rebuilt landing pages, forms and checkout flows",
-      "Experiment log with significance, lift and revenue impact",
-      "Funnel + event-tracking setup in GA4 and your CRO tooling"
-    ],
-    "highlights": [
-      {
-        "title": "Hypotheses, not hunches",
-        "desc": "Every test starts from evidence — recordings, drop-off data and customer interviews — and runs to statistical significance. We ship changes we can prove, and we kill the ones that don't earn their place."
-      },
-      {
-        "title": "We optimise for revenue, not rate",
-        "desc": "A higher conversion rate that lowers order value is a trap. We watch revenue per visitor and downstream quality, so the wins hold up in your P&L, not just the dashboard."
-      },
-      {
-        "title": "You own the engine",
-        "desc": "The tracking, the test backlog and the documented playbook stay with you. If we parted ways tomorrow, your team could keep running experiments without missing a beat."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Diagnose",
-        "body": "We instrument the funnel and study the friction — analytics, heatmaps, recordings and customer interviews — to find exactly where intent leaks and money goes with it."
-      },
-      {
-        "step": "02",
-        "title": "Prioritise",
-        "body": "Findings become a scored backlog. We rank each hypothesis by expected impact, confidence and effort, so we test the highest-leverage ideas first instead of guessing."
-      },
-      {
-        "step": "03",
-        "title": "Test",
-        "body": "We build clean A/B and multivariate experiments, QA across devices, and run each to significance against a fixed baseline. No peeking, no calling wins early."
-      },
-      {
-        "step": "04",
-        "title": "Compound",
-        "body": "Winners ship to production and feed the next round of hypotheses. The backlog never empties, so the conversion rate keeps climbing instead of plateauing."
-      }
-    ],
-    "metric": {
-      "value": "+38%",
-      "label": "checkout conversion in 90 days"
-    },
-    "faqs": [
-      {
-        "q": "How much traffic do I need before CRO is worth it?",
-        "a": "As a rule of thumb, around 1,000 conversions a month per page gives clean, fast results. Below that we still help — we lean on qualitative research and ship higher-confidence, larger changes rather than waiting months for tiny tests to reach significance."
-      },
-      {
-        "q": "When will I see results?",
-        "a": "First insights land inside two weeks from the audit and tracking work. Tested, shipped wins typically show within the first 60 to 90 days, depending on traffic volume. We report on every experiment, including the ones that lose, because those shape the next round."
-      },
-      {
-        "q": "Do you only change pages, or the strategy behind them?",
-        "a": "Both. We will happily rewrite a headline or rebuild a checkout, but the real gains come from fixing why people hesitate — pricing clarity, trust signals, offer and flow. We optimise the decision, not just the design."
-      }
-    ]
-  },
-  {
-    "category": "development",
-    "slug": "web-development",
-    "name": "Web Development",
-    "tagline": "Websites engineered to convert.",
-    "intro": "Web development at Creative Monk is the craft of turning a strategy into a fast, accessible site that earns its keep — a build your team owns outright, not a template you keep renting.",
-    "overview": [
-      "Web development is where positioning becomes a working product. We build sites and stores on a modern stack — Next.js and headless where speed and scale matter, Shopify and WordPress where your team needs to run things without us. Every page is shaped around a single job: move the right visitor one step closer to buying, booking, or getting in touch.",
-      "Our approach starts with the conversion path, not the homepage hero. We map where intent is highest, design the flow that carries it, then engineer the front end so nothing leaks — clean semantics, real accessibility, Core Web Vitals in the green on the devices your customers actually use. Design, code, copy, and analytics are produced in-house, so the build is consistent from the first wireframe to the last deploy.",
-      "The outcome is an asset you own. You get the design system, the codebase, the CMS, and the documentation — no proprietary lock-in, no monthly ransom to edit a paragraph. A site that loads in under two seconds, ranks because it deserves to, and turns more of your existing traffic into revenue without spending another rupee on ads."
-    ],
-    "deliverables": [
-      "Conversion-mapped sitemap, wireframes, and a reusable design system / UI kit",
-      "Production front-end build (Next.js, Shopify, or WordPress) with a CMS your team can edit",
-      "Core Web Vitals tuning, semantic HTML, and WCAG-AA accessibility pass",
-      "Analytics, event tracking, and an A/B testing setup wired before launch",
-      "Full source code, deployment, and handover docs — owned by you, no lock-in"
-    ],
-    "highlights": [
-      {
-        "title": "Built around the conversion path",
-        "desc": "We start with where intent lives and engineer the flow that carries it. Layout, copy, and load order all serve one measurable job — not a designer's mood board."
-      },
-      {
-        "title": "You own the asset",
-        "desc": "Codebase, CMS, design tokens, and docs are handed over in full. No proprietary builders, no edit-a-line invoices. The site is yours to run and extend."
-      },
-      {
-        "title": "Performance is a feature, not a finish",
-        "desc": "Speed and accessibility are designed in from the first commit. Green Core Web Vitals on mid-range phones, not just a Lighthouse screenshot from a fast laptop."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Map the path",
-        "body": "We audit your current site, traffic, and goals, then map the routes that drive revenue. Sitemap, page priorities, and the conversion logic come before a single pixel."
-      },
-      {
-        "step": "02",
-        "title": "Design the system",
-        "body": "Wireframes become a real design system — tokens, components, and responsive states — so every page feels inevitable and nothing gets reinvented mid-build."
-      },
-      {
-        "step": "03",
-        "title": "Engineer and instrument",
-        "body": "We build on the right stack for your team, hit Core Web Vitals and accessibility targets, and wire analytics and A/B tests so launch day is measurable from minute one."
-      },
-      {
-        "step": "04",
-        "title": "Ship and hand over",
-        "body": "We deploy, transfer the full codebase and docs, and train your team to run it. Then we watch the numbers and tune what the data tells us to."
-      }
-    ],
-    "metric": {
-      "value": "98",
-      "label": "avg. Lighthouse performance score"
-    },
-    "faqs": [
-      {
-        "q": "How long does a website take to build?",
-        "a": "A focused landing page runs two to three weeks. A full marketing site is typically six to eight weeks; a custom store or headless build, eight to twelve. We lock a milestone schedule up front and report against it — no open-ended timelines."
-      },
-      {
-        "q": "Which platform will you build on?",
-        "a": "Whatever serves the job, not what's easiest for us. Next.js or headless for speed and scale, Shopify for stores, WordPress when your team needs to edit freely. We recommend the stack in discovery and explain the trade-offs before you commit."
-      },
-      {
-        "q": "Do I actually own the site when it's done?",
-        "a": "Yes, completely. You get the source code, the CMS, the design system, and the documentation. There's no proprietary builder and no fee to change your own content. If you ever leave us, the asset goes with you."
-      }
-    ]
-  },
-  {
-    "category": "development",
-    "slug": "shopify-ecommerce",
-    "name": "Shopify & E-commerce",
-    "tagline": "Stores that load fast and sell harder.",
-    "intro": "We build Shopify and headless e-commerce stores engineered around one number: revenue per session. Fast to load, ruthless about checkout, and yours to keep when we hand over the keys.",
-    "overview": [
-      "Most Shopify stores are slow themes stuffed with apps, leaking money at every step between the product page and the thank-you screen. We start the other way around — with your margins, your average order value and the path a buyer actually takes — then build the store to remove friction from that exact path. Theme or fully headless, the goal never changes: more of the traffic you already pay for turns into orders.",
-      "Our approach is in-house and end to end. Storefront design, custom Liquid or a headless Next.js front end, payment and shipping setup, subscriptions, and the analytics to prove what is working — all under one roof, no hand-offs that lose the plot. We treat speed as a feature you can sell with: every theme we ship targets sub-2-second loads and green Core Web Vitals on a real mid-range phone, because that is what your customers are holding.",
-      "The outcome is a store that compounds. You own the theme code, the data layer and the customer list — not a rented template you fight with every quarter. We instrument it so each month of traffic teaches the next one, and we keep tuning the funnel long after launch so conversion rate climbs instead of plateauing the week the project closes."
-    ],
-    "deliverables": [
-      "Conversion-shaped Shopify storefront — custom theme or headless Next.js build",
-      "Optimised product, collection, cart and checkout flow with upsell and bundle logic",
-      "App and integration stack: payments, shipping, reviews, subscriptions, ERP/3PL",
-      "Klaviyo and GA4 event tracking with a clean data layer and reporting dashboard",
-      "Speed pass to sub-2s loads and green Core Web Vitals on mobile",
-      "Handover kit: theme code, documentation and a 30-day post-launch support window"
-    ],
-    "highlights": [
-      {
-        "title": "Built around revenue per session",
-        "desc": "We design the funnel before the pixels — product page, cart, checkout, post-purchase. Every block earns its place by moving the number that pays the bills, not by looking busy."
-      },
-      {
-        "title": "Speed treated as a sales channel",
-        "desc": "No app bloat, no 6-second hero videos. Lean theme code, lazy-loaded media and headless where it pays off — because a second of load time is orders you never see."
-      },
-      {
-        "title": "You own the store, outright",
-        "desc": "Theme code, customer data, ad and email accounts — all yours from day one. We hand over documentation, not a dependency, so your team can run and grow it without us in the loop."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Map the funnel",
-        "body": "We audit your current store or category — traffic, average order value, where buyers drop off — and define the exact path from ad click to repeat purchase we are building toward."
-      },
-      {
-        "step": "02",
-        "title": "Design to convert",
-        "body": "Storefront and product experience designed around that path: clear hierarchy, honest social proof, frictionless cart and a checkout that gets out of the way."
-      },
-      {
-        "step": "03",
-        "title": "Build and instrument",
-        "body": "Custom theme or headless build, app stack wired in, payments and shipping tested, and full event tracking so every click is measured from launch day one."
-      },
-      {
-        "step": "04",
-        "title": "Launch and lift",
-        "body": "We ship, watch the real numbers, and run a continuous loop of A/B tests and speed tuning so conversion rate keeps climbing month after month."
-      }
-    ],
-    "metric": {
-      "value": "+38%",
-      "label": "avg. conversion rate lift post-rebuild"
-    },
-    "faqs": [
-      {
-        "q": "Should we go with a Shopify theme or a fully headless build?",
-        "a": "Depends on scale and budget. A well-built custom theme covers most brands and ships faster. Headless (Next.js front end on Shopify) is worth it once you need top-tier speed, a complex catalogue or a content-heavy store. We will recommend the honest fit, not the bigger invoice."
-      },
-      {
-        "q": "Can you migrate our existing store without losing SEO or orders?",
-        "a": "Yes. We migrate products, customers and order history, map every old URL to a redirect so rankings hold, and run the new store in parallel before cutover. Downtime is minutes, not days, and your organic traffic stays intact."
-      },
-      {
-        "q": "What happens after launch — are we on our own?",
-        "a": "Every build includes a 30-day support window and a documented handover, so your team can run it. From there most brands move to a monthly retainer where we keep A/B testing the funnel and tuning speed. Either way the store and its code are yours to keep."
-      }
-    ]
-  },
-  {
-    "category": "development",
-    "slug": "wordpress",
-    "name": "WordPress",
-    "tagline": "A WordPress site your team runs without us",
-    "intro": "WordPress, built the way it should be: a fast, secure site with an editing experience your marketing team can actually use, so launching a page or a campaign never waits on a developer.",
-    "overview": [
-      "WordPress powers a huge share of the web for one reason: the right build lets non-technical teams publish, edit and grow without touching code. The wrong build does the opposite, burying you under plugins, page builders and a back end nobody wants to log into. We build the first kind. Custom blocks in the native editor, clean templates, and a structure that matches how your team actually works.",
-      "Our approach starts with how you'll run the site after launch, not just how it looks on day one. We map your content types, build reusable blocks and patterns in the Gutenberg editor, and keep the plugin list short and deliberate. Hosting, caching and image handling are configured for Core Web Vitals from the start, so the site stays fast as the content library grows.",
-      "The outcome is a site you own and operate. Your team ships landing pages, blog posts and product updates the same afternoon they're briefed. There's no monthly hostage situation over small edits, no theme you can't update without breaking, and a documented handover so the people who use it every day know exactly where everything lives."
-    ],
-    "deliverables": [
-      "Custom WordPress theme with reusable Gutenberg blocks and page patterns built for your content types",
-      "A curated, security-vetted plugin stack with auto-updates, daily backups and a staging environment",
-      "Configured hosting, caching and image optimisation tuned to pass Core Web Vitals",
-      "Editor training session plus a written runbook covering pages, posts, SEO fields and media",
-      "Analytics, search and 301-redirect setup with a content migration from your existing site"
-    ],
-    "highlights": [
-      {
-        "title": "Blocks, not page-builder bloat",
-        "desc": "We build in the native block editor with custom blocks instead of heavy page builders like Elementor or Divi. Less code, faster pages, and an editing experience your team can learn in an afternoon."
-      },
-      {
-        "title": "Built for the people who run it",
-        "desc": "We design the back end around your actual content and your actual editors. Fields are labelled in plain language, layouts are guided, and nothing breaks when a non-developer publishes."
-      },
-      {
-        "title": "Fast WordPress is a discipline",
-        "desc": "Most WordPress sites are slow because nobody owns performance. We do, from plugin choices to caching to image formats, so the site loads quickly on day one and stays that way."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Audit and map",
-        "body": "We review your current site, content and goals, then map content types, templates and the blocks your editors will reuse. This is where we decide what to keep, kill and rebuild."
-      },
-      {
-        "step": "02",
-        "title": "Design the system",
-        "body": "We design templates and custom blocks against your brand, agreeing the editing experience before build. You see how a page is assembled, not just how it renders."
-      },
-      {
-        "step": "03",
-        "title": "Build and migrate",
-        "body": "We build the theme and blocks, configure the plugin stack, hosting and caching, then migrate content with redirects in place so rankings and links survive the move."
-      },
-      {
-        "step": "04",
-        "title": "Train and hand over",
-        "body": "We launch, run a live training session and hand over a written runbook. You leave owning the site, the logins and the knowledge to run it without us."
-      }
-    ],
-    "metric": {
-      "value": "0.9s",
-      "label": "avg. load time on rebuilt sites"
-    },
-    "faqs": [
-      {
-        "q": "Will my team be able to edit the site without a developer?",
-        "a": "Yes, that's the point. We build custom blocks in the native editor and hand over a runbook plus a training session. Most clients are publishing pages and posts independently within their first week."
-      },
-      {
-        "q": "Do you use page builders like Elementor or Divi?",
-        "a": "Only when a project genuinely calls for it. By default we build with native Gutenberg blocks, which keeps the site faster, lighter and easier to maintain. We'll tell you honestly which fits your case before we start."
-      },
-      {
-        "q": "Can you move our existing WordPress or other site over?",
-        "a": "Yes. We migrate your content, set up 301 redirects so search rankings and inbound links carry over, and run the move on a staging environment first so nothing breaks on the live site."
-      }
-    ]
-  },
-  {
-    "category": "development",
-    "slug": "headless-nextjs",
-    "name": "Next.js / Headless",
-    "tagline": "Headless builds you own and outgrow slowly.",
-    "intro": "Next.js and headless architecture for brands that have outgrown the page-builder ceiling and need a site engineered for speed, scale, and a decade of editing without a rebuild.",
-    "overview": [
-      "Headless means the front end and the content live apart. We build the interface in Next.js and connect it to whatever CMS or commerce backend fits your team, so editors get a clean, familiar place to work while the public site stays a fast, statically rendered shell. The result loads in milliseconds, ranks well, and never makes a customer wait on a database query to read your homepage.",
-      "Creative Monk treats the architecture as a long-term decision, not a launch trick. We model your content as structured data, render at the edge, and wire incremental builds so a blog edit ships in seconds without rebuilding the whole site. Components are typed, documented, and reused, which means the second page costs a fraction of the first and your team can extend the system without calling us back.",
-      "The outcome is a site that compounds. Core Web Vitals stay green as traffic grows, new templates take days instead of sprints, and the codebase is yours to keep, host, and hand to any competent Next.js developer. You stop renting a platform and start owning the engine your growth runs on."
-    ],
-    "deliverables": [
-      "Production Next.js codebase in your Git repository, fully owned and documented",
-      "Headless CMS or commerce integration with structured content models and editor onboarding",
-      "Typed, reusable component library with a living Storybook reference",
-      "Edge-rendered deployment on Vercel or your own infrastructure, with preview environments",
-      "Core Web Vitals, analytics, and SEO instrumentation wired in from day one",
-      "Handover kit: architecture notes, runbook, and a recorded walkthrough for your team"
-    ],
-    "highlights": [
-      {
-        "title": "Own the codebase, not a license",
-        "desc": "You get the full Next.js repo, the content models, and the deployment config. No proprietary lock-in, no per-seat platform fee, no permission needed to hire another developer later."
-      },
-      {
-        "title": "Speed budgeted, not hoped for",
-        "desc": "We set a performance budget before the first line of code and hold every component to it. Pages ship statically rendered and edge-cached, so green Core Web Vitals are the baseline, not a post-launch scramble."
-      },
-      {
-        "title": "Built to be edited by humans",
-        "desc": "Content is modelled around how your team actually thinks, with sensible field names and preview-as-you-type. Marketers publish without a ticket, and a structured schema means the site stays consistent as it grows."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Architect",
-        "body": "We map your content, traffic patterns and editing workflows, then choose the CMS, rendering strategy and hosting that fit. You leave this stage with a clear data model and a performance budget on paper."
-      },
-      {
-        "step": "02",
-        "title": "Build the system",
-        "body": "We construct a typed component library and the templates that compose it, wired to the headless backend. Each piece is documented in Storybook so the system stays legible long after launch."
-      },
-      {
-        "step": "03",
-        "title": "Wire and harden",
-        "body": "Content models, preview environments, SEO, analytics and incremental builds get connected and tested. We profile against the budget and fix what is slow before anyone outside sees it."
-      },
-      {
-        "step": "04",
-        "title": "Ship and hand over",
-        "body": "We deploy to the edge, train your editors, and hand you the repo, runbook and walkthrough. The site is live, fast, and entirely yours to extend from here."
-      }
-    ],
-    "metric": {
-      "value": "0.4s",
-      "label": "median Largest Contentful Paint on headless builds"
-    },
-    "faqs": [
-      {
-        "q": "Do we need a developer on staff to run a headless site?",
-        "a": "No. Day-to-day content lives in the CMS, so your team publishes pages, posts and products without touching code. You only need a developer when you want new templates or features, and the documented codebase means any competent Next.js engineer can pick it up."
-      },
-      {
-        "q": "Can you keep our existing CMS or commerce backend?",
-        "a": "Usually, yes. Next.js connects to most headless CMSs and to Shopify, WooCommerce or a custom API. If your current backend is the bottleneck we will say so plainly, but we will not force a migration you do not need."
-      },
-      {
-        "q": "Is headless overkill for a small site?",
-        "a": "Sometimes it is, and we will tell you. Headless earns its keep when you have real traffic, frequent edits, multiple content types or plans to scale. For a simple brochure site we will often recommend a lighter build instead of selling you complexity you will not use."
-      }
-    ]
-  },
-  {
-    "category": "development",
-    "slug": "landing-pages",
-    "name": "Landing Pages",
-    "tagline": "Pages built to turn clicks into customers.",
-    "intro": "High-intent landing pages engineered for paid traffic — single-minded pages that take the promise in your ad and pay it off in seconds.",
-    "overview": [
-      "A landing page is the most expensive real estate you own. Every rupee of ad spend lands here, and a slow, vague, or distracted page quietly burns the budget before a visitor ever decides. We build pages with one job: convert the exact person who clicked the exact ad, with no detours and nothing left to chance.",
-      "Our approach starts with the offer, not the layout. We map the visitor's intent at the moment of the click, mirror the ad's promise above the fold, and remove every reason to hesitate — friction, doubt, dead weight. The page ships fast and accessible by default: server-rendered, sub-second loads, clean event tracking wired in from day one so you can see what each section earns.",
-      "The outcome is a page that compounds. Because we instrument it properly and build it to be tested, your conversion rate keeps climbing after launch instead of decaying. Lower cost per acquisition, more qualified leads, and an asset you own outright — not a rented template you rebuild every campaign."
-    ],
-    "deliverables": [
-      "Conversion-shaped landing page, production-built and responsive",
-      "Copy and offer framework matched to your ad message",
-      "Analytics, conversion events and heatmap tracking, wired and verified",
-      "A/B test plan with the first variant set live",
-      "Lightweight CMS or editable sections so your team can update copy",
-      "Speed and Core Web Vitals report with a passing baseline"
-    ],
-    "highlights": [
-      {
-        "title": "Message-match, not guesswork",
-        "desc": "We build the page around the specific ad and audience driving traffic, so the headline pays off the click instead of forcing visitors to reorient. Tighter match, lower bounce, cheaper conversions."
-      },
-      {
-        "title": "Instrumented to improve",
-        "desc": "Every page ships with conversion tracking and a test plan in place. We don't hand over a static file — we hand over a measurable asset that gets sharper with each round of data."
-      },
-      {
-        "title": "Speed treated as conversion",
-        "desc": "Server-rendered, sub-second loads on mobile, where most paid traffic lands. We hold the line on Core Web Vitals because every 100ms of delay is paid for in lost sales."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Map the intent",
-        "body": "We start with the campaign, not the canvas. What did the ad promise, who is clicking, and what single action defines success? We pin the offer, the objection, and the one metric that matters before any design begins."
-      },
-      {
-        "step": "02",
-        "title": "Write to convert",
-        "body": "Copy leads, layout follows. We draft the headline, proof and call-to-action first — message-matched to the ad — then shape the page structure around the words that do the selling."
-      },
-      {
-        "step": "03",
-        "title": "Build and instrument",
-        "body": "We ship a fast, accessible, server-rendered page with conversion events, heatmaps and analytics wired in and tested. Nothing goes live until tracking fires correctly and the page passes Core Web Vitals."
-      },
-      {
-        "step": "04",
-        "title": "Test and compound",
-        "body": "We launch the first A/B variant, watch real traffic, and iterate on the headline, offer and flow. The page keeps earning more from the same spend, month after month."
-      }
-    ],
-    "metric": {
-      "value": "+68%",
-      "label": "avg. lift in conversion rate"
-    },
-    "faqs": [
-      {
-        "q": "How is a landing page different from a regular website page?",
-        "a": "A website page serves many visitors with many goals and lots of navigation. A landing page serves one audience, one offer, one action — usually traffic from a specific ad — with the distractions stripped out. That focus is exactly why it converts paid clicks better than a generic page."
-      },
-      {
-        "q": "How long does it take to build one?",
-        "a": "A single high-intent page typically takes two to three weeks from kickoff to live, including copy, build, tracking setup and the first test variant. If you already have a clear offer and brand assets, we move faster. Complex pages with custom interactions take a little longer."
-      },
-      {
-        "q": "Do I own the page, or am I locked into a builder?",
-        "a": "You own it outright. We build on a real codebase you keep — not a rented page-builder subscription. You get the files, the CMS access, and the freedom to host it anywhere. Nothing breaks or disappears if you stop working with us."
-      }
-    ]
-  },
-  {
-    "category": "development",
-    "slug": "ui-ux",
-    "name": "UI / UX Design",
-    "tagline": "Interfaces people finish, not abandon.",
-    "intro": "UI/UX design for products and sites that respect the user's time and the business's numbers. We design the path from first click to completed action, then prove it works.",
-    "overview": [
-      "UI/UX design is the discipline of deciding what a screen should do before deciding how it should look. We map the real jobs people come to your product to finish — buy, book, sign up, find an answer — and remove every step, doubt and dead end between them and that outcome. Visual polish comes after the logic is sound, never instead of it.",
-      "Our approach starts with evidence, not opinion. We watch how people actually use what you have, read your funnel data, and talk to the customers who churn. From there we build flows, wireframes and a working prototype before a single high-fidelity pixel is drawn — so the expensive decisions get tested while they are still cheap to change. Everything ships in a component system your team owns and can extend without us.",
-      "The outcome is fewer abandoned carts, shorter forms that more people complete, and onboarding people get through on their own. You keep the design system, the rationale behind every choice, and a measurable lift you can point to — not a folder of pretty screens that nobody can maintain."
-    ],
-    "deliverables": [
-      "User flows and a clickable Figma prototype tested before build",
-      "High-fidelity UI for every state — empty, loading, error, success",
-      "A component-based design system with tokens and usage rules",
-      "Annotated handoff specs and a developer-ready Figma file",
-      "Usability test findings with a prioritised fix list",
-      "Accessibility pass to WCAG 2.2 AA with contrast and focus states"
-    ],
-    "highlights": [
-      {
-        "title": "Flow before facade",
-        "desc": "We prototype and test the path to conversion before designing a single finished screen. Logic gets validated while it is cheap to change, so polish lands on a structure that already works."
-      },
-      {
-        "title": "A system you own",
-        "desc": "You receive a documented component library with tokens and rules — not flat mockups. Your team ships new screens that stay on-brand and consistent long after we hand over."
-      },
-      {
-        "title": "Designed for every state",
-        "desc": "Real products break at the edges. We design the empty, loading, error and success states too, so the experience holds up the day a user does the unexpected."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Diagnose",
-        "body": "We study your analytics, session recordings and support tickets, then interview real users. The goal is to name exactly where people stall, hesitate or leave — backed by evidence, not hunches."
-      },
-      {
-        "step": "02",
-        "title": "Architect",
-        "body": "We rebuild the flows and information structure, then turn them into wireframes and a clickable prototype. The hardest decisions get tested with users before anyone touches visual design."
-      },
-      {
-        "step": "03",
-        "title": "Craft",
-        "body": "With the structure proven, we design high-fidelity screens for every state and assemble them into a reusable component system with tokens, spacing and accessibility built in."
-      },
-      {
-        "step": "04",
-        "title": "Validate",
-        "body": "We run usability tests, fix what fails, and hand off developer-ready files. After launch we read the funnel and refine, so the improvement compounds rather than fades."
-      }
-    ],
-    "metric": {
-      "value": "+38%",
-      "label": "checkout completion after redesign"
-    },
-    "faqs": [
-      {
-        "q": "What's the difference between UI and UX in your process?",
-        "a": "UX is the decision-making: what the product should do, in what order, and why. UI is how that becomes something people see and touch. We do both, in that order — structure and flows first, then the visual layer on top. Splitting them is how products end up beautiful and unusable."
-      },
-      {
-        "q": "Do you only design, or do you build too?",
-        "a": "We can do both. Design hands off as a developer-ready Figma file with specs and a component system, which your engineers or ours can build. Since our web and development teams sit in the same studio, design-to-build stays consistent instead of getting lost in translation."
-      },
-      {
-        "q": "How do you prove the redesign actually worked?",
-        "a": "We agree on the metrics that matter — completion rate, drop-off, time-to-task, support volume — and baseline them before we start. After launch we read the funnel against that baseline. If a flow underperforms, we iterate. You get a number, not a vibe."
-      }
-    ]
-  },
-  {
-    "category": "ai",
-    "slug": "ai-strategy",
-    "name": "AI Strategy & Consulting",
-    "tagline": "Know where AI pays off before you spend a rupee on it.",
-    "intro": "AI strategy is the plan that comes before the tools: where AI actually moves your numbers, what to build first, and what to ignore. We cut through the hype and hand you a roadmap your team can act on.",
-    "overview": [
-      "Most businesses meet AI as a pile of pressure — a competitor's launch, a board's question, a hundred tools promising to change everything. So they buy a subscription, run a pilot that goes nowhere, and conclude AI is overrated. The problem was never the technology. It was starting with the tool instead of the decision.",
-      "We start with your P&L, not the model of the week. We map where your team actually loses hours, where slow response costs you deals, and where content or support can't keep up with demand, then rank those against what AI can reliably do today. The output is a prioritised roadmap: the two or three use-cases that pay back fastest, what each needs, and the ones worth deliberately skipping until they mature.",
-      "The point is leverage without the gamble. You walk away knowing exactly where AI earns its place, with a sequenced plan, a build-or-buy call on each piece, and honest numbers on cost, effort and payback, so the first thing you ship works and the wins fund the next step."
-    ],
-    "deliverables": [
-      "AI opportunity audit across marketing, sales, support and operations, scored by impact and effort",
-      "Prioritised AI roadmap: what to build first, next and never, with sequencing",
-      "Build-vs-buy and tool recommendation for each use-case, with realistic cost and effort",
-      "Data and readiness check: what you have, what's missing, and how to prepare it",
-      "ROI model and success metrics for each initiative, so wins are measurable",
-      "Team enablement plan: who runs what, and the guardrails to use AI safely"
-    ],
-    "highlights": [
-      {
-        "title": "Business case first, tools last",
-        "desc": "We start from where you lose money and time, not from a demo. Every recommendation is tied to a number it is meant to move, so AI spend is an investment with a payback, not a science project."
-      },
-      {
-        "title": "Honest about what AI can't do yet",
-        "desc": "We will tell you which ideas are ready to ship and which are hype that will waste a quarter. Knowing what to skip is half the value of the exercise."
-      },
-      {
-        "title": "A roadmap you own and run",
-        "desc": "You keep the audit, the roadmap and the models as files. Whether we build it or your team does, the plan does not live in a locked tool or in our heads."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Audit",
-        "body": "We map your workflows, funnel and tooling to find where hours leak, response is slow, and output can't keep up, the places AI has real leverage."
-      },
-      {
-        "step": "02",
-        "title": "Prioritise",
-        "body": "We score every opportunity by impact and effort and rank them into a sequence: quick wins that fund the bigger bets, and the ideas worth waiting on."
-      },
-      {
-        "step": "03",
-        "title": "Plan",
-        "body": "Each use-case gets a build-or-buy call, a tool and cost estimate, the data it needs, and the metric it is accountable for. Decisions, not a wish list."
-      },
-      {
-        "step": "04",
-        "title": "Enable",
-        "body": "We hand over the roadmap and set the guardrails, who runs what, how to use AI safely, and the review cadence that keeps the plan honest as the tech moves."
-      }
-    ],
-    "metric": {
-      "value": "40+ hrs",
-      "label": "of manual work a month freed up by the first use-cases we ship"
-    },
-    "faqs": [
-      {
-        "q": "Is our business too small for AI?",
-        "a": "Usually the opposite. Small teams feel the leverage most, because AI can cover work you can't yet afford to hire for, support replies, content volume, lead follow-up. The trick is picking the one or two use-cases that pay back now, which is exactly what the roadmap does."
-      },
-      {
-        "q": "Will you push tools we don't need?",
-        "a": "No. We are tool-agnostic and often recommend the cheapest thing that works, or nothing, if the idea isn't ready. We make money building what earns its place, not reselling subscriptions."
-      },
-      {
-        "q": "What do we actually walk away with?",
-        "a": "A prioritised roadmap, a build-or-buy call and cost estimate per use-case, a data-readiness check and an ROI model, all files you own. Enough to start, whether we build it or your team does."
-      }
-    ]
-  },
-  {
-    "category": "ai",
-    "slug": "generative-content",
-    "name": "Generative Content & Creative",
-    "tagline": "Ten times the output, still unmistakably your brand.",
-    "intro": "Generative content is AI-assisted production — copy, images, video and variations — run through a brand system so the volume goes up without the quality or the voice going down.",
-    "overview": [
-      "The demand for content is infinite and your team is not. Every channel wants more, every campaign wants variants, and 'just post more' quietly burns out the people who make the good stuff. Generative AI changes the maths, but raw, un-directed AI output is exactly the beige, on-nobody's-brand sludge flooding the internet. The difference is the system around it.",
-      "We wrap generation in your brand. We build the prompts, style references, tone guides and review gates so the model produces on-voice copy, on-palette visuals and on-format video, first draft, not fortieth. Then a human edits. You get the speed of AI with a craftsperson's taste on top, across social, ads, blog, product and email, in a fraction of the time and cost.",
-      "The output is leverage, not slop. A month of on-brand posts, ad variations worth testing, and image and video concepts by the dozen, produced fast enough to keep every channel fed and refined enough that no one can tell a machine helped. You own the prompt library and the system, so the engine keeps running."
-    ],
-    "deliverables": [
-      "Brand-tuned prompt library and style references for copy, image and video generation",
-      "On-brand content produced at volume: social, ads, blog, email and product copy",
-      "AI image and short-form video concepts, generated and human-finished",
-      "Ad and headline variations built for testing at the scale paid media needs",
-      "A generation and human-review workflow your team can run, with quality gates",
-      "Tone, do's-and-don'ts and guardrails so AI output never drifts off-brand"
-    ],
-    "highlights": [
-      {
-        "title": "A system, not a prompt",
-        "desc": "Anyone can paste into ChatGPT. We build the reference library, voice guide and review gates that make the output reliably yours, so volume never costs you the brand."
-      },
-      {
-        "title": "Human taste on top",
-        "desc": "AI drafts, a person decides. Every piece gets an editor's eye before it ships, so you get the speed without the tell-tale AI blandness."
-      },
-      {
-        "title": "Built to test",
-        "desc": "Generation shines where you need many good variants, ad angles, subject lines, hooks. We produce at the scale performance marketing actually needs to find winners."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Tune",
-        "body": "We distil your brand into prompts, style refs and a voice guide the models can follow, the difference between generic output and something recognisably you."
-      },
-      {
-        "step": "02",
-        "title": "Generate",
-        "body": "We produce at volume against real briefs, posts, variants, images, video concepts, using the system so first drafts land close, not miles off."
-      },
-      {
-        "step": "03",
-        "title": "Refine",
-        "body": "A human editor sharpens voice, fact-checks and kills anything that smells like a machine. Quality gates before anything reaches your feed."
-      },
-      {
-        "step": "04",
-        "title": "Scale",
-        "body": "We hand over the prompt library and workflow so your team can keep the engine running, and tune it as the brand and the models evolve."
-      }
-    ],
-    "metric": {
-      "value": "3×",
-      "label": "content output at the same cost, without losing the brand voice"
-    },
-    "faqs": [
-      {
-        "q": "Won't AI content hurt our brand or SEO?",
-        "a": "Un-edited, generic AI content can. That is the whole reason we wrap it in a brand system and a human edit. Google rewards useful, original content regardless of how it is made; what it punishes is thin, un-owned sludge, which is exactly what our process filters out."
-      },
-      {
-        "q": "Will it actually sound like us?",
-        "a": "That is the point of the tuning phase. We build the voice guide and references so the first draft lands close, and a human editor closes the gap. Most readers can't tell, and your brand stays intact."
-      },
-      {
-        "q": "Do you replace our writers and designers?",
-        "a": "No, we make them faster. AI handles volume and variations; your people (or ours) bring the taste, strategy and final call. The best results are human-directed, not human-free."
-      }
-    ]
-  },
-  {
-    "category": "ai",
-    "slug": "ai-chatbots",
-    "name": "AI Chatbots & Assistants",
-    "tagline": "A tireless first responder that answers, qualifies and books.",
-    "intro": "An AI assistant trained on your business, answering customers, qualifying leads and booking calls 24/7 on your site, WhatsApp or socials, in your voice, with a clean handoff to a human when it matters.",
-    "overview": [
-      "Most enquiries die in the gap between 'interested' and 'answered.' Someone lands at 11pm with a question, no one replies till morning, and they have already booked your competitor. Your team can't be everywhere at once, and a generic bot that loops 'I didn't understand that' is worse than nothing. The fix is an assistant that actually knows your business.",
-      "We build assistants grounded in your real content, your services, pricing logic, FAQs and docs, so answers are accurate, not hallucinated. It greets visitors, answers real questions, qualifies the serious ones, captures details, books the meeting, and hands off to a human with full context when a conversation needs one. On your website, WhatsApp, Instagram or all three, in your tone.",
-      "The result is a first responder that never sleeps and never tires of the same question. Faster replies turn more visitors into conversations, qualification saves your team from tyre-kickers, and every chat is logged so you learn what customers actually ask. You own the assistant and its knowledge base, and it gets smarter as you feed it."
-    ],
-    "deliverables": [
-      "Custom AI assistant trained on your services, pricing, FAQs and documents",
-      "Deployment on your website, plus WhatsApp / Instagram / Messenger as needed",
-      "Lead capture and qualification flow, with booking or CRM handoff built in",
-      "Human-handoff with full conversation context, so nothing gets lost",
-      "Guardrails and tone tuning so it stays on-brand and never invents answers",
-      "Analytics dashboard: top questions, drop-offs and captured leads"
-    ],
-    "highlights": [
-      {
-        "title": "Grounded, not guessing",
-        "desc": "The assistant answers from your actual content, with guardrails against making things up. It is a knowledgeable rep, not a bot that confidently invents a refund policy you don't have."
-      },
-      {
-        "title": "Qualifies while you sleep",
-        "desc": "It doesn't just answer, it asks the right questions, captures details, books the call and hands hot leads to your team with context. A 24/7 SDR on the front line."
-      },
-      {
-        "title": "Knows when to step aside",
-        "desc": "For anything sensitive or high-value it hands off to a human cleanly, passing the whole conversation so your team picks up mid-stride instead of starting over."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Feed",
-        "body": "We gather your services, pricing logic, FAQs and docs into a knowledge base the assistant answers from, so responses are yours, accurate and specific."
-      },
-      {
-        "step": "02",
-        "title": "Build",
-        "body": "We design the conversation, qualification and booking flows, tune the tone to your brand, and set guardrails on what it can and can't say."
-      },
-      {
-        "step": "03",
-        "title": "Deploy",
-        "body": "We ship it to your site and the channels your customers use, with lead capture wired to your CRM or inbox and a clean human handoff."
-      },
-      {
-        "step": "04",
-        "title": "Improve",
-        "body": "We watch the real conversations, close gaps in its knowledge and sharpen the flows, so it converts more and escalates less every month."
-      }
-    ],
-    "metric": {
-      "value": "24/7",
-      "label": "instant first response, most enquiries answered in seconds, any hour"
-    },
-    "faqs": [
-      {
-        "q": "Will it make things up?",
-        "a": "We build it to answer only from your approved content, with guardrails and a fallback to a human when it isn't sure. That grounding is the difference between a helpful assistant and a liability, and it is the core of how we build."
-      },
-      {
-        "q": "Which platforms can it live on?",
-        "a": "Your website is the usual home, but we deploy the same assistant to WhatsApp, Instagram DMs, Messenger and more, so it meets customers where they already are, with one shared brain behind all of them."
-      },
-      {
-        "q": "Does it replace our support or sales team?",
-        "a": "It handles the repetitive front line, the same questions, after-hours enquiries, first qualification, and hands the rest to your people with context. Your team spends its time on the conversations that actually need a human."
-      }
-    ]
-  },
-  {
-    "category": "ai",
-    "slug": "ai-automation",
-    "name": "AI Automation & Workflows",
-    "tagline": "Put the busywork on autopilot.",
-    "intro": "AI automation wires the repetitive glue-work of your business — replies, routing, data entry, reporting — into workflows that run themselves, so your team spends its hours on the work only people can do.",
-    "overview": [
-      "Every business runs on a hidden tax of manual glue-work: copying leads between tools, chasing the same follow-ups, formatting the same report, triaging the same inbox. It rarely shows up on a job description, but it quietly eats days a month and burns out good people on work a machine should do. AI automation is how you get those hours back.",
-      "We map the repetitive workflows across your marketing, sales and operations, then wire them together with automation platforms and AI in the loop, n8n, Make, Zapier and custom code where it is warranted. Leads route themselves and land in your CRM enriched. Enquiries get drafted replies. Reports build and send on schedule. Content gets repurposed across channels. AI handles the judgement calls that used to need a human; the automation handles the plumbing.",
-      "The result is a team that scales without headcount. The busywork runs quietly in the background, nothing falls through the cracks, and your people are freed for the strategy, relationships and craft that actually need them. You own the workflows and the documentation, so the machine keeps running whether or not we are in the room."
-    ],
-    "deliverables": [
-      "Workflow audit that surfaces the repetitive tasks worth automating first",
-      "Automations built across your stack (CRM, email, sheets, socials, support) with AI in the loop",
-      "Lead routing and enrichment: capture, qualify, enrich and assign, automatically",
-      "Auto-drafted replies, summaries and reports, triggered by real events",
-      "Content repurposing pipelines, one asset reshaped for every channel",
-      "Documentation and monitoring so workflows are transparent and yours to run"
-    ],
-    "highlights": [
-      {
-        "title": "AI where judgement is needed",
-        "desc": "Classic automation moves data; it can't decide. We add AI for the steps that need reading, summarising or drafting, so whole workflows run end-to-end instead of stalling at the human bit."
-      },
-      {
-        "title": "Wired into what you already use",
-        "desc": "We connect the tools you have, CRM, inbox, sheets, socials, rather than forcing a rip-and-replace. The automation fits your stack, not the other way round."
-      },
-      {
-        "title": "Hours back, every week",
-        "desc": "We target the tasks that eat the most time for the least thought. The payback shows up fast, in days returned to your team and things that stop slipping through the cracks."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Map",
-        "body": "We shadow your workflows to find the repetitive, rules-based and copy-paste tasks, the ones draining hours with no strategic value. Those are the targets."
-      },
-      {
-        "step": "02",
-        "title": "Design",
-        "body": "We design each automation end-to-end: the trigger, the steps, where AI makes a judgement call, and the safeguards for when something looks off."
-      },
-      {
-        "step": "03",
-        "title": "Build",
-        "body": "We wire it across your tools with the right platform for the job, test it on real data, and put a human check on anything high-stakes before it goes live."
-      },
-      {
-        "step": "04",
-        "title": "Hand over",
-        "body": "We document every workflow, set up monitoring and train your team to run and tweak them, so the system is transparent and yours, not a black box."
-      }
-    ],
-    "metric": {
-      "value": "40+ hrs",
-      "label": "of manual work removed per month across a typical automation set"
-    },
-    "faqs": [
-      {
-        "q": "What can actually be automated?",
-        "a": "Anything repetitive and rules-based: lead routing, data entry, follow-up emails, report building, content repurposing, inbox triage, review requests. If your team does it the same way every time, it is a candidate, and adding AI extends that to tasks that need light judgement, like summarising or drafting."
-      },
-      {
-        "q": "Is this reliable, or will it break?",
-        "a": "We build in checks, alerts and human approval on anything high-stakes, and we document everything. Automations are monitored, not fire-and-forget, so you will know if something needs attention before it becomes a problem."
-      },
-      {
-        "q": "Do we need to change our tools?",
-        "a": "Rarely. We connect the stack you already run. Only if a tool is actively blocking a high-value workflow will we suggest a swap, and always with the trade-off spelled out."
-      }
-    ]
-  },
-  {
-    "category": "ai",
-    "slug": "ai-search-aeo",
-    "name": "AI Search Optimisation (AEO)",
-    "tagline": "Be the answer AI gives, not just a blue link.",
-    "intro": "AEO — Answer Engine Optimisation — is SEO for the AI era: getting your brand cited and recommended inside ChatGPT, Perplexity, Gemini and Google's AI answers, where more and more buyers now start.",
-    "overview": [
-      "Search is splitting in two. A growing share of people no longer scroll ten blue links, they ask ChatGPT, Perplexity or Google's AI Overview and take the synthesised answer. If your brand isn't in that answer, you are invisible to them, no matter how well you rank on the old page. AEO is how you show up where the question actually gets answered now.",
-      "The rules are related to SEO but not the same. AI answer engines pull from content that is clear, well-structured, genuinely authoritative and easy to quote. We optimise for that: content shaped around the real questions buyers ask, structured so machines can extract it, marked up with schema, and backed by the mentions and citations across the web that teach an AI to trust and recommend you. We also track what these engines currently say about you, and fix it when it is wrong.",
-      "The result is presence in the new front door of the internet. When someone asks an AI for the best option in your category, or how to solve the problem you solve, your brand is in the answer, cited, recommended, linked. It compounds like SEO, it is an asset you own, and right now most of your competitors aren't even watching it."
-    ],
-    "deliverables": [
-      "AEO audit: what ChatGPT, Perplexity, Gemini and Google AI currently say about you and your category",
-      "Answer-shaped content built around the questions buyers ask AI, structured to be quoted",
-      "Schema and technical markup that helps engines extract and attribute your content",
-      "Entity and citation building, the mentions across the web that make AI trust you",
-      "Prompt and query tracking, so you can see and monitor your AI-search visibility",
-      "Fixes for wrong or outdated things AI currently says about your brand"
-    ],
-    "highlights": [
-      {
-        "title": "Optimised to be quoted, not just ranked",
-        "desc": "AI answers pull clear, structured, authoritative passages. We write and mark up content so engines can lift it cleanly and attribute it to you, the unit that wins in AI search."
-      },
-      {
-        "title": "We track what AI says about you",
-        "desc": "You can't fix what you can't see. We monitor how the major engines describe your brand and category, so you know where you stand and can correct the record."
-      },
-      {
-        "title": "Early to a channel still wide open",
-        "desc": "AEO is where SEO was fifteen years ago, huge upside, little competition. Moving now buys a lead most of your market hasn't realised it is already losing."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Diagnose",
-        "body": "We ask the AI engines the questions your buyers do, and record what they say, whether you are mentioned, what about you, and who is winning the answers instead."
+        "body": "We interrogate your market, your positioning and the customers you want to win. We audit how you look today and where the brand contradicts itself, so the identity is built on strategy, not taste alone."
       },
       {
         "step": "02",
         "title": "Shape",
-        "body": "We build content around those real questions, written and structured to be extracted and quoted, with schema that helps engines attribute it to you."
+        "body": "We define the core idea, then draft the visual and verbal territory it lives in. You see directions early and often, so the identity is agreed before it is polished."
       },
       {
         "step": "03",
-        "title": "Authority",
-        "body": "We build the entity signals and citations across the web, the mentions and references that teach an AI your brand is a credible answer worth recommending."
+        "title": "Make",
+        "body": "We build the full system: logo suite, palettes, type, layouts, components and the rules that bind them. Everything is documented so it can be executed by anyone, not just its author."
       },
       {
         "step": "04",
-        "title": "Monitor",
-        "body": "We track your presence in AI answers over time, correct anything wrong, and keep shaping content as the engines and the questions evolve."
+        "title": "Compound",
+        "body": "We hand over the files and the guidelines, then help your team apply the system across their first real deliverables. From there the brand compounds recognition every time it ships."
       }
     ],
     "metric": {
-      "value": "Cited",
-      "label": "in AI answers for the questions your buyers ask, where competitors aren't"
+      "value": "+180%",
+      "label": "unaided brand recall after a full identity system rollout"
     },
     "faqs": [
       {
-        "q": "Is AEO just SEO with a new name?",
-        "a": "They overlap, and good SEO helps, but they are not identical. AI engines reward clear, quotable, well-structured, authoritative content and citations more than raw keywords and backlinks. Optimising for a synthesised answer is a different target than optimising for a ranked page, and we do both."
+        "q": "Isn't a logo enough to get started?",
+        "a": "A logo is one asset in a system, and on its own it can't keep a brand consistent across a website, ads, decks and social. Without rules for type, colour and layout, everything downstream drifts. The system is what makes the logo actually hold up in the wild."
       },
       {
-        "q": "Can you really influence what ChatGPT says?",
-        "a": "Not overnight, and not by trickery, but yes. These engines learn from the content and citations across the web. By shaping authoritative, quotable content and building the right mentions, you measurably improve how and how often you show up. We track it so you can see the movement."
+        "q": "Do we own the files, or are we locked into your tools?",
+        "a": "You own everything outright — source files, exports and the guidelines document. Nothing lives in a locked account or a subscription. The whole point is an asset you keep and run yourself."
       },
       {
-        "q": "Why bother now?",
-        "a": "Because a real and growing share of buyers already start with AI, and almost none of your competitors are optimising for it. It is the rare window where moving early buys outsized visibility for a fraction of what the same lead costs in paid search."
+        "q": "Can our in-house team run the brand after handover?",
+        "a": "Yes, that is the design goal. We document the system so a non-designer can stay on-brand and a designer can extend it. We also walk your team through it and stay available for the harder pieces."
       }
     ]
   },
   {
-    "category": "ai",
-    "slug": "custom-ai-solutions",
-    "name": "Custom AI Solutions",
-    "tagline": "AI built into your product, not bolted on.",
-    "intro": "When an off-the-shelf tool won't cut it, we build the custom thing — RAG assistants over your data, AI features inside your product, model integrations and internal tools — designed, built and wired into your stack.",
+    "category": "design",
+    "slug": "graphic-design-creative",
+    "name": "Graphic Design & Creative",
+    "tagline": "Design once, run it everywhere.",
+    "intro": "Graphic design and creative is the day-to-day production of campaign, social and marketing visuals that carry your brand into the world. We build creative once and structure it to be reused everywhere, on-brand, so it becomes a library you own instead of a queue you keep refilling.",
     "overview": [
-      "Sometimes the use-case is yours alone. A support assistant that has to reason over ten thousand of your documents. An AI feature your users would pay for. An internal tool that turns a specialist's afternoon into a click. No SaaS subscription fits, because the value is in your data, your workflow, your product. That is where a custom build earns its keep.",
-      "We design and build AI solutions end-to-end. Retrieval-augmented (RAG) assistants that answer accurately over your private knowledge. AI features embedded in your app via the OpenAI, Anthropic and open-source model APIs. Internal tools that automate expert judgement. We handle the architecture, the prompt and retrieval engineering, the guardrails and evaluation, and the integration into the systems you already run, with the same taste for craft and performance we bring to everything.",
-      "The result is a durable asset, not a rented feature. It is built around your data and your workflow, owned by you, and designed to be maintained and extended as you grow. Because brand, web and AI sit under one roof here, the thing we build looks and feels like your product, not a grafted-on widget from a different world."
+      "Most design queues are a treadmill: a request comes in, a one-off gets made, it ships and it is forgotten, and next week the cycle restarts from zero. Nothing accumulates. We work the other way. Every piece we make is built as a modular, reusable system — templates, master files and component sets — so a single campaign concept can flex into forty formats without forty briefs. That is how creative stops being a cost centre and starts becoming an asset that lowers the cost of the next thing.",
+      "Because it all sits on your brand system, the output holds together across channels instead of pulling apart. A social series, a paid campaign, a sales one-pager and an event banner read as one brand, because they come from one source. You own the master files, so the library compounds: the more you build, the less each new deliverable costs and the faster it ships. This is production designed to make you self-sufficient, not dependent."
     ],
     "deliverables": [
-      "Solution design and technical scoping, with a build-or-buy call before a line of code",
-      "RAG assistant or AI feature built over your data, docs or product",
-      "Model integration (OpenAI, Anthropic, open-source) via secure, monitored APIs",
-      "Prompt, retrieval and guardrail engineering, with evaluation to keep answers reliable",
-      "Integration into your app, site or internal tools, and your data sources",
-      "Documentation, monitoring and a handover so your team can run and extend it"
+      "Campaign creative concepts with a master layout and a full set of channel adaptations",
+      "Editable social templates for feed, story and carousel formats your team can update",
+      "Marketing collateral: one-pagers, decks, brochures and event graphics on a shared grid",
+      "Ad creative variants built for testing across Meta, Google and display",
+      "Organised, owned master files and an asset library structured for reuse"
     ],
     "highlights": [
       {
-        "title": "Grounded in your data",
-        "desc": "RAG means the AI answers from your actual documents and data, with citations, accurate and specific, not a generic model guessing. The value no off-the-shelf tool can match is that it knows your world."
+        "title": "One concept, every format",
+        "desc": "We design a campaign as a system, then adapt it across every placement it needs. You get consistency and volume without paying to reinvent the idea for each channel."
       },
       {
-        "title": "Engineered, not prompted",
-        "desc": "Real products need evaluation, guardrails, fallbacks and monitoring, not a clever prompt and hope. We build for reliability and cost, and test against real cases before it ships."
+        "title": "Templates your team can drive",
+        "desc": "Where it makes sense we hand over editable templates, so routine updates don't need a designer at all. The high-craft work stays with us; the repeatable work becomes yours."
       },
       {
-        "title": "Looks like your product",
-        "desc": "Design and engineering under one roof means the AI feature feels native, your brand, your UX, your standards, instead of a bolted-on widget that breaks the experience."
+        "title": "A library that compounds",
+        "desc": "Every deliverable feeds an owned asset library. Over time the marginal cost of new creative drops, because you're adapting proven assets instead of starting from a blank canvas."
       }
     ],
     "process": [
       {
         "step": "01",
-        "title": "Scope",
-        "body": "We pin down the use-case, the data it needs and what 'good' looks like, and give you an honest build-or-buy call before committing to a build."
+        "title": "Listen",
+        "body": "We take the campaign goal, the audience and the channels in play. We check what already exists in your library so we extend the system rather than duplicate it."
       },
       {
         "step": "02",
-        "title": "Prototype",
-        "body": "We build a working proof over your real data fast, so you can see quality and cost on your actual use-case before we invest in the full thing."
+        "title": "Shape",
+        "body": "We develop the creative concept and the master layout it flows from. You approve the idea and the system before we scale it across formats."
       },
       {
         "step": "03",
-        "title": "Build",
-        "body": "We engineer the solution, retrieval, prompts, guardrails, evaluation, and integrate it into your product or tools, built for reliability and sane running costs."
+        "title": "Make",
+        "body": "We produce the full set of assets and adaptations, built modular and on-brand. Everything is exported clean and organised so it's ready to run and easy to find later."
       },
       {
         "step": "04",
-        "title": "Ship & support",
-        "body": "We deploy with monitoring, document how it works, and hand it over, with the option to keep improving it as your data and needs grow."
+        "title": "Compound",
+        "body": "We file the master assets and any editable templates into your owned library. Each campaign leaves you with more to reuse, so the next one starts further ahead."
       }
     ],
     "metric": {
-      "value": "Yours",
-      "label": "a built-and-owned AI asset wired to your data, not a rented feature"
+      "value": "3.2×",
+      "label": "creative output per brief once the reusable library was in place"
     },
     "faqs": [
       {
-        "q": "What's RAG, and why does it matter?",
-        "a": "Retrieval-augmented generation lets an AI answer from your specific documents and data instead of only what it learned in training. It is the difference between an assistant that actually knows your product, policies and history, with citations, and a generic model that guesses. For most business use-cases it is the piece that makes AI trustworthy."
+        "q": "How is this different from a design subscription?",
+        "a": "A subscription rents you throughput and keeps the assets in their system. We build a library you own, structured for reuse, so your cost per deliverable falls over time instead of resetting each month. You keep everything."
       },
       {
-        "q": "Which models do you build on?",
-        "a": "Whatever fits the job, OpenAI and Anthropic for capability, open-source models where privacy or cost demands it. We are model-agnostic and design so you are not locked to one provider if the landscape shifts."
+        "q": "Can you handle high volume for paid campaigns?",
+        "a": "Yes. Because we design from a master system, producing dozens of ad variants is fast rather than forty separate projects. That's exactly where the reusable approach pays off most."
       },
       {
-        "q": "Is our data safe?",
-        "a": "Yes, we architect for it. Your data stays in systems you control, we use providers' no-training options and secure APIs, and for sensitive cases we can build on models that run in your own environment. Security and privacy are part of the design, not an afterthought."
+        "q": "Will everything stay on-brand across channels?",
+        "a": "It's built to. All creative sits on your brand system, so a social post, an ad and a brochure read as one brand. Consistency is engineered in, not policed after the fact."
+      }
+    ]
+  },
+  {
+    "category": "design",
+    "slug": "video-motion",
+    "name": "Video & Motion",
+    "tagline": "Motion that keeps earning after the shoot.",
+    "intro": "Video and motion is the production of animated and filmed content that stops the scroll and explains what static can't. We build it to be cut, reframed and reused long after the shoot is paid for, so it becomes a motion asset you own that keeps earning attention.",
+    "overview": [
+      "A single hero video that airs once and dies is the most expensive way to buy attention. We plan the opposite from the first frame: shoot and build for modularity, so one production yields a hero cut, a dozen short-form edits, animated snippets, GIFs and stills. The expensive part — the concept, the footage, the motion system — is created once and then keeps working across every channel and every campaign that follows. That is how motion stops being a line item and starts being an asset.",
+      "The same discipline runs through animation. We build motion on reusable rigs, templates and brand-consistent systems, so future videos are faster and cheaper because the groundwork already exists. You own the masters, the project files and the components, which means the library compounds instead of expiring. Attention is rented on every platform; owning the assets that earn it is the only way to stop paying full price for it twice."
+    ],
+    "deliverables": [
+      "Hero video or brand film with a clear concept and a channel-ready master cut",
+      "A set of short-form edits and reframes for social, ads and stories from the same shoot",
+      "Motion graphics and animated explainers built on reusable, brand-consistent templates",
+      "Animated snippets, GIFs and stills extracted for lightweight, everyday use",
+      "Owned master files, project files and motion components for future reuse"
+    ],
+    "highlights": [
+      {
+        "title": "Shot once, cut many",
+        "desc": "We plan every production for modularity, so one shoot becomes a hero film plus a library of short-form cuts. The cost is paid once; the assets keep earning across campaigns."
+      },
+      {
+        "title": "Motion built on systems",
+        "desc": "Animations run on reusable rigs and branded templates, not throwaway timelines. Your next video starts from proven components, so it ships faster and holds the brand automatically."
+      },
+      {
+        "title": "You keep the masters",
+        "desc": "Project files, footage and motion components are yours. When you want a new cut in six months, you're not starting a new project — you're drawing from an asset you already own."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Listen",
+        "body": "We define the story, the channels and how the footage will be reused before anything rolls. Planning for reuse up front is what makes one shoot pay for a year of content."
+      },
+      {
+        "step": "02",
+        "title": "Shape",
+        "body": "We storyboard the hero and map the derivative cuts it will spawn. You sign off the concept and the edit plan, so production has a clear, modular target."
+      },
+      {
+        "step": "03",
+        "title": "Make",
+        "body": "We produce the film and the motion, building on reusable rigs and templates. The master and every derivative edit are cut, colour-matched and exported channel-ready."
+      },
+      {
+        "step": "04",
+        "title": "Compound",
+        "body": "We hand over the masters, project files and motion components as your owned library. New cuts and future videos draw from it, so each production leaves you further ahead."
+      }
+    ],
+    "metric": {
+      "value": "5×",
+      "label": "channel-ready assets produced per shoot with a modular edit plan"
+    },
+    "faqs": [
+      {
+        "q": "We only need one video — why plan for more?",
+        "a": "Because the concept and footage are the costly part, and shooting for reuse is nearly free at the margin. Planning derivatives up front means the same budget yields short-form cuts, stills and snippets you'd otherwise pay to create separately. You can always use just the hero cut first."
+      },
+      {
+        "q": "Do we get the raw footage and project files?",
+        "a": "Yes. You own the masters, the raw footage and the motion project files. That's what lets you commission new cuts later without re-shooting or rebuilding from scratch."
+      },
+      {
+        "q": "Can motion templates keep our future videos on-brand?",
+        "a": "That's the intent. We build animations on branded, reusable templates, so subsequent videos inherit the same look automatically and cost less to make. The system compounds with every use."
+      }
+    ]
+  },
+  {
+    "category": "design",
+    "slug": "ui-ux-design",
+    "name": "UI/UX Design",
+    "tagline": "Experience that converts, not a redesign.",
+    "intro": "UI/UX design is the work of making a product or site clear, usable and persuasive, grounded in how real people actually behave. We build it as a permanent conversion asset backed by a design system you own, not a redesign project you'll have to repeat.",
+    "overview": [
+      "A redesign is a reset button, and businesses keep hitting it because the last one was decoration dressed up as strategy. Pretty screens that nobody tested, launched, and quietly underperformed. We treat experience design as an asset instead: research the real friction, design against it, and build a reusable component system so the interface can keep improving without being torn up and rebuilt. The goal is a conversion asset that appreciates, not a project you fund again in eighteen months.",
+      "Every decision ties back to a job the user is trying to do and a number the business is trying to move. We map the flows, remove the friction, and design interfaces that are as easy to use as they are on-brand — then hand over a component library and the research behind it, all owned by you. Because it's a system, the next feature or page starts from proven parts rather than a blank file. That's how UI/UX stops being a periodic cost and becomes infrastructure that compounds conversion month after month."
+    ],
+    "deliverables": [
+      "UX research and audit: user flows, friction points and prioritised opportunities",
+      "Wireframes and interactive prototypes for the key journeys, tested before build",
+      "High-fidelity UI designs for every core screen, responsive and on-brand",
+      "A reusable component and design-token library your developers and designers own",
+      "Handoff specs with states, interactions and annotations engineering can build from"
+    ],
+    "highlights": [
+      {
+        "title": "Designed against friction",
+        "desc": "We start from how people actually use your product, not how we'd like them to. Every screen is a considered answer to a real point of drop-off, so conversion improves for a reason."
+      },
+      {
+        "title": "A system, not a set of screens",
+        "desc": "You get a component and token library, so the next page or feature is assembled from proven parts. The interface can evolve continuously instead of demanding a full redesign."
+      },
+      {
+        "title": "A conversion asset you own",
+        "desc": "The designs, the system and the research are yours. It keeps paying back every time you ship, and it makes each future build faster and more consistent."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Listen",
+        "body": "We study your users, your analytics and the journeys that matter to the business. The friction and the opportunities come from evidence, so we design against real problems."
+      },
+      {
+        "step": "02",
+        "title": "Shape",
+        "body": "We wireframe and prototype the key flows, then test the thinking before it's polished. You validate the experience early, so build never rests on a guess."
+      },
+      {
+        "step": "03",
+        "title": "Make",
+        "body": "We design the high-fidelity screens and build the reusable component system behind them. Everything is specced and annotated so engineering can ship it faithfully."
+      },
+      {
+        "step": "04",
+        "title": "Compound",
+        "body": "We hand over the design system and the research as owned assets. New features draw from the library and the feedback loop keeps refining conversion over time."
+      }
+    ],
+    "metric": {
+      "value": "+64%",
+      "label": "conversion rate on the redesigned core flow post-launch"
+    },
+    "faqs": [
+      {
+        "q": "How is this different from a normal redesign?",
+        "a": "A redesign restyles the surface and usually gets torn up next cycle. We build a researched, component-based system that keeps improving without a full rebuild. It's an asset that appreciates, not a project you repeat."
+      },
+      {
+        "q": "Do you actually test the designs, or just make them look good?",
+        "a": "We test the flows before they're built, using research and prototypes. Looking good is table stakes; the work is judged on whether it moves conversion and reduces friction for real users."
+      },
+      {
+        "q": "Will our developers be able to build from what you hand over?",
+        "a": "Yes. You get a component library, design tokens and detailed handoff specs with states and interactions. It's structured for engineering to implement cleanly and reuse on future work."
+      }
+    ]
+  },
+  {
+    "category": "market",
+    "slug": "seo",
+    "name": "SEO",
+    "tagline": "Visibility you own, not rent.",
+    "intro": "SEO is the discipline of earning durable rankings for the searches that bring you customers, through content, technical health and authority. We build it as visibility you own in the SERP, not attention you rent for the length of a campaign.",
+    "overview": [
+      "Paid traffic stops the moment you stop paying; a ranking page keeps working while you sleep. That's the whole case for SEO, and it's why we treat it as an owned asset rather than a monthly service you're renting. We build on three fronts at once — content that answers real intent, technical foundations that let search engines trust and crawl your site, and authority that proves you deserve the position. Get all three compounding and rankings become a moat, not a line item.",
+      "We start from your margins and your buyers, not a vanity keyword list. We map the queries that sit closest to a purchase, build the pages that own them, fix the technical debt quietly bleeding your rankings, and earn the links that make it stick. The strategy, the research and the pages are yours to keep, so the engine keeps pulling qualified traffic whether we run it or your team takes over. Visibility you own is the difference between a business that has to keep buying attention and one that has banked it."
+    ],
+    "deliverables": [
+      "Keyword and intent map tying priority queries to specific pages and funnel stages",
+      "Technical SEO audit and fixes: crawlability, speed, structure and Core Web Vitals",
+      "On-page optimisation of priority pages with content, structure and internal linking",
+      "Authority and link-building plan with earned placements that hold rankings",
+      "Owned reporting and a ranking dashboard tracking traffic, positions and conversions"
+    ],
+    "highlights": [
+      {
+        "title": "Ranked for revenue, not vanity",
+        "desc": "We prioritise the queries closest to a purchase, graded by intent and margin. Traffic that doesn't convert is a distraction; we chase positions that produce enquiries and sales."
+      },
+      {
+        "title": "Three engines, one system",
+        "desc": "Content, technical health and authority are worked together, because rankings only hold when all three line up. That combined push is what makes the visibility durable."
+      },
+      {
+        "title": "An asset you keep",
+        "desc": "The strategy, research and optimised pages are yours. Stop the retainer and the rankings don't evaporate — you've banked visibility instead of renting it."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Listen",
+        "body": "We study your market, margins and the searches your buyers actually run. We audit current rankings and technical health so the plan targets what will move the business."
+      },
+      {
+        "step": "02",
+        "title": "Shape",
+        "body": "We build the keyword-to-page map and the priority roadmap, ranked by intent and opportunity. You see exactly what we'll target and why before work begins."
+      },
+      {
+        "step": "03",
+        "title": "Make",
+        "body": "We fix the technical foundations, optimise and build the priority pages, and earn the authority that holds them. Each move is tracked against rankings and conversions."
+      },
+      {
+        "step": "04",
+        "title": "Compound",
+        "body": "Rankings build on each other as the library and authority grow. We hand over the assets and reporting, so visibility keeps compounding with or without us."
+      }
+    ],
+    "metric": {
+      "value": "+212%",
+      "label": "organic traffic over 12 months across content and technical SEO"
+    },
+    "faqs": [
+      {
+        "q": "How long does SEO take to work?",
+        "a": "It compounds, so expect movement over months rather than weeks. Priority pages often start ranking within a quarter, and the curve steepens as content and authority reinforce each other. The upside is that the results, once earned, persist without ongoing spend."
+      },
+      {
+        "q": "Why not just run ads instead?",
+        "a": "Ads are rented visibility — they vanish when the budget stops. SEO is an asset you keep earning from after the work is done. The two work best together, but only one of them compounds and stays."
+      },
+      {
+        "q": "What happens if we stop the retainer?",
+        "a": "You keep the rankings, the pages and the strategy, because they're owned assets. Rankings can soften over time without maintenance, but you don't fall off a cliff the way paid traffic does. That's the point of owning visibility."
+      }
+    ]
+  },
+  {
+    "category": "market",
+    "slug": "google-ads",
+    "name": "Google Ads",
+    "tagline": "Spend that buys assets, not just clicks.",
+    "intro": "Google Ads is paid search and shopping done as a system: the right queries, the right creative, and structured testing that keeps getting cheaper. We run it so your spend buys learnings and creative assets the account keeps using, not just a burst of clicks that ends with the invoice.",
+    "overview": [
+      "Most Google Ads spend evaporates twice — once on the click, and again when nobody captures what the click taught you. We run it so every pound buys two things: the traffic and the intelligence. Winning keywords, proven ad copy, negative lists, tested landing structures and audience data all get captured and compounded, so the account gets sharper and cheaper the longer it runs. That's the difference between renting clicks and building an advertising asset.",
+      "We structure campaigns around your margins and your best-converting intent, then test relentlessly and feed the winners back in. The creative and copy we prove don't just live in the ad manager — they become assets you own that inform your SEO, your landing pages and your other channels. You keep the account, the data and the learnings outright. Paid media will always cost money; the aim is to make each cycle cost less and teach you more, so the spend compounds instead of resetting."
+    ],
+    "deliverables": [
+      "Restructured campaign architecture built around intent, margin and match type",
+      "Search, shopping and performance-max campaigns configured and conversion-tracked",
+      "A tested ad-copy and creative library with winners documented and reusable",
+      "Negative-keyword and audience lists that lower waste and cost per acquisition",
+      "Owned reporting dashboard tracking spend, CPA, ROAS and the learnings behind them"
+    ],
+    "highlights": [
+      {
+        "title": "Every click teaches",
+        "desc": "We capture what each campaign proves — winning terms, copy and audiences — so the account compounds. Spend stops being disposable and starts building durable intelligence."
+      },
+      {
+        "title": "Structured for margin",
+        "desc": "Campaigns are built around your economics, not just clicks. We optimise to cost per acquisition and return, so the account is judged on profit, not vanity traffic."
+      },
+      {
+        "title": "Assets beyond the ad account",
+        "desc": "Proven copy and creative feed your landing pages, SEO and other channels. The learnings are yours to keep and reuse, not trapped inside a platform we control."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Listen",
+        "body": "We dig into your margins, your best customers and what's converting today. The account is built to buy profitable intent, not the cheapest possible traffic."
+      },
+      {
+        "step": "02",
+        "title": "Shape",
+        "body": "We design the campaign architecture, the testing plan and the tracking that proves it out. You know what we're testing and what success looks like before spend goes live."
+      },
+      {
+        "step": "03",
+        "title": "Make",
+        "body": "We launch, test creative and keywords systematically, and cut waste as the data lands. Winners are documented and reused; losers are pruned fast."
+      },
+      {
+        "step": "04",
+        "title": "Compound",
+        "body": "Each cycle feeds the next: proven assets and audiences make the account cheaper and sharper. You own the account, the data and the learnings the whole way through."
+      }
+    ],
+    "metric": {
+      "value": "-41%",
+      "label": "cost per acquisition after three optimisation cycles"
+    },
+    "faqs": [
+      {
+        "q": "Isn't Google Ads just renting traffic?",
+        "a": "The clicks are rented, but the learnings don't have to be. We capture the winning keywords, copy and audiences as owned assets, so the account gets cheaper and smarter over time. That intelligence is what compounds, even though the media spend recurs."
+      },
+      {
+        "q": "Do we own the account and the data?",
+        "a": "Yes, entirely. The account, conversion data and documented learnings are yours. If we ever part ways, you keep everything that made it work rather than starting over."
+      },
+      {
+        "q": "How do you keep cost per acquisition falling?",
+        "a": "Through structured testing and disciplined pruning: we double down on what converts, kill waste with negative lists, and reuse proven creative. Each cycle removes inefficiency the last one exposed, so CPA trends down rather than plateauing."
+      }
+    ]
+  },
+  {
+    "category": "market",
+    "slug": "meta-ads",
+    "name": "Meta Ads",
+    "tagline": "Feed-native creative that feeds your library.",
+    "intro": "Meta Ads is paid social on Facebook and Instagram, built on creative that belongs in the feed rather than interrupting it. We run it so the winning creative feeds back into your owned content library, turning ad spend into assets instead of disposable impressions.",
+    "overview": [
+      "On Meta, the creative is the campaign — targeting is largely automated now, so what you say and show is what wins or loses. We build feed-native creative that earns attention instead of buying its way past the scroll, then test it systematically to find what actually converts. The difference in how we run it is what happens next: the winners aren't just paused when the campaign ends, they're captured into a content library you own and reuse across organic, email and your next launch.",
+      "We structure spend around your economics and let the data pick the winners, cutting the losers fast and doubling down on proof. Every tested hook, format and angle becomes intelligence about what your audience responds to — an asset that makes the next campaign and every other channel sharper. You keep the ad account, the creative masters and the learnings. Impressions are rented by definition; the creative library and the audience insight you build alongside them are yours to compound."
+    ],
+    "deliverables": [
+      "Feed-native creative concepts produced in multiple formats and hooks for testing",
+      "Campaign structure built for efficient learning across prospecting and retargeting",
+      "Full-funnel setup with pixel, conversion events and audience configuration",
+      "A documented library of winning creative and angles, owned and reusable",
+      "Owned reporting on spend, CPA, ROAS and the creative insights driving them"
+    ],
+    "highlights": [
+      {
+        "title": "Made for the feed",
+        "desc": "We build creative that looks like it belongs on the platform, not a banner forced into it. Native creative earns attention, and attention is what makes paid social pay."
+      },
+      {
+        "title": "Winners feed your library",
+        "desc": "Proven ad creative doesn't die when the campaign ends — it enters a content library you own. Your organic, email and future ads all draw from what testing proved works."
+      },
+      {
+        "title": "Insight you keep",
+        "desc": "Every test teaches you what your audience responds to. That audience intelligence is an owned asset that sharpens every channel, not a metric trapped in the ad manager."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Listen",
+        "body": "We learn your audience, your margins and what's resonated before. Creative and targeting are built around the customers worth winning, not the widest possible reach."
+      },
+      {
+        "step": "02",
+        "title": "Shape",
+        "body": "We develop the creative angles and the testing plan, and set up clean tracking. You approve the concepts and know what each test is designed to prove."
+      },
+      {
+        "step": "03",
+        "title": "Make",
+        "body": "We launch, test hooks and formats systematically, and reallocate to winners as data lands. Losers are cut quickly so budget concentrates on what converts."
+      },
+      {
+        "step": "04",
+        "title": "Compound",
+        "body": "Winning creative and audience insight flow into your owned library and your other channels. Each campaign leaves you with more proven assets than you started with."
+      }
+    ],
+    "metric": {
+      "value": "2.8×",
+      "label": "return on ad spend after moving to a creative-testing system"
+    },
+    "faqs": [
+      {
+        "q": "Does creative really matter more than targeting now?",
+        "a": "On Meta, yes. The platform's algorithms handle most of the targeting, so creative is the main lever you control. That's why we invest in native, testable creative and treat the winners as reusable assets."
+      },
+      {
+        "q": "What does it mean that winners feed our library?",
+        "a": "When a piece of ad creative proves it converts, we document it and add it to a content library you own. You can then repurpose it for organic posts, email or future campaigns. The spend that found the winner keeps paying off elsewhere."
+      },
+      {
+        "q": "Do we own the creative and the account?",
+        "a": "Yes. The ad account, the creative masters and the audience learnings are all yours. Nothing that makes the campaigns work is locked away from you."
+      }
+    ]
+  },
+  {
+    "category": "market",
+    "slug": "social-media-management",
+    "name": "Social Media Management",
+    "tagline": "A presence that compounds, not a treadmill.",
+    "intro": "Social media management is the ongoing work of showing up consistently and building a real audience across your channels. We run it as a presence asset that keeps compounding audience and authority, not a content treadmill that resets to zero every month.",
+    "overview": [
+      "Most social management is a treadmill: post daily, chase the algorithm, and start again next month with nothing banked but a slightly older feed. We reject the churn. We build a content system — pillars, formats and a reusable production line — that turns effort into an audience and a brand presence that accumulate. Followers, engagement and authority are the compounding return; the point is that each month builds on the last instead of replacing it.",
+      "We plan content around what actually grows your audience and moves them toward buying, not just filling a calendar. Everything is produced on your brand system and captured as owned, reusable assets, so a strong post becomes a template, a series and source material for other channels. You own the strategy, the content library and the audience relationship outright. A treadmill costs the same forever and gets you nowhere; a presence asset gets cheaper to run and more valuable to hold the longer it compounds."
+    ],
+    "deliverables": [
+      "Channel strategy and content pillars mapped to audience growth and business goals",
+      "A monthly content calendar with produced, on-brand posts across formats",
+      "Community management and engagement that builds relationships, not just replies",
+      "A reusable content-template and asset library your team owns",
+      "Owned performance reporting on growth, engagement and audience quality"
+    ],
+    "highlights": [
+      {
+        "title": "Audience as the asset",
+        "desc": "We optimise for a growing, engaged audience you own the relationship with, not vanity posting cadence. That audience compounds into reach you don't have to keep buying."
+      },
+      {
+        "title": "A production system, not ad-hoc posts",
+        "desc": "Content runs on pillars, templates and a repeatable process. That's what makes consistent output sustainable and keeps every post reinforcing the brand."
+      },
+      {
+        "title": "Built to be handed over",
+        "desc": "The strategy, templates and library are yours. If you bring social in-house later, the system runs without us because it was never locked in our heads."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Listen",
+        "body": "We learn your audience, your goals and what's worked on your channels so far. The strategy is built to grow the audience that matters to the business, not chase raw numbers."
+      },
+      {
+        "step": "02",
+        "title": "Shape",
+        "body": "We define content pillars, formats and a calendar, plus the templates that make production repeatable. You approve the direction before we start publishing."
+      },
+      {
+        "step": "03",
+        "title": "Make",
+        "body": "We produce and publish on-brand content, engage the community and manage the day-to-day. Everything is created on your brand system and captured for reuse."
+      },
+      {
+        "step": "04",
+        "title": "Compound",
+        "body": "Audience, engagement and the content library grow month over month. We report on what's compounding and hand over assets so the presence keeps building, with or without us."
+      }
+    ],
+    "metric": {
+      "value": "+147%",
+      "label": "engaged audience growth over six months on a content system"
+    },
+    "faqs": [
+      {
+        "q": "How is this different from just posting every day?",
+        "a": "Posting fills a calendar; a system builds an audience. We work from content pillars and reusable templates so effort accumulates into growth and a library you own. The aim is compounding presence, not a feed that resets each month."
+      },
+      {
+        "q": "Do we own the content and the strategy?",
+        "a": "Yes. The strategy, the template library and the produced content are yours, and so is the audience relationship. You can take it in-house whenever you like without losing the engine."
+      },
+      {
+        "q": "What do you actually measure?",
+        "a": "Engaged audience growth, meaningful engagement and audience quality against business goals — not vanity follower counts alone. We report on what's genuinely compounding so you can see the asset building."
+      }
+    ]
+  },
+  {
+    "category": "market",
+    "slug": "content-copywriting",
+    "name": "Content & Copywriting",
+    "tagline": "Write once, run it everywhere.",
+    "intro": "Content and copywriting is the craft of writing words that rank, persuade and sound like you, produced as a system rather than one-off pieces. We build words once into a system tuned for SEO and brand voice, so they can be reused across every channel instead of rewritten each time.",
+    "overview": [
+      "Most copy is written once, used once and thrown away, which is a strange thing to do with your most reusable asset. We treat words as a system. A single piece of pillar content is built to fuel a blog post, an email sequence, social captions, ad copy and landing-page sections — all carrying the same intent, keywords and voice. The expensive part, the thinking and the writing, is done once and then earns across every channel it touches. That's the difference between renting sentences and building a content asset.",
+      "Everything sits on two foundations: search intent, so the words get found, and a documented brand voice, so they sound unmistakably like you no matter who's writing. We hand over the messaging framework, the voice guide and the content itself as owned assets, so your team can extend the system without starting from scratch. A well-built page keeps pulling traffic and warming buyers long after it ships — attention you own, not attention you rent. Words built as a system compound; words written in isolation just expire."
+    ],
+    "deliverables": [
+      "A messaging and tone-of-voice framework your team can write from",
+      "Pillar content built to be repurposed across channels and funnel stages",
+      "SEO-optimised articles and page copy structured to rank and convert",
+      "Channel adaptations: email, social, ad and landing-page copy from the same source",
+      "Owned voice guide, briefs and content library for ongoing reuse"
+    ],
+    "highlights": [
+      {
+        "title": "One source, every channel",
+        "desc": "We build pillar content designed to fuel blogs, email, social and ads. The thinking is done once, then adapted, so you stop paying to reinvent the same message for each channel."
+      },
+      {
+        "title": "SEO and voice, together",
+        "desc": "Every piece is built to be found and to sound like you. Ranking and brand aren't a trade-off here — the words satisfy the search engine and the reader in the same breath."
+      },
+      {
+        "title": "A system you own",
+        "desc": "The voice guide, briefs and content are yours. Your team can run and extend the system without us, because the rules and the assets live with you, not in a locked account."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Listen",
+        "body": "We learn your audience, your search intent and how your brand should sound. The voice and the keyword targets are grounded in evidence before a word is written."
+      },
+      {
+        "step": "02",
+        "title": "Shape",
+        "body": "We build the messaging framework and the content plan, mapping pillars to the channels they'll feed. You approve the voice and the direction up front."
+      },
+      {
+        "step": "03",
+        "title": "Make",
+        "body": "We write the pillar content and its channel adaptations, optimised for search and true to voice. Every piece is briefed, structured and ready to publish."
+      },
+      {
+        "step": "04",
+        "title": "Compound",
+        "body": "The content library and voice guide become owned assets your team reuses and extends. Each piece keeps working across channels long after it's written."
+      }
+    ],
+    "metric": {
+      "value": "4×",
+      "label": "channel outputs produced per pillar piece with a content system"
+    },
+    "faqs": [
+      {
+        "q": "Why build content as a system instead of piece by piece?",
+        "a": "Because the thinking behind a strong piece is reusable across channels, and rewriting it each time is waste. A system turns one pillar into a blog, an email flow, social and ad copy that all align. You get more output and more consistency from the same effort."
+      },
+      {
+        "q": "Can copy really rank and sound human at the same time?",
+        "a": "Yes — that's the whole discipline. We start from search intent so it gets found, and write to a documented voice so it reads like a person. Density tricks and keyword stuffing do neither well; relevance and craft do both."
+      },
+      {
+        "q": "Do we own the voice guide and content?",
+        "a": "Yes. The messaging framework, voice guide, briefs and content are all yours to keep and extend. Your team can run the system independently whenever you choose."
+      }
+    ]
+  },
+  {
+    "category": "develop",
+    "slug": "websites-landing-pages",
+    "name": "Websites & Landing Pages",
+    "tagline": "The asset every campaign points back to.",
+    "intro": "Websites and landing pages are the destinations your marketing sends people to and the place decisions actually get made. We build them as the asset every campaign points back to and improves, not a static brochure that's obsolete the day it launches.",
+    "overview": [
+      "Your website is the one asset every other channel feeds — ads, SEO, email and social all point here, and this is where the conversion happens or doesn't. Yet most sites are built once as a fixed brochure and left to rot, so all that upstream spend leaks out at the final step. We build the opposite: a fast, conversion-focused site engineered to be measured and improved, with landing pages structured so every campaign can point at them and make them better over time.",
+      "We build on clean, owned foundations — your CMS, your code, your analytics — so you're never renting your own storefront or waiting on us to change a headline. Pages are componentised, so new campaigns spin up landing pages from proven blocks instead of starting from zero. And because everything is instrumented, each campaign that points back teaches the page how to convert better. The site stops being a one-time build and becomes a compounding asset: the more traffic and testing it sees, the harder it works."
+    ],
+    "deliverables": [
+      "A fast, responsive, conversion-focused website built on owned foundations",
+      "A reusable landing-page system your team can spin up campaigns from",
+      "Analytics, conversion tracking and event setup wired in from launch",
+      "Componentised, editable pages so your team can update without a developer",
+      "Owned code, CMS and design assets, with documentation and handover"
+    ],
+    "highlights": [
+      {
+        "title": "The hub every channel improves",
+        "desc": "Ads, SEO and email all point here, so we build the site to capture and convert that traffic. Every campaign that sends people back becomes a chance to make the page better."
+      },
+      {
+        "title": "Landing pages on tap",
+        "desc": "Pages are built from reusable, proven components, so launching a new campaign page is fast and consistent. You're assembling from a system, not commissioning a project each time."
+      },
+      {
+        "title": "Owned, not rented",
+        "desc": "You own the code, the CMS and the assets. No lock-in, no waiting on us for a headline change — the storefront your business runs on belongs to you."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Listen",
+        "body": "We map who's landing on the site, where they come from and what they need to do. The build is designed around the conversions that matter, not a generic template."
+      },
+      {
+        "step": "02",
+        "title": "Shape",
+        "body": "We design the structure, the key pages and the reusable component system. You sign off the experience and the conversion logic before a line of code is written."
+      },
+      {
+        "step": "03",
+        "title": "Make",
+        "body": "We build fast, responsive, instrumented pages on owned foundations. Everything is componentised and tracked so it can be edited and measured from day one."
+      },
+      {
+        "step": "04",
+        "title": "Compound",
+        "body": "We hand over the code, CMS and documentation, then wire in the loop that lets campaigns improve the pages. The site keeps getting better as traffic and testing flow through it."
+      }
+    ],
+    "metric": {
+      "value": "+58%",
+      "label": "landing-page conversion after moving to a componentised system"
+    },
+    "faqs": [
+      {
+        "q": "Why not just use a template site builder?",
+        "a": "Templates get you live, but they rarely convert and you don't truly own or control them. We build a fast, instrumented site on owned foundations that's designed to improve with every campaign. The difference shows up in conversion and in never being locked in."
+      },
+      {
+        "q": "Can our team update pages without a developer?",
+        "a": "Yes. Pages are componentised and editable in the CMS, so routine changes and new campaign pages don't need us. The harder engineering work stays available, but day-to-day control is yours."
+      },
+      {
+        "q": "How does the site improve over time?",
+        "a": "It's instrumented from launch, so every campaign that points back generates data on what converts. We use that to refine pages and spin up better landing pages from proven components. The asset compounds instead of going stale."
+      }
+    ]
+  },
+  {
+    "category": "develop",
+    "slug": "ecommerce",
+    "name": "E-commerce",
+    "tagline": "A storefront that improves every cycle.",
+    "intro": "E-commerce is the build and optimisation of the store where your customers actually buy, from product pages to checkout. We engineer it to get better with every cycle of data, so it's an owned asset that compounds revenue rather than a storefront you rebuild each time it stalls.",
+    "overview": [
+      "An online store is a machine with a hundred dials — product pages, search, cart, checkout, shipping, upsells — and revenue lives in how well they're tuned. Most stores are launched once and left, so growth stalls and the reflex is an expensive rebuild that resets everything you learned. We build the opposite: a store instrumented end to end, engineered so each cycle of real purchase data tells us exactly which dial to turn next. The storefront gets better because it's designed to learn, not because you keep starting over.",
+      "We build on owned, scalable foundations — your platform, your data, your code — and structure the store in components so improvements ship without a teardown. Every optimisation cycle compounds: a better product page lifts the whole funnel, a smoother checkout recovers revenue that keeps recovering. You own the store, the data and the roadmap outright. A rebuilt-every-two-years store is a recurring cost that keeps forgetting; a store engineered to compound is an asset that turns every cycle of data into more revenue than the last."
+    ],
+    "deliverables": [
+      "A scalable, conversion-focused store built on an owned, maintainable platform",
+      "Optimised product, category, cart and checkout flows instrumented for testing",
+      "Analytics, funnel tracking and revenue attribution wired in across the journey",
+      "A prioritised optimisation roadmap driven by real purchase data",
+      "Owned code, platform config and documentation, with full handover"
+    ],
+    "highlights": [
+      {
+        "title": "Engineered to learn",
+        "desc": "The store is instrumented end to end, so every cycle of purchase data points to the next fix. It improves by design, instead of stalling until the next costly rebuild."
+      },
+      {
+        "title": "Improve without a teardown",
+        "desc": "Componentised structure means we ship optimisations continuously, not in disruptive replatforming projects. Each improvement compounds on the last across the funnel."
+      },
+      {
+        "title": "You own the machine",
+        "desc": "The platform, the data and the roadmap are yours. You're never locked into a rented storefront or dependent on us to read your own numbers."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Listen",
+        "body": "We study your products, margins and customer journey, and audit where the current store leaks revenue. The build targets the flows that actually move sales."
+      },
+      {
+        "step": "02",
+        "title": "Shape",
+        "body": "We design the store structure, the key flows and the instrumentation plan. You approve the experience and the conversion logic before build."
+      },
+      {
+        "step": "03",
+        "title": "Make",
+        "body": "We build the store on owned, scalable foundations, componentised and fully tracked. Product pages, cart and checkout are engineered to convert and to be measured."
+      },
+      {
+        "step": "04",
+        "title": "Compound",
+        "body": "Each cycle of purchase data feeds a prioritised optimisation roadmap. We turn the dials that matter, so the store earns more with every cycle rather than needing a rebuild."
+      }
+    ],
+    "metric": {
+      "value": "+37%",
+      "label": "revenue per visitor across three optimisation cycles"
+    },
+    "faqs": [
+      {
+        "q": "We already have a store — do we need to rebuild?",
+        "a": "Usually not from scratch. We often re-instrument and componentise an existing store so it can be optimised continuously instead of replatformed. The goal is a store that improves each cycle, not another expensive teardown."
+      },
+      {
+        "q": "What does 'improves every cycle' actually mean?",
+        "a": "The store is tracked end to end, so each period of real purchase data shows exactly where customers drop off and what to fix next. We ship those fixes and measure the lift. Revenue per visitor climbs cycle over cycle instead of plateauing."
+      },
+      {
+        "q": "Do we own the platform and data?",
+        "a": "Yes. The platform, code, configuration and all your data are yours, with full documentation and handover. You keep the asset and can run or extend it independently."
+      }
+    ]
+  },
+  {
+    "category": "growth",
+    "slug": "lead-generation-funnels",
+    "name": "Lead Generation & Funnels",
+    "tagline": "Tuned to your margins, not a rented list.",
+    "intro": "Lead generation and funnels is the design of the path that turns a stranger into a qualified enquiry, end to end. We build it as a system tuned to your margins and owned by you, not a rented list of leads that dries up the moment you stop paying.",
+    "overview": [
+      "Buying a list of leads is renting other people's attention, and it stops the instant the invoice does. We build a funnel instead: a repeatable system that attracts the right people, qualifies them and converts them into enquiries you own. Every stage — the offer, the capture, the nurture, the handoff to sales — is designed around your economics, so you're generating leads at a cost that actually works against your margins rather than chasing volume that doesn't convert.",
+      "The funnel is instrumented and owned, so it improves with every cycle and belongs to you outright. We build the pages, the offers, the sequences and the tracking as assets in your accounts, not ours, and tune them to your cost-per-acquisition targets. A rented list is a recurring cost with nothing left behind; a funnel is an asset that gets cheaper and more predictable the longer it runs. You end up with a machine that produces qualified enquiries on demand, tuned to your numbers, not dependent on anyone else's."
+    ],
+    "deliverables": [
+      "A mapped end-to-end funnel from first touch to qualified enquiry",
+      "Lead magnets and offers designed to attract and qualify the right buyers",
+      "Landing pages and capture forms built and instrumented for conversion",
+      "Nurture sequences and lead scoring that hand sales the ready ones",
+      "Owned tracking and reporting on cost per lead, qualification rate and CAC"
+    ],
+    "highlights": [
+      {
+        "title": "Tuned to your economics",
+        "desc": "We design to your margins and cost-per-acquisition targets, not raw lead volume. A cheap lead that never buys is expensive; we optimise for qualified enquiries that convert."
+      },
+      {
+        "title": "Owned, not rented",
+        "desc": "The funnel, the pages and the sequences live in your accounts as assets you keep. Stop paying and the machine is still yours, unlike a list that vanishes with the invoice."
+      },
+      {
+        "title": "Improves every cycle",
+        "desc": "The funnel is instrumented end to end, so each cohort of leads tells us what to tune. Cost per qualified enquiry trends down as the system learns."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Listen",
+        "body": "We learn your margins, your best customers and your sales process. The funnel is designed to produce enquiries your team can actually close, at a cost that works."
+      },
+      {
+        "step": "02",
+        "title": "Shape",
+        "body": "We map the funnel stages, the offers and the qualification logic. You approve the path and the targets before we build anything."
+      },
+      {
+        "step": "03",
+        "title": "Make",
+        "body": "We build the offers, pages, sequences and tracking as owned assets. Everything is instrumented so we can see cost per lead and qualification rate from day one."
+      },
+      {
+        "step": "04",
+        "title": "Compound",
+        "body": "Each cohort feeds the next round of tuning, lowering cost per qualified enquiry over time. You own the system, so it keeps producing leads whether we run it or you do."
+      }
+    ],
+    "metric": {
+      "value": "-38%",
+      "label": "cost per qualified lead after funnel optimisation"
+    },
+    "faqs": [
+      {
+        "q": "Why not just buy leads?",
+        "a": "Bought lists are rented attention — they stop when you stop paying and leave you nothing to build on. A funnel is an owned system that produces qualified enquiries and gets cheaper over time. It's the difference between a recurring cost and a compounding asset."
+      },
+      {
+        "q": "What does 'tuned to your margins' mean in practice?",
+        "a": "We design and optimise the funnel to your cost-per-acquisition targets, not to a vanity lead count. That means favouring qualified enquiries your team can profitably close over cheap leads that never buy. The economics drive the decisions."
+      },
+      {
+        "q": "Do we own the funnel?",
+        "a": "Yes. The pages, offers, sequences and tracking are built in your accounts and belong to you. You keep the whole machine and can run it independently at any point."
+      }
+    ]
+  },
+  {
+    "category": "growth",
+    "slug": "analytics-cro",
+    "name": "Analytics & CRO",
+    "tagline": "The loop that makes everything compound.",
+    "intro": "Analytics and CRO is the discipline of measuring what actually happens and systematically improving it through testing. It's the feedback loop that makes every other asset compound month over month, turning guesswork into a machine that keeps getting better.",
+    "overview": [
+      "Every asset you own — your site, your ads, your funnel, your content — is only as good as your ability to see what it's doing and improve it. Without a feedback loop, they all plateau. Analytics and CRO is that loop: clean measurement so you know what's really happening, and structured experimentation so you improve it deliberately instead of guessing. It's the connective layer that turns a collection of assets into a system that compounds, because every test feeds a learning that makes the next one smarter.",
+      "We build trustworthy tracking first — proper events, funnels and attribution — then run a disciplined testing programme against the pages and flows that matter most. Every experiment produces a documented learning you own: what converts, what doesn't, and why. Those learnings compound across the whole business, so a win on the checkout informs the landing pages and the ad creative too. The result isn't a one-off conversion bump; it's an owned engine of continuous improvement that makes every other investment work harder, month after month."
+    ],
+    "deliverables": [
+      "A trustworthy analytics setup with clean events, funnels and attribution",
+      "A prioritised CRO roadmap targeting the highest-impact pages and flows",
+      "Structured A/B and multivariate tests with clear hypotheses and results",
+      "A documented library of experiments and learnings you own",
+      "Owned dashboards tying tests to conversion, revenue and CAC"
+    ],
+    "highlights": [
+      {
+        "title": "Measure before you move",
+        "desc": "We build tracking you can trust before optimising anything, so decisions rest on reality, not dashboard noise. Clean data is the foundation the whole loop stands on."
+      },
+      {
+        "title": "Learnings that compound",
+        "desc": "Every test produces a documented insight you own, and a win in one place informs the next. The programme makes your whole stack of assets improve together, month over month."
+      },
+      {
+        "title": "The loop is the asset",
+        "desc": "You own the tracking, the roadmap and the library of learnings. It keeps making every other investment work harder, whether we run it or your team takes the controls."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Listen",
+        "body": "We audit your current tracking and find where the data lies or goes missing. Then we identify the pages and flows where improvement would move the business most."
+      },
+      {
+        "step": "02",
+        "title": "Shape",
+        "body": "We fix measurement and build a prioritised testing roadmap with clear hypotheses. You know what we're testing, why, and what a win looks like before we run it."
+      },
+      {
+        "step": "03",
+        "title": "Make",
+        "body": "We run structured experiments against the priorities, measuring rigorously. Wins are shipped and losses are documented, because both teach the system something."
+      },
+      {
+        "step": "04",
+        "title": "Compound",
+        "body": "Each learning feeds the next test and spreads across your other assets. The owned library and dashboards make the whole business compound month over month."
+      }
+    ],
+    "metric": {
+      "value": "+29%",
+      "label": "average conversion lift across a two-quarter testing programme"
+    },
+    "faqs": [
+      {
+        "q": "Isn't CRO just changing button colours?",
+        "a": "No — that caricature is why most CRO fails. Real CRO starts with trustworthy data, then tests meaningful hypotheses about how people decide and where they drop off. The button-colour stuff is noise; the loop is about compounding, documented learnings that move revenue."
+      },
+      {
+        "q": "How does this make our other work compound?",
+        "a": "A learning from one test — say, what messaging converts on checkout — informs your landing pages, ads and content too. Instead of isolated wins, you build a shared library of what works. Every asset improves off the same loop, month over month."
+      },
+      {
+        "q": "Do we own the data and learnings?",
+        "a": "Yes. The tracking setup, dashboards and the documented library of experiments are all yours. The feedback loop is an owned asset your team can keep running independently."
+      }
+    ]
+  },
+  {
+    "category": "growth",
+    "slug": "growth-system-360",
+    "name": "360 Growth System",
+    "tagline": "One team, one engine, no hand-offs.",
+    "intro": "The 360 Growth System is our flagship retainer: the full Listen, Shape, Make and Compound engine run by one team across strategy, design, marketing, development and analytics. It's built as a single compounding growth asset you own, not a stack of disconnected services with a hand-off tax at every seam.",
+    "overview": [
+      "Most agencies sell you slices — a bit of design here, some ads there, SEO from another team — and every seam between them leaks time, money and consistency. Briefs get lost in translation, channels contradict each other, and nobody owns the whole outcome. The 360 Growth System removes the seams. One team runs the entire engine: research and strategy, brand and design, marketing and media, web and development, analytics and CRO, all under a single roof with a shared plan and no hand-offs. The result is a growth machine where every part reinforces the others instead of fighting them.",
+      "Because it runs the full Listen, Shape, Make, Compound loop continuously, everything we build feeds everything else. Ad learnings sharpen the content, the content feeds SEO, the site converts the traffic, and analytics tells the whole system where to push next. Every asset — brand, pages, funnels, creative, data — is owned by you and compounds together month over month. This is the difference between renting a stack of monthly outputs and owning one integrated engine that gets more valuable the longer it runs. It's the flagship because it's where the compounding is greatest."
+    ],
+    "deliverables": [
+      "A unified growth strategy across brand, marketing, web, product and data",
+      "One integrated team covering strategy, design, media, development and analytics",
+      "Owned assets across every channel, built to reinforce each other",
+      "A continuous Listen-Shape-Make-Compound operating cadence with shared reporting",
+      "A single owned dashboard tying every channel to revenue, CAC and growth"
+    ],
+    "highlights": [
+      {
+        "title": "No hand-off tax",
+        "desc": "One team owns the whole engine, so nothing gets lost between disciplines or agencies. Strategy, creative, media, build and data pull in the same direction by default."
+      },
+      {
+        "title": "Everything feeds everything",
+        "desc": "Ad learnings sharpen content, content feeds SEO, the site converts, and analytics steers it all. The channels compound together instead of running as isolated line items."
+      },
+      {
+        "title": "One owned engine",
+        "desc": "Every asset across every channel belongs to you and compounds as one system. You're building an integrated growth machine, not renting a stack of monthly outputs."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Listen",
+        "body": "We embed with your business to understand the market, margins, customers and current performance across every channel. One shared picture replaces a dozen siloed briefs."
+      },
+      {
+        "step": "02",
+        "title": "Shape",
+        "body": "We build a single integrated growth strategy and roadmap spanning brand, marketing, web and data. Every workstream is sequenced to reinforce the others."
+      },
+      {
+        "step": "03",
+        "title": "Make",
+        "body": "One team executes across all disciplines in a shared cadence, with no hand-offs between channels. Assets are built to connect, and everything is instrumented from the start."
+      },
+      {
+        "step": "04",
+        "title": "Compound",
+        "body": "Analytics feeds the loop, so learnings from any channel improve all of them. Every asset you own compounds together, month over month, into one growth engine."
+      }
+    ],
+    "metric": {
+      "value": "3.4×",
+      "label": "blended growth over 12 months on the integrated system"
+    },
+    "faqs": [
+      {
+        "q": "How is this different from hiring several specialist agencies?",
+        "a": "Specialists give you slices with a hand-off tax at every seam, and no one owns the whole outcome. The 360 Growth System puts one team on the entire engine, so channels reinforce rather than contradict each other. The compounding comes from integration, which siloed agencies can't deliver."
+      },
+      {
+        "q": "Is this only for large companies?",
+        "a": "No, but it's for businesses ready to treat growth as a system rather than a series of one-off projects. It suits companies that want compounding, owned assets across channels under one team. We scope the cadence to your stage and budget."
+      },
+      {
+        "q": "Do we own everything the system builds?",
+        "a": "Yes, entirely. Brand, pages, funnels, creative, data and the strategy are all owned by you and built to compound together. You're building one integrated engine you keep, not renting disconnected outputs."
+      }
+    ]
+  },
+  {
+    "category": "ai",
+    "slug": "ai-marketing-automation",
+    "name": "AI-Powered Marketing & Automation",
+    "tagline": "Efficiency baked into the loop.",
+    "intro": "AI-powered marketing and automation is the work of wiring intelligent systems into your marketing operations so the repetitive work runs itself. We build it as compounding efficiency baked into the Make and Compound loop, an owned system that keeps freeing time and sharpening decisions rather than a tool you rent by the seat.",
+    "overview": [
+      "Marketing teams lose most of their hours to work that doesn't need a human — routing leads, personalising sends, moving data between tools, reporting the same numbers every week. AI and automation are how you win those hours back, but only if they're built into your process rather than bolted on as another subscription. We design automations and AI workflows that live inside your operating loop, so the efficiency compounds: every process we automate frees capacity that goes into the work that actually moves growth.",
+      "We build on your systems and your data, so the automations are owned assets you keep, not rented seats that hold your process hostage. Lead scoring, nurture personalisation, reporting, content assistance and data hygiene all get wired into the Make and Compound stages of your engine, where they make every cycle faster and better informed. The gain isn't a one-time productivity bump; it's a system that keeps compounding, doing more of the routine work each quarter so your team and your budget concentrate on what humans do best."
+    ],
+    "deliverables": [
+      "An audit of your marketing operations mapping what to automate and why",
+      "AI workflows and automations built into your existing stack and data",
+      "Automated lead routing, scoring and personalisation across the funnel",
+      "Automated reporting and data hygiene that free your team from manual work",
+      "Owned documentation and playbooks so the system runs and extends without us"
+    ],
+    "highlights": [
+      {
+        "title": "Built into the loop",
+        "desc": "Automations live inside your Make and Compound cadence, not off to the side. That's what makes the efficiency compound — every cycle runs faster and better informed than the last."
+      },
+      {
+        "title": "Owned, not rented seats",
+        "desc": "We build on your systems and data, so the workflows are assets you keep. You're not renting efficiency by the seat or handing your process to a tool you don't control."
+      },
+      {
+        "title": "Time redeployed to growth",
+        "desc": "Every hour we automate away is capacity your team spends on strategy and creative. The routine shrinks quarter over quarter while the high-value work grows."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Listen",
+        "body": "We map your marketing operations and find the repetitive, error-prone work draining your team. Automation targets the tasks where it frees the most time for the least risk."
+      },
+      {
+        "step": "02",
+        "title": "Shape",
+        "body": "We design the automations and AI workflows to fit your stack and data, and prioritise them by impact. You approve what gets automated and how before we build."
+      },
+      {
+        "step": "03",
+        "title": "Make",
+        "body": "We build the workflows into your existing systems, tested and documented. The automations slot into your operating loop rather than becoming another tool to babysit."
+      },
+      {
+        "step": "04",
+        "title": "Compound",
+        "body": "Each automation frees capacity that compounds across the loop, and we extend the system as new bottlenecks surface. You own the playbooks, so it keeps paying off over time."
+      }
+    ],
+    "metric": {
+      "value": "-52%",
+      "label": "time spent on repetitive marketing operations after automation"
+    },
+    "faqs": [
+      {
+        "q": "Will AI automation replace our marketing team?",
+        "a": "No — it removes the repetitive work so your team spends time where humans add the most value. The point is redeploying capacity to strategy and creative, not cutting headcount. The system amplifies your people rather than replacing them."
+      },
+      {
+        "q": "Do we own the automations, or are they locked to a tool?",
+        "a": "You own them. We build on your systems and data and hand over documentation and playbooks. The efficiency is an asset you keep and extend, not seats you rent indefinitely."
+      },
+      {
+        "q": "Is our data safe in these workflows?",
+        "a": "Yes — we design for it. Your data stays in systems you control, we use providers' no-training options and secure connections, and sensitive cases can run on models in your own environment. Security is part of the design, not an afterthought."
+      }
+    ]
+  },
+  {
+    "category": "ai",
+    "slug": "ai-content-tools",
+    "name": "AI Content & Creative Tools",
+    "tagline": "Scale the library, not the headcount.",
+    "intro": "AI content and creative tools is the work of building AI-assisted production systems that multiply what your team can make. We build it as production capacity that scales your owned asset library without scaling headcount, so output grows while your brand and quality stay firmly in your hands.",
+    "overview": [
+      "Content demand always outgrows content capacity, and the usual answers are hiring more people or lowering the bar. AI changes the maths, but only when it's built into a real system rather than let loose to produce generic filler. We build AI-assisted production tools — trained on your brand voice, your assets and your guidelines — so your team can produce more of the content that feeds your owned library without proportionally more people or hours. The capacity scales; the headcount doesn't have to.",
+      "The guardrails are the whole point. We wire in your voice, your brand system and human review, so speed never costs you consistency or quality. Every piece the system helps produce still lands on-brand and still becomes an owned, reusable asset — the library grows faster, not sloppier. You keep the tools, the prompts and the workflows as assets you control, so the production capacity is yours to run and extend. It's how you scale an asset library on your terms, instead of renting output or diluting the brand to hit volume."
+    ],
+    "deliverables": [
+      "AI-assisted content and creative workflows trained on your brand voice and assets",
+      "Custom prompt libraries and templates tuned to your guidelines",
+      "Human-in-the-loop review steps that protect quality and consistency",
+      "Integration of the tools into your existing production and publishing process",
+      "Owned tools, prompts and playbooks your team controls and extends"
+    ],
+    "highlights": [
+      {
+        "title": "Capacity without headcount",
+        "desc": "The system multiplies what your team can produce, so output scales without scaling hiring. You feed the asset library faster while keeping the same lean team."
+      },
+      {
+        "title": "On-brand by design",
+        "desc": "Tools are trained on your voice and assets, with human review built in. Speed never comes at the cost of consistency, because the guardrails are part of the system."
+      },
+      {
+        "title": "Tools you own",
+        "desc": "The prompts, workflows and playbooks are yours to keep and extend. The production capacity is an owned asset, not a rented tool that dictates how you work."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Listen",
+        "body": "We learn your brand voice, your production process and where volume bottlenecks. The tools are designed to relieve real constraints without compromising quality."
+      },
+      {
+        "step": "02",
+        "title": "Shape",
+        "body": "We design the AI workflows, prompt libraries and review steps around your guidelines. You approve how the system produces and where humans stay in the loop."
+      },
+      {
+        "step": "03",
+        "title": "Make",
+        "body": "We build and train the tools on your brand assets and wire them into your process. Everything is tested so the output lands on-brand and ready to use."
+      },
+      {
+        "step": "04",
+        "title": "Compound",
+        "body": "The system keeps expanding your owned library without expanding headcount, and we extend it as needs grow. You own the tools, so the capacity keeps compounding."
+      }
+    ],
+    "metric": {
+      "value": "4.5×",
+      "label": "content output per team member with AI-assisted production"
+    },
+    "faqs": [
+      {
+        "q": "Won't AI content sound generic and off-brand?",
+        "a": "It does when it's used raw, which is why we train the tools on your voice and assets and build human review into the workflow. The system accelerates on-brand production, it doesn't replace judgement. Quality and consistency are engineered in, not left to chance."
+      },
+      {
+        "q": "Does this replace our writers and designers?",
+        "a": "No — it multiplies them. Your team directs and reviews the output, spending less time on the mechanical parts and more on craft and strategy. The goal is scaling the library without scaling headcount, with your people still in control."
+      },
+      {
+        "q": "Do we own the tools and prompts?",
+        "a": "Yes. The workflows, prompt libraries and playbooks are yours to keep, run and extend. The production capacity is an owned asset, not a subscription that locks in your process."
       }
     ]
   }

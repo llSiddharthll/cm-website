@@ -6,10 +6,16 @@ services:
       context: ..
       dockerfile: Dockerfile
     env_file:
-      - ../.env # backend secrets (Turso, Cloudinary, JWT, admin)
+      - ../.env # backend secrets (Cloudinary, JWT, admin) — no Turso needed
     environment:
       - PORT=4000
       - NODE_ENV=production
+      # Embedded libSQL/SQLite DB living on the persistent `cm_db` volume below,
+      # so all data survives container rebuilds/redeploys. Overrides any value
+      # from ../.env. No auth token needed for a local file DB.
+      - TURSO_DATABASE_URL=file:/data/cm.db
+    volumes:
+      - cm_db:/data
     expose:
       - "4000"
     restart: unless-stopped
@@ -32,3 +38,4 @@ services:
 volumes:
   caddy_data:
   caddy_config:
+  cm_db: # persistent embedded database (survives redeploys)
