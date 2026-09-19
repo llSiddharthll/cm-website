@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { CASES } from "@/lib/content";
 import { SERVICE_CATEGORIES, INDUSTRY_PAGES, LOCATION_PAGES } from "@/lib/agency";
+import { allPseoSlugs } from "@/lib/pseo";
 import { POSTS } from "@/lib/cms";
 import { SITE_URL as BASE } from "@/lib/site";
 
@@ -55,5 +56,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...services, ...industries, ...locations, ...cases, ...posts];
+  const pseo = allPseoSlugs().map((slug) => ({
+    url: `${BASE}/${slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...services, ...industries, ...locations, ...pseo, ...cases, ...posts];
 }

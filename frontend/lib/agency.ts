@@ -236,18 +236,18 @@ export const FOOTER_LINKS: Record<string, { label: string; href: string }[]> = {
     { label: "AI", href: "/services/ai" },
   ],
   Industries: [
-    { label: "Real Estate", href: "/industries/real-estate" },
-    { label: "D2C & E-commerce", href: "/industries/d2c-ecommerce" },
-    { label: "Hospitality", href: "/industries/hospitality" },
-    { label: "FMCG", href: "/industries/fmcg" },
-    { label: "Healthcare", href: "/industries/healthcare" },
-    { label: "SaaS", href: "/industries/saas" },
+    { label: "Real Estate", href: "/digital-marketing-for-real-estate" },
+    { label: "D2C & E-commerce", href: "/digital-marketing-for-d2c-ecommerce" },
+    { label: "Hospitality", href: "/digital-marketing-for-hospitality" },
+    { label: "FMCG", href: "/digital-marketing-for-fmcg" },
+    { label: "Healthcare", href: "/digital-marketing-for-healthcare" },
+    { label: "SaaS", href: "/digital-marketing-for-saas" },
   ],
   Locations: [
-    { label: "Chandigarh", href: "/locations/chandigarh" },
-    { label: "Mohali", href: "/locations/mohali" },
-    { label: "Panchkula", href: "/locations/panchkula" },
-    { label: "Zirakpur", href: "/locations/zirakpur" },
+    { label: "Chandigarh", href: "/digital-marketing-in-chandigarh" },
+    { label: "Mohali", href: "/digital-marketing-in-mohali" },
+    { label: "Panchkula", href: "/digital-marketing-in-panchkula" },
+    { label: "Zirakpur", href: "/digital-marketing-in-zirakpur" },
   ],
 };
 
