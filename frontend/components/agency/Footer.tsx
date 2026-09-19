@@ -107,9 +107,10 @@ export async function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
             </ul>
           </div>
 
-          {/* right: nav columns + services directory (keeps the footer full) */}
+          {/* right: quick nav + service directories (by city / by industry) */}
           <div className="col-span-12 md:col-span-8">
-            <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">
+            {/* quick nav */}
+            <div className="grid max-w-md grid-cols-2 gap-x-8 gap-y-10">
               {footerGroups.map((group) => (
                 <div key={group.title}>
                   <span className="label mb-5 block text-on-ink-3">{group.title}</span>
@@ -127,48 +128,12 @@ export async function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
                   </ul>
                 </div>
               ))}
-
-              {/* Industries */}
-              <div>
-                <span className="label mb-5 block text-on-ink-3">Industries</span>
-                <ul className="space-y-3">
-                  {PSEO_INDUSTRIES.map((ind) => (
-                    <li key={ind.slug}>
-                      <Link
-                        href={`/digital-marketing-for-${ind.slug}`}
-                        className="text-on-ink-2 transition-colors hover:text-on-ink"
-                      >
-                        {ind.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Locations */}
-              <div>
-                <span className="label mb-5 block text-on-ink-3">Locations</span>
-                <ul className="space-y-3">
-                  {PSEO_PLACES.map((place) => (
-                    <li key={place.slug}>
-                      <Link
-                        href={`/digital-marketing-in-${place.slug}`}
-                        className="text-on-ink-2 transition-colors hover:text-on-ink"
-                      >
-                        {place.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
 
             {/* services by city */}
-            <div className="mt-14 border-t border-line-invert pt-10">
-              <span className="label block text-on-ink-3">
-                Our services across the Tricity
-              </span>
-              <div className="mt-7 grid grid-cols-2 gap-x-8 gap-y-9 sm:grid-cols-4">
+            <div className="mt-12 border-t border-line-invert pt-10">
+              <span className="label block text-on-ink-3">Services by city</span>
+              <div className="mt-6 grid grid-cols-2 gap-x-8 gap-y-9 sm:grid-cols-4">
                 {PSEO_PLACES.map((place) => (
                   <div key={place.slug}>
                     <span className="mono mb-4 block text-on-ink">{place.name}</span>
@@ -177,6 +142,30 @@ export async function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
                         <li key={s.slug}>
                           <Link
                             href={`/${s.slug}-in-${place.slug}`}
+                            className="text-sm text-on-ink-3 transition-colors hover:text-orange"
+                          >
+                            {s.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* services by industry */}
+            <div className="mt-12 border-t border-line-invert pt-10">
+              <span className="label block text-on-ink-3">Services by industry</span>
+              <div className="mt-6 grid grid-cols-2 gap-x-8 gap-y-9 sm:grid-cols-3">
+                {PSEO_INDUSTRIES.map((ind) => (
+                  <div key={ind.slug}>
+                    <span className="mono mb-4 block text-on-ink">{ind.name}</span>
+                    <ul className="space-y-2.5">
+                      {FOOTER_SVCS.map((s) => (
+                        <li key={s.slug}>
+                          <Link
+                            href={`/${s.slug}-for-${ind.slug}`}
                             className="text-sm text-on-ink-3 transition-colors hover:text-orange"
                           >
                             {s.name}
