@@ -139,27 +139,48 @@ export function DriveUploadButton({
 
   if (!driveUploadEnabled) return null;
 
+  const title = doneName
+    ? `Uploaded — ${doneName}`
+    : busy
+      ? "Uploading to your Drive…"
+      : !ready
+        ? "Loading Google Drive…"
+        : "Upload your CV to Google Drive";
+  const sub = doneName
+    ? "Shared “anyone with the link” · link filled in below"
+    : "Signs into your Google, uploads to your Drive, shares it view-only, and fills the link below";
+
   return (
     <div className="mb-3">
       <button
         type="button"
         onClick={start}
         disabled={!ready || busy}
-        className="inline-flex items-center gap-2 border border-line-invert bg-dark px-4 py-2.5 text-sm text-on-ink transition-colors hover:border-orange disabled:opacity-60"
+        className="group/up flex w-full items-center gap-4 rounded-lg border border-dashed border-line-invert bg-dark-2 px-5 py-4 text-left transition-colors hover:border-orange disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {busy ? (
-          <Loader2 className="size-4 animate-spin" />
-        ) : doneName ? (
-          <Check className="size-4 text-orange" />
-        ) : (
-          <UploadCloud className="size-4 text-orange" />
-        )}
-        {doneName ? `Uploaded: ${doneName}` : ready ? "Upload CV to Google Drive" : "Loading…"}
+        <span
+          className={`grid size-11 shrink-0 place-items-center rounded-full ${
+            doneName ? "bg-orange text-on-orange" : "bg-orange/10 text-orange"
+          }`}
+        >
+          {busy ? (
+            <Loader2 className="size-5 animate-spin" />
+          ) : doneName ? (
+            <Check className="size-5" />
+          ) : (
+            <UploadCloud className="size-5" />
+          )}
+        </span>
+        <span className="min-w-0">
+          <span className="block text-on-ink">{title}</span>
+          <span className="mono block truncate text-xs text-on-ink-3">{sub}</span>
+        </span>
       </button>
-      {error && <span className="mono ml-3 text-sm text-red-400">{error}</span>}
-      <p className="mono mt-2 text-xs text-on-ink-3">
-        Uploads to your own Drive as “anyone with the link can view”, then fills the link below.
-      </p>
+      {error && (
+        <span role="alert" className="mono mt-2 block text-sm text-red-400">
+          {error}
+        </span>
+      )}
     </div>
   );
 }
