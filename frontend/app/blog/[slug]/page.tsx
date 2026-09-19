@@ -11,7 +11,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { ContactForm } from "@/components/agency/ContactForm";
 import { Reveal, RevealLines } from "@/components/ui/Reveal";
-import { ReadingProgress } from "@/components/blog/ReadingProgress";
 import { ShareRow } from "@/components/blog/ShareRow";
 
 export const revalidate = 60;
@@ -81,12 +80,11 @@ export default async function PostPage({
           ]),
         ]}
       />
-      <ReadingProgress />
       <span id="top" className="absolute top-0" aria-hidden />
       <Header dark />
       <main className="bg-dark text-on-ink">
         {/* ── Article header ── */}
-        <section className="bg-dark pb-8 pt-[clamp(7rem,13vh,9.5rem)] md:pb-10">
+        <section className="bg-dark pb-10 pt-[clamp(8rem,18vh,12rem)] md:pb-14">
           <div className="shell">
             <Reveal>
               <Link
@@ -98,88 +96,106 @@ export default async function PostPage({
               </Link>
             </Reveal>
 
-            <div className="mx-auto mt-8 max-w-3xl">
-              <Reveal>
-                <span className="mono inline-flex items-center gap-1.5 rounded-full border border-orange/40 bg-orange/[0.06] px-3 py-1 text-xs text-orange">
-                  {post.category}
+            {/* meta row — hairline + mono, matching the rest of the site */}
+            <div className="mt-8 grid12 items-baseline gap-y-2 border-t border-on-ink/30 pt-4">
+              <span className="label col-span-12 md:col-span-8">
+                <span className="text-orange">Journal</span>
+                <span className="mx-2 opacity-40" aria-hidden>
+                  —
                 </span>
-              </Reveal>
-
-              <h1 className="display-tight mt-5 text-[clamp(1.75rem,1.1rem+2.4vw,3rem)] leading-[1.05] text-on-ink">
-                <RevealLines lines={[cleanTitle]} />
-              </h1>
-
-              {post.excerpt && (
-                <Reveal
-                  as="span"
-                  delay={0.1}
-                  className="mt-5 block max-w-2xl text-[clamp(1.02rem,0.98rem+0.35vw,1.2rem)] leading-relaxed text-on-ink-2"
-                >
-                  {post.excerpt}
-                </Reveal>
-              )}
-
-              <Reveal
-                delay={0.14}
-                className="mono mt-7 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-on-ink-3"
-              >
-                <span className="flex items-center gap-2 text-on-ink-2">
-                  <span className="grid size-6 place-items-center rounded-full bg-orange text-[10px] font-bold text-on-orange">
-                    CM
-                  </span>
-                  Creative Monk
-                </span>
-                <span aria-hidden className="opacity-40">·</span>
-                <span>{formattedDate}</span>
-                <span aria-hidden className="opacity-40">·</span>
-                <span>{post.read}</span>
-              </Reveal>
+                {post.category}
+              </span>
+              <span className="label col-span-12 text-on-ink-2 md:col-span-4 md:text-right">
+                {formattedDate} · {post.read}
+              </span>
             </div>
+
+            <h1 className="display-tight mt-8 max-w-[20ch] text-[clamp(2rem,1.2rem+2.9vw,3.5rem)] leading-[1.02] text-on-ink">
+              <RevealLines lines={[cleanTitle]} />
+              <span
+                aria-hidden
+                className="ml-[0.12em] inline-block aspect-square w-[0.34em] bg-orange align-baseline"
+              />
+            </h1>
+
+            {post.excerpt && (
+              <Reveal
+                as="span"
+                delay={0.12}
+                className="mt-7 block max-w-2xl text-[clamp(1.05rem,1rem+0.45vw,1.3rem)] leading-relaxed text-on-ink-2"
+              >
+                {post.excerpt}
+              </Reveal>
+            )}
+
+            <Reveal
+              delay={0.16}
+              className="mono mt-9 flex items-center gap-2.5 text-on-ink-3"
+            >
+              <span className="grid size-7 place-items-center rounded-full bg-orange text-[11px] font-bold text-on-orange">
+                CM
+              </span>
+              <span className="text-on-ink-2">Written by Creative Monk</span>
+            </Reveal>
           </div>
         </section>
 
-        {/* ── Cover image ── */}
+        {/* ── Cover ── */}
         {post.cover && (
           <div className="shell">
-            <div className="mx-auto max-w-4xl">
+            <div className="overflow-hidden rounded-2xl border border-line-invert-2 bg-dark-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={post.cover}
                 alt={cleanTitle}
-                className="aspect-[16/10] w-full rounded-2xl border border-line-invert-2 bg-dark-2 object-cover md:aspect-[2/1]"
+                className="aspect-[16/9] w-full object-cover md:aspect-[2.4/1]"
               />
             </div>
           </div>
         )}
 
-        {/* ── Article body ── */}
-        <section className="bg-dark pb-[var(--section-pad)] pt-10 md:pt-12">
+        {/* ── Article body — reading column + sticky share rail ── */}
+        <section className="bg-dark pb-[var(--section-pad)] pt-12 md:pt-16">
           <div className="shell">
-            <div className="mx-auto max-w-2xl">
-              {/* Article body renders immediately — a long body is taller than
-                  the viewport, so a scroll-reveal threshold would never fire. */}
-              {bodyHtml.trim() ? (
-                <Prose html={bodyHtml} className="text-on-ink-2" />
-              ) : (
-                <div className="space-y-7">
-                  <p className="text-[length:var(--text-lead)] leading-relaxed text-on-ink">
-                    {post.excerpt}
-                  </p>
-                  {post.source && (
-                    <a
-                      href={post.source}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group/cta label inline-flex items-center gap-1.5 bg-orange px-4 py-2.5 text-on-orange transition-colors duration-200 hover:bg-orange-press"
-                    >
-                      Read the full article
-                      <ArrowRight className="size-4 transition-transform duration-200 group-hover/cta:translate-x-0.5" />
-                    </a>
+            <div className="grid12 gap-y-10">
+              <aside className="col-span-12 md:col-span-3">
+                <div className="flex flex-col gap-8 md:sticky md:top-28">
+                  <div>
+                    <span className="label block text-on-ink-3">Share</span>
+                    <ShareRow
+                      title={cleanTitle}
+                      path={`/blog/${post.slug}`}
+                      className="mt-3"
+                    />
+                  </div>
+                </div>
+              </aside>
+
+              <div className="col-span-12 md:col-span-8 md:col-start-5">
+                <div className="max-w-2xl">
+                  {/* Body renders immediately — a long body outruns any scroll reveal. */}
+                  {bodyHtml.trim() ? (
+                    <Prose html={bodyHtml} className="text-on-ink-2" />
+                  ) : (
+                    <div className="space-y-7">
+                      <p className="text-[length:var(--text-lead)] leading-relaxed text-on-ink">
+                        {post.excerpt}
+                      </p>
+                      {post.source && (
+                        <a
+                          href={post.source}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group/cta label inline-flex items-center gap-1.5 bg-orange px-4 py-2.5 text-on-orange transition-colors duration-200 hover:bg-orange-press"
+                        >
+                          Read the full article
+                          <ArrowRight className="size-4 transition-transform duration-200 group-hover/cta:translate-x-0.5" />
+                        </a>
+                      )}
+                    </div>
                   )}
                 </div>
-              )}
-
-              <ShareRow title={cleanTitle} path={`/blog/${post.slug}`} />
+              </div>
             </div>
           </div>
         </section>
