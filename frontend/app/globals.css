@@ -207,8 +207,23 @@ body {
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
 }
+.cm-prose h2,
+.cm-prose h3,
+.cm-prose h4 {
+  color: var(--color-on-ink);
+}
 .cm-prose strong {
   font-weight: 700;
+  color: var(--color-on-ink);
+}
+/* Lead paragraph — larger, brighter opener for articles. */
+.cm-prose > p:first-of-type {
+  font-size: var(--text-lead);
+  line-height: 1.7;
+  color: var(--color-on-ink);
+}
+.cm-prose a:hover {
+  color: var(--color-orange-press);
 }
 .cm-prose blockquote {
   border-left: 2px solid var(--color-orange);
