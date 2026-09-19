@@ -46,6 +46,7 @@ export function DriveUploadButton({
   onUploaded: (url: string, filename: string) => void;
 }) {
   const [ready, setReady] = useState(false);
+  const [signedIn, setSignedIn] = useState(false);
   const [state, setState] = useState<State>("idle");
   const [progress, setProgress] = useState(0);
   const [name, setName] = useState("");
@@ -73,6 +74,7 @@ export function DriveUploadButton({
               return;
             }
             tokenRef.current = resp.access_token;
+            setSignedIn(true);
             const act = afterAuthRef.current;
             afterAuthRef.current = null;
             if (act) act(resp.access_token);
@@ -168,11 +170,22 @@ export function DriveUploadButton({
     [withToken, doUpload],
   );
 
-  // Click the zone → sign in first (gesture-safe), then open the file dialog.
+  // If already signed in, a click opens the file dialog directly (a real user
+  // gesture, which the browser requires). If not, the first click only signs
+  // in — then the button flips to "choose your file" for a clean second click
+  // (Chrome blocks file dialogs opened from the async sign-in callback).
   const onZoneClick = useCallback(() => {
     if (!ready || state === "auth" || state === "uploading") return;
     setError("");
-    withToken(() => inputRef.current?.click());
+    if (tokenRef.current) {
+      inputRef.current?.click();
+      return;
+    }
+    withToken(() => {
+      setState("idle");
+      // best-effort auto-open; if the browser blocks it, the user clicks again
+      inputRef.current?.click();
+    });
   }, [ready, state, withToken]);
 
   if (!driveUploadEnabled) return null;
@@ -261,9 +274,11 @@ export function DriveUploadButton({
                 ? "Opening Google sign-in…"
                 : state === "uploading"
                   ? `Uploading to your Drive… ${progress}%`
-                  : ready
-                    ? "Drag & drop your CV, or click to browse"
-                    : "Loading Google Drive…"}
+                  : !ready
+                    ? "Loading Google Drive…"
+                    : signedIn
+                      ? "Click to choose your CV, or drag & drop"
+                      : "Click to connect Google Drive & upload"}
             </span>
             <span className="mono block text-xs text-on-ink-3">
               PDF or Word · up to 10 MB · saved to your own Drive, shared view-only
