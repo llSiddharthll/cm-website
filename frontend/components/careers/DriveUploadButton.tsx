@@ -15,7 +15,9 @@ import { Loader2, UploadCloud, Check } from "lucide-react";
  *   NEXT_PUBLIC_GOOGLE_API_KEY     — API key (Picker API enabled)
  *   NEXT_PUBLIC_GOOGLE_APP_ID      — (optional) GCP project number
  */
-const CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || "";
+const CLIENT_ID =
+  process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID ||
+  "596691896133-j8m3lvk14qohvlgbefhchcauiiv5foj5.apps.googleusercontent.com";
 // API key + project number are provisioned; only the OAuth Client ID (console-
 // only) is still needed to enable the applicant's-own-Drive path.
 const API_KEY =
