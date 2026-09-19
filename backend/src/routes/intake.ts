@@ -1,11 +1,39 @@
 import { Router } from "express";
 import { z } from "zod";
+import multer from "multer";
 import { asyncHandler } from "../lib/http";
 import { getCollection } from "../schema";
 import { createEntry, listEntries } from "../store";
 import { verifyTurnstile } from "../lib/turnstile";
+import { cloudinaryEnabled, uploadBuffer } from "../lib/cloudinary";
 
 export const intakeRouter = Router();
+
+/* ── Public CV upload — applicants upload a résumé, we store it on Cloudinary
+   and hand back a shareable URL used as the `resume` link. ── */
+const cvUpload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 10 * 1024 * 1024 }, // 10 MB
+});
+const ALLOWED_CV_TYPES = new Set([
+  "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+]);
+
+intakeRouter.post(
+  "/upload",
+  cvUpload.single("file"),
+  asyncHandler(async (req, res) => {
+    if (!cloudinaryEnabled) return res.status(503).json({ error: "Uploads are unavailable" });
+    const file = (req as { file?: Express.Multer.File }).file;
+    if (!file) return res.status(422).json({ error: "No file uploaded" });
+    if (!ALLOWED_CV_TYPES.has(file.mimetype))
+      return res.status(415).json({ error: "Please upload a PDF or Word document" });
+    const result = await uploadBuffer(file.buffer, file.originalname);
+    res.status(201).json({ url: result.url, name: file.originalname });
+  }),
+);
 
 /** Captcha token accompanying a public submission (stripped before storage). */
 const turnstileToken = z.string().max(4096).optional().or(z.literal(""));
