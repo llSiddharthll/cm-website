@@ -7,10 +7,8 @@ import { Loader2, UploadCloud, Check, FileText, X } from "lucide-react";
  * CV upload straight into the applicant's OWN Google Drive — no Google Picker,
  * a fully custom drag-&-drop dropzone. Flow: GIS token (drive.file) → multipart
  * upload to Drive → set "anyone with the link → reader" → return webViewLink.
- * Nothing touches our storage.
- *
- * Needs an OAuth Web client id (the API key is not required for direct upload):
- *   NEXT_PUBLIC_GOOGLE_CLIENT_ID
+ * The OAuth popup is always requested from a direct click/drop gesture so
+ * browsers don't block it.
  */
 const CLIENT_ID =
   process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID ||
@@ -55,7 +53,7 @@ export function DriveUploadButton({
   const [drag, setDrag] = useState(false);
   const tokenRef = useRef("");
   const tokenClientRef = useRef<any>(null);
-  const pendingRef = useRef<File | null>(null);
+  const afterAuthRef = useRef<((token: string) => void) | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -70,12 +68,20 @@ export function DriveUploadButton({
           callback: (resp: any) => {
             if (resp.error || !resp.access_token) {
               setState("error");
-              setError("Google sign-in was cancelled.");
+              setError("Google sign-in was cancelled. Click to try again.");
+              afterAuthRef.current = null;
               return;
             }
             tokenRef.current = resp.access_token;
-            const f = pendingRef.current;
-            if (f) void doUpload(f, resp.access_token);
+            const act = afterAuthRef.current;
+            afterAuthRef.current = null;
+            if (act) act(resp.access_token);
+            else setState("idle");
+          },
+          error_callback: () => {
+            setState("error");
+            setError("Sign-in popup was blocked — allow pop-ups for this site, then click again.");
+            afterAuthRef.current = null;
           },
         });
         setReady(true);
@@ -85,6 +91,14 @@ export function DriveUploadButton({
       alive = false;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  /** Ensure we have a Drive token, then run `cb` with it (popup opens here). */
+  const withToken = useCallback((cb: (token: string) => void) => {
+    if (tokenRef.current) return cb(tokenRef.current);
+    afterAuthRef.current = cb;
+    setState("auth");
+    tokenClientRef.current?.requestAccessToken({ prompt: "consent" });
   }, []);
 
   const doUpload = useCallback(
@@ -111,9 +125,8 @@ export function DriveUploadButton({
           };
           xhr.onload = async () => {
             if (xhr.status < 200 || xhr.status >= 300)
-              return reject(new Error("Upload failed"));
+              return reject(new Error("Upload failed — please try again."));
             const data = JSON.parse(xhr.responseText);
-            // share: anyone with the link can view
             await fetch(`https://www.googleapis.com/drive/v3/files/${data.id}/permissions`, {
               method: "POST",
               headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
@@ -121,7 +134,7 @@ export function DriveUploadButton({
             });
             resolve({ url: data.webViewLink, name: data.name });
           };
-          xhr.onerror = () => reject(new Error("Network error during upload"));
+          xhr.onerror = () => reject(new Error("Network error during upload."));
           xhr.send(body);
         });
         setName(link.name);
@@ -129,19 +142,16 @@ export function DriveUploadButton({
         onUploaded(link.url, link.name);
       } catch (err) {
         setState("error");
-        setError(err instanceof Error ? err.message : "Upload failed");
-      } finally {
-        pendingRef.current = null;
+        setError(err instanceof Error ? err.message : "Upload failed.");
       }
     },
     [onUploaded],
   );
 
-  const begin = useCallback(
-    (file?: File | null) => {
-      if (!file) return;
+  const validateAndUpload = useCallback(
+    (file: File) => {
       setError("");
-      if (!OK_TYPES.has(file.type) && !/\.(pdf|docx?|)$/i.test(file.name)) {
+      if (!OK_TYPES.has(file.type) && !/\.(pdf|docx?)$/i.test(file.name)) {
         setState("error");
         setError("Please choose a PDF or Word document.");
         return;
@@ -151,20 +161,22 @@ export function DriveUploadButton({
         setError("File must be under 10 MB.");
         return;
       }
-      if (tokenRef.current) {
-        void doUpload(file, tokenRef.current);
-      } else {
-        pendingRef.current = file;
-        setState("auth");
-        tokenClientRef.current?.requestAccessToken({ prompt: "consent" });
-      }
+      withToken((t) => doUpload(file, t));
     },
-    [doUpload],
+    [withToken, doUpload],
   );
+
+  // Click the zone → sign in first (gesture-safe), then open the file dialog.
+  const onZoneClick = useCallback(() => {
+    if (!ready || state === "auth" || state === "uploading") return;
+    setError("");
+    withToken(() => inputRef.current?.click());
+  }, [ready, state, withToken]);
 
   if (!driveUploadEnabled) return null;
 
   const busy = state === "auth" || state === "uploading";
+
   const reset = () => {
     setState("idle");
     setName("");
@@ -180,7 +192,11 @@ export function DriveUploadButton({
         type="file"
         accept={ACCEPT}
         className="hidden"
-        onChange={(e) => begin(e.target.files?.[0])}
+        onChange={(e) => {
+          const f = e.target.files?.[0];
+          if (f) validateAndUpload(f);
+          e.target.value = "";
+        }}
       />
 
       {state === "done" ? (
@@ -209,7 +225,7 @@ export function DriveUploadButton({
       ) : (
         <button
           type="button"
-          onClick={() => ready && !busy && inputRef.current?.click()}
+          onClick={onZoneClick}
           onDragOver={(e) => {
             e.preventDefault();
             setDrag(true);
@@ -218,7 +234,10 @@ export function DriveUploadButton({
           onDrop={(e) => {
             e.preventDefault();
             setDrag(false);
-            if (!busy) begin(e.dataTransfer.files?.[0]);
+            if (!busy) {
+              const f = e.dataTransfer.files?.[0];
+              if (f) validateAndUpload(f);
+            }
           }}
           disabled={!ready || busy}
           className={`flex w-full items-center gap-4 rounded-lg border border-dashed px-5 py-4 text-left transition-colors disabled:cursor-not-allowed ${
@@ -237,7 +256,7 @@ export function DriveUploadButton({
           <span className="min-w-0 flex-1">
             <span className="block text-on-ink">
               {state === "auth"
-                ? "Waiting for Google sign-in…"
+                ? "Opening Google sign-in…"
                 : state === "uploading"
                   ? `Uploading to your Drive… ${progress}%`
                   : ready
