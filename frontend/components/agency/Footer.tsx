@@ -1,11 +1,17 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUp } from "lucide-react";
 import { getSite, getFooterGroups } from "@/lib/cms";
+import { PSEO_SERVICES, PSEO_PLACES, PSEO_INDUSTRIES } from "@/lib/pseo";
 import { Logo } from "@/components/layout/Logo";
 import { Magnetic } from "@/components/fx/Magnetic";
 import { NewsletterForm } from "./NewsletterForm";
 
 const YEAR = 2026;
+
+/** Services surfaced in the footer directory (high local-intent first). */
+const FOOTER_SVCS = ["digital-marketing", "seo", "google-ads", "social-media-marketing", "web-development", "branding"]
+  .map((slug) => PSEO_SERVICES.find((s) => s.slug === slug)!)
+  .filter(Boolean);
 
 /**
  * Site footer.
@@ -119,6 +125,53 @@ export async function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
               </ul>
             </div>
           ))}
+        </div>
+
+        {/* ── Services directory (by city + by industry) ── */}
+        <div className="border-t border-line-invert py-[clamp(2.5rem,4vw,4rem)]">
+          <span className="label block text-on-ink-3">
+            Digital marketing &amp; growth, by city
+          </span>
+          <div className="mt-7 grid grid-cols-2 gap-x-8 gap-y-9 sm:grid-cols-4">
+            {PSEO_PLACES.map((place) => (
+              <div key={place.slug}>
+                <span className="mono mb-4 block text-on-ink">{place.name}</span>
+                <ul className="space-y-2.5">
+                  {FOOTER_SVCS.map((s) => (
+                    <li key={s.slug}>
+                      <Link
+                        href={`/${s.slug}-in-${place.slug}`}
+                        className="text-sm text-on-ink-3 transition-colors hover:text-orange"
+                      >
+                        {s.name} in {place.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <span className="label mt-14 block text-on-ink-3">By industry</span>
+          <div className="mt-7 grid grid-cols-2 gap-x-8 gap-y-9 sm:grid-cols-3">
+            {PSEO_INDUSTRIES.map((ind) => (
+              <div key={ind.slug}>
+                <span className="mono mb-4 block text-on-ink">{ind.name}</span>
+                <ul className="space-y-2.5">
+                  {FOOTER_SVCS.map((s) => (
+                    <li key={s.slug}>
+                      <Link
+                        href={`/${s.slug}-for-${ind.slug}`}
+                        className="text-sm text-on-ink-3 transition-colors hover:text-orange"
+                      >
+                        {s.name} for {ind.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
