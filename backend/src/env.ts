@@ -46,7 +46,21 @@ export const env = {
     // skipped so public forms keep working before the keys are configured.
     secretKey: process.env.TURNSTILE_SECRET_KEY || "",
   },
+
+  // Server-side Google OAuth — applicant CVs upload into the studio's own
+  // Google Drive using a one-time owner authorization (refresh token).
+  google: {
+    clientId: process.env.GOOGLE_OAUTH_CLIENT_ID || "",
+    clientSecret: process.env.GOOGLE_OAUTH_CLIENT_SECRET || "",
+    redirectUri: process.env.GOOGLE_OAUTH_REDIRECT_URI || "",
+    tokenFile: process.env.GOOGLE_TOKEN_FILE || "/data/google-oauth.json",
+    folderId: process.env.GOOGLE_DRIVE_FOLDER_ID || "",
+  },
 };
+
+export const googleOAuthEnabled = Boolean(
+  env.google.clientId && env.google.clientSecret && env.google.redirectUri,
+);
 
 export const turnstileEnabled = Boolean(env.turnstile.secretKey);
 

@@ -5,12 +5,19 @@ import { asyncHandler } from "../lib/http";
 import { getCollection } from "../schema";
 import { createEntry, listEntries } from "../store";
 import { verifyTurnstile } from "../lib/turnstile";
-import { cloudinaryEnabled, uploadBuffer } from "../lib/cloudinary";
+import { googleOAuthEnabled } from "../env";
+import {
+  consentUrl,
+  exchangeCode,
+  saveRefreshToken,
+  driveConnected,
+  uploadToDrive,
+} from "../lib/gdrive";
 
 export const intakeRouter = Router();
 
-/* ── Public CV upload — applicants upload a résumé, we store it on Cloudinary
-   and hand back a shareable URL used as the `resume` link. ── */
+/* ── Public CV upload — applicants upload a résumé in one click; we store it in
+   the studio's OWN Google Drive (owner-authorized) and return a shareable link. ── */
 const cvUpload = multer({
   storage: multer.memoryStorage(),
   limits: { fileSize: 10 * 1024 * 1024 }, // 10 MB
@@ -25,13 +32,44 @@ intakeRouter.post(
   "/upload",
   cvUpload.single("file"),
   asyncHandler(async (req, res) => {
-    if (!cloudinaryEnabled) return res.status(503).json({ error: "Uploads are unavailable" });
     const file = (req as { file?: Express.Multer.File }).file;
     if (!file) return res.status(422).json({ error: "No file uploaded" });
     if (!ALLOWED_CV_TYPES.has(file.mimetype))
       return res.status(415).json({ error: "Please upload a PDF or Word document" });
-    const result = await uploadBuffer(file.buffer, file.originalname);
-    res.status(201).json({ url: result.url, name: file.originalname });
+    if (!(await driveConnected()))
+      return res.status(503).json({ error: "Résumé upload isn’t set up yet." });
+    const result = await uploadToDrive(file.buffer, file.originalname, file.mimetype);
+    res.status(201).json({ url: result.url, name: result.name });
+  }),
+);
+
+/* ── One-time owner authorization so uploads land in the studio's Drive ── */
+intakeRouter.get("/gauth/start", (_req, res) => {
+  if (!googleOAuthEnabled) return res.status(503).send("Google OAuth is not configured.");
+  res.redirect(consentUrl());
+});
+
+intakeRouter.get(
+  "/gauth/callback",
+  asyncHandler(async (req, res) => {
+    const code = typeof req.query.code === "string" ? req.query.code : "";
+    if (!code) return res.status(400).send("Missing authorization code.");
+    const refresh = await exchangeCode(code);
+    await saveRefreshToken(refresh);
+    res.type("html").send(
+      `<div style="font-family:system-ui;max-width:32rem;margin:15vh auto;text-align:center">
+        <h2>✅ Google Drive connected</h2>
+        <p>Applicant CVs will now upload straight into this Google account's Drive.
+        You can close this tab.</p>
+      </div>`,
+    );
+  }),
+);
+
+intakeRouter.get(
+  "/gauth/status",
+  asyncHandler(async (_req, res) => {
+    res.json({ configured: googleOAuthEnabled, connected: await driveConnected() });
   }),
 );
 
