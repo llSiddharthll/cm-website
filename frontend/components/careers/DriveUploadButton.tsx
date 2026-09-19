@@ -93,12 +93,14 @@ export function DriveUploadButton({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  /** Ensure we have a Drive token, then run `cb` with it (popup opens here). */
+  /** Ensure we have a Drive token, then run `cb` with it (popup opens here).
+      requestAccessToken is fired FIRST — before any React state update — so the
+      browser keeps the click's user-activation and never blocks the popup. */
   const withToken = useCallback((cb: (token: string) => void) => {
     if (tokenRef.current) return cb(tokenRef.current);
     afterAuthRef.current = cb;
-    setState("auth");
     tokenClientRef.current?.requestAccessToken({ prompt: "consent" });
+    setState("auth");
   }, []);
 
   const doUpload = useCallback(
