@@ -86,7 +86,7 @@ export default async function PostPage({
       <Header dark />
       <main className="bg-dark text-on-ink">
         {/* ── Article header ── */}
-        <section className="bg-dark pt-[clamp(8rem,18vh,12rem)] pb-10 md:pb-12">
+        <section className="bg-dark pb-8 pt-[clamp(7rem,13vh,9.5rem)] md:pb-10">
           <div className="shell">
             <Reveal>
               <Link
@@ -105,7 +105,7 @@ export default async function PostPage({
                 </span>
               </Reveal>
 
-              <h1 className="display-tight mt-6 text-[length:var(--text-h1)] leading-[0.98] text-on-ink">
+              <h1 className="display-tight mt-5 text-[clamp(1.75rem,1.1rem+2.4vw,3rem)] leading-[1.05] text-on-ink">
                 <RevealLines lines={[cleanTitle]} />
               </h1>
 
@@ -113,7 +113,7 @@ export default async function PostPage({
                 <Reveal
                   as="span"
                   delay={0.1}
-                  className="mt-6 block text-[length:var(--text-lead)] leading-snug text-on-ink-2"
+                  className="mt-5 block max-w-2xl text-[clamp(1.02rem,0.98rem+0.35vw,1.2rem)] leading-relaxed text-on-ink-2"
                 >
                   {post.excerpt}
                 </Reveal>
@@ -121,7 +121,7 @@ export default async function PostPage({
 
               <Reveal
                 delay={0.14}
-                className="mono mt-8 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-on-ink-3"
+                className="mono mt-7 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-on-ink-3"
               >
                 <span className="flex items-center gap-2 text-on-ink-2">
                   <span className="grid size-6 place-items-center rounded-full bg-orange text-[10px] font-bold text-on-orange">
@@ -153,7 +153,7 @@ export default async function PostPage({
         )}
 
         {/* ── Article body ── */}
-        <section className="bg-dark section pt-12 md:pt-16">
+        <section className="bg-dark pb-[var(--section-pad)] pt-10 md:pt-12">
           <div className="shell">
             <div className="mx-auto max-w-2xl">
               {/* Article body renders immediately — a long body is taller than
@@ -226,7 +226,7 @@ export default async function PostPage({
                           <span aria-hidden>·</span>
                           <span>{p.read}</span>
                         </span>
-                        <h3 className="display mt-3 text-[length:var(--text-h3)] leading-[1.1] text-on-ink transition-colors duration-200 group-hover/card:text-orange">
+                        <h3 className="display mt-3 text-[clamp(1.15rem,1rem+0.6vw,1.5rem)] leading-snug text-on-ink transition-colors duration-200 group-hover/card:text-orange">
                           {p.title}
                         </h3>
                       </div>
