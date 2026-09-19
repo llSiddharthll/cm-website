@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUp } from "lucide-react";
 import { getSite, getFooterGroups } from "@/lib/cms";
-import { PSEO_SERVICES, PSEO_PLACES } from "@/lib/pseo";
+import { PSEO_SERVICES, PSEO_PLACES, PSEO_INDUSTRIES } from "@/lib/pseo";
 import { Logo } from "@/components/layout/Logo";
 import { Magnetic } from "@/components/fx/Magnetic";
 import { NewsletterForm } from "./NewsletterForm";
@@ -107,49 +107,87 @@ export async function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
             </ul>
           </div>
 
-          {/* link groups, Company · Services · Industries · Locations */}
-          {footerGroups.map((group) => (
-            <div key={group.title} className="col-span-6 md:col-span-2">
-              <span className="label mb-5 block text-on-ink-3">{group.title}</span>
-              <ul className="space-y-3">
-                {group.links.map((l) => (
-                  <li key={l.label}>
-                    <Link
-                      href={l.href}
-                      className="text-on-ink-2 transition-colors hover:text-on-ink"
-                    >
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+          {/* right: nav columns + services directory (keeps the footer full) */}
+          <div className="col-span-12 md:col-span-8">
+            <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">
+              {footerGroups.map((group) => (
+                <div key={group.title}>
+                  <span className="label mb-5 block text-on-ink-3">{group.title}</span>
+                  <ul className="space-y-3">
+                    {group.links.map((l) => (
+                      <li key={l.label}>
+                        <Link
+                          href={l.href}
+                          className="text-on-ink-2 transition-colors hover:text-on-ink"
+                        >
+                          {l.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
 
-        {/* ── Services by city (local internal links) ── */}
-        <div className="border-t border-line-invert py-[clamp(2.5rem,4vw,4rem)]">
-          <span className="label block text-on-ink-3">
-            Our services across the Tricity
-          </span>
-          <div className="mt-7 grid grid-cols-2 gap-x-8 gap-y-9 sm:grid-cols-4">
-            {PSEO_PLACES.map((place) => (
-              <div key={place.slug}>
-                <span className="mono mb-4 block text-on-ink">{place.name}</span>
-                <ul className="space-y-2.5">
-                  {FOOTER_SVCS.map((s) => (
-                    <li key={s.slug}>
+              {/* Industries */}
+              <div>
+                <span className="label mb-5 block text-on-ink-3">Industries</span>
+                <ul className="space-y-3">
+                  {PSEO_INDUSTRIES.map((ind) => (
+                    <li key={ind.slug}>
                       <Link
-                        href={`/${s.slug}-in-${place.slug}`}
-                        className="text-sm text-on-ink-3 transition-colors hover:text-orange"
+                        href={`/digital-marketing-for-${ind.slug}`}
+                        className="text-on-ink-2 transition-colors hover:text-on-ink"
                       >
-                        {s.name} in {place.name}
+                        {ind.name}
                       </Link>
                     </li>
                   ))}
                 </ul>
               </div>
-            ))}
+
+              {/* Locations */}
+              <div>
+                <span className="label mb-5 block text-on-ink-3">Locations</span>
+                <ul className="space-y-3">
+                  {PSEO_PLACES.map((place) => (
+                    <li key={place.slug}>
+                      <Link
+                        href={`/digital-marketing-in-${place.slug}`}
+                        className="text-on-ink-2 transition-colors hover:text-on-ink"
+                      >
+                        {place.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* services by city */}
+            <div className="mt-14 border-t border-line-invert pt-10">
+              <span className="label block text-on-ink-3">
+                Our services across the Tricity
+              </span>
+              <div className="mt-7 grid grid-cols-2 gap-x-8 gap-y-9 sm:grid-cols-4">
+                {PSEO_PLACES.map((place) => (
+                  <div key={place.slug}>
+                    <span className="mono mb-4 block text-on-ink">{place.name}</span>
+                    <ul className="space-y-2.5">
+                      {FOOTER_SVCS.map((s) => (
+                        <li key={s.slug}>
+                          <Link
+                            href={`/${s.slug}-in-${place.slug}`}
+                            className="text-sm text-on-ink-3 transition-colors hover:text-orange"
+                          >
+                            {s.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
