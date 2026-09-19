@@ -94,14 +94,6 @@ export function DriveUploadButton({
           },
         });
         setReady(true);
-        // Reuse an existing Drive grant silently (no popup) so returning users
-        // get a token up front → a single click uploads.
-        try {
-          silentRef.current = true;
-          tokenClientRef.current.requestAccessToken({ prompt: "none" });
-        } catch {
-          silentRef.current = false;
-        }
       })
       .catch(() => alive && setError("Couldn't load Google sign-in."));
     return () => {
