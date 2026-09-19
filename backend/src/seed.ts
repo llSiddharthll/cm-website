@@ -75,11 +75,31 @@ const FOOTER_GROUPS = [
   {
     title: "Services",
     links: [
-      { label: "Branding", href: "/services" },
-      { label: "Web Development", href: "/services" },
-      { label: "Performance", href: "/services" },
-      { label: "SEO", href: "/services" },
-      { label: "Video & Motion", href: "/services" },
+      { label: "Design", href: "/services/design" },
+      { label: "Market", href: "/services/market" },
+      { label: "Develop", href: "/services/develop" },
+      { label: "Growth", href: "/services/growth" },
+      { label: "AI", href: "/services/ai" },
+    ],
+  },
+  {
+    title: "Industries",
+    links: [
+      { label: "Real Estate", href: "/digital-marketing-for-real-estate" },
+      { label: "D2C & E-commerce", href: "/digital-marketing-for-d2c-ecommerce" },
+      { label: "Hospitality", href: "/digital-marketing-for-hospitality" },
+      { label: "FMCG", href: "/digital-marketing-for-fmcg" },
+      { label: "Healthcare", href: "/digital-marketing-for-healthcare" },
+      { label: "SaaS", href: "/digital-marketing-for-saas" },
+    ],
+  },
+  {
+    title: "Locations",
+    links: [
+      { label: "Chandigarh", href: "/digital-marketing-in-chandigarh" },
+      { label: "Mohali", href: "/digital-marketing-in-mohali" },
+      { label: "Panchkula", href: "/digital-marketing-in-panchkula" },
+      { label: "Zirakpur", href: "/digital-marketing-in-zirakpur" },
     ],
   },
 ];
