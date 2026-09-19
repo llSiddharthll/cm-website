@@ -301,6 +301,8 @@ export type Careers = {
   heroTitle1: string;
   heroTitle2: string;
   heroLede: string;
+  rolesEyebrow?: string;
+  rolesIntro?: string;
   whyEyebrow: string;
   whyLead: string;
   whyMuted: string;
@@ -326,6 +328,9 @@ export const CAREERS: Careers = {
   heroTitle2: "worth owning",
   heroLede:
     "We're a small, in-house team that values craft, ownership and the long game — people who'd rather build an asset than rent attention.",
+  rolesEyebrow: "Open roles",
+  rolesIntro:
+    "Don't fit one neatly? Apply to the closest — we hire for craft, not checklists.",
   whyEyebrow: "Why Creative Monk",
   whyLead: "No hand-offs, no ego, no busywork —",
   whyMuted: "just sharp people shipping work they're proud to sign.",
@@ -933,4 +938,33 @@ export const GROWTH_PILLARS: GrowthPillar[] = [
       { slug: "growth-system", name: "The 360 Growth System", desc: "The umbrella tier: every pillar, run as one retainer." },
     ],
   },
+];
+
+/* ============================================================
+   OPEN ROLES — /careers listings. Full rich descriptions live in
+   the CMS (roles collection); this is the client-bundle fallback
+   used when the API is unreachable.
+   ============================================================ */
+export type OpenRole = {
+  title: string;
+  slug: string;
+  team?: string;
+  type?: string;
+  location?: string;
+  experience?: string;
+  salary?: string;
+  summary?: string;
+  description?: string;
+  applyUrl?: string;
+  image?: string;
+};
+
+export const OPEN_ROLES: OpenRole[] = [
+  { title: "AI Content Creator & Editor", slug: "ai-content-creator-editor", team: "AI", type: "Full-time", location: "Zirakpur / Mohali", experience: "1–2 years", salary: "Based on experience", summary: "Create and edit video & image content with AI tools — on-brand and platform-ready.", description: "<p>Produce visual assets using AI-powered tools alongside traditional editing software for client campaigns.</p>" },
+  { title: "Videographer / DOP", slug: "videographer-dop", team: "Design", type: "Full-time", location: "Zirakpur / Mohali", experience: "2–4 years", salary: "₹20,000–₹35,000/mo", summary: "Plan, shoot and edit brand films, events and real-estate content, end to end.", description: "<p>Own the camera from pre-production planning to a polished, platform-ready cut.</p>" },
+  { title: "Media Buyer (Meta & Google Ads)", slug: "media-buyer", team: "Market", type: "Full-time", location: "Zirakpur / Mohali", experience: "2–4 years", salary: "₹30,000–₹40,000/mo", summary: "Plan and optimise Meta & Google Ads to CPL, CPA and ROAS across client accounts.", description: "<p>Own paid performance across Meta and Google for multiple client accounts.</p>" },
+  { title: "Social Media Manager", slug: "social-media-manager", team: "Market", type: "Full-time", location: "Zirakpur / Chandigarh", summary: "Own social strategy, content and paid campaigns across client brands.", description: "<p>Develop strategy and run client accounts across every major platform — organic and paid.</p>" },
+  { title: "Content Writer", slug: "content-writer", team: "Market", type: "Full-time", location: "Zirakpur", summary: "Write SEO-savvy content across web, blog, social and email.", description: "<p>Produce engaging digital content across platforms and shape cohesive brand messaging.</p>" },
+  { title: "Video Editor", slug: "video-editor", team: "Design", type: "Full-time", location: "Zirakpur / Mohali", summary: "Edit polished video and motion graphics for social, web and YouTube.", description: "<p>Produce high-quality video for digital platforms and shape concepts with the creative team.</p>" },
+  { title: "Graphic Designer", slug: "graphic-designer", team: "Design", type: "Full-time", location: "Zirakpur / Chandigarh", summary: "Craft logos, layouts and on-brand visuals across every channel.", description: "<p>Create visually compelling design across digital platforms, web, social and marketing materials.</p>" },
 ];

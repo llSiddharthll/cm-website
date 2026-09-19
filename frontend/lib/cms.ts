@@ -40,9 +40,11 @@ import {
   VALUES,
   INDUSTRIES,
   CAREERS,
+  OPEN_ROLES,
   SERVICE_CATEGORIES,
   INDUSTRY_PAGES,
   LOCATION_PAGES,
+  type OpenRole,
   type GridService,
   type VideoProject,
   type Review,
@@ -118,6 +120,10 @@ export type Locations = typeof LOCATIONS;
 export const getLocations = () => singleton<Locations>("locations", LOCATIONS);
 
 export const getCareers = () => singleton<Careers>("careers", CAREERS);
+
+/** Open roles for the /careers page (CMS `roles` collection). */
+export type Role = OpenRole;
+export const getRoles = () => collection<Role>("roles", OPEN_ROLES);
 
 /* footer columns → array of { title, links } */
 export type FooterGroup = { title: string; links: { label: string; href: string }[] };

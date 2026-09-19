@@ -12,6 +12,8 @@ import {
   HeartPulse,
   Sparkles,
   Check,
+  MapPin,
+  Briefcase,
   type LucideIcon,
 } from "lucide-react";
 import { RATINGS } from "@/lib/agency";
@@ -19,13 +21,14 @@ import {
   getBenefits,
   getCultureStats,
   getCareers,
-  getTeam,
+  getRoles,
 } from "@/lib/cms";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
+import { Prose } from "@/components/ui/Prose";
 import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 import { Aurora } from "@/components/fx/Aurora";
 
@@ -52,14 +55,12 @@ const perkIcon = (label: string): LucideIcon => {
 };
 
 export default async function CareersPage() {
-  const [BENEFITS, CULTURE_STATS, careers, team] = await Promise.all([
+  const [BENEFITS, CULTURE_STATS, careers, roles] = await Promise.all([
     getBenefits(),
     getCultureStats(),
     getCareers(),
-    getTeam(),
+    getRoles(),
   ]);
-
-  const people = team.filter((m) => m.photo).slice(0, 10);
 
   return (
     <>
@@ -104,17 +105,17 @@ export default async function CareersPage() {
           </div>
         </section>
 
-        {/* ── The team ── */}
-        {people.length >= 3 && (
-          <section className="bg-dark section pt-4">
+        {/* ── Open roles ── */}
+        {roles.length > 0 && (
+          <section id="roles" className="bg-dark section pt-4">
             <div className="shell">
               <div className="grid12 items-end gap-y-6">
                 <Reveal className="col-span-12 md:col-span-7">
                   <Eyebrow index="◆" invert>
-                    The team
+                    {careers.rolesEyebrow ?? "Open roles"}
                   </Eyebrow>
                   <h2 className="display mt-7 text-[length:var(--text-h2)] leading-[1.05] text-on-ink">
-                    The people you&rsquo;d build with
+                    Roles we&rsquo;re hiring for
                     <span className="text-orange">.</span>
                   </h2>
                 </Reveal>
@@ -123,35 +124,76 @@ export default async function CareersPage() {
                   delay={0.1}
                   className="col-span-12 block max-w-sm text-on-ink-2 md:col-span-4 md:col-start-9 md:text-right"
                 >
-                  A tight, senior, in-house team — no juniors thrown at your work,
-                  no hand-offs.
+                  {careers.rolesIntro ??
+                    "Don't fit one neatly? Apply to the closest — we hire for craft, not checklists."}
                 </Reveal>
               </div>
 
-              <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-                {people.map((m, i) => (
-                  <Reveal key={m.name} delay={(i % 5) * 0.06}>
-                    <figure className="group relative overflow-hidden rounded-2xl border border-line-invert-2 bg-dark-2">
-                      <div className="aspect-[4/5] overflow-hidden">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={m.photo}
-                          alt={m.name}
-                          loading="lazy"
-                          className="h-full w-full object-cover grayscale transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05] group-hover:grayscale-0"
-                        />
-                      </div>
-                      <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-dark via-dark/55 to-transparent p-4 pt-12">
-                        <span className="label block text-on-ink">{m.name}</span>
-                        <span className="mono block text-on-ink-3">{m.role}</span>
-                      </figcaption>
-                      <span
-                        aria-hidden
-                        className="pointer-events-none absolute left-3 top-3 size-2 rounded-full bg-orange opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                      />
-                    </figure>
-                  </Reveal>
-                ))}
+              <div className="mt-12 divide-y divide-line-invert border-y border-line-invert">
+                {roles.map((role, i) => {
+                  const applyHref = role.applyUrl || "/careers/apply";
+                  const meta = [role.type, role.location, role.experience, role.salary].filter(
+                    Boolean,
+                  );
+                  return (
+                    <Reveal key={role.slug ?? role.title} delay={(i % 6) * 0.04}>
+                      <details className="group/role">
+                        <summary className="flex cursor-pointer list-none flex-col gap-3 py-7 md:flex-row md:items-center md:gap-8">
+                          <div className="min-w-0 flex-1">
+                            <div className="flex items-center gap-3">
+                              {role.team && (
+                                <span className="mono text-orange">{role.team}</span>
+                              )}
+                              <h3 className="display text-[length:var(--text-h3)] leading-tight text-on-ink transition-colors group-open/role:text-orange">
+                                {role.title}
+                              </h3>
+                            </div>
+                            {role.summary && (
+                              <p className="mt-2 max-w-2xl text-on-ink-2">{role.summary}</p>
+                            )}
+                            {meta.length > 0 && (
+                              <div className="mono mt-3 flex flex-wrap items-center gap-x-5 gap-y-1.5 text-on-ink-3">
+                                {role.type && (
+                                  <span className="inline-flex items-center gap-1.5">
+                                    <Briefcase className="size-3.5" />
+                                    {role.type}
+                                  </span>
+                                )}
+                                {role.location && (
+                                  <span className="inline-flex items-center gap-1.5">
+                                    <MapPin className="size-3.5" />
+                                    {role.location}
+                                  </span>
+                                )}
+                                {role.experience && (
+                                  <span className="inline-flex items-center gap-1.5">
+                                    <Clock className="size-3.5" />
+                                    {role.experience}
+                                  </span>
+                                )}
+                                {role.salary && <span>{role.salary}</span>}
+                              </div>
+                            )}
+                          </div>
+                          <span className="label inline-flex shrink-0 items-center gap-1.5 text-on-ink-2 transition-colors group-hover/role:text-orange">
+                            <span className="group-open/role:hidden">View details</span>
+                            <span className="hidden group-open/role:inline">Hide details</span>
+                            <ArrowRight className="size-4 transition-transform duration-300 group-open/role:rotate-90" />
+                          </span>
+                        </summary>
+
+                        {role.description && (
+                          <Prose html={role.description} className="max-w-3xl pb-6" />
+                        )}
+                        <div className="pb-8">
+                          <Button href={applyHref} variant="primary">
+                            Apply for this role
+                          </Button>
+                        </div>
+                      </details>
+                    </Reveal>
+                  );
+                })}
               </div>
             </div>
           </section>
