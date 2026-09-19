@@ -1,6 +1,6 @@
 /* One-off: replace placeholder work with the REAL client cases/galleries/video,
    and point every service-page cover at real client work.
-   Run: npm run seed:work  (safe to re-run — it clears + re-inserts these collections). */
+   Run: npm run seed:work  (safe to re-run, it clears + re-inserts these collections). */
 import { db, migrate } from "./db";
 import { getCollection } from "./schema";
 import { createEntry, updateEntry } from "./store";

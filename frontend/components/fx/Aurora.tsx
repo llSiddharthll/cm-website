@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Aurora UI — large, heavily-blurred orange/amber blobs drifting behind a dark
+ * Aurora UI, large, heavily-blurred orange/amber blobs drifting behind a dark
  * surface. Decorative only (aria-hidden), GPU-friendly (transform/opacity),
  * and frozen under prefers-reduced-motion.
  */

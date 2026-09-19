@@ -19,7 +19,7 @@ import { PageHero } from "@/components/agency/PageHero";
 export const metadata: Metadata = buildMetadata({
   title: "Services",
   description:
-    "Brand, web, content and performance — twelve disciplines, wired together to compound into an asset you own.",
+    "Brand, web, content and performance, twelve disciplines, wired together to compound into an asset you own.",
   path: "/services",
 });
 

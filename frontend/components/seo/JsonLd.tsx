@@ -1,5 +1,5 @@
 /**
- * Renders one or more JSON-LD structured-data blocks. Server component —
+ * Renders one or more JSON-LD structured-data blocks. Server component, 
  * emits <script type="application/ld+json"> straight into the markup so
  * crawlers see it without executing JS.
  */

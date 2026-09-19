@@ -163,7 +163,7 @@ export function EntrySheet({
             field.type === "slug" && field.name !== sourceName
               ? {
                   ...field,
-                  help: [field.help, "Auto-fills from the title as you type — edit to set a custom slug, or clear it to resume auto-fill."]
+                  help: [field.help, "Auto-fills from the title as you type, edit to set a custom slug, or clear it to resume auto-fill."]
                     .filter(Boolean)
                     .join(" "),
                 }

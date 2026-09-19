@@ -1,5 +1,5 @@
 /* ============================================================
-   AGENCY (TML-style) CONTENT — original copy, Creative Monk brand.
+   AGENCY (TML-style) CONTENT, original copy, Creative Monk brand.
    All figures/quotes are realistic placeholders, not real data.
    ============================================================ */
 
@@ -7,7 +7,7 @@ export const AGENCY_HERO = {
   eyebrow: "Creative & growth studio · since 2017",
   headline: ["Own your", "growth."],
   accentWord: "growth.",
-  sub: "We design brands and build the growth engines behind them — strategy, web, content and performance under one roof, engineered to compound into something you own.",
+  sub: "We design brands and build the growth engines behind them, strategy, web, content and performance under one roof, engineered to compound into something you own.",
   ctaPrimary: { label: "Book a strategy call", href: "#contact" },
   ctaSecondary: { label: "See our work", href: "#work" },
 };
@@ -30,8 +30,8 @@ export const AGENCY_STORY = {
   index: "01",
   kicker: "The studio",
   q: "Why does growth marketing feel like renting?",
-  a: "Because most agencies optimise the ad account and ignore the asset. We flipped it. Brand, web, content and performance live under one roof here — every rupee of spend builds something that keeps working after the campaign ends.",
-  signature: "— The Creative Monk team",
+  a: "Because most agencies optimise the ad account and ignore the asset. We flipped it. Brand, web, content and performance live under one roof here, every rupee of spend builds something that keeps working after the campaign ends.",
+  signature: "The Creative Monk team",
 };
 
 /** Platforms & tools (rendered as text wordmarks in a marquee). */
@@ -68,7 +68,7 @@ export const SERVICES_12: GridService[] = [
   { no: "09", title: "Content", desc: "Words that rank and persuade, in your voice." },
   { no: "10", title: "Video & Motion", desc: "Reels, films and motion built to travel." },
   { no: "11", title: "UI / UX", desc: "Product and site experiences people finish." },
-  { no: "12", title: "Analytics & CRO", desc: "Measure, learn, reinvest — month after month." },
+  { no: "12", title: "Analytics & CRO", desc: "Measure, learn, reinvest, month after month." },
   { no: "13", title: "AI & Automation", desc: "Assistants, generative content and automations wired into your funnel." },
 ];
 
@@ -79,16 +79,16 @@ export type VideoProject = {
 };
 
 export const VIDEO_PROJECTS: VideoProject[] = [
-  { id: "v1", title: "Tvisva — Brand Film", category: "Jewellery" },
-  { id: "v2", title: "The Avenry — Food Reel", category: "F&B" },
-  { id: "v3", title: "White Wolf — Product Reel", category: "Grooming" },
-  { id: "v4", title: "Best Western Plus — Property Film", category: "Hospitality" },
-  { id: "v5", title: "IBC — Launch Campaign", category: "Real Estate" },
-  { id: "v6", title: "Trix — Product Reel", category: "Lighting" },
+  { id: "v1", title: "Tvisva, Brand Film", category: "Jewellery" },
+  { id: "v2", title: "The Avenry, Food Reel", category: "F&B" },
+  { id: "v3", title: "White Wolf, Product Reel", category: "Grooming" },
+  { id: "v4", title: "Best Western Plus, Property Film", category: "Hospitality" },
+  { id: "v5", title: "IBC, Launch Campaign", category: "Real Estate" },
+  { id: "v6", title: "Trix, Product Reel", category: "Lighting" },
 ];
 
 export const CERTS = [
-  "Global 100 — Best Marketing Firm '26",
+  "Global 100, Best Marketing Firm '26",
   "Google Partner",
   "Meta Business Partner",
 ] as const;
@@ -157,10 +157,10 @@ export type Review = {
 
 // Real, attributed Google reviews from Creative Monk's Google Business Profile.
 export const REVIEWS: Review[] = [
-  { name: "Sachin D.", role: "Google review", rating: 5, quote: "A wonderful experience working with Creative Monk — the best digital marketing agency in Zirakpur. The team provided exceptional service.", service: "Digital Marketing" },
+  { name: "Sachin D.", role: "Google review", rating: 5, quote: "A wonderful experience working with Creative Monk, the best digital marketing agency in Zirakpur. The team provided exceptional service.", service: "Digital Marketing" },
   { name: "Kanika S.", role: "Google review", rating: 5, quote: "The go-to team for digital marketing. Their strategies are result-driven and tailored to the business.", service: "Strategy" },
-  { name: "Amisha R.", role: "Google review", rating: 5, quote: "I really appreciate how transparent and friendly the team is — no hidden charges, no jargon.", service: "Branding" },
-  { name: "Laxman S.", role: "Google review", rating: 5, quote: "If you want real business growth — not just fancy reports — go with Creative Monk.", service: "Growth" },
+  { name: "Amisha R.", role: "Google review", rating: 5, quote: "I really appreciate how transparent and friendly the team is, no hidden charges, no jargon.", service: "Branding" },
+  { name: "Laxman S.", role: "Google review", rating: 5, quote: "If you want real business growth, not just fancy reports, go with Creative Monk.", service: "Growth" },
   { name: "Shivani M.", role: "Google review", rating: 5, quote: "Very reliable and professional people. They improved my website's ranking faster than I expected.", service: "SEO" },
   { name: "Ashpreet K.", role: "Google review", rating: 5, quote: "An exceptional digital agency. The team is highly skilled and dedicated to delivering top-notch results.", service: "Web · Social" },
 ];
@@ -170,7 +170,7 @@ export const REVIEW_SUMMARY = { rating: "4.4", count: "33", platforms: "Google" 
 export const FAQS = [
   {
     q: "How is Creative Monk different from a typical agency?",
-    a: "Everything is in-house — brand, web, content and performance. Nothing gets lost between hand-offs, and your spend builds an asset instead of renting attention.",
+    a: "Everything is in-house, brand, web, content and performance. Nothing gets lost between hand-offs, and your spend builds an asset instead of renting attention.",
   },
   {
     q: "Do you work on retainer or per project?",
@@ -182,7 +182,7 @@ export const FAQS = [
   },
   {
     q: "Which industries do you specialise in?",
-    a: "FMCG, D2C & e-commerce, real estate, SaaS, hospitality and local services — but our system travels well across categories.",
+    a: "FMCG, D2C & e-commerce, real estate, SaaS, hospitality and local services, but our system travels well across categories.",
   },
   {
     q: "Do you only work with brands in India?",
@@ -190,7 +190,7 @@ export const FAQS = [
   },
   {
     q: "Who owns the work you produce?",
-    a: "You do — outright. Brand files, code, content and ad accounts are yours. That's the whole point of building an asset.",
+    a: "You do, outright. Brand files, code, content and ad accounts are yours. That's the whole point of building an asset.",
   },
 ];
 
@@ -214,7 +214,7 @@ export const RATINGS = [
   { source: "Google", value: "4.4" },
 ] as const;
 
-/** Footer location — real HQ (Zirakpur / Tricity) + reach. */
+/** Footer location, real HQ (Zirakpur / Tricity) + reach. */
 export const LOCATIONS = {
   india: ["Zirakpur, Punjab", "Chandigarh", "Mohali"],
   global: ["Clients across 7 countries"],
@@ -266,7 +266,7 @@ export const VALUES = [
   {
     no: "01",
     title: "Own the asset",
-    body: "Every rupee of work should build something you keep — a brand, a system, a channel — not attention you rent and lose.",
+    body: "Every rupee of work should build something you keep, a brand, a system, a channel, not attention you rent and lose.",
   },
   {
     no: "02",
@@ -281,7 +281,7 @@ export const VALUES = [
   {
     no: "04",
     title: "Patience, then pace",
-    body: "We move like a monk — listen first, then execute relentlessly. Compounding beats sprinting every single time.",
+    body: "We move like a monk, listen first, then execute relentlessly. Compounding beats sprinting every single time.",
   },
 ] as const;
 
@@ -291,7 +291,7 @@ export const INDUSTRIES = [
   { name: "Real Estate", blurb: "Premium projects sold before launch with funnels + film." },
   { name: "FMCG", blurb: "Heritage brands re-lit for the feed and the shelf." },
   { name: "SaaS", blurb: "Demand engines for product-led growth teams." },
-  { name: "Hospitality", blurb: "Places people travel for — and post about." },
+  { name: "Hospitality", blurb: "Places people travel for, and post about." },
   { name: "Healthcare", blurb: "Trust-first marketing for clinics and wellness brands." },
 ] as const;
 
@@ -327,12 +327,12 @@ export const CAREERS: Careers = {
   heroTitle1: "Build things",
   heroTitle2: "worth owning",
   heroLede:
-    "We're a small, in-house team that values craft, ownership and the long game — people who'd rather build an asset than rent attention.",
+    "We're a small, in-house team that values craft, ownership and the long game, people who'd rather build an asset than rent attention.",
   rolesEyebrow: "Open roles",
   rolesIntro:
-    "Don't fit one neatly? Apply to the closest — we hire for craft, not checklists.",
+    "Don't fit one neatly? Apply to the closest, we hire for craft, not checklists.",
   whyEyebrow: "Why Creative Monk",
-  whyLead: "No hand-offs, no ego, no busywork —",
+  whyLead: "No hand-offs, no ego, no busywork, ",
   whyMuted: "just sharp people shipping work they're proud to sign.",
   perksEyebrow: "Perks",
   perksHeading: "The things that keep good people building.",
@@ -359,7 +359,7 @@ export type Post = {
 
 
 /* ============================================================
-   SERVICE CATEGORIES — the mega-menu + internal /services/[slug] pages.
+   SERVICE CATEGORIES, the mega-menu + internal /services/[slug] pages.
    Five buckets: Design · Market · Develop · Growth · AI.
    Every service is framed as an asset you own that compounds.
    ============================================================ */
@@ -380,7 +380,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     name: "Design",
     tagline: "The identity and creative assets you own, not rent",
     intro:
-      "Identity, design and motion built as assets you own outright — a system that compounds recognition across every surface, from the first logo to the last frame of the reel.",
+      "Identity, design and motion built as assets you own outright, a system that compounds recognition across every surface, from the first logo to the last frame of the reel.",
     items: [
       { slug: "brand-identity-systems", name: "Brand Identity & Systems", desc: "A system that compounds recognition, not a one-off logo file." },
       { slug: "graphic-design-creative", name: "Graphic Design & Creative", desc: "Campaign and social creative built once, reused everywhere on-brand." },
@@ -394,13 +394,13 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     name: "Market",
     tagline: "Demand that compounds instead of resetting every month",
     intro:
-      "Search, paid and social that turn spend into owned learnings, audience and content — demand that builds on itself instead of resetting when the campaign ends.",
+      "Search, paid and social that turn spend into owned learnings, audience and content, demand that builds on itself instead of resetting when the campaign ends.",
     items: [
       { slug: "seo", name: "SEO", desc: "Visibility you own in the SERP, not rented for the length of a campaign." },
       { slug: "google-ads", name: "Google Ads", desc: "Spend that buys learnings and creative assets the account keeps using, not just clicks." },
       { slug: "meta-ads", name: "Meta Ads", desc: "Feed-native creative that feeds back into your owned content library." },
       { slug: "social-media-management", name: "Social Media Management", desc: "A presence asset that keeps compounding audience, not a content treadmill." },
-      { slug: "content-copywriting", name: "Content & Copywriting", desc: "Words built once into a system — SEO and brand voice — reused across every channel." },
+      { slug: "content-copywriting", name: "Content & Copywriting", desc: "Words built once into a system, SEO and brand voice, reused across every channel." },
     ],
   },
   {
@@ -409,7 +409,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     name: "Develop",
     tagline: "The infrastructure your growth runs on",
     intro:
-      "Fast, conversion-shaped sites, stores and landing pages — the asset every campaign points back to, engineered to get better with each cycle of data.",
+      "Fast, conversion-shaped sites, stores and landing pages, the asset every campaign points back to, engineered to get better with each cycle of data.",
     items: [
       { slug: "websites-landing-pages", name: "Websites & Landing Pages", desc: "The asset every campaign points back to and improves." },
       { slug: "ecommerce", name: "E-commerce", desc: "A storefront engineered to get better with every cycle of data, not rebuilt each time." },
@@ -421,7 +421,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     name: "Growth",
     tagline: "Where Make becomes Compound",
     intro:
-      "Funnels, analytics and CRO wired into one feedback loop — the engine that makes every other asset compound month over month, run by one team with no hand-offs.",
+      "Funnels, analytics and CRO wired into one feedback loop, the engine that makes every other asset compound month over month, run by one team with no hand-offs.",
     items: [
       { slug: "lead-generation-funnels", name: "Lead Generation & Funnels", desc: "A system tuned to your margins, not a rented list of leads." },
       { slug: "analytics-cro", name: "Analytics & CRO", desc: "The feedback loop that makes every other asset compound month over month." },
@@ -434,7 +434,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     name: "AI",
     tagline: "Intelligence, put to work",
     intro:
-      "Automation and AI tooling baked into the Make/Compound loop — compounding efficiency and production capacity that scale your asset library without scaling headcount.",
+      "Automation and AI tooling baked into the Make/Compound loop, compounding efficiency and production capacity that scale your asset library without scaling headcount.",
     items: [
       { slug: "ai-marketing-automation", name: "AI-Powered Marketing & Automation", desc: "Compounding efficiency baked into the Make/Compound loop." },
       { slug: "ai-content-tools", name: "AI Content & Creative Tools", desc: "Production capacity that scales the asset library without scaling headcount." },
@@ -443,7 +443,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
 ];
 
 /* ============================================================
-   INDUSTRY PAGES — vertical-specific landing pages.
+   INDUSTRY PAGES, vertical-specific landing pages.
    /industries and /industries/[slug]
    ============================================================ */
 export type LinkRef = { label: string; href: string };
@@ -475,19 +475,19 @@ export const INDUSTRY_PAGES: IndustryPage[] = [
     name: "Real Estate",
     tagline: "Premium projects, sold before launch.",
     intro:
-      "We help developers and channel partners fill inventory faster — with brand, film and paid funnels that turn a plot of land into a project people want in on.",
+      "We help developers and channel partners fill inventory faster, with brand, film and paid funnels that turn a plot of land into a project people want in on.",
     overview: [
-      "Real estate is sold on trust and aspiration, long before a single flat is booked. We build the brand world around a project — name, identity, walkthrough film, microsite — and then wire a lead engine underneath it that qualifies buyers instead of just collecting numbers.",
-      "From pre-launch teasers to possession-day content, we run the whole campaign as one system: creative that makes the project feel inevitable, and performance marketing tuned to cost-per-qualified-site-visit — the only metric a sales team actually cares about.",
+      "Real estate is sold on trust and aspiration, long before a single flat is booked. We build the brand world around a project, name, identity, walkthrough film, microsite, and then wire a lead engine underneath it that qualifies buyers instead of just collecting numbers.",
+      "From pre-launch teasers to possession-day content, we run the whole campaign as one system: creative that makes the project feel inevitable, and performance marketing tuned to cost-per-qualified-site-visit, the only metric a sales team actually cares about.",
     ],
     challenges: [
       { title: "Long, high-ticket decisions", desc: "Buyers take months and compare hard. Weak follow-up and generic creative lose the deal to the next hoarding." },
       { title: "Lead quality over volume", desc: "Cheap leads flood the CRM and burn the sales team. The real cost is per qualified site visit, not per form fill." },
-      { title: "Undifferentiated projects", desc: "Every brochure looks the same — glass towers and stock families. Nothing tells the buyer why this address." },
+      { title: "Undifferentiated projects", desc: "Every brochure looks the same, glass towers and stock families. Nothing tells the buyer why this address." },
     ],
     approach: [
       { title: "A project brand, not a brochure", desc: "Name, identity, walkthrough film and a microsite that make the project feel premium and specific." },
-      { title: "Funnels tuned to site visits", desc: "Meta and Google campaigns optimised down-funnel — qualified enquiries and booked visits, with creative to match each stage." },
+      { title: "Funnels tuned to site visits", desc: "Meta and Google campaigns optimised down-funnel, qualified enquiries and booked visits, with creative to match each stage." },
       { title: "Content that carries momentum", desc: "Construction updates, RERA-safe reels and testimonials that keep the project alive across the whole sales cycle." },
     ],
     services: [
@@ -498,7 +498,7 @@ export const INDUSTRY_PAGES: IndustryPage[] = [
     ],
     metric: { value: "Pre-sold", label: "projects launched with full funnels" },
     faqs: [
-      { q: "Do you work with developers or channel partners?", a: "Both. We run project-brand campaigns for developers and lead-gen funnels for channel partners and broking teams — the creative and targeting differ, but the discipline is the same." },
+      { q: "Do you work with developers or channel partners?", a: "Both. We run project-brand campaigns for developers and lead-gen funnels for channel partners and broking teams, the creative and targeting differ, but the discipline is the same." },
       { q: "Can you handle RERA-compliant creative?", a: "Yes. We keep claims, disclaimers and pricing language within RERA norms while still making the work feel premium." },
       { q: "How do you measure success?", a: "Cost per qualified site visit and booking, not raw lead count. We report against sales-relevant milestones from day one." },
     ],
@@ -509,19 +509,19 @@ export const INDUSTRY_PAGES: IndustryPage[] = [
     name: "D2C & E-commerce",
     tagline: "Launch-to-scale brands that live on ROAS.",
     intro:
-      "From first product to profitable scale — brand, store and performance built as one machine, so every rupee of ad spend compounds into an asset you own.",
+      "From first product to profitable scale, brand, store and performance built as one machine, so every rupee of ad spend compounds into an asset you own.",
     overview: [
-      "A D2C brand wins on two things: a store that converts and a media engine that stays profitable as it scales. We build both — a fast Shopify or headless storefront wired for conversion, and a creative-led paid engine that keeps CAC honest.",
-      "We treat the whole funnel as one system: thumb-stopping ad creative, landing experiences that carry the promise through to checkout, and retention flows that turn a first order into a lifetime. The brand isn't decoration — it's the reason people pay full price and come back.",
+      "A D2C brand wins on two things: a store that converts and a media engine that stays profitable as it scales. We build both, a fast Shopify or headless storefront wired for conversion, and a creative-led paid engine that keeps CAC honest.",
+      "We treat the whole funnel as one system: thumb-stopping ad creative, landing experiences that carry the promise through to checkout, and retention flows that turn a first order into a lifetime. The brand isn't decoration, it's the reason people pay full price and come back.",
     ],
     challenges: [
       { title: "Rising CAC", desc: "Ad costs climb every quarter. Without fresh creative and tight funnels, unit economics quietly break." },
       { title: "Conversion leaks", desc: "Slow stores, weak PDPs and clunky checkout bleed the traffic you paid for right before the sale." },
-      { title: "One-and-done buyers", desc: "No retention system means every sale starts from zero — and the LTV never catches up to the CAC." },
+      { title: "One-and-done buyers", desc: "No retention system means every sale starts from zero, and the LTV never catches up to the CAC." },
     ],
     approach: [
       { title: "A store engineered to convert", desc: "Fast Shopify or headless builds with PDPs, bundles and checkout tuned for AOV and Core Web Vitals." },
-      { title: "Creative-led paid growth", desc: "A steady stream of test-ready ad creative across Meta and Google, managed to profit — not vanity ROAS." },
+      { title: "Creative-led paid growth", desc: "A steady stream of test-ready ad creative across Meta and Google, managed to profit, not vanity ROAS." },
       { title: "Retention that compounds", desc: "Email and WhatsApp flows that turn first orders into repeat revenue and push LTV past CAC." },
     ],
     services: [
@@ -541,12 +541,12 @@ export const INDUSTRY_PAGES: IndustryPage[] = [
     slug: "hospitality",
     index: "03",
     name: "Hospitality",
-    tagline: "Places people travel for — and post about.",
+    tagline: "Places people travel for, and post about.",
     intro:
       "Restaurants, cafés and hotels live and die by how they look on a feed and read on a map. We make yours the one people save, share and book.",
     overview: [
-      "Hospitality is a visual, local business. The buying decision happens on Instagram, Google Maps and a friend's story — long before anyone walks in. We build a brand and content system that makes the place feel worth the trip, then make sure it's the first result when someone nearby is hungry or booking a stay.",
-      "We've done this for cafés, restaurants and hotels across the Tricity — identity, menu and interior-led photography direction, always-on social, and local SEO that owns the 'near me' moment. The goal is simple: more covers, more bookings, more regulars.",
+      "Hospitality is a visual, local business. The buying decision happens on Instagram, Google Maps and a friend's story, long before anyone walks in. We build a brand and content system that makes the place feel worth the trip, then make sure it's the first result when someone nearby is hungry or booking a stay.",
+      "We've done this for cafés, restaurants and hotels across the Tricity, identity, menu and interior-led photography direction, always-on social, and local SEO that owns the 'near me' moment. The goal is simple: more covers, more bookings, more regulars.",
     ],
     challenges: [
       { title: "The decision happens online", desc: "Feed, Maps and reviews decide the visit. A weak grid or thin profile loses the table to the place next door." },
@@ -555,7 +555,7 @@ export const INDUSTRY_PAGES: IndustryPage[] = [
     ],
     approach: [
       { title: "A brand you'd travel for", desc: "Identity, menus, signage and content direction that make the place feel like a destination, not a default." },
-      { title: "Always-on social that fills tables", desc: "Reels, stories and campaigns tuned to the local audience and the seasons — built to be saved and shared." },
+      { title: "Always-on social that fills tables", desc: "Reels, stories and campaigns tuned to the local audience and the seasons, built to be saved and shared." },
       { title: "Local SEO that owns 'near me'", desc: "Google Business Profile, reviews and location pages that put you top of the map when it counts." },
     ],
     services: [
@@ -567,7 +567,7 @@ export const INDUSTRY_PAGES: IndustryPage[] = [
     metric: { value: "Tricity", label: "cafés, restaurants & hotels served" },
     faqs: [
       { q: "Do you shoot the food and interiors?", a: "We art-direct and manage shoots with trusted partners, then build the content system around the footage so it lasts months, not one post." },
-      { q: "Can you manage our Instagram end-to-end?", a: "Yes — strategy, creative, captions, posting and community management, with reporting tied to reach, saves and footfall." },
+      { q: "Can you manage our Instagram end-to-end?", a: "Yes, strategy, creative, captions, posting and community management, with reporting tied to reach, saves and footfall." },
       { q: "We're a single outlet. Is that too small?", a: "Not at all. Single outlets are where local SEO and a sharp feed move the needle fastest." },
     ],
   },
@@ -577,14 +577,14 @@ export const INDUSTRY_PAGES: IndustryPage[] = [
     name: "FMCG",
     tagline: "Heritage brands, re-lit for the feed and the shelf.",
     intro:
-      "Legacy and new-age FMCG brands trust us to modernise the identity, win the shelf and build a direct line to the customer — without losing what made them loved.",
+      "Legacy and new-age FMCG brands trust us to modernise the identity, win the shelf and build a direct line to the customer, without losing what made them loved.",
     overview: [
-      "FMCG lives in two places at once: the retail shelf and the phone screen. We refresh the brand so it stands out in both — packaging that earns the pick-up, and a content and commerce layer that builds demand before the customer ever reaches the aisle.",
-      "For heritage brands, the job is evolution, not erasure — keep the equity, lose the dated. For challengers, it's velocity — a distinctive brand and a D2C channel that proves demand fast. Either way, we connect brand, packaging and performance into one growth story.",
+      "FMCG lives in two places at once: the retail shelf and the phone screen. We refresh the brand so it stands out in both, packaging that earns the pick-up, and a content and commerce layer that builds demand before the customer ever reaches the aisle.",
+      "For heritage brands, the job is evolution, not erasure, keep the equity, lose the dated. For challengers, it's velocity, a distinctive brand and a D2C channel that proves demand fast. Either way, we connect brand, packaging and performance into one growth story.",
     ],
     challenges: [
       { title: "Winning a crowded shelf", desc: "Dozens of near-identical products. If the pack doesn't earn the pick-up in two seconds, the sale is lost." },
-      { title: "Dated brand equity", desc: "Loved but tired brands risk alienating a new generation — or losing their base if the refresh goes too far." },
+      { title: "Dated brand equity", desc: "Loved but tired brands risk alienating a new generation, or losing their base if the refresh goes too far." },
       { title: "No direct customer line", desc: "Selling only through distribution means zero data and zero relationship with the people who buy you." },
     ],
     approach: [
@@ -601,7 +601,7 @@ export const INDUSTRY_PAGES: IndustryPage[] = [
     metric: { value: "Shelf-to-feed", label: "brand systems built end-to-end" },
     faqs: [
       { q: "Can you handle packaging across a large SKU range?", a: "Yes. We build a scalable packaging system with clear rules so new SKUs stay on-brand and ship fast." },
-      { q: "We're a heritage brand nervous about change. How do you approach a refresh?", a: "Carefully. We audit the equity first, keep what's loved, and evolve only what's holding the brand back — always with your team in the loop." },
+      { q: "We're a heritage brand nervous about change. How do you approach a refresh?", a: "Carefully. We audit the equity first, keep what's loved, and evolve only what's holding the brand back, always with your team in the loop." },
       { q: "Do you set up the D2C side too?", a: "We build the store, content and paid engine so you own a direct relationship and first-party data, not just distribution." },
     ],
   },
@@ -611,19 +611,19 @@ export const INDUSTRY_PAGES: IndustryPage[] = [
     name: "Healthcare & Wellness",
     tagline: "Trust-first marketing for clinics and wellness brands.",
     intro:
-      "Clinics, hospitals and wellness brands come to us to build credibility and a steady flow of the right patients — with marketing that's ethical, clear and quietly persuasive.",
+      "Clinics, hospitals and wellness brands come to us to build credibility and a steady flow of the right patients, with marketing that's ethical, clear and quietly persuasive.",
     overview: [
-      "Healthcare marketing is a trust business. Patients research, compare and hesitate — so the brand has to feel credible, the website has to answer real questions, and the content has to educate before it ever sells. We build all three, within the guardrails the category demands.",
-      "From Ayurveda and wellness brands to specialist clinics, we create identities that reassure, sites that convert enquiries into appointments, and local SEO and content that make you the obvious, trustworthy choice — no fear-mongering, no over-claiming.",
+      "Healthcare marketing is a trust business. Patients research, compare and hesitate, so the brand has to feel credible, the website has to answer real questions, and the content has to educate before it ever sells. We build all three, within the guardrails the category demands.",
+      "From Ayurveda and wellness brands to specialist clinics, we create identities that reassure, sites that convert enquiries into appointments, and local SEO and content that make you the obvious, trustworthy choice, no fear-mongering, no over-claiming.",
     ],
     challenges: [
       { title: "Trust is the whole game", desc: "Patients won't book a clinic that looks amateur or over-promises. Credibility has to be visible everywhere." },
-      { title: "Sensitive, regulated claims", desc: "Health messaging has to persuade without crossing ethical or compliance lines — a narrow path most agencies fumble." },
+      { title: "Sensitive, regulated claims", desc: "Health messaging has to persuade without crossing ethical or compliance lines, a narrow path most agencies fumble." },
       { title: "High-intent, local demand", desc: "Most patients search locally and decide fast. Losing the map pack and reviews means losing the appointment." },
     ],
     approach: [
       { title: "A brand that reassures", desc: "Calm, credible identity and messaging that make patients feel safe choosing you." },
-      { title: "Educational content that converts", desc: "Clear answers to real patient questions — building authority and trust before the enquiry." },
+      { title: "Educational content that converts", desc: "Clear answers to real patient questions, building authority and trust before the enquiry." },
       { title: "Ethical local growth", desc: "Local SEO, reviews and appointment-shaped funnels that bring in the right patients, responsibly." },
     ],
     services: [
@@ -634,9 +634,9 @@ export const INDUSTRY_PAGES: IndustryPage[] = [
     ],
     metric: { value: "Ethics-first", label: "clinics & wellness brands grown" },
     faqs: [
-      { q: "Do you follow advertising rules for healthcare?", a: "Yes. We keep claims evidence-based and within platform and category guidelines — persuasive, never misleading." },
+      { q: "Do you follow advertising rules for healthcare?", a: "Yes. We keep claims evidence-based and within platform and category guidelines, persuasive, never misleading." },
       { q: "Can you help a single clinic compete locally?", a: "Absolutely. Local SEO, a strong profile and review strategy are where a single clinic gains the most, fastest." },
-      { q: "We're a wellness/Ayurveda brand — do you get the space?", a: "We do — we've worked with Ayurveda and wellness brands and know how to balance tradition, credibility and modern demand." },
+      { q: "We're a wellness/Ayurveda brand, do you get the space?", a: "We do, we've worked with Ayurveda and wellness brands and know how to balance tradition, credibility and modern demand." },
     ],
   },
   {
@@ -645,15 +645,15 @@ export const INDUSTRY_PAGES: IndustryPage[] = [
     name: "SaaS & Tech",
     tagline: "Demand engines for product-led teams.",
     intro:
-      "We help SaaS and tech companies turn a great product into a growth story — positioning, a site that sells, and content-led demand that compounds.",
+      "We help SaaS and tech companies turn a great product into a growth story, positioning, a site that sells, and content-led demand that compounds.",
     overview: [
-      "Great products don't sell themselves — clear positioning and a site that makes the value obvious do. We sharpen the message, rebuild the marketing site around conversion, and stand up a content and SEO engine that brings in qualified pipeline month after month.",
+      "Great products don't sell themselves, clear positioning and a site that makes the value obvious do. We sharpen the message, rebuild the marketing site around conversion, and stand up a content and SEO engine that brings in qualified pipeline month after month.",
       "For product-led teams, we tune the whole funnel: landing pages for each campaign, activation-shaped onboarding content, and AEO so your product gets cited by AI answers, not just ranked on Google. Marketing that behaves like part of the product, not a bolt-on.",
     ],
     challenges: [
       { title: "Vague positioning", desc: "If a visitor can't tell what you do and why it's better in five seconds, no amount of traffic converts." },
       { title: "A site that explains but doesn't sell", desc: "Feature lists and jargon don't move buyers. The site has to carry outcomes, proof and a clear next step." },
-      { title: "Unpredictable pipeline", desc: "Without a content and SEO engine, growth depends on paid alone — and stops the moment budget does." },
+      { title: "Unpredictable pipeline", desc: "Without a content and SEO engine, growth depends on paid alone, and stops the moment budget does." },
     ],
     approach: [
       { title: "Positioning that clicks", desc: "Messaging and a narrative that make the value obvious to the buyer who matters." },
@@ -668,15 +668,15 @@ export const INDUSTRY_PAGES: IndustryPage[] = [
     ],
     metric: { value: "Product-led", label: "demand engines built" },
     faqs: [
-      { q: "Do you work with early-stage startups?", a: "Yes — from pre-launch positioning and a first marketing site to scaling a content engine post-PMF." },
-      { q: "What's AEO and why should we care?", a: "Answer Engine Optimisation gets your product cited inside ChatGPT, Perplexity and Google's AI answers — increasingly where buyers start their research." },
+      { q: "Do you work with early-stage startups?", a: "Yes, from pre-launch positioning and a first marketing site to scaling a content engine post-PMF." },
+      { q: "What's AEO and why should we care?", a: "Answer Engine Optimisation gets your product cited inside ChatGPT, Perplexity and Google's AI answers, increasingly where buyers start their research." },
       { q: "Can you build the site on our stack?", a: "We default to Next.js for performance, but we'll work within your existing stack or CMS when it makes sense." },
     ],
   },
 ];
 
 /* ============================================================
-   LOCATION PAGES — local-SEO landing pages.
+   LOCATION PAGES, local-SEO landing pages.
    /locations and /locations/[slug]
    ============================================================ */
 export type LocationPage = {
@@ -707,13 +707,13 @@ export const LOCATION_PAGES: LocationPage[] = [
     region: "The City Beautiful · Tricity",
     tagline: "The full-service studio Chandigarh brands grow with.",
     intro:
-      "A creative and digital growth studio in the heart of the Tricity — brand, web, content and performance under one roof, built for Chandigarh businesses that want to own their growth.",
+      "A creative and digital growth studio in the heart of the Tricity, brand, web, content and performance under one roof, built for Chandigarh businesses that want to own their growth.",
     overview: [
-      "Chandigarh is our home ground. From Sector 17 retail to Industrial Area startups and IT Park tech teams, we've helped local brands look sharper and grow faster — without the hand-offs and hidden costs of stringing five vendors together.",
+      "Chandigarh is our home ground. From Sector 17 retail to Industrial Area startups and IT Park tech teams, we've helped local brands look sharper and grow faster, without the hand-offs and hidden costs of stringing five vendors together.",
       "Working with a studio in your own city means faster shoots, in-person strategy sessions and a team that understands the local market. Brand, website, social, ads and SEO all live under one roof, wired to compound month after month.",
     ],
     stats: [
-      { value: "1", label: "roof — brand, web, content & growth" },
+      { value: "1", label: "roof, brand, web, content & growth" },
       { value: "7", label: "countries served from Chandigarh" },
       { value: "Local", label: "shoots, strategy & support in person" },
     ],
@@ -731,9 +731,9 @@ export const LOCATION_PAGES: LocationPage[] = [
       { label: "Social & Content", href: "/services/content" },
     ],
     faqs: [
-      { q: "Where are you based in the Tricity?", a: "Our studio is at Sushma Infinium, Zirakpur — a few minutes from Chandigarh, Mohali and Panchkula, so in-person meetings are easy across the Tricity." },
-      { q: "Do you only work with Chandigarh businesses?", a: "No — we serve clients across seven countries. But being local means Chandigarh brands get faster shoots, in-person strategy and a team that knows the market." },
-      { q: "Can you do everything in-house?", a: "Yes. Brand, website, content, social, ads and SEO all live under one roof — no chasing five different vendors." },
+      { q: "Where are you based in the Tricity?", a: "Our studio is at Sushma Infinium, Zirakpur, a few minutes from Chandigarh, Mohali and Panchkula, so in-person meetings are easy across the Tricity." },
+      { q: "Do you only work with Chandigarh businesses?", a: "No, we serve clients across seven countries. But being local means Chandigarh brands get faster shoots, in-person strategy and a team that knows the market." },
+      { q: "Can you do everything in-house?", a: "Yes. Brand, website, content, social, ads and SEO all live under one roof, no chasing five different vendors." },
     ],
   },
   {
@@ -743,13 +743,13 @@ export const LOCATION_PAGES: LocationPage[] = [
     region: "SAS Nagar · Tricity",
     tagline: "Growth partner for Mohali's businesses and startups.",
     intro:
-      "From IT and real estate to hospitality and D2C, Mohali brands work with us for creative and performance marketing that's built to compound — right next door.",
+      "From IT and real estate to hospitality and D2C, Mohali brands work with us for creative and performance marketing that's built to compound, right next door.",
     overview: [
-      "Mohali has become the Tricity's growth engine — IT companies, real-estate projects, hospitals and new-age brands all scaling fast. We help them stand out and sell, with brand, website and paid marketing run as one system rather than disconnected pieces.",
+      "Mohali has become the Tricity's growth engine, IT companies, real-estate projects, hospitals and new-age brands all scaling fast. We help them stand out and sell, with brand, website and paid marketing run as one system rather than disconnected pieces.",
       "Being minutes away means we can move quickly: on-site shoots, in-person strategy and a team that treats your growth like a neighbour would. Everything from identity to lead-gen funnels, under one roof.",
     ],
     stats: [
-      { value: "1", label: "roof — brand, web, content & growth" },
+      { value: "1", label: "roof, brand, web, content & growth" },
       { value: "Minutes", label: "away for shoots & strategy" },
       { value: "Tricity", label: "clients across every sector" },
     ],
@@ -768,8 +768,8 @@ export const LOCATION_PAGES: LocationPage[] = [
     ],
     faqs: [
       { q: "How close are you to Mohali?", a: "Our Zirakpur studio is a short drive from every Mohali sector, so in-person meetings and shoots are simple to arrange." },
-      { q: "Do you work with Mohali IT and real-estate firms?", a: "Yes — from IT City tech teams to real-estate projects around Aerocity and New Chandigarh, we run brand and demand campaigns across sectors." },
-      { q: "Can you handle both creative and ads?", a: "That's the point of one roof — identity, website, content and paid marketing are all built and managed together." },
+      { q: "Do you work with Mohali IT and real-estate firms?", a: "Yes, from IT City tech teams to real-estate projects around Aerocity and New Chandigarh, we run brand and demand campaigns across sectors." },
+      { q: "Can you handle both creative and ads?", a: "That's the point of one roof, identity, website, content and paid marketing are all built and managed together." },
     ],
   },
   {
@@ -781,11 +781,11 @@ export const LOCATION_PAGES: LocationPage[] = [
     intro:
       "Retailers, clinics, restaurants and manufacturers in Panchkula trust us to build a sharper brand and a steady flow of local customers.",
     overview: [
-      "Panchkula blends established retail and industry with a fast-growing residential and wellness scene. We help local businesses win their neighbourhood — with a brand that stands out, a website that converts, and local SEO that owns the 'near me' searches that matter.",
+      "Panchkula blends established retail and industry with a fast-growing residential and wellness scene. We help local businesses win their neighbourhood, with a brand that stands out, a website that converts, and local SEO that owns the 'near me' searches that matter.",
       "As a Tricity studio, we're close enough to work hands-on: shoots, meetings and quick turnarounds, plus the full stack of brand, web and performance marketing under one roof.",
     ],
     stats: [
-      { value: "1", label: "roof — brand, web, content & growth" },
+      { value: "1", label: "roof, brand, web, content & growth" },
       { value: "Local", label: "SEO tuned to 'near me' intent" },
       { value: "Tricity", label: "team, in person when it counts" },
     ],
@@ -803,26 +803,26 @@ export const LOCATION_PAGES: LocationPage[] = [
       { label: "Social & Content", href: "/services/content" },
     ],
     faqs: [
-      { q: "Do you help Panchkula shops and clinics get found locally?", a: "Yes — local SEO, Google Business Profile and review strategy are core to what we do for neighbourhood businesses." },
-      { q: "Are you far from Panchkula?", a: "No — our Zirakpur studio sits right on the corridor between Zirakpur and Panchkula, so we're easy to reach." },
-      { q: "Can you run everything for a small business?", a: "Yes. We scale the engagement to fit — from a brand-and-website sprint to always-on social and ads." },
+      { q: "Do you help Panchkula shops and clinics get found locally?", a: "Yes, local SEO, Google Business Profile and review strategy are core to what we do for neighbourhood businesses." },
+      { q: "Are you far from Panchkula?", a: "No, our Zirakpur studio sits right on the corridor between Zirakpur and Panchkula, so we're easy to reach." },
+      { q: "Can you run everything for a small business?", a: "Yes. We scale the engagement to fit, from a brand-and-website sprint to always-on social and ads." },
     ],
   },
   {
     slug: "zirakpur",
     index: "04",
     city: "Zirakpur",
-    region: "Punjab · Tricity — our home",
+    region: "Punjab · Tricity, our home",
     tagline: "Your neighbourhood studio, on the Tricity's fastest-growing strip.",
     intro:
-      "Zirakpur is where our studio lives — so local brands get the closest thing to an in-house creative and growth team, without hiring one.",
+      "Zirakpur is where our studio lives, so local brands get the closest thing to an in-house creative and growth team, without hiring one.",
     overview: [
-      "Zirakpur has exploded — highrises, retail, restaurants and D2C brands all racing to establish themselves. As a studio based right here at Sushma Infinium, we help local businesses cut through with a distinctive brand, a fast website and marketing that actually brings customers in.",
+      "Zirakpur has exploded, highrises, retail, restaurants and D2C brands all racing to establish themselves. As a studio based right here at Sushma Infinium, we help local businesses cut through with a distinctive brand, a fast website and marketing that actually brings customers in.",
       "Being in your own backyard means the fastest turnarounds in the Tricity: drop-in strategy sessions, same-week shoots, and one team owning brand, web, content and performance end-to-end.",
     ],
     stats: [
       { value: "Home", label: "our studio at Sushma Infinium" },
-      { value: "1", label: "roof — brand, web, content & growth" },
+      { value: "1", label: "roof, brand, web, content & growth" },
       { value: "Fastest", label: "turnarounds in the Tricity" },
     ],
     areas: [
@@ -839,15 +839,15 @@ export const LOCATION_PAGES: LocationPage[] = [
       { label: "Content & Social", href: "/services/content" },
     ],
     faqs: [
-      { q: "Where exactly is your studio?", a: "Office 11–12, 9th Floor, Sushma Infinium, Zirakpur — easy to reach from VIP Road, Patiala Road and the Chandigarh highway." },
+      { q: "Where exactly is your studio?", a: "Office 11–12, 9th Floor, Sushma Infinium, Zirakpur, easy to reach from VIP Road, Patiala Road and the Chandigarh highway." },
       { q: "Do local Zirakpur businesses get any advantage?", a: "The biggest one: speed and access. Drop-in strategy sessions, same-week shoots and a team you can actually sit across from." },
-      { q: "Can you handle a brand-new business from scratch?", a: "Yes — naming, identity, website, social and launch marketing, all built together so you start with a complete, cohesive presence." },
+      { q: "Can you handle a brand-new business from scratch?", a: "Yes, naming, identity, website, social and launch marketing, all built together so you start with a complete, cohesive presence." },
     ],
   },
 ];
 
 /* ============================================================
-   GROWTH PILLARS — outcome-first framing for the homepage
+   GROWTH PILLARS, outcome-first framing for the homepage
    "disciplines" sections (bento + horizontal showcase).
    These sit ABOVE the à-la-carte SERVICE_CATEGORIES: each pillar
    is an outcome that rolls up several existing services. Shaped
@@ -918,8 +918,8 @@ export const GROWTH_PILLARS: GrowthPillar[] = [
     index: "05",
     name: "Get Better Every Month",
     tagline: "Analytics, CRO & growth optimization",
-    result: "Continuous, measurable improvement in ROI — not a one-off campaign.",
-    intro: "Continuous, measurable improvement in ROI — not a one-off campaign.",
+    result: "Continuous, measurable improvement in ROI, not a one-off campaign.",
+    intro: "Continuous, measurable improvement in ROI, not a one-off campaign.",
     href: "/services",
     items: [
       { slug: "analytics-cro", name: "Analytics & CRO", desc: "Track what matters, then lift the numbers that move revenue." },
@@ -930,7 +930,7 @@ export const GROWTH_PILLARS: GrowthPillar[] = [
     slug: "get-it-all",
     index: "06",
     name: "Get It All",
-    tagline: "The 360 Growth System — done-for-you retainer",
+    tagline: "The 360 Growth System, done-for-you retainer",
     result: "One integrated team and system, replacing five fragmented vendors.",
     intro: "One integrated team and system, replacing five fragmented vendors.",
     href: "/services",
@@ -941,7 +941,7 @@ export const GROWTH_PILLARS: GrowthPillar[] = [
 ];
 
 /* ============================================================
-   OPEN ROLES — /careers listings. Full rich descriptions live in
+   OPEN ROLES, /careers listings. Full rich descriptions live in
    the CMS (roles collection); this is the client-bundle fallback
    used when the API is unreachable.
    ============================================================ */
@@ -960,10 +960,10 @@ export type OpenRole = {
 };
 
 export const OPEN_ROLES: OpenRole[] = [
-  { title: "AI Content Creator & Editor", slug: "ai-content-creator-editor", team: "AI", type: "Full-time", location: "Zirakpur / Mohali", experience: "1–2 years", salary: "Based on experience", summary: "Create and edit video & image content with AI tools — on-brand and platform-ready.", description: "<p>Produce visual assets using AI-powered tools alongside traditional editing software for client campaigns.</p>" },
+  { title: "AI Content Creator & Editor", slug: "ai-content-creator-editor", team: "AI", type: "Full-time", location: "Zirakpur / Mohali", experience: "1–2 years", salary: "Based on experience", summary: "Create and edit video & image content with AI tools, on-brand and platform-ready.", description: "<p>Produce visual assets using AI-powered tools alongside traditional editing software for client campaigns.</p>" },
   { title: "Videographer / DOP", slug: "videographer-dop", team: "Design", type: "Full-time", location: "Zirakpur / Mohali", experience: "2–4 years", salary: "₹20,000–₹35,000/mo", summary: "Plan, shoot and edit brand films, events and real-estate content, end to end.", description: "<p>Own the camera from pre-production planning to a polished, platform-ready cut.</p>" },
   { title: "Media Buyer (Meta & Google Ads)", slug: "media-buyer", team: "Market", type: "Full-time", location: "Zirakpur / Mohali", experience: "2–4 years", salary: "₹30,000–₹40,000/mo", summary: "Plan and optimise Meta & Google Ads to CPL, CPA and ROAS across client accounts.", description: "<p>Own paid performance across Meta and Google for multiple client accounts.</p>" },
-  { title: "Social Media Manager", slug: "social-media-manager", team: "Market", type: "Full-time", location: "Zirakpur / Chandigarh", summary: "Own social strategy, content and paid campaigns across client brands.", description: "<p>Develop strategy and run client accounts across every major platform — organic and paid.</p>" },
+  { title: "Social Media Manager", slug: "social-media-manager", team: "Market", type: "Full-time", location: "Zirakpur / Chandigarh", summary: "Own social strategy, content and paid campaigns across client brands.", description: "<p>Develop strategy and run client accounts across every major platform, organic and paid.</p>" },
   { title: "Content Writer", slug: "content-writer", team: "Market", type: "Full-time", location: "Zirakpur", summary: "Write SEO-savvy content across web, blog, social and email.", description: "<p>Produce engaging digital content across platforms and shape cohesive brand messaging.</p>" },
   { title: "Video Editor", slug: "video-editor", team: "Design", type: "Full-time", location: "Zirakpur / Mohali", summary: "Edit polished video and motion graphics for social, web and YouTube.", description: "<p>Produce high-quality video for digital platforms and shape concepts with the creative team.</p>" },
   { title: "Graphic Designer", slug: "graphic-designer", team: "Design", type: "Full-time", location: "Zirakpur / Chandigarh", summary: "Craft logos, layouts and on-brand visuals across every channel.", description: "<p>Create visually compelling design across digital platforms, web, social and marketing materials.</p>" },

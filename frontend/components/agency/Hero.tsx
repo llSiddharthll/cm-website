@@ -20,7 +20,7 @@ export function Hero({
 
   return (
     <section className="relative flex min-h-svh flex-col justify-between overflow-hidden bg-dark pb-8 pt-[clamp(7rem,16vh,10rem)] text-on-ink">
-      {/* Ambient background reel — autoplays in view, kept subtle. */}
+      {/* Ambient background reel, autoplays in view, kept subtle. */}
       <div className="absolute inset-0">
         <AutoVideo
           src={VIDEO.hero}

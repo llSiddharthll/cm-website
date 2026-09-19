@@ -16,7 +16,7 @@ import {
 
 export const intakeRouter = Router();
 
-/* ── Public CV upload — applicants upload a résumé in one click; we store it in
+/* ── Public CV upload, applicants upload a résumé in one click; we store it in
    the studio's OWN Google Drive (owner-authorized) and return a shareable link. ── */
 const cvUpload = multer({
   storage: multer.memoryStorage(),

@@ -6,7 +6,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { MoveRight } from "lucide-react";
 import { Tilt } from "@/components/fx/Tilt";
 
-/** Horizontal scroll-snap rail of proof. CSS-only — safe as a server component. */
+/** Horizontal scroll-snap rail of proof. CSS-only, safe as a server component. */
 export function CaseStudies({
   cases = CASES,
 }: {
@@ -46,7 +46,7 @@ export function CaseStudies({
                 <div className="relative aspect-[4/3] overflow-hidden bg-dark-3">
                   <Image
                     src={c.cover ?? VIDEO.posters[i % VIDEO.posters.length]}
-                    alt={c.cover ? `${c.client} — ${c.title}` : ""}
+                    alt={c.cover ? `${c.client}, ${c.title}` : ""}
                     fill
                     sizes="(min-width: 1024px) 31vw, (min-width: 640px) 46vw, 82vw"
                     className={`object-cover transition duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 ${

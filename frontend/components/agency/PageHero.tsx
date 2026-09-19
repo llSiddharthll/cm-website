@@ -1,7 +1,7 @@
 import { Reveal, RevealLines } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
-/** Reusable dark page hero — top meta row, oversized title (+orange stop), lede. */
+/** Reusable dark page hero, top meta row, oversized title (+orange stop), lede. */
 export function PageHero({
   index,
   kicker,

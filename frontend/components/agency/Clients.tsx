@@ -22,13 +22,13 @@ export function Clients({ clients }: { clients: Client[] }) {
             <Reveal delay={0.05}>
               <h2 className="display-tight mt-6 text-[length:var(--text-h2)] leading-[1.02] text-on-ink">
                 Trusted across the Tricity
-                <br />— and beyond.
+                <br />and beyond.
               </h2>
             </Reveal>
           </div>
           <Reveal delay={0.1} className="col-span-12 md:col-span-4 md:text-right">
             <p className="max-w-sm text-on-ink-2 md:ml-auto">
-              {clients.length}+ brands across 10+ sectors — built and run under one
+              {clients.length}+ brands across 10+ sectors, built and run under one
               roof.
             </p>
           </Reveal>
@@ -58,7 +58,7 @@ export function Clients({ clients }: { clients: Client[] }) {
             </Reveal>
           ))}
 
-          {/* closing CTA tile — completes the grid (clients + 1 = multiple of 2/3/4) */}
+          {/* closing CTA tile, completes the grid (clients + 1 = multiple of 2/3/4) */}
           <Reveal as="div" delay={0.1}>
             <Link
               href="/contact"

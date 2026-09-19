@@ -90,7 +90,7 @@ export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const caretRef = useRef<HTMLSpanElement>(null);
 
-  // Scroll handoff — content drifts up + fades as you scroll into the marquee.
+  // Scroll handoff, content drifts up + fades as you scroll into the marquee.
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -98,7 +98,7 @@ export function Hero() {
   const contentY = useTransform(scrollYProgress, [0, 1], [0, -70]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
-  // Magnetic caret — pulls gently toward the cursor.
+  // Magnetic caret, pulls gently toward the cursor.
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
   const sx = useSpring(mx, { stiffness: 150, damping: 14, mass: 0.4 });
@@ -146,7 +146,7 @@ export function Hero() {
               <span className="text-orange">/01</span>&nbsp;&nbsp;The Studio
             </span>
             <span className="label col-span-6 text-ink md:col-span-4 md:col-start-4">
-              {HERO.kicker.split("—")[0].trim()}
+              {HERO.kicker.split("")[0].trim()}
             </span>
             <span className="label col-span-12 md:col-span-5 md:col-start-8 md:justify-self-end">
               <StudioClock />

@@ -25,7 +25,7 @@ export function Culture({
         </Reveal>
 
         <div className="grid12 mt-12">
-          {/* LEFT — image collage */}
+          {/* LEFT, image collage */}
           <Reveal className="col-span-12 md:col-span-6">
             <div className="grid grid-cols-2 gap-[var(--col-gap)]">
               <img
@@ -48,7 +48,7 @@ export function Culture({
             </div>
           </Reveal>
 
-          {/* RIGHT — stats, benefits, ratings */}
+          {/* RIGHT, stats, benefits, ratings */}
           <div className="col-span-12 mt-10 md:col-span-5 md:col-start-8 md:mt-0">
             <Reveal>
               <dl className="flex flex-wrap gap-x-12 gap-y-6">

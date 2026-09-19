@@ -20,7 +20,7 @@ type Cat = {
 /**
  * Disciplines as a pinned horizontal-scroll deck on desktop (GSAP ScrollTrigger
  * pin + scrub). On mobile / reduced-motion it degrades to a normal vertical
- * stack — no pinning, no horizontal overflow.
+ * stack, no pinning, no horizontal overflow.
  */
 export function HorizontalShowcase({ categories }: { categories: Cat[] }) {
   const sectionRef = useRef<HTMLElement>(null);
@@ -69,7 +69,7 @@ export function HorizontalShowcase({ categories }: { categories: Cat[] }) {
             move the needle.
           </h2>
           <p className="mt-6 max-w-sm text-on-ink-2">
-            Five à-la-carte outcomes — and one done-for-you tier that runs them
+            Five à-la-carte outcomes, and one done-for-you tier that runs them
             all. Each stands alone, and they compound when they run together.
           </p>
           <span className="mono mt-8 hidden items-center gap-2 text-on-ink-3 md:flex">

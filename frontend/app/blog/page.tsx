@@ -9,7 +9,7 @@ import { BlogIndex } from "@/components/blog/BlogIndex";
 export const metadata: Metadata = buildMetadata({
   title: "Blog",
   description:
-    "Guides on digital marketing, SEO, Google Ads, social media and growth — from the Creative Monk studio in Chandigarh.",
+    "Guides on digital marketing, SEO, Google Ads, social media and growth, from the Creative Monk studio in Chandigarh.",
   path: "/blog",
 });
 
@@ -25,7 +25,7 @@ export default async function BlogPage() {
           index="/ 04"
           kicker="Journal"
           titleLines={["Notes from", "the studio"]}
-          lede="Practical guides on digital marketing, SEO, Google Ads, social media and growth — short reads that compound into something you own."
+          lede="Practical guides on digital marketing, SEO, Google Ads, social media and growth, short reads that compound into something you own."
           meta={`${POSTS.length} articles`}
         />
 

@@ -11,7 +11,7 @@ import { getSite, getLocations, getServicesGrid } from "@/lib/cms";
 export const metadata: Metadata = buildMetadata({
   title: "Contact",
   description:
-    "Tell us where you want to grow. We come back with a clear, honest next step — not a hard sell. Replies within one business day.",
+    "Tell us where you want to grow. We come back with a clear, honest next step, not a hard sell. Replies within one business day.",
   path: "/contact",
 });
 
@@ -19,7 +19,7 @@ const NEXT_STEPS = [
   {
     no: "01",
     title: "We reply within a day",
-    body: "A real person reads what you sent and writes back within one business day — no auto-responder, no queue.",
+    body: "A real person reads what you sent and writes back within one business day, no auto-responder, no queue.",
   },
   {
     no: "02",
@@ -29,7 +29,7 @@ const NEXT_STEPS = [
   {
     no: "03",
     title: "A tailored proposal",
-    body: "A scoped plan with honest timelines, ownership and price — built for your stage, not a template tier.",
+    body: "A scoped plan with honest timelines, ownership and price, built for your stage, not a template tier.",
   },
 ];
 
@@ -49,7 +49,7 @@ export default async function ContactPage() {
           index="/ 03"
           kicker="Contact"
           titleLines={["Let’s talk"]}
-          lede="Tell us where you want to grow — we’ll come back with a clear, honest next step, not a hard sell."
+          lede="Tell us where you want to grow, we’ll come back with a clear, honest next step, not a hard sell."
           meta="Replies within 1 business day"
         />
 
@@ -104,7 +104,7 @@ export default async function ContactPage() {
                 className="col-span-12 block max-w-md text-on-ink-2 md:col-span-5 md:col-start-8 md:justify-self-end"
               >
                 Built in Chandigarh, shipping for clients across India and the
-                wider world — in their time zone when it matters.
+                wider world, in their time zone when it matters.
               </Reveal>
             </div>
 

@@ -8,7 +8,7 @@ import { Badge, Button } from "./ui";
 
 function FieldValue({ field, value }: { field: Field; value: unknown }) {
   if (value === undefined || value === null || value === "")
-    return <span className="text-sm text-zinc-500">—</span>;
+    return <span className="text-sm text-zinc-500"></span>;
 
   switch (field.type) {
     case "boolean":
@@ -36,7 +36,7 @@ function FieldValue({ field, value }: { field: Field; value: unknown }) {
         </div>
       );
     case "richtext":
-      // Author-written markup — render it instead of printing the tags.
+      // Author-written markup, render it instead of printing the tags.
       return (
         <div
           className="cm-prose max-h-80 max-w-none overflow-y-auto overscroll-contain rounded-lg border border-zinc-800 bg-zinc-800/40 px-3 py-2.5 text-sm text-zinc-300"
@@ -55,7 +55,7 @@ function FieldValue({ field, value }: { field: Field; value: unknown }) {
           {(field.fields ?? []).map((sub) => (
             <div key={sub.name} className="flex gap-2">
               <span className="text-zinc-500">{sub.label}:</span>
-              <span>{String((value as Record<string, unknown>)?.[sub.name] ?? "—")}</span>
+              <span>{String((value as Record<string, unknown>)?.[sub.name] ?? "")}</span>
             </div>
           ))}
         </div>
@@ -71,7 +71,7 @@ function FieldValue({ field, value }: { field: Field; value: unknown }) {
         </div>
       );
     default:
-      // Some legacy WordPress-imported values (e.g. titles) carry stray markup —
+      // Some legacy WordPress-imported values (e.g. titles) carry stray markup, 
       // show the readable text rather than the tags.
       return (
         <span className="text-sm text-zinc-300">

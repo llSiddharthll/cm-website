@@ -13,7 +13,7 @@ import { DetailSheet } from "./DetailSheet";
 
 function cellValue(field: Field, value: unknown) {
   if (value === undefined || value === null || value === "")
-    return <span className="text-zinc-600">—</span>;
+    return <span className="text-zinc-600"></span>;
   switch (field.type) {
     case "boolean":
       return <Badge tone={value ? "won" : "default"}>{value ? "Yes" : "No"}</Badge>;
@@ -32,7 +32,7 @@ function cellValue(field: Field, value: unknown) {
     case "select":
       return <Badge tone={String(value)}>{String(value)}</Badge>;
     default: {
-      // Rich text and legacy imported values carry markup — show readable text,
+      // Rich text and legacy imported values carry markup, show readable text,
       // never raw tags, in the table.
       const s = stripHtml(value);
       return <span className="line-clamp-1 text-zinc-300">{s.length > 80 ? s.slice(0, 80) + "…" : s}</span>;
@@ -164,7 +164,7 @@ export function CollectionView({ collection }: { collection: Collection }) {
                   <dd className="line-clamp-1 text-zinc-300">
                     {Array.isArray(singleton?.[f.name])
                       ? (singleton?.[f.name] as unknown[]).length + " items"
-                      : stripHtml(singleton?.[f.name] ?? "") || "—"}
+                      : stripHtml(singleton?.[f.name] ?? "") || ""}
                   </dd>
                 </div>
               ))}

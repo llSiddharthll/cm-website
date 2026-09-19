@@ -27,7 +27,7 @@ export function Process({
 
         <Reveal delay={0.16}>
           <p className="mt-6 max-w-xl text-[length:var(--text-body)] leading-snug text-on-ink-2">
-            Four deliberate moves — attention, strategy, craft and measurement —
+            Four deliberate moves, attention, strategy, craft and measurement, 
             run in-house so the work keeps building on itself.
           </p>
         </Reveal>

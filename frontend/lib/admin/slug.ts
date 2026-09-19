@@ -3,7 +3,7 @@ import { stripHtml } from "./html";
 /**
  * Canonical slug from arbitrary text (handles HTML-laden titles, e.g. legacy
  * WordPress imports where a title is `<strong>…</strong>`). Trimmed on both
- * ends — use for auto-generating from a title.
+ * ends, use for auto-generating from a title.
  */
 export function slugify(input: unknown): string {
   return stripHtml(input)

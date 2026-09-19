@@ -122,7 +122,7 @@ function LibraryDialog({
             </div>
           ) : items.length === 0 ? (
             <p className="flex h-48 items-center justify-center text-sm text-zinc-400">
-              No uploads yet — use the Upload button.
+              No uploads yet, use the Upload button.
             </p>
           ) : (
             <div className="grid max-h-[60vh] grid-cols-3 gap-3 overflow-y-auto sm:grid-cols-4">

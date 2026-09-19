@@ -26,7 +26,7 @@ declare global {
 const SCRIPT_SRC =
   "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
 
-/** True when a site key is configured — forms use this to require a token. */
+/** True when a site key is configured, forms use this to require a token. */
 export const turnstileEnabled = Boolean(TURNSTILE_SITE_KEY);
 
 /** Loads the Turnstile script once and resolves when the API is ready. */
@@ -58,7 +58,7 @@ function loadTurnstile(): Promise<void> {
 }
 
 /**
- * Cloudflare Turnstile — invisible/low-friction captcha.
+ * Cloudflare Turnstile, invisible/low-friction captcha.
  *
  * Renders nothing when NEXT_PUBLIC_TURNSTILE_SITE_KEY is unset, so forms keep
  * working before the keys are configured. `onVerify` receives the token to
@@ -97,7 +97,7 @@ export function Turnstile({
         });
       })
       .catch(() => {
-        // Script blocked (ad-blocker/offline) — don't hard-block the form.
+        // Script blocked (ad-blocker/offline), don't hard-block the form.
         cb.current("");
       });
 

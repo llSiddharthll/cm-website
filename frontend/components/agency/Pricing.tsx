@@ -19,7 +19,7 @@ export function Pricing() {
           </div>
           <p className="col-span-12 self-end text-on-ink-2 md:col-span-4">
             Start where you are, scale when you&rsquo;re ready. Every plan is a
-            partnership, not a package — built to compound into something you own.
+            partnership, not a package, built to compound into something you own.
           </p>
         </div>
 

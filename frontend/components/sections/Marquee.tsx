@@ -9,7 +9,7 @@ import {
 import { MARQUEE } from "@/lib/content";
 
 /**
- * Marquee — a thin DARK rhythm band between sections.
+ * Marquee, a thin DARK rhythm band between sections.
  * One seamless infinite track of the capability words, separated by a
  * single solid orange square (the one accent, repeated). The word set is
  * rendered twice so the translateX 0 → -50% loop reads as one continuous
@@ -44,7 +44,7 @@ export function Marquee() {
           <span className="display whitespace-nowrap text-2xl text-on-ink sm:text-3xl">
             {word}
           </span>
-          {/* separator — a single solid orange square, not rotated */}
+          {/* separator, a single solid orange square, not rotated */}
           <span
             aria-hidden
             className="mx-[clamp(1.5rem,3vw,3.5rem)] block size-2 shrink-0 bg-orange"

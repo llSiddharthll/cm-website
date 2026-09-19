@@ -10,7 +10,7 @@ import { getCases, getSite, getServicesGrid } from "@/lib/cms";
 export const metadata: Metadata = buildMetadata({
   title: "Work",
   description:
-    "Selected work from Creative Monk — brand, web, performance marketing and motion built for compounding growth.",
+    "Selected work from Creative Monk, brand, web, performance marketing and motion built for compounding growth.",
   path: "/work",
 });
 

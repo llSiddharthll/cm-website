@@ -9,7 +9,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 /**
- * Services — an expanding editorial table.
+ * Services, an expanding editorial table.
  * Each discipline sits on a hairline rule: mono index · oversized title.
  * The active row tints to orange, nudges right and reveals blurb + capability
  * chips. First row opens by default so the table reads as a live document.
@@ -20,7 +20,7 @@ export function Services() {
   return (
     <section id="services" className="bg-paper section">
       <div className="shell">
-        {/* ── Intro: heading left, lede pinned right — asymmetric ── */}
+        {/* ── Intro: heading left, lede pinned right, asymmetric ── */}
         <div className="grid12 items-end gap-y-10">
           <div className="col-span-6 md:col-span-7">
             <Reveal>
@@ -37,7 +37,7 @@ export function Services() {
 
           <Reveal delay={0.12} className="col-span-6 md:col-span-4 md:col-start-9">
             <p className="text-[length:var(--text-lead)] leading-snug text-ink-2">
-              Strategy, design, code and content under one roof — so the craft
+              Strategy, design, code and content under one roof, so the craft
               stays consistent from the first pixel to the last post.
             </p>
           </Reveal>
@@ -135,7 +135,7 @@ function ServiceRow({
         </div>
       </button>
 
-      {/* Detail: blurb + capability chips — animate height/opacity */}
+      {/* Detail: blurb + capability chips, animate height/opacity */}
       <AnimatePresence initial={false}>
         {isActive && (
           <motion.div
@@ -187,7 +187,7 @@ function ServiceRow({
                 </ul>
               </div>
 
-              {/* deliverables — what you get */}
+              {/* deliverables, what you get */}
               <div className="col-span-3 md:col-span-3 md:col-start-10">
                 <span className="label mb-4 block text-ink-3">You get</span>
                 <ul>

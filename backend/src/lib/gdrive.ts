@@ -4,7 +4,7 @@ import { env } from "../env";
 /**
  * Uploads into the studio's OWN Google Drive using a one-time owner
  * authorization (offline refresh token, drive.file scope). Applicants never
- * touch Google — they just POST a file and we return a shareable link.
+ * touch Google, they just POST a file and we return a shareable link.
  */
 const TOKEN_FILE = env.google.tokenFile;
 
@@ -103,6 +103,6 @@ export async function exchangeCode(code: string): Promise<string> {
   if (!res.ok) throw new Error(`Code exchange failed: ${await res.text()}`);
   const data = (await res.json()) as { refresh_token?: string };
   if (!data.refresh_token)
-    throw new Error("No refresh token returned — revoke prior access and retry with prompt=consent.");
+    throw new Error("No refresh token returned, revoke prior access and retry with prompt=consent.");
   return data.refresh_token;
 }

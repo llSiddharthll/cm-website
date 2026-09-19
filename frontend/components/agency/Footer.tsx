@@ -10,7 +10,7 @@ const YEAR = 2026;
 /**
  * Site footer.
  *
- * `hideCta` drops the "Let's build something you own" band — use it on pages
+ * `hideCta` drops the "Let's build something you own" band, use it on pages
  * that already end with their own CTA, so the two don't stack (e.g. /careers).
  */
 export async function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
@@ -59,7 +59,7 @@ export async function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
           <div className="col-span-12 md:col-span-4">
             <Logo invert />
             <p className="mt-5 max-w-xs text-on-ink-2">
-              {SITE.tagline} — a full-service creative &amp; growth studio from{" "}
+              {SITE.tagline}, a full-service creative &amp; growth studio from{" "}
               {SITE.city.split(" · ")[0]}.
             </p>
             <NewsletterForm />
@@ -101,7 +101,7 @@ export async function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
             </ul>
           </div>
 
-          {/* link groups — Company · Services · Industries · Locations */}
+          {/* link groups, Company · Services · Industries · Locations */}
           {footerGroups.map((group) => (
             <div key={group.title} className="col-span-6 md:col-span-2">
               <span className="label mb-5 block text-on-ink-3">{group.title}</span>

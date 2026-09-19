@@ -30,7 +30,7 @@ export function NewsletterForm() {
       if (!res.ok) throw new Error(String(res.status));
       setDone(true);
     } catch {
-      setError("Couldn't subscribe just now — please try again.");
+      setError("Couldn't subscribe just now, please try again.");
     } finally {
       setLoading(false);
     }

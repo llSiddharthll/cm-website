@@ -13,7 +13,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 export const metadata: Metadata = buildMetadata({
   title: "Locations",
   description:
-    "A creative and digital growth studio serving Chandigarh, Mohali, Panchkula and Zirakpur — brand, web, content and performance across the Tricity.",
+    "A creative and digital growth studio serving Chandigarh, Mohali, Panchkula and Zirakpur, brand, web, content and performance across the Tricity.",
   path: "/locations",
 });
 
@@ -33,7 +33,7 @@ export default async function LocationsPage() {
           index="/ 08"
           kicker="Locations"
           titleLines={["A Tricity studio,", "close to you"]}
-          lede="Based in Zirakpur, working hands-on across the Tricity — and with clients in seven countries. Find your city."
+          lede="Based in Zirakpur, working hands-on across the Tricity, and with clients in seven countries. Find your city."
           meta={`${locations.length} cities`}
         />
 
@@ -73,7 +73,7 @@ export default async function LocationsPage() {
             <div className="grid12 items-end gap-y-8">
               <div className="col-span-12 md:col-span-8">
                 <Reveal>
-                  <Eyebrow index="—" invert>
+                  <Eyebrow index="" invert>
                     By industry
                   </Eyebrow>
                 </Reveal>

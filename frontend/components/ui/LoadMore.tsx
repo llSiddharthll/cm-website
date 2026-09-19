@@ -34,7 +34,7 @@ export function LoadMore({
             <span className="size-1.5 animate-bounce rounded-full bg-orange" />
           </span>
           <span className="mono text-on-ink-3">
-            Loading more — {shown} of {total}
+            Loading more, {shown} of {total}
           </span>
         </>
       ) : (

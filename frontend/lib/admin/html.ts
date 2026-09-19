@@ -6,7 +6,7 @@
  * so plain-text contexts strip them and rich contexts render them.
  */
 
-/** Strip tags and decode the common entities — for table cells, titles, previews. */
+/** Strip tags and decode the common entities, for table cells, titles, previews. */
 export function stripHtml(input: unknown): string {
   const s = String(input ?? "");
   if (!s.includes("<") && !s.includes("&")) return s;

@@ -4,7 +4,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SITE, NAV } from "@/lib/content";
 
 /**
- * Footer — the dark finale. Swiss bold-minimal: 12-col grid, hairline rules,
+ * Footer, the dark finale. Swiss bold-minimal: 12-col grid, hairline rules,
  * mono metadata, one surgical orange accent on hover. A massive clipped
  * "CREATIVE MONK" wordmark sits as a faint structural backdrop. Server component.
  */

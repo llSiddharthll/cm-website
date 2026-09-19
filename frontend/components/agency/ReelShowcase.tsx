@@ -70,7 +70,7 @@ export function ReelShowcase({
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-md text-[length:var(--text-lead)] leading-snug text-on-ink-2">
-              Concept, camera and cut — short-form built end-to-end in-house. The
+              Concept, camera and cut, short-form built end-to-end in-house. The
               kind of scroll-stopping motion that travels across feeds and earns
               the save.
             </p>

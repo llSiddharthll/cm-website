@@ -12,7 +12,7 @@ export const revalidate = 60;
 export const metadata: Metadata = buildMetadata({
   title: "Portfolio",
   description:
-    "Selected creative work by Creative Monk — branding, social, packaging, print, UI and full websites across industries.",
+    "Selected creative work by Creative Monk, branding, social, packaging, print, UI and full websites across industries.",
   path: "/portfolio",
 });
 
@@ -32,7 +32,7 @@ export default async function PortfolioPage() {
           index="/ 02"
           kicker="Portfolio"
           titleLines={["The work,", "up close"]}
-          lede="Branding, social, packaging, print, UI and full websites — a closer look at what we make, across disciplines and industries. Filter by craft, tap to expand."
+          lede="Branding, social, packaging, print, UI and full websites, a closer look at what we make, across disciplines and industries. Filter by craft, tap to expand."
           meta={`${items.length} pieces`}
         />
 

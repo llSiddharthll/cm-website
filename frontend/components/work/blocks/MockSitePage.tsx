@@ -1,6 +1,6 @@
 /**
  * A tall, light, CSS-rendered landing page that reads like a real website
- * screenshot — used inside ScreenshotScroll when no real screenshot is uploaded.
+ * screenshot, used inside ScreenshotScroll when no real screenshot is uploaded.
  * Pure markup (no images), so it always renders crisply.
  */
 export function MockSitePage({ title = "Brand" }: { title?: string }) {

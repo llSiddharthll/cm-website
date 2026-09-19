@@ -8,11 +8,11 @@ export const SITE_URL = (
     "Google Analytics" ownership verification method. */
 export const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-1XX3SG68HR";
 
-/** Optional GTM container (e.g. "GTM-XXXXXXX") — set to also load Tag Manager,
+/** Optional GTM container (e.g. "GTM-XXXXXXX"), set to also load Tag Manager,
     which is the method Search Console currently has on file. */
 export const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "";
 
-/** Optional `google-site-verification` token — the value from Search Console's
+/** Optional `google-site-verification` token, the value from Search Console's
     "HTML tag" method, as a belt-and-braces backup to the Analytics method. */
 export const GSC_VERIFICATION = process.env.NEXT_PUBLIC_GSC_VERIFICATION || "";
 

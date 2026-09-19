@@ -6,7 +6,7 @@ import { Loader2, UploadCloud, Check, FileText, X } from "lucide-react";
 /**
  * One-click CV upload. The file is POSTed to /api/intake/upload, which stores
  * it in the studio's own Google Drive (owner-authorized) and returns a
- * shareable link. No Google sign-in for the applicant — a single click.
+ * shareable link. No Google sign-in for the applicant, a single click.
  */
 const API = "https://34-172-180-194.nip.io".replace(/\/$/, "");
 const MAX_BYTES = 10 * 1024 * 1024;

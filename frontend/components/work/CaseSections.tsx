@@ -35,7 +35,7 @@ export function CaseSections({
 
           return (
             <article key={i} className="border-t border-line-invert pt-8 md:pt-10">
-              {/* compact header — heading + intro close together */}
+              {/* compact header, heading + intro close together */}
               {!isQuote && (
                 <div className="grid12 items-end gap-y-3">
                   <Reveal className="col-span-12 md:col-span-7">
@@ -106,8 +106,7 @@ export function CaseSections({
                         <span className="text-orange">&rdquo;</span>
                       </blockquote>
                       {s.author && (
-                        <figcaption className="mono col-span-12 mt-6 text-on-ink-3">
-                          — {s.author}
+                        <figcaption className="mono col-span-12 mt-6 text-on-ink-3">{s.author}
                         </figcaption>
                       )}
                     </figure>

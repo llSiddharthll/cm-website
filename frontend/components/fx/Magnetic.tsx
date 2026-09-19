@@ -5,7 +5,7 @@ import { motion, useMotionValue, useSpring, useReducedMotion } from "motion/reac
 import { cn } from "@/lib/utils";
 
 /**
- * Magnetic hover — the element drifts toward the cursor and springs back.
+ * Magnetic hover, the element drifts toward the cursor and springs back.
  * Pointer-only (inert on touch) and disabled under prefers-reduced-motion.
  */
 export function Magnetic({

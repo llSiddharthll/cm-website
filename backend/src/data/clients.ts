@@ -18,7 +18,7 @@ export const CLIENTS = [
   { name: "CP.67 Offices", sector: "Real Estate", works: ["Social Media"], featured: false },
   { name: "Felicity Adobe", sector: "Real Estate", works: ["Website", "Social Media"], featured: false },
   { name: "Felix Plaza", sector: "Real Estate", works: ["Social Media"], featured: false },
-  { name: "IBC — Indian Business Centre", sector: "Real Estate", works: ["Ad Campaign"], featured: true },
+  { name: "IBC, Indian Business Centre", sector: "Real Estate", works: ["Ad Campaign"], featured: true },
   { name: "Trix", sector: "Lighting", works: ["Packaging", "Social Media"], featured: false },
   { name: "Export House", sector: "Handloom & Retail", works: ["Website", "Retail Branding"], featured: false },
   { name: "CII Coolex", sector: "Events & Exhibition", works: ["Social Media", "PR", "Standee"], featured: false },

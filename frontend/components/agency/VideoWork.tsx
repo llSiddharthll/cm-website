@@ -43,7 +43,7 @@ export function VideoWork({
           </Reveal>
         </div>
 
-        {/* Featured films — 16:9, autoplaying in view */}
+        {/* Featured films, 16:9, autoplaying in view */}
         <div className="grid12 mt-12 gap-5 md:mt-16">
           {films.map((p, i) => (
             <Reveal
@@ -75,7 +75,7 @@ export function VideoWork({
           ))}
         </div>
 
-        {/* Reels rail — 9:16, autoplaying, drag/scroll */}
+        {/* Reels rail, 9:16, autoplaying, drag/scroll */}
         <Reveal delay={0.1}>
           <div className="mt-12 flex items-center justify-between">
             <span className="label text-on-ink-3">Reels &amp; shorts</span>

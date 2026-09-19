@@ -26,7 +26,7 @@ export function FAQ({
               Good to know.
             </h2>
             <p className="max-w-xl text-[length:var(--text-lead)] leading-snug text-on-ink-2">
-              The questions founders ask us most — answered straight, before
+              The questions founders ask us most, answered straight, before
               you book the call.
             </p>
           </header>

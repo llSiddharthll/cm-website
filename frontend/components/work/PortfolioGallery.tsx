@@ -84,7 +84,7 @@ export function PortfolioGallery({ items }: { items: Portfolio[] }) {
                       {it.image && (
                         <Image
                           src={it.image}
-                          alt={`${it.title}${it.client ? ` — ${it.client}` : ""}`}
+                          alt={`${it.title}${it.client ? `${it.client}` : ""}`}
                           fill
                           sizes={wide ? "(min-width:1024px) 62vw, 92vw" : "(min-width:1024px) 31vw, 46vw"}
                           className="object-cover transition duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"

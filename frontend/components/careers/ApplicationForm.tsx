@@ -89,7 +89,7 @@ export function ApplicationForm({
           ]
             .filter(Boolean)
             .join("\n"),
-          source: `Application — ${role}`,
+          source: `Application, ${role}`,
         });
       }
       if (!res.ok)
@@ -109,7 +109,7 @@ export function ApplicationForm({
       >
         <Check className="size-10 text-orange" strokeWidth={2} />
         <p className="display text-[length:var(--text-h3)] text-on-ink">
-          Application received — thank you.
+          Application received, thank you.
         </p>
         <p className="max-w-md text-on-ink-2">
           We read every application ourselves. If there&rsquo;s a fit, we&rsquo;ll

@@ -11,7 +11,7 @@ export function Certs({ certs = CERTS }: { certs?: readonly string[] }) {
     >
       <div className="shell">
         <Reveal>
-          <Eyebrow index="—" invert>
+          <Eyebrow index="" invert>
             Recognised &amp; certified
           </Eyebrow>
         </Reveal>

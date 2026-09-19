@@ -47,7 +47,7 @@ export const env = {
     secretKey: process.env.TURNSTILE_SECRET_KEY || "",
   },
 
-  // Server-side Google OAuth — applicant CVs upload into the studio's own
+  // Server-side Google OAuth, applicant CVs upload into the studio's own
   // Google Drive using a one-time owner authorization (refresh token).
   google: {
     clientId: process.env.GOOGLE_OAUTH_CLIENT_ID || "",

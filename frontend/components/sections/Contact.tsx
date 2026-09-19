@@ -9,7 +9,7 @@ import { EASE, DUR, VIEWPORT } from "@/lib/motion";
 import { SITE } from "@/lib/content";
 
 /**
- * Contact — the dark finale.
+ * Contact, the dark finale.
  * Swiss bold-minimal: an oversized grotesk CTA closed by the orange-square
  * full-stop (mirroring the hero signature), two flat actions, and a hairline
  * contact ledger. Boldness spent on one line; quiet, precise everywhere else.
@@ -60,7 +60,7 @@ export function Contact() {
                   }}
                 >
                   {line}
-                  {/* orange square full-stop — the single bold accent */}
+                  {/* orange square full-stop, the single bold accent */}
                   {i === HEADLINE.length - 1 && (
                     <span
                       aria-hidden
@@ -78,7 +78,7 @@ export function Contact() {
           <Reveal delay={0.1} className="col-span-6 md:col-span-5">
             <p className="max-w-md text-[length:var(--text-lead)] leading-snug text-on-ink-2">
               Tell us where you want to be in twelve months. We&apos;ll show you
-              the route — and build the engine that gets you there.
+              the route, and build the engine that gets you there.
             </p>
           </Reveal>
 
@@ -95,7 +95,7 @@ export function Contact() {
           </Reveal>
         </div>
 
-        {/* ── Contact ledger — hairline-divided cells ── */}
+        {/* ── Contact ledger, hairline-divided cells ── */}
         <div className="grid12 mt-20 border-t border-line-invert pt-px md:mt-28">
           {DETAILS.map((item, i) => {
             const body = (

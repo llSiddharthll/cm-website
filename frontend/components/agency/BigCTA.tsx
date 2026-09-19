@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { Magnetic } from "@/components/fx/Magnetic";
 
 /**
- * Full-bleed dark CTA moment — the last big push before the contact form.
+ * Full-bleed dark CTA moment, the last big push before the contact form.
  * Giant invite + dual CTA, anchored by a mini proof-stat row.
  */
 export function BigCTA({
@@ -21,7 +21,7 @@ export function BigCTA({
 }) {
   return (
     <section className="bg-dark text-on-ink section relative overflow-hidden">
-      {/* atmosphere — dark office, dimmed under a scrim for legibility */}
+      {/* atmosphere, dark office, dimmed under a scrim for legibility */}
       <img
         src={IMG.bigCta}
         alt=""
@@ -48,7 +48,7 @@ export function BigCTA({
 
         <Reveal delay={0.16}>
           <p className="mt-8 max-w-2xl text-[length:var(--text-lead)] leading-snug text-on-ink-2">
-            Tell us where you’re headed and we’ll map the first move — no decks
+            Tell us where you’re headed and we’ll map the first move, no decks
             to sit through, just a straight conversation about what we’d build
             together.
           </p>

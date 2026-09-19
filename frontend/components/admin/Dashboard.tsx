@@ -65,13 +65,13 @@ export function Dashboard() {
         </div>
         <Card className="overflow-hidden">
           {data.recentLeads.length === 0 ? (
-            <p className="px-4 py-8 text-center text-sm text-zinc-400">No leads yet — they’ll show up here when the contact form is used.</p>
+            <p className="px-4 py-8 text-center text-sm text-zinc-400">No leads yet, they’ll show up here when the contact form is used.</p>
           ) : (
             <table className="w-full text-sm">
               <tbody className="divide-y divide-zinc-800">
                 {data.recentLeads.map((l) => (
                   <tr key={l._id}>
-                    <td className="px-4 py-3 font-medium text-zinc-100">{String(l.name ?? "—")}</td>
+                    <td className="px-4 py-3 font-medium text-zinc-100">{String(l.name ?? "")}</td>
                     <td className="px-4 py-3 text-zinc-400">{String(l.email ?? "")}</td>
                     <td className="hidden px-4 py-3 text-zinc-400 sm:table-cell">{String(l.service ?? l.company ?? "")}</td>
                     <td className="px-4 py-3"><Badge tone={String(l.status ?? "new")}>{String(l.status ?? "new")}</Badge></td>

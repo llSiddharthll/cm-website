@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * Mono section label, optionally prefixed by an orange index (e.g. "01").
- * The index is a real structural device — use it where content is a sequence.
+ * The index is a real structural device, use it where content is a sequence.
  */
 export function Eyebrow({
   children,

@@ -103,7 +103,7 @@ export function Header({ dark = true }: { dark?: boolean }) {
         )}
       >
         <div className="shell flex h-16 items-center justify-between md:h-18">
-          <Link href="/" aria-label="Creative Monk — home" onMouseEnter={scheduleClose}>
+          <Link href="/" aria-label="Creative Monk, home" onMouseEnter={scheduleClose}>
             <Logo invert={dark} />
           </Link>
 
@@ -227,7 +227,7 @@ export function Header({ dark = true }: { dark?: boolean }) {
           )}
         </AnimatePresence>
 
-        {/* scroll-progress bar — pinned to the nav bar, not the growing header box */}
+        {/* scroll-progress bar, pinned to the nav bar, not the growing header box */}
         {!reduce && (
           <motion.div
             aria-hidden

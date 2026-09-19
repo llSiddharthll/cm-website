@@ -36,7 +36,7 @@ export const revalidate = 60;
 export const metadata: Metadata = buildMetadata({
   title: "Careers",
   description:
-    "Join Creative Monk — a small, in-house studio in Chandigarh that values craft, ownership and the long game. Send us an application.",
+    "Join Creative Monk, a small, in-house studio in Chandigarh that values craft, ownership and the long game. Send us an application.",
   path: "/careers",
 });
 
@@ -124,7 +124,7 @@ export default async function CareersPage() {
                   className="col-span-12 block max-w-sm text-on-ink-2 md:col-span-4 md:col-start-9 md:text-right"
                 >
                   {careers.rolesIntro ??
-                    "Don't fit one neatly? Apply to the closest — we hire for craft, not checklists."}
+                    "Don't fit one neatly? Apply to the closest, we hire for craft, not checklists."}
                 </Reveal>
               </div>
 
@@ -230,8 +230,7 @@ export default async function CareersPage() {
                     <span className="mono text-on-ink-3">on {r.source}</span>
                   </span>
                 ))}
-                <span className="mono text-on-ink-3">
-                  — trusted by 100+ brands across the Tricity &amp; beyond
+                <span className="mono text-on-ink-3">trusted by 100+ brands across the Tricity &amp; beyond
                 </span>
               </Reveal>
             </div>
@@ -293,7 +292,7 @@ export default async function CareersPage() {
           </div>
         </section>
       </main>
-      {/* page already ends with its own CTA band — don't stack a second one */}
+      {/* page already ends with its own CTA band, don't stack a second one */}
       <Footer hideCta />
     </>
   );

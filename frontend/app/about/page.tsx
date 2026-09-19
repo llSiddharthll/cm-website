@@ -24,7 +24,7 @@ import {
 export const metadata: Metadata = buildMetadata({
   title: "About",
   description:
-    "The in-house creative & growth studio from Chandigarh behind the work — our why, our team and how we think.",
+    "The in-house creative & growth studio from Chandigarh behind the work, our why, our team and how we think.",
   path: "/about",
 });
 
@@ -59,7 +59,7 @@ export default async function AboutPage() {
           index="/ 01"
           kicker="About the studio"
           titleLines={["The studio", "behind the work"]}
-          lede="An in-house creative & growth studio from Chandigarh — brand, web, content and performance built under one roof and engineered to compound."
+          lede="An in-house creative & growth studio from Chandigarh, brand, web, content and performance built under one roof and engineered to compound."
           meta="Est. 2017 · Chandigarh"
         />
 
@@ -100,7 +100,7 @@ export default async function AboutPage() {
             <dl className="grid grid-cols-2 border-t border-line-invert lg:grid-cols-4">
               {TIMELINE.map((t, i) => {
                 // Count up only stat figures (those with a suffix); render the
-                // founded year as plain text — no comma, no count-up.
+                // founded year as plain text, no comma, no count-up.
                 const counts = "suffix" in t && !!t.suffix;
                 return (
                   <Reveal

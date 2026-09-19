@@ -8,7 +8,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export function Awards() {
-  // The Global 100 2026 win leads the list — feature it as a plinth.
+  // The Global 100 2026 win leads the list, feature it as a plinth.
   const [feature, ...rest] = AWARDS;
 
   return (
@@ -31,7 +31,7 @@ export function Awards() {
 
         {/* ── Body: featured plinth beside the table ── */}
         <div className="grid12 mt-16 gap-y-12 md:mt-24">
-          {/* Featured — AWARDS[0], museum plinth */}
+          {/* Featured, AWARDS[0], museum plinth */}
           <Reveal className="col-span-6 md:col-span-4">
             <figure className="bg-paper-3 flex h-full flex-col justify-between gap-12 p-8 md:p-10">
               <div className="flex items-center justify-between">
@@ -50,7 +50,7 @@ export function Awards() {
             </figure>
           </Reveal>
 
-          {/* Table — remaining awards as hairline rows */}
+          {/* Table, remaining awards as hairline rows */}
           <ol className="col-span-6 md:col-span-7 md:col-start-6">
             {rest.map((award, i) => (
               <AwardRow

@@ -33,7 +33,7 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Creative Monk — Growth, with intention.",
+    default: "Creative Monk, Growth, with intention.",
     template: "%s · Creative Monk",
   },
   description:
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Creative Monk — Growth, with intention.",
+    title: "Creative Monk, Growth, with intention.",
     description:
-      "Brand, web, performance marketing and motion — engineered for compounding growth.",
+      "Brand, web, performance marketing and motion, engineered for compounding growth.",
     type: "website",
     locale: "en_IN",
     url: SITE_URL,
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Creative Monk — Growth, with intention.",
+    title: "Creative Monk, Growth, with intention.",
     description:
-      "Brand, web, performance marketing and motion — engineered for compounding growth.",
+      "Brand, web, performance marketing and motion, engineered for compounding growth.",
     images: ["/opengraph-image"],
   },
   robots: {
@@ -82,7 +82,7 @@ export const viewport: Viewport = {
   colorScheme: "dark light",
 };
 
-// Runs before paint — resolves the saved theme (default: system) and sets
+// Runs before paint, resolves the saved theme (default: system) and sets
 // data-theme on <html> so there's no flash of the wrong theme.
 const themeScript = `(function(){try{var p=new URLSearchParams(location.search).get('theme');if(p==='light'||p==='dark'||p==='system'){localStorage.setItem('cm-theme',p);}var t=localStorage.getItem('cm-theme')||'system';var d=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
 

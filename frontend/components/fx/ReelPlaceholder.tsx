@@ -11,7 +11,7 @@ const RATIO: Record<string, string> = {
 };
 
 /**
- * Reel/work tile, Swiss-flat. No gradients or spinning textures — a disciplined
+ * Reel/work tile, Swiss-flat. No gradients or spinning textures, a disciplined
  * ink block with a mono index, a hairline frame, and a crisp orange-on-hover
  * reveal. If `src` is set it plays a real <video> on hover; otherwise the block
  * stands in. Drop a file in /public/reels and pass `src` to go live.
@@ -69,7 +69,7 @@ export function ReelPlaceholder({
         </video>
       ) : (
         <>
-          {/* big ghost index — typographic, not decorative noise */}
+          {/* big ghost index, typographic, not decorative noise */}
           {index && (
             <span
               aria-hidden
@@ -86,7 +86,7 @@ export function ReelPlaceholder({
         </>
       )}
 
-      {/* meta — top-left index/category, bottom title */}
+      {/* meta, top-left index/category, bottom title */}
       <div className="absolute inset-0 flex flex-col justify-between p-4">
         <div className="flex items-center justify-between">
           <span className="label text-on-ink/70 transition-colors duration-300 group-hover/reel:text-on-orange">

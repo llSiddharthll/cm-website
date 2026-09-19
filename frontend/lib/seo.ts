@@ -1,5 +1,5 @@
 /* ============================================================
-   SEO helpers — canonical URLs, per-page OpenGraph/Twitter, and
+   SEO helpers, canonical URLs, per-page OpenGraph/Twitter, and
    JSON-LD (structured data) builders. Keep page files thin: they
    call buildMetadata() for <head> tags and the *Schema() helpers
    for structured data rendered via <JsonLd>.
@@ -25,7 +25,7 @@ export function metaDescription(input: unknown, max = 160): string {
 type BuildMeta = {
   title?: string;
   description?: string;
-  /** Route path — used for the canonical URL and og:url. */
+  /** Route path, used for the canonical URL and og:url. */
   path: string;
   /** Social image (absolute or site-relative). Falls back to the site OG image. */
   image?: string;
@@ -85,7 +85,7 @@ export function buildMetadata({
 const ORG_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
 
-/** The brand entity — referenced by @id from other schemas. */
+/** The brand entity, referenced by @id from other schemas. */
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
@@ -98,7 +98,7 @@ export function organizationSchema() {
     telephone: SITE.phoneHref,
     foundingDate: String(SITE.founded),
     description:
-      "A full-service creative & digital growth studio from Chandigarh, India — brand, web, performance marketing and motion under one roof.",
+      "A full-service creative & digital growth studio from Chandigarh, India, brand, web, performance marketing and motion under one roof.",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Office 11–12, 9th Floor, Sushma Infinium",
@@ -213,7 +213,7 @@ export function localBusinessSchema(opts: {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": `${absoluteUrl(opts.path)}#localbusiness`,
-    name: `${SITE.name} — ${opts.city}`,
+    name: `${SITE.name}, ${opts.city}`,
     url: absoluteUrl(opts.path),
     image: `${SITE_URL}/opengraph-image`,
     logo: `${SITE_URL}/icon.png`,

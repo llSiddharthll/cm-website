@@ -24,10 +24,10 @@ export function Testimonials() {
           </div>
         </Reveal>
 
-        {/* ── Featured pull-quote — the single bold voice ── */}
+        {/* ── Featured pull-quote, the single bold voice ── */}
         <div className="grid12 mt-[clamp(3rem,6vw,6rem)] items-start gap-y-6">
           <Reveal className="col-span-6 md:col-span-1" delay={0.05}>
-            {/* leading orange square — the surgical accent */}
+            {/* leading orange square, the surgical accent */}
             <span
               aria-hidden
               className="block aspect-square w-7 bg-orange md:w-9"
@@ -50,7 +50,7 @@ export function Testimonials() {
           </Reveal>
         </div>
 
-        {/* ── Supporting quotes — sharp 2-col card grid ── */}
+        {/* ── Supporting quotes, sharp 2-col card grid ── */}
         <div className="grid12 mt-[clamp(3rem,6vw,5rem)] gap-y-6">
           {rest.map((t, i) => (
             <Reveal

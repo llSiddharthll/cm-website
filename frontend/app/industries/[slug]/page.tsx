@@ -41,7 +41,7 @@ export async function generateMetadata({
   const page = await getIndustryPage(slug);
   if (!page) return { title: "Industries" };
   return buildMetadata({
-    title: `${page.name} — Creative & Growth Studio`,
+    title: `${page.name}, Creative & Growth Studio`,
     description: page.intro,
     path: `/industries/${page.slug}`,
   });
@@ -181,7 +181,7 @@ export default async function IndustryPageView({
 
             <div className="col-span-12 lg:col-span-4 lg:col-start-9">
               <Reveal>
-                <Eyebrow index="—" invert>
+                <Eyebrow index="" invert>
                   What we bring
                 </Eyebrow>
               </Reveal>
@@ -230,7 +230,7 @@ export default async function IndustryPageView({
         <section className="bg-dark-2 section">
           <div className="shell">
             <Reveal>
-              <Eyebrow index="—" invert>
+              <Eyebrow index="" invert>
                 How we win it
               </Eyebrow>
             </Reveal>

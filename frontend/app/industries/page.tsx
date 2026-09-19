@@ -13,7 +13,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 export const metadata: Metadata = buildMetadata({
   title: "Industries",
   description:
-    "Brand, web, content and performance, tuned to the way your industry actually buys — real estate, D2C, hospitality, FMCG, healthcare and SaaS.",
+    "Brand, web, content and performance, tuned to the way your industry actually buys, real estate, D2C, hospitality, FMCG, healthcare and SaaS.",
   path: "/industries",
 });
 
@@ -70,7 +70,7 @@ export default async function IndustriesPage() {
             <div className="grid12 items-end gap-y-8">
               <div className="col-span-12 md:col-span-8">
                 <Reveal>
-                  <Eyebrow index="—" invert>
+                  <Eyebrow index="" invert>
                     Where we work
                   </Eyebrow>
                 </Reveal>

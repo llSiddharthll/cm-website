@@ -24,7 +24,7 @@ export function Capabilities({
 }) {
   const s = (i: number) => stats[i] ?? { value: "", label: "" };
 
-  // Marquee rows for the stack card — enough distinct rows (varied offset,
+  // Marquee rows for the stack card, enough distinct rows (varied offset,
   // direction and speed) to fill the card's full height with no dead space.
   const rot = (arr: string[], n: number) => [...arr.slice(n), ...arr.slice(0, n)];
   const rev = [...tools].reverse();
@@ -48,7 +48,7 @@ export function Capabilities({
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="display-tight mt-6 max-w-3xl text-[length:var(--text-h2)] leading-[1.04] text-on-ink">
-            Brand, web, content and performance — built together, in-house.
+            Brand, web, content and performance, built together, in-house.
           </h2>
         </Reveal>
 
@@ -59,7 +59,7 @@ export function Capabilities({
               <Sparkles className="size-6 text-orange" />
               <div>
                 <p className="display text-[length:var(--text-h3)] leading-tight text-on-ink">
-                  Everything your brand needs to grow — under one roof.
+                  Everything your brand needs to grow, under one roof.
                 </p>
                 <p className="mt-4 max-w-md text-on-ink-2">
                   No hand-offs between agencies. Strategy, design, code and
@@ -154,7 +154,7 @@ export function Capabilities({
             </div>
           </Reveal>
 
-          {/* stack (wide) — living marquee */}
+          {/* stack (wide), living marquee */}
           <Reveal delay={0.14} className="col-span-2 md:col-span-2">
             <div className={`${glass} flex h-full flex-col overflow-hidden p-7`}>
               <div className="flex items-baseline justify-between gap-3">
@@ -162,7 +162,7 @@ export function Capabilities({
                 <span className="mono text-on-ink-3">{tools.length} tools</span>
               </div>
               <p className="mt-3 max-w-sm text-on-ink-2">
-                The platforms we design, build, ship and scale on — one team,
+                The platforms we design, build, ship and scale on, one team,
                 fluent across the whole stack.
               </p>
               <div className="mt-6 flex flex-1 flex-col justify-between gap-2.5">

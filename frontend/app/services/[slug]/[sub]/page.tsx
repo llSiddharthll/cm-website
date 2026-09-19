@@ -40,7 +40,7 @@ export async function generateMetadata({
   const page = await getServicePage(slug, sub);
   if (!page) return { title: "Services" };
   return buildMetadata({
-    title: `${page.name} — Services`,
+    title: `${page.name}, Services`,
     description: page.intro || page.tagline,
     path: `/services/${slug}/${sub}`,
     image: page.cover,
@@ -202,7 +202,7 @@ export default async function ServicePageView({
               {page.deliverables?.length ? (
                 <div className="col-span-12 lg:col-span-4 lg:col-start-9">
                   <Reveal>
-                    <Eyebrow index="—" invert>What you get</Eyebrow>
+                    <Eyebrow index="" invert>What you get</Eyebrow>
                   </Reveal>
                   <ul className="mt-8 space-y-4">
                     {page.deliverables.map((d, i) => (
@@ -245,7 +245,7 @@ export default async function ServicePageView({
           <section className="bg-dark-2 section">
             <div className="shell">
               <Reveal>
-                <Eyebrow index="—" invert>How we work</Eyebrow>
+                <Eyebrow index="" invert>How we work</Eyebrow>
               </Reveal>
               <ol className="grid12 mt-12 gap-y-12">
                 {page.process.map((p, i) => (

@@ -1,5 +1,5 @@
 /* ============================================================
-   SEED — loads the original Creative Monk content into Turso.
+   SEED, loads the original Creative Monk content into Turso.
    Run:  npm run seed         (only fills empty collections)
          npm run seed:force   (wipes ALL entries, then reseeds)
    ============================================================ */
@@ -13,7 +13,7 @@ import { CLIENTS } from "./data/clients";
 import BLOG_POSTS from "./data/blog-posts.json";
 
 const force = process.argv.includes("--force");
-// --only=<slug> replaces just one collection (delete + reinsert) — leaves the rest untouched.
+// --only=<slug> replaces just one collection (delete + reinsert), leaves the rest untouched.
 const only = process.argv.find((a) => a.startsWith("--only="))?.split("=")[1] || null;
 
 /* ───────────── source content (from the original site) ───────────── */
@@ -41,7 +41,7 @@ const HOME_HERO = {
   eyebrow: "Creative & growth studio · since 2017",
   headline: ["Own your", "growth."],
   accentWord: "growth.",
-  sub: "We design brands and build the growth engines behind them — strategy, web, content and performance under one roof, engineered to compound into something you own.",
+  sub: "We design brands and build the growth engines behind them, strategy, web, content and performance under one roof, engineered to compound into something you own.",
   ctaPrimary: { label: "Book a strategy call", href: "#contact" },
   ctaSecondary: { label: "See our work", href: "#work" },
 };
@@ -50,8 +50,8 @@ const STORY = {
   index: "01",
   kicker: "The studio",
   q: "Why does growth marketing feel like renting?",
-  a: "Because most agencies optimise the ad account and ignore the asset. We flipped it. Brand, web, content and performance live under one roof here — every rupee of spend builds something that keeps working after the campaign ends.",
-  signature: "— The Creative Monk team",
+  a: "Because most agencies optimise the ad account and ignore the asset. We flipped it. Brand, web, content and performance live under one roof here, every rupee of spend builds something that keeps working after the campaign ends.",
+  signature: "The Creative Monk team",
 };
 
 const REVIEW_SUMMARY = { rating: "4.9", count: "350+", platforms: "Google · Clutch" };
@@ -89,7 +89,7 @@ const SERVICES = [
     id: "digital-marketing",
     index: "01",
     title: "Digital Marketing",
-    blurb: "Demand that doesn't sleep. Full-funnel growth engineered around your unit economics — not vanity metrics.",
+    blurb: "Demand that doesn't sleep. Full-funnel growth engineered around your unit economics, not vanity metrics.",
     capabilities: ["SEO & Content", "Paid Search / PPC", "Social Media", "Lead Generation", "Conversion Rate Optimisation", "Local Business Marketing"],
     deliverables: ["Quarterly growth roadmap", "Always-on campaign calendar", "Monthly performance reporting"],
     outcome: { value: "4.1×", label: "avg. blended ROAS" },
@@ -98,7 +98,7 @@ const SERVICES = [
     id: "web",
     index: "02",
     title: "Web Design & Development",
-    blurb: "Sites that feel inevitable. Fast, accessible, conversion-shaped builds — from landing pages to full e-commerce.",
+    blurb: "Sites that feel inevitable. Fast, accessible, conversion-shaped builds, from landing pages to full e-commerce.",
     capabilities: ["Next.js & Headless", "Shopify & WooCommerce", "WordPress / Laravel", "Landing Pages", "E-commerce", "Core Web Vitals"],
     deliverables: ["Design system + UI kit", "Production build & CMS", "Analytics & A/B setup"],
     outcome: { value: "98", label: "avg. Lighthouse score" },
@@ -107,7 +107,7 @@ const SERVICES = [
     id: "design",
     index: "03",
     title: "Graphic & Brand Design",
-    blurb: "Identity with a backbone. The logo, the system, and everything it touches — built to scale across every surface.",
+    blurb: "Identity with a backbone. The logo, the system, and everything it touches, built to scale across every surface.",
     capabilities: ["Logo & Identity", "Brand Systems", "Packaging", "Social Creative", "Stationery", "Campaign Design"],
     deliverables: ["Logo suite & guidelines", "Brand book & tokens", "Templates & asset library"],
     outcome: { value: "100%", label: "in-house, no outsourcing" },
@@ -126,7 +126,7 @@ const SERVICES = [
 const SERVICE_CATEGORIES = [
   {
     slug: "design", index: "01", name: "Design", tagline: "The identity and creative assets you own, not rent",
-    intro: "Identity, design and motion built as assets you own outright — a system that compounds recognition across every surface, from the first logo to the last frame of the reel.",
+    intro: "Identity, design and motion built as assets you own outright, a system that compounds recognition across every surface, from the first logo to the last frame of the reel.",
     items: [
       { slug: "brand-identity-systems", name: "Brand Identity & Systems", desc: "A system that compounds recognition, not a one-off logo file." },
       { slug: "graphic-design-creative", name: "Graphic Design & Creative", desc: "Campaign and social creative built once, reused everywhere on-brand." },
@@ -136,18 +136,18 @@ const SERVICE_CATEGORIES = [
   },
   {
     slug: "market", index: "02", name: "Market", tagline: "Demand that compounds instead of resetting every month",
-    intro: "Search, paid and social that turn spend into owned learnings, audience and content — demand that builds on itself instead of resetting when the campaign ends.",
+    intro: "Search, paid and social that turn spend into owned learnings, audience and content, demand that builds on itself instead of resetting when the campaign ends.",
     items: [
       { slug: "seo", name: "SEO", desc: "Visibility you own in the SERP, not rented for the length of a campaign." },
       { slug: "google-ads", name: "Google Ads", desc: "Spend that buys learnings and creative assets the account keeps using, not just clicks." },
       { slug: "meta-ads", name: "Meta Ads", desc: "Feed-native creative that feeds back into your owned content library." },
       { slug: "social-media-management", name: "Social Media Management", desc: "A presence asset that keeps compounding audience, not a content treadmill." },
-      { slug: "content-copywriting", name: "Content & Copywriting", desc: "Words built once into a system — SEO and brand voice — reused across every channel." },
+      { slug: "content-copywriting", name: "Content & Copywriting", desc: "Words built once into a system, SEO and brand voice, reused across every channel." },
     ],
   },
   {
     slug: "develop", index: "03", name: "Develop", tagline: "The infrastructure your growth runs on",
-    intro: "Fast, conversion-shaped sites, stores and landing pages — the asset every campaign points back to, engineered to get better with each cycle of data.",
+    intro: "Fast, conversion-shaped sites, stores and landing pages, the asset every campaign points back to, engineered to get better with each cycle of data.",
     items: [
       { slug: "websites-landing-pages", name: "Websites & Landing Pages", desc: "The asset every campaign points back to and improves." },
       { slug: "ecommerce", name: "E-commerce", desc: "A storefront engineered to get better with every cycle of data, not rebuilt each time." },
@@ -155,7 +155,7 @@ const SERVICE_CATEGORIES = [
   },
   {
     slug: "growth", index: "04", name: "Growth", tagline: "Where Make becomes Compound",
-    intro: "Funnels, analytics and CRO wired into one feedback loop — the engine that makes every other asset compound month over month, run by one team with no hand-offs.",
+    intro: "Funnels, analytics and CRO wired into one feedback loop, the engine that makes every other asset compound month over month, run by one team with no hand-offs.",
     items: [
       { slug: "lead-generation-funnels", name: "Lead Generation & Funnels", desc: "A system tuned to your margins, not a rented list of leads." },
       { slug: "analytics-cro", name: "Analytics & CRO", desc: "The feedback loop that makes every other asset compound month over month." },
@@ -168,7 +168,7 @@ const SERVICE_CATEGORIES = [
     name: "AI",
     tagline: "Intelligence, put to work",
     intro:
-      "Automation and AI tooling baked into the Make/Compound loop — compounding efficiency and production capacity that scale your asset library without scaling headcount.",
+      "Automation and AI tooling baked into the Make/Compound loop, compounding efficiency and production capacity that scale your asset library without scaling headcount.",
     items: [
       { slug: "ai-marketing-automation", name: "AI-Powered Marketing & Automation", desc: "Compounding efficiency baked into the Make/Compound loop." },
       { slug: "ai-content-tools", name: "AI Content & Creative Tools", desc: "Production capacity that scales the asset library without scaling headcount." },
@@ -188,7 +188,7 @@ const SERVICES_GRID = [
   { no: "09", title: "Content", desc: "Words that rank and persuade, in your voice." },
   { no: "10", title: "Video & Motion", desc: "Reels, films and motion built to travel." },
   { no: "11", title: "UI / UX", desc: "Product and site experiences people finish." },
-  { no: "12", title: "Analytics & CRO", desc: "Measure, learn, reinvest — month after month." },
+  { no: "12", title: "Analytics & CRO", desc: "Measure, learn, reinvest, month after month." },
 ];
 
 
@@ -218,12 +218,12 @@ const ROLES = [
     location: "Zirakpur / Mohali",
     experience: "1–2 years",
     salary: "Based on experience",
-    summary: "Create and edit video & image content with AI tools — on-brand and platform-ready.",
+    summary: "Create and edit video & image content with AI tools, on-brand and platform-ready.",
     description: jd(
       "Produce visual assets using AI-powered tools alongside traditional editing software for client campaigns.",
       [
         "Use AI generation tools (Midjourney, Runway, DALL·E) for graphics, social visuals and short-form video",
-        "Edit and enhance assets — upscaling, auto-captioning, background removal and colour grading",
+        "Edit and enhance assets, upscaling, auto-captioning, background removal and colour grading",
         "Produce platform-ready assets for Reels, Shorts, carousels, static graphics and brand videos",
         "Collaborate with content and strategy teams on AI-assisted concepts aligned to brand identity",
         "QA AI output to remove artifacts and keep everything brand-compliant",
@@ -251,14 +251,14 @@ const ROLES = [
     description: jd(
       "Own the camera from pre-production planning to a polished, platform-ready cut.",
       [
-        "Plan shoots with the creative and account teams — shot lists, locations, equipment and shoot-day logistics",
+        "Plan shoots with the creative and account teams, shot lists, locations, equipment and shoot-day logistics",
         "Capture high-quality video for real-estate walkthroughs, events, brand films and social content",
-        "Edit raw footage into polished videos — cuts, colour correction, sound design, graphics and captions",
+        "Edit raw footage into polished videos, cuts, colour correction, sound design, graphics and captions",
         "Deliver multi-format content suited to each platform from a single shoot",
         "Keep pace with video trends and platform-specific best practices",
       ],
       [
-        "2–4 years as a videographer/video editor — agency, event or real-estate content ideally",
+        "2–4 years as a videographer/video editor, agency, event or real-estate content ideally",
         "Strong camera operation, lighting and audio capture",
         "Proficiency in Adobe Premiere Pro, DaVinci Resolve or Final Cut Pro",
         "A portfolio showing consistent quality across projects",
@@ -282,7 +282,7 @@ const ROLES = [
       [
         "Plan, launch and manage Meta Ads and Google Ads (Search & Performance Max) campaigns",
         "Own budget pacing and bid optimisation toward CPL, CPA or ROAS targets",
-        "Set up and maintain tracking — Meta Pixel/CAPI, Google Tag Manager and GA4",
+        "Set up and maintain tracking, Meta Pixel/CAPI, Google Tag Manager and GA4",
         "Run structured creative and audience testing and turn it into insight",
         "Build performance reports that explain results in plain language",
         "Brief creative teams with data-driven conversion insights",
@@ -291,7 +291,7 @@ const ROLES = [
         "2–4 years managing Meta and Google Ads, ideally in an agency",
         "A track record optimising CPL, CPA or ROAS",
         "Proficiency with Meta Ads Manager, Google Ads, Pixel/CAPI, GTM and GA4",
-        "Strong analytical skills — you read the data and act on it",
+        "Strong analytical skills, you read the data and act on it",
         "Able to manage multiple client accounts independently",
       ],
       ["Looker Studio reporting"],
@@ -308,14 +308,14 @@ const ROLES = [
     salary: "",
     summary: "Own social strategy, content and paid campaigns across client brands.",
     description: jd(
-      "Develop strategy and run client accounts across every major platform — organic and paid.",
+      "Develop strategy and run client accounts across every major platform, organic and paid.",
       [
         "Develop social strategies tailored to each client brand, including paid approaches",
-        "Create and curate content for Facebook, Instagram, Twitter and LinkedIn — organic and ads",
+        "Create and curate content for Facebook, Instagram, Twitter and LinkedIn, organic and ads",
         "Plan and manage ad campaigns: objectives, targeting, budgets and optimisation",
-        "Manage accounts end to end — planning, scheduling, posting and monitoring",
+        "Manage accounts end to end, planning, scheduling, posting and monitoring",
         "Track organic and paid metrics and optimise strategy and spend",
-        "Engage the community — respond to comments and messages and build the brand",
+        "Engage the community, respond to comments and messages and build the brand",
       ],
       [
         "A track record managing social with successful campaigns, including paid",
@@ -355,7 +355,7 @@ const ROLES = [
         "Able to juggle multiple projects to tight deadlines",
       ],
       [],
-      "Bring samples that show range — we hire for craft, not word count.",
+      "Bring samples that show range, we hire for craft, not word count.",
     ),
   },
   {
@@ -420,7 +420,7 @@ const ROLES = [
 ];
 
 const REVIEWS = [
-  { name: "Rhea Malhotra", role: "Founder, Aether Skincare", rating: 5, quote: "They didn't just make us look good — they made us make sense. Sharp strategy, relentless execution.", service: "Brand · Performance" },
+  { name: "Rhea Malhotra", role: "Founder, Aether Skincare", rating: 5, quote: "They didn't just make us look good, they made us make sense. Sharp strategy, relentless execution.", service: "Brand · Performance" },
   { name: "Arjun Sethi", role: "Director, Meridian Realty", rating: 5, quote: "The only team we've worked with that treats our P&L like their own. Calm people, loud results.", service: "Web · Lead Gen" },
   { name: "Karan Bedi", role: "CMO, Sunburst Foods", rating: 5, quote: "Our reels finally feel like us. Reach tripled and it still feels effortless on their side.", service: "Social · Motion" },
   { name: "Nadia Khan", role: "Founder, Kettle & Co.", rating: 5, quote: "From packaging to paid, everything matched. Organic reach is up triple digits and climbing.", service: "Brand · E-commerce" },
@@ -429,12 +429,12 @@ const REVIEWS = [
 ];
 
 const FAQS = [
-  { q: "How is Creative Monk different from a typical agency?", a: "Everything is in-house — brand, web, content and performance. Nothing gets lost between hand-offs, and your spend builds an asset instead of renting attention." },
+  { q: "How is Creative Monk different from a typical agency?", a: "Everything is in-house, brand, web, content and performance. Nothing gets lost between hand-offs, and your spend builds an asset instead of renting attention." },
   { q: "Do you work on retainer or per project?", a: "Both. Most clients start with a defined project, then move to a monthly retainer once the engine is running. Pick whatever fits your stage." },
   { q: "How soon will we see results?", a: "Paid channels can move in weeks; brand and SEO compound over months. We set honest milestones up front and report against them, not vanity metrics." },
-  { q: "Which industries do you specialise in?", a: "FMCG, D2C & e-commerce, real estate, SaaS, hospitality and local services — but our system travels well across categories." },
+  { q: "Which industries do you specialise in?", a: "FMCG, D2C & e-commerce, real estate, SaaS, hospitality and local services, but our system travels well across categories." },
   { q: "Do you only work with brands in India?", a: "No. We're based in Chandigarh but ship work for clients across 27+ countries, working in their time zone when it matters." },
-  { q: "Who owns the work you produce?", a: "You do — outright. Brand files, code, content and ad accounts are yours. That's the whole point of building an asset." },
+  { q: "Who owns the work you produce?", a: "You do, outright. Brand files, code, content and ad accounts are yours. That's the whole point of building an asset." },
 ];
 
 const INDUSTRIES = [
@@ -442,21 +442,21 @@ const INDUSTRIES = [
   { name: "Real Estate", blurb: "Premium projects sold before launch with funnels + film." },
   { name: "FMCG", blurb: "Heritage brands re-lit for the feed and the shelf." },
   { name: "SaaS", blurb: "Demand engines for product-led growth teams." },
-  { name: "Hospitality", blurb: "Places people travel for — and post about." },
+  { name: "Hospitality", blurb: "Places people travel for, and post about." },
   { name: "Healthcare", blurb: "Trust-first marketing for clinics and wellness brands." },
 ];
 
 const VALUES = [
-  { no: "01", title: "Own the asset", body: "Every rupee of work should build something you keep — a brand, a system, a channel — not attention you rent and lose." },
+  { no: "01", title: "Own the asset", body: "Every rupee of work should build something you keep, a brand, a system, a channel, not attention you rent and lose." },
   { no: "02", title: "Proof over promises", body: "We set honest milestones up front and report against outcomes, not vanity metrics. The numbers do the talking." },
   { no: "03", title: "One roof, one craft", body: "Brand, web, content and performance live in-house, so nothing gets lost between hand-offs and the quality never drops." },
-  { no: "04", title: "Patience, then pace", body: "We move like a monk — listen first, then execute relentlessly. Compounding beats sprinting every single time." },
+  { no: "04", title: "Patience, then pace", body: "We move like a monk, listen first, then execute relentlessly. Compounding beats sprinting every single time." },
 ];
 
 const PROCESS = [
-  { step: "01", title: "Listen", body: "We start where a monk starts — with attention. Deep discovery into your market, margins and the job your customer is hiring you for." },
+  { step: "01", title: "Listen", body: "We start where a monk starts, with attention. Deep discovery into your market, margins and the job your customer is hiring you for." },
   { step: "02", title: "Shape", body: "Strategy becomes a system: positioning, identity, message and the channels that will carry them. Decisions, not decoration." },
-  { step: "03", title: "Make", body: "Design, code, content and campaigns produced in-house — so the craft stays consistent from the first pixel to the last post." },
+  { step: "03", title: "Make", body: "Design, code, content and campaigns produced in-house, so the craft stays consistent from the first pixel to the last post." },
   { step: "04", title: "Compound", body: "We measure, learn and reinvest. Growth that builds on itself, month after month, instead of resetting every quarter." },
 ];
 
@@ -485,13 +485,13 @@ const PRICING = [
 
 const AWARDS = [
   { title: "Best Marketing & Advertising Firm of the Year", org: "Global 100 Awards", year: "2026" },
-  { title: "Top Digital Marketing Agency — India", org: "Industry Recognition", year: "2025" },
+  { title: "Top Digital Marketing Agency, India", org: "Industry Recognition", year: "2025" },
   { title: "Excellence in Brand Design", org: "Creative Index", year: "2024" },
-  { title: "Performance Marketing — Finalist", org: "Growth Summit", year: "2024" },
+  { title: "Performance Marketing, Finalist", org: "Growth Summit", year: "2024" },
 ];
 
 const TOOLS = ["Google Ads", "Meta", "Shopify", "GA4", "HubSpot", "Klaviyo", "Webflow", "Figma", "Next.js", "WordPress", "Semrush", "Mailchimp"];
-const CERTS = ["Global 100 — Firm of the Year '26", "Top Digital Marketing — India", "ISO 9001", "ISO 27001", "Google Partner", "Meta Business Partner"];
+const CERTS = ["Global 100, Firm of the Year '26", "Top Digital Marketing, India", "ISO 9001", "ISO 27001", "Google Partner", "Meta Business Partner"];
 const MARQUEE = ["Brand Strategy", "Web Design", "SEO", "Performance Marketing", "Social", "Motion & Reels", "E-commerce", "Identity"];
 const BENEFITS = ["Team first", "Remote-friendly", "Learning budget", "Pet friendly", "Food & snacks", "Flexible hours", "Health cover", "No-ego culture"];
 
@@ -499,14 +499,14 @@ const CAREERS = {
   heroKicker: "Careers",
   heroTitle1: "Build things",
   heroTitle2: "worth owning",
-  heroLede: "We're a small, in-house team that values craft, ownership and the long game — people who'd rather build an asset than rent attention.",
+  heroLede: "We're a small, in-house team that values craft, ownership and the long game, people who'd rather build an asset than rent attention.",
   whyEyebrow: "Why Creative Monk",
-  whyLead: "No hand-offs, no ego, no busywork —",
+  whyLead: "No hand-offs, no ego, no busywork, ",
   whyMuted: "just sharp people shipping work they're proud to sign.",
   perksEyebrow: "Perks",
   perksHeading: "The things that keep good people building.",
   rolesEyebrow: "Open roles",
-  rolesIntro: "Don't fit one neatly? Apply to the closest — we hire for craft, not checklists.",
+  rolesIntro: "Don't fit one neatly? Apply to the closest, we hire for craft, not checklists.",
   ctaLead: "Don't see your role?",
   ctaMuted: "Pitch us.",
   ctaBody: "If you're great at something we'll need, tell us what you'd build here. The best hires rarely come from a job post.",

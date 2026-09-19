@@ -78,7 +78,7 @@ export function ContactForm({
     <section id="contact" className="bg-dark text-on-ink section">
       <div className="shell">
         <div className="grid12 gap-y-14">
-          {/* LEFT — pitch + details */}
+          {/* LEFT, pitch + details */}
           <Reveal className="col-span-12 md:col-span-4">
             <Eyebrow index="11" invert>
               Contact
@@ -88,7 +88,7 @@ export function ContactForm({
             </h2>
             <p className="mt-5 max-w-md text-on-ink-2">
               Tell us where you want to grow. We&rsquo;ll come back with a clear,
-              honest next step — not a hard sell.
+              honest next step, not a hard sell.
             </p>
 
             <dl className="mt-10 flex flex-col gap-6">
@@ -143,7 +143,7 @@ export function ContactForm({
             </div>
           </Reveal>
 
-          {/* RIGHT — form / success */}
+          {/* RIGHT, form / success */}
           <Reveal
             delay={0.1}
             className="col-span-12 md:col-span-7 md:col-start-6"
@@ -152,7 +152,7 @@ export function ContactForm({
               <div role="status" className="flex flex-col items-start gap-5 border border-line-invert bg-dark-2 p-8 md:p-12">
                 <Check className="size-10 text-orange" strokeWidth={2} />
                 <p className="display text-[length:var(--text-h3)] text-on-ink">
-                  Thanks — we&rsquo;ll be in touch within one business day.
+                  Thanks, we&rsquo;ll be in touch within one business day.
                 </p>
                 <a
                   href={`mailto:${site.email}`}

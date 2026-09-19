@@ -28,7 +28,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const c = await getCase(slug);
   if (!c) return { title: "Work" };
-  return { title: `${c.client} — ${c.title}`, description: c.result };
+  return { title: `${c.client}, ${c.title}`, description: c.result };
 }
 
 export default async function CasePage({
@@ -51,12 +51,12 @@ export default async function CasePage({
   const brief = c.brief?.length
     ? c.brief
     : [
-        `${c.client} came to us for ${c.category.join(", ").toLowerCase() || "a brand that works"} — a system that carries the brand across every surface and keeps compounding long after launch.`,
+        `${c.client} came to us for ${c.category.join(", ").toLowerCase() || "a brand that works"}, a system that carries the brand across every surface and keeps compounding long after launch.`,
       ];
   const approach = c.approach?.length
     ? c.approach
     : [
-        `We ran our four-step process — listen, shape, make, compound — pairing strategy with in-house design, content and code. ${c.result}`,
+        `We ran our four-step process, listen, shape, make, compound, pairing strategy with in-house design, content and code. ${c.result}`,
       ];
   const results = c.results?.length
     ? c.results
@@ -120,14 +120,14 @@ export default async function CasePage({
               </Reveal>
             </div>
 
-            {/* hero visual — integrated, framed, deck watermark muted by the scrim */}
+            {/* hero visual, integrated, framed, deck watermark muted by the scrim */}
             <Reveal y={40} className="mt-12 block">
               {c.cover ? (
                 <div className="group relative aspect-[16/9] overflow-hidden rounded-2xl border border-line-invert-2 bg-dark-3">
                   <Parallax className="absolute inset-x-0 -top-[7%] h-[114%]" speed={5}>
                     <Image
                       src={c.cover}
-                      alt={`${c.client} — ${c.title}`}
+                      alt={`${c.client}, ${c.title}`}
                       fill
                       priority
                       sizes="(min-width: 1280px) 1200px, 100vw"

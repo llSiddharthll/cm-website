@@ -54,7 +54,7 @@ export default async function PostPage({
   ].slice(0, 3);
   const site = await getSite();
 
-  // body may arrive as rich-text HTML (new) or a paragraph array (legacy data) — normalise.
+  // body may arrive as rich-text HTML (new) or a paragraph array (legacy data), normalise.
   const bodyHtml = Array.isArray(post.body)
     ? (post.body as unknown as string[]).map((p) => `<p>${p}</p>`).join("")
     : (post.body ?? "");
@@ -96,13 +96,11 @@ export default async function PostPage({
               </Link>
             </Reveal>
 
-            {/* meta row — hairline + mono, matching the rest of the site */}
+            {/* meta row, hairline + mono, matching the rest of the site */}
             <div className="mt-8 grid12 items-baseline gap-y-2 border-t border-on-ink/30 pt-4">
               <span className="label col-span-12 md:col-span-8">
                 <span className="text-orange">Journal</span>
-                <span className="mx-2 opacity-40" aria-hidden>
-                  —
-                </span>
+                <span className="mx-2 opacity-40" aria-hidden></span>
                 {post.category}
               </span>
               <span className="label col-span-12 text-on-ink-2 md:col-span-4 md:text-right">
@@ -154,7 +152,7 @@ export default async function PostPage({
           </div>
         )}
 
-        {/* ── Article body — reading column + sticky share rail ── */}
+        {/* ── Article body, reading column + sticky share rail ── */}
         <section className="bg-dark pb-[var(--section-pad)] pt-12 md:pt-16">
           <div className="shell">
             <div className="grid12 gap-y-10">
@@ -173,7 +171,7 @@ export default async function PostPage({
 
               <div className="col-span-12 md:col-span-8 md:col-start-5">
                 <div className="max-w-2xl">
-                  {/* Body renders immediately — a long body outruns any scroll reveal. */}
+                  {/* Body renders immediately, a long body outruns any scroll reveal. */}
                   {bodyHtml.trim() ? (
                     <Prose html={bodyHtml} className="text-on-ink-2" />
                   ) : (

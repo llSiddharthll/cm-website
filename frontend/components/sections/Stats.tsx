@@ -6,7 +6,7 @@ import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 import { STATS } from "@/lib/content";
 
 /**
- * Stats — dark bold band. Numbers are the hero, but SIZED TO FIT their cells:
+ * Stats, dark bold band. Numbers are the hero, but SIZED TO FIT their cells:
  * a contained clamp (not the full display scale) so four figures sit cleanly on
  * one row without colliding. Hairline-ruled like a data sheet; one figure orange.
  */
@@ -43,7 +43,7 @@ export function Stats() {
           </Reveal>
         </div>
 
-        {/* The figures — 4-up, each contained in its cell */}
+        {/* The figures, 4-up, each contained in its cell */}
         <dl className="grid grid-cols-2 lg:grid-cols-4">
           {STATS.map((stat, i) => {
             const orange = i === 1; // spend the orange once

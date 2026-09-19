@@ -184,7 +184,7 @@ export default async function LocationPageView({
 
             <div className="col-span-12 lg:col-span-4 lg:col-start-9">
               <Reveal>
-                <Eyebrow index="—" invert>
+                <Eyebrow index="" invert>
                   What we do here
                 </Eyebrow>
               </Reveal>

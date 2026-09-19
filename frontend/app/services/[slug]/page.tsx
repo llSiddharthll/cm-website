@@ -35,7 +35,7 @@ export async function generateMetadata({
   const cat = await getServiceCategory(slug);
   if (!cat) return { title: "Services" };
   return buildMetadata({
-    title: `${cat.name} — Services`,
+    title: `${cat.name}, Services`,
     description: cat.intro,
     path: `/services/${cat.slug}`,
   });
@@ -85,7 +85,7 @@ export default async function ServiceCategoryPage({
           meta={cat.tagline}
         />
 
-        {/* ── What's included — the sub-services ── */}
+        {/* ── What's included, the sub-services ── */}
         <section className="bg-dark section">
           <div className="shell">
             <Reveal>
@@ -119,7 +119,7 @@ export default async function ServiceCategoryPage({
         <section className="bg-dark-2 section">
           <div className="shell">
             <Reveal>
-              <Eyebrow index="—" invert>
+              <Eyebrow index="" invert>
                 How we work
               </Eyebrow>
             </Reveal>

@@ -46,7 +46,7 @@ export function Work() {
           </Reveal>
         </div>
 
-        {/* ── Featured tiles — click to open the sheet ── */}
+        {/* ── Featured tiles, click to open the sheet ── */}
         <div className="mt-14 grid12 gap-5 md:mt-20 md:gap-x-5 md:gap-y-5">
           {FEATURED.map((c, i) => (
             <Reveal
@@ -64,10 +64,10 @@ export function Work() {
           <div className="rule mt-14 flex items-baseline justify-between pt-4 md:mt-20">
             <span className="mono text-ink-3">
               <span className="text-orange">0{FEATURED.length}</span>
-              <span className="px-2 text-ink-4">—</span>
+              <span className="px-2 text-ink-4"></span>
               featured · tap to preview
             </span>
-            <span className="mono hidden text-ink-4 sm:inline">2023 — 2026</span>
+            <span className="mono hidden text-ink-4 sm:inline">2023, 2026</span>
           </div>
         </Reveal>
       </div>
@@ -101,7 +101,7 @@ function FeaturedTile({
       whileHover={{ y: -8 }}
       transition={{ duration: 0.4, ease: EASE.outQuart }}
       className="group/tile relative block h-[clamp(15rem,22vw,22rem)] w-full overflow-hidden border border-line bg-ink-block text-left"
-      aria-label={`Preview ${c.client} — ${c.title}`}
+      aria-label={`Preview ${c.client}, ${c.title}`}
     >
       {/* ghost index */}
       <span
@@ -152,7 +152,7 @@ function FeaturedTile({
 function SheetBody({ c }: { c: CaseStudy }) {
   return (
     <div className="grid12 gap-y-10 pb-4">
-      {/* left meta — sticky while the long screenshot scrolls */}
+      {/* left meta, sticky while the long screenshot scrolls */}
       <div className="col-span-12 md:col-span-4 md:sticky md:top-2 md:self-start">
         <p className="display text-[length:var(--text-h3)] leading-[1.1] text-ink">
           {c.title}
@@ -181,7 +181,7 @@ function SheetBody({ c }: { c: CaseStudy }) {
         </div>
       </div>
 
-      {/* right — the long website screenshot */}
+      {/* right, the long website screenshot */}
       <div className="col-span-12 md:col-span-7 md:col-start-6">
         <div className="mb-3 flex items-center gap-2 text-ink-3">
           <ArrowUpRight className="size-4" />

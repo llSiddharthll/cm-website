@@ -6,14 +6,14 @@ import { EASE, DUR } from "@/lib/motion";
 import { RevealLines } from "@/components/ui/Reveal";
 import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 
-/* Above-the-fold entrance — fires on mount, not on scroll. */
+/* Above-the-fold entrance, fires on mount, not on scroll. */
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 16 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: DUR.large, ease: EASE.outQuart, delay },
 });
 
-/* Stat strip — display figure over mono caption (Swiss "data" texture). */
+/* Stat strip, display figure over mono caption (Swiss "data" texture). */
 const STAT_STRIP = [
   { value: 100, suffix: "+", label: "Businesses" },
   { value: 10, suffix: "+", label: "Industries" },
@@ -26,7 +26,7 @@ export function WorkHero({ cases = CASES }: { cases?: typeof CASES }) {
   return (
     <section className="bg-dark text-on-ink section overflow-hidden pt-[clamp(7rem,16vh,10rem)]">
       <div className="shell">
-        {/* ── Meta row — strong rule + mono coordinates ── */}
+        {/* ── Meta row, strong rule + mono coordinates ── */}
         <motion.div
           {...fadeUp(0.05)}
           className="grid12 items-baseline gap-y-3 border-t border-on-ink/30 pt-4"
@@ -42,7 +42,7 @@ export function WorkHero({ cases = CASES }: { cases?: typeof CASES }) {
           </span>
         </motion.div>
 
-        {/* ── The statement — an index thesis, not a showreel ── */}
+        {/* ── The statement, an index thesis, not a showreel ── */}
         <h1 className="display-tight mt-[clamp(2.5rem,7vh,5rem)] text-[length:var(--text-display)] text-on-ink">
           <RevealLines
             lines={["PROOF OF", "THE CRAFT"]}
@@ -50,7 +50,7 @@ export function WorkHero({ cases = CASES }: { cases?: typeof CASES }) {
             delay={0.2}
             stagger={0.1}
           />
-          {/* orange square full-stop — the single bold accent (mirrors Hero) */}
+          {/* orange square full-stop, the single bold accent (mirrors Hero) */}
           <motion.span
             aria-hidden
             initial={{ opacity: 0, scale: 0.4 }}
@@ -60,13 +60,13 @@ export function WorkHero({ cases = CASES }: { cases?: typeof CASES }) {
           />
         </h1>
 
-        {/* ── Lede + stat strip — asymmetric counterweight on the right cols ── */}
+        {/* ── Lede + stat strip, asymmetric counterweight on the right cols ── */}
         <div className="grid12 mt-[clamp(2.5rem,6vh,4.5rem)] items-end gap-y-12 border-t border-line-invert pt-7">
           <motion.p
             {...fadeUp(0.55)}
             className="col-span-6 max-w-xl text-[length:var(--text-lead)] leading-snug text-on-ink-2"
           >
-            Not a showreel &mdash; a ledger of outcomes. Brands rebuilt, funnels
+            Not a showreel, a ledger of outcomes. Brands rebuilt, funnels
             engineered and stories that travel,{" "}
             <span className="text-on-ink">measured, not decorated.</span>
           </motion.p>
@@ -93,7 +93,7 @@ export function WorkHero({ cases = CASES }: { cases?: typeof CASES }) {
           </motion.ul>
         </div>
 
-        {/* ── Bottom hairline — the four disciplines, one orange marker each ── */}
+        {/* ── Bottom hairline, the four disciplines, one orange marker each ── */}
         <motion.div
           {...fadeUp(0.8)}
           className="mt-[clamp(3rem,7vh,5rem)] border-t border-line-invert pt-4"

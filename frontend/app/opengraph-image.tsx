@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Creative Monk — Own your growth.";
+export const alt = "Creative Monk, Own your growth.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -50,7 +50,7 @@ export default function OpengraphImage() {
             />
           </div>
           <div style={{ color: "#A0A4AA", fontSize: 34, marginTop: 28 }}>
-            Brand · Web · Performance · Motion — a creative & growth studio.
+            Brand · Web · Performance · Motion, a creative & growth studio.
           </div>
         </div>
       </div>

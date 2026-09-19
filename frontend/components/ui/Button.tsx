@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * Swiss flat button. Sharp geometry, one orange, crisp 200ms hover invert.
- * No gradients, no magnetic drift — precision over flourish.
+ * No gradients, no magnetic drift, precision over flourish.
  */
 const button = cva(
   "group/btn relative inline-flex items-center justify-center gap-2.5 rounded-[var(--radius-sm)] font-medium tracking-tight transition-colors duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] focus-visible:outline-2 focus-visible:outline-offset-2",

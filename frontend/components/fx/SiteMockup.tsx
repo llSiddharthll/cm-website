@@ -1,7 +1,7 @@
 import type { CaseStudy } from "@/lib/content";
 
 /**
- * A tall, flat "website screenshot" built from a case's data — a stand-in for a
+ * A tall, flat "website screenshot" built from a case's data, a stand-in for a
  * real long-scroll capture. Lives inside the BottomSheet's scroll area. Swap the
  * whole block for <img src="/work/<id>-full.png"/> when real screenshots exist.
  */

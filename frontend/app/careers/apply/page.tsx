@@ -13,7 +13,7 @@ export const revalidate = 60;
 export const metadata: Metadata = buildMetadata({
   title: "Apply",
   description:
-    "Apply to join Creative Monk — a short form to tell us who you are and what you'd build here.",
+    "Apply to join Creative Monk, a short form to tell us who you are and what you'd build here.",
   path: "/careers/apply",
 });
 
@@ -69,20 +69,20 @@ export default async function ApplyPage({
               delay={0.12}
               className="mt-6 block max-w-xl text-on-ink-2"
             >
-              One short form — no login, no portal. Tell us who you are and what
+              One short form, no login, no portal. Tell us who you are and what
               you&rsquo;d build here. A resume link is enough.
             </Reveal>
           </div>
         </section>
 
-        {/* ── Form — embedded (external ATS / Google Form) or built-in ── */}
+        {/* ── Form, embedded (external ATS / Google Form) or built-in ── */}
         <section className="bg-dark section pt-0">
           <div className="shell">
             <div className="mx-auto max-w-3xl border-t border-line-invert pt-12">
               {embedCode ? (
                 <div
                   className="cm-embed [&_iframe]:w-full [&_iframe]:rounded-lg [&_iframe]:border-0"
-                  // Admin-authored embed snippet from the CMS — trusted content.
+                  // Admin-authored embed snippet from the CMS, trusted content.
                   dangerouslySetInnerHTML={{ __html: embedCode }}
                 />
               ) : embedUrl ? (

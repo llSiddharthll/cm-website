@@ -1,6 +1,6 @@
 /**
  * One-off migration EXPORT: dump the whole DB (entries + admin users + media)
- * to a JSON file. Run locally against the source DB (e.g. Turso) — reads only.
+ * to a JSON file. Run locally against the source DB (e.g. Turso), reads only.
  *   npx tsx src/migrate-export.ts turso-dump.json
  * Pair with migrate-import.ts on the destination (the new embedded file DB).
  */

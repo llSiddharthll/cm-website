@@ -23,7 +23,7 @@ export const CASE_SECTIONS = [
     kind: "marketing",
     discipline: "Marketing",
     title: "Attention that turned into demand",
-    intro: "An always-on social engine, measured against the P&L — not vanity metrics.",
+    intro: "An always-on social engine, measured against the P&L, not vanity metrics.",
     stats: [
       { label: "Engagement lift", value: "3.4", suffix: "×" },
       { label: "Organic reach", value: "+186", suffix: "%" },
@@ -34,7 +34,7 @@ export const CASE_SECTIONS = [
     case: "sunburst",
     kind: "quote",
     quote: "Our reels finally feel like us. Reach tripled and it still feels effortless on their side.",
-    author: "Karan Bedi, CMO — Sunburst Foods",
+    author: "Karan Bedi, CMO, Sunburst Foods",
   },
 
   /* ─────────── Aether Skincare (D2C: web · performance · seo) ─────────── */
@@ -100,7 +100,7 @@ export const CASE_SECTIONS = [
     discipline: "Content",
     title: "The story behind the skyline",
     body: [
-      "Premium real estate sells on belief long before a site visit. We built the narrative spine for the launch — positioning, neighbourhood story and a buyer journey that answers the quiet objections most brochures ignore.",
+      "Premium real estate sells on belief long before a site visit. We built the narrative spine for the launch, positioning, neighbourhood story and a buyer journey that answers the quiet objections most brochures ignore.",
       "Every page was written to do a job: the hero to stop the scroll, the floor-plan section to build confidence, the enquiry step to feel like a natural next move rather than a sales gate. The copy and the funnel were designed together, not bolted on.",
     ],
   },
@@ -122,7 +122,7 @@ export const CASE_SECTIONS = [
     kind: "marketing",
     discipline: "Social & Reels",
     title: "Reels that travel",
-    intro: "Short-form built to be watched twice — and shared once.",
+    intro: "Short-form built to be watched twice, and shared once.",
     stats: [
       { label: "Organic reach", value: "+212", suffix: "%" },
       { label: "Avg. watch-through", value: "68", suffix: "%" },
@@ -133,7 +133,7 @@ export const CASE_SECTIONS = [
     case: "kettle",
     kind: "quote",
     quote: "From packaging to paid, everything matched. Organic reach is up triple digits and climbing.",
-    author: "Nadia Khan, Founder — Kettle & Co.",
+    author: "Nadia Khan, Founder, Kettle & Co.",
   },
 
   /* ─────────── Pulse Fitness (local seo · social · motion) ─────────── */
@@ -177,7 +177,7 @@ export const CASE_SECTIONS = [
     discipline: "Content",
     title: "A content engine that books trips",
     body: [
-      "Travel is researched obsessively and booked emotionally. We built a content engine around the questions travellers actually ask — when to go, what it costs, what it feels like — and tied each guide to a bookable itinerary.",
+      "Travel is researched obsessively and booked emotionally. We built a content engine around the questions travellers actually ask, when to go, what it costs, what it feels like, and tied each guide to a bookable itinerary.",
       "The result was a library that does double duty: it ranks for high-intent searches and warms readers toward a booking, so the same article that earns the click also earns the enquiry.",
     ],
   },

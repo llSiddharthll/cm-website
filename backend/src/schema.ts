@@ -1,5 +1,5 @@
 /* ============================================================
-   SCHEMA REGISTRY — single source of truth for every content
+   SCHEMA REGISTRY, single source of truth for every content
    collection. Drives: API validation, public data shapes, and the
    entire schema-driven admin UI (tables, forms, filters, sheets).
    Exposed to the admin at GET /api/schema.
@@ -65,7 +65,7 @@ const cta = (name: string, label: string): Field => ({
   ],
 });
 
-/** Shared discipline categories — drive case-study multi-select + per-category
+/** Shared discipline categories, drive case-study multi-select + per-category
     content blocks, and the portfolio filter. */
 export const WORK_CATEGORIES = [
   "Branding",
@@ -360,12 +360,12 @@ export const SCHEMA: Collection[] = [
         options: WORK_CATEGORIES,
         listColumn: true,
         filterable: true,
-        help: "Disciplines this case covers — these drive the per-category content sections.",
+        help: "Disciplines this case covers, these drive the per-category content sections.",
       },
       { name: "year", label: "Year", type: "text", listColumn: true, filterable: true },
       { name: "result", label: "Result (one-line, for cards)", type: "textarea" },
-      { name: "brief", label: "The brief — client needs & requirements", type: "paragraphs", help: "What the client came to us for." },
-      { name: "approach", label: "Our approach — what we delivered", type: "paragraphs", help: "How we solved it." },
+      { name: "brief", label: "The brief, client needs & requirements", type: "paragraphs", help: "What the client came to us for." },
+      { name: "approach", label: "Our approach, what we delivered", type: "paragraphs", help: "How we solved it." },
       {
         name: "results",
         label: "Results / outcomes",
@@ -397,7 +397,7 @@ export const SCHEMA: Collection[] = [
     kind: "collection",
     group: "Work",
     icon: "Grid3x3",
-    description: "Visual work for the /portfolio gallery — creatives, designs, UI shots and website screenshots.",
+    description: "Visual work for the /portfolio gallery, creatives, designs, UI shots and website screenshots.",
     titleField: "title",
     subtitleField: "category",
     defaultSort: "position",
@@ -414,7 +414,7 @@ export const SCHEMA: Collection[] = [
         filterable: true,
       },
       { name: "image", label: "Image", type: "image", help: "For creatives / designs / UI shots." },
-      { name: "screenshot", label: "Full-page screenshot (tall)", type: "image", help: "For 'Website' items — auto-scrolls in a browser frame." },
+      { name: "screenshot", label: "Full-page screenshot (tall)", type: "image", help: "For 'Website' items, auto-scrolls in a browser frame." },
       { name: "url", label: "Live URL", type: "text", help: "For 'Website' items." },
       { name: "featured", label: "Featured", type: "boolean", listColumn: true },
     ],
@@ -500,13 +500,13 @@ export const SCHEMA: Collection[] = [
           { name: "caption", label: "Caption", type: "text" },
         ],
       },
-      { name: "screenshot", label: "Screenshot (tall)", type: "image", help: "For the 'website' kind — a full-page screenshot. Left blank shows a mock site." },
+      { name: "screenshot", label: "Screenshot (tall)", type: "image", help: "For the 'website' kind, a full-page screenshot. Left blank shows a mock site." },
       { name: "url", label: "Live URL", type: "text", help: "For the 'website' kind." },
       {
         name: "stats",
         label: "Stats",
         type: "objectList",
-        help: "For 'marketing' / 'seo' kinds — also rendered as a bar graph.",
+        help: "For 'marketing' / 'seo' kinds, also rendered as a bar graph.",
         fields: [
           { name: "label", label: "Label", type: "text" },
           { name: "value", label: "Value", type: "text" },
@@ -548,7 +548,7 @@ export const SCHEMA: Collection[] = [
       { name: "date", label: "Date", type: "date", listColumn: true },
       { name: "read", label: "Read time", type: "text" },
       { name: "cover", label: "Cover image", type: "image" },
-      { name: "body", label: "Body", type: "richtext", help: "Full article — use the toolbar for headings, lists, links and quotes." },
+      { name: "body", label: "Body", type: "richtext", help: "Full article, use the toolbar for headings, lists, links and quotes." },
       { name: "source", label: "Original URL", type: "url", help: "If Body is empty, the post links out to the full article here." },
     ],
   },
@@ -594,10 +594,10 @@ export const SCHEMA: Collection[] = [
       { name: "location", label: "Location", type: "text", listColumn: true, filterable: true },
       { name: "experience", label: "Experience", type: "text", help: "e.g. 2–4 years." },
       { name: "salary", label: "Compensation", type: "text", help: "e.g. ₹60k–1.1L/mo (optional)." },
-      { name: "image", label: "Accent image", type: "image", help: "Optional — shown on the role card & detail hero." },
+      { name: "image", label: "Accent image", type: "image", help: "Optional, shown on the role card & detail hero." },
       { name: "summary", label: "Summary", type: "textarea", help: "One line shown on the role card." },
-      { name: "description", label: "Job description", type: "richtext", help: "Full JD — about the role, what you'll do, what we're looking for. Use headings & lists." },
-      { name: "applyUrl", label: "External apply link", type: "url", help: "Optional — overrides the built-in application form." },
+      { name: "description", label: "Job description", type: "richtext", help: "Full JD, about the role, what you'll do, what we're looking for. Use headings & lists." },
+      { name: "applyUrl", label: "External apply link", type: "url", help: "Optional, overrides the built-in application form." },
     ],
   },
   {
@@ -610,35 +610,35 @@ export const SCHEMA: Collection[] = [
     description: "Editorial copy for the /careers page. Perks and culture stats are managed in their own sections.",
     titleField: "heroTitle1",
     fields: [
-      { name: "heroKicker", label: "Hero — kicker", type: "text" },
-      { name: "heroTitle1", label: "Hero — title line 1", type: "text" },
-      { name: "heroTitle2", label: "Hero — title line 2", type: "text" },
-      { name: "heroLede", label: "Hero — intro", type: "textarea" },
-      { name: "whyEyebrow", label: "Why-join — eyebrow", type: "text" },
-      { name: "whyLead", label: "Why-join — heading (bright part)", type: "textarea" },
-      { name: "whyMuted", label: "Why-join — heading (muted tail)", type: "textarea" },
-      { name: "perksEyebrow", label: "Perks — eyebrow", type: "text" },
-      { name: "perksHeading", label: "Perks — heading", type: "text" },
-      { name: "ctaLead", label: "CTA — heading (bright part)", type: "text" },
-      { name: "ctaMuted", label: "CTA — heading (muted tail)", type: "text" },
-      { name: "ctaBody", label: "CTA — body", type: "textarea" },
-      { name: "ctaButtonLabel", label: "CTA — button label", type: "text" },
-      { name: "ctaButtonHref", label: "CTA — button link", type: "text" },
+      { name: "heroKicker", label: "Hero, kicker", type: "text" },
+      { name: "heroTitle1", label: "Hero, title line 1", type: "text" },
+      { name: "heroTitle2", label: "Hero, title line 2", type: "text" },
+      { name: "heroLede", label: "Hero, intro", type: "textarea" },
+      { name: "whyEyebrow", label: "Why-join, eyebrow", type: "text" },
+      { name: "whyLead", label: "Why-join, heading (bright part)", type: "textarea" },
+      { name: "whyMuted", label: "Why-join, heading (muted tail)", type: "textarea" },
+      { name: "perksEyebrow", label: "Perks, eyebrow", type: "text" },
+      { name: "perksHeading", label: "Perks, heading", type: "text" },
+      { name: "ctaLead", label: "CTA, heading (bright part)", type: "text" },
+      { name: "ctaMuted", label: "CTA, heading (muted tail)", type: "text" },
+      { name: "ctaBody", label: "CTA, body", type: "textarea" },
+      { name: "ctaButtonLabel", label: "CTA, button label", type: "text" },
+      { name: "ctaButtonHref", label: "CTA, button link", type: "text" },
       {
         name: "applyEmbedUrl",
-        label: "Apply form — embed URL",
+        label: "Apply form, embed URL",
         type: "url",
         help: "Optional. Paste the URL of an external form (Google Form, Typeform, ATS). Rendered as an iframe and REPLACES the built-in application form.",
       },
       {
         name: "applyEmbedCode",
-        label: "Apply form — embed code",
+        label: "Apply form, embed code",
         type: "textarea",
         help: "Optional. Paste a full <iframe>/embed snippet. Takes priority over the embed URL and replaces the built-in form. Leave both blank to use the built-in form.",
       },
       {
         name: "applyEmbedHeight",
-        label: "Apply form — embed height (px)",
+        label: "Apply form, embed height (px)",
         type: "number",
         help: "Only used with the embed URL. Default 1100.",
       },
@@ -653,7 +653,7 @@ export const SCHEMA: Collection[] = [
     kind: "collection",
     group: "Social proof",
     icon: "Handshake",
-    description: "Brands we've worked with — shown in the 'trusted by' showcase.",
+    description: "Brands we've worked with, shown in the 'trusted by' showcase.",
     titleField: "name",
     subtitleField: "sector",
     fields: [

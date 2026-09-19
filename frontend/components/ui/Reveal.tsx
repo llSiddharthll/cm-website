@@ -50,7 +50,7 @@ export function RevealLines({
   delay?: number;
   stagger?: number;
 }) {
-  // Observe the untransformed container — the child spans start translated
+  // Observe the untransformed container, the child spans start translated
   // out of their clip box, so observing them directly is unreliable.
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: VIEWPORT.once, amount: VIEWPORT.amount });

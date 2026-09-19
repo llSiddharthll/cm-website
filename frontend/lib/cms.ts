@@ -2,7 +2,7 @@
    CMS DATA LAYER
    Server-side getters that fetch from the Creative Monk API and
    fall back to the bundled static content when the API is not
-   configured or unreachable — so the site never breaks.
+   configured or unreachable, so the site never breaks.
 
    Set NEXT_PUBLIC_API_URL (or API_URL) to the deployed backend to
    go fully dynamic. Each getter returns the SAME shape the static
@@ -57,7 +57,7 @@ import {
 } from "./agency";
 import POSTS_DATA from "./blog-posts.json";
 
-// All 102 real articles migrated from the old WordPress site — server-only fallback
+// All 102 real articles migrated from the old WordPress site, server-only fallback
 // when the CMS API is unreachable (kept out of agency.ts to avoid client-bundle bloat).
 export const POSTS: Post[] = POSTS_DATA as Post[];
 
@@ -73,7 +73,7 @@ async function cmsFetch<T>(path: string): Promise<T | null> {
   try {
     const res = await fetch(`${API_URL}/api${path}`, {
       next: { revalidate: REVALIDATE, tags: ["cms"] },
-      // don't let a cold/hung backend stall SSR — fall back to static content
+      // don't let a cold/hung backend stall SSR, fall back to static content
       signal: AbortSignal.timeout(Number(process.env.CMS_TIMEOUT_MS || 4000)),
     });
     if (!res.ok) {
@@ -202,9 +202,9 @@ const PORTFOLIO_FALLBACK: Portfolio[] = [
   P("Hotel social feed", "Social Media", "/work/best-western-083.jpg", "Best Western Plus"),
   P("Yukti Herbs packaging", "Packaging", "/work/yukti-herbs-121.jpg", "Yukti Herbs"),
   P("Veloire identity", "Branding", "/work/veloire-040.jpg", "Veloire"),
-  { title: "Tvisva Jewels — live website", category: "Website", image: "/work/tvisva-030.jpg", client: "Tvisva", screenshot: "/work/screenshots/tvisva-site.jpg", url: "https://tvisvajewels.com", featured: true },
-  { title: "Chatha Foods — live website", category: "Website", image: "/work/chatha-foods-088.jpg", client: "Chatha Foods", screenshot: "/work/screenshots/chatha-site.jpg", url: "https://cfpl.net.in", featured: true },
-  { title: "Felicity Adobe — website", category: "Website", image: "/work/felicity-adobe-096.jpg", client: "Felicity Adobe" },
+  { title: "Tvisva Jewels, live website", category: "Website", image: "/work/tvisva-030.jpg", client: "Tvisva", screenshot: "/work/screenshots/tvisva-site.jpg", url: "https://tvisvajewels.com", featured: true },
+  { title: "Chatha Foods, live website", category: "Website", image: "/work/chatha-foods-088.jpg", client: "Chatha Foods", screenshot: "/work/screenshots/chatha-site.jpg", url: "https://cfpl.net.in", featured: true },
+  { title: "Felicity Adobe, website", category: "Website", image: "/work/felicity-adobe-096.jpg", client: "Felicity Adobe" },
 ];
 export const getPortfolio = () => collection<Portfolio>("portfolio", PORTFOLIO_FALLBACK);
 export async function getCaseSectionsFor(caseId: string): Promise<(CaseSection & Meta)[]> {
@@ -223,7 +223,7 @@ const CLIENTS_FALLBACK: Client[] = [
   { name: "Avenry", sector: "Restaurant & Café", featured: true, logo: "/work/logos/avenry.png" },
   { name: "Best Western Plus Mohali", sector: "Hospitality", featured: true, logo: "/work/logos/Best-western-white.png" },
   { name: "Chatha Foods", sector: "Processed & Frozen Food", featured: true, logo: "/work/logos/Chatha Food White.png" },
-  { name: "IBC — Indian Business Centre", sector: "Real Estate", featured: true, logo: "/work/logos/IBC.png" },
+  { name: "IBC, Indian Business Centre", sector: "Real Estate", featured: true, logo: "/work/logos/IBC.png" },
   { name: "Veloire", sector: "Beauty & Fashion", logo: "/work/logos/veloire.png" },
   { name: "Inaysha", sector: "Beauty & Fashion", featured: true, logo: "/work/logos/Inaysha.png" },
   { name: "Fabie", sector: "Beauty Salon", featured: true, logo: "/work/logos/fabie-white.png" },

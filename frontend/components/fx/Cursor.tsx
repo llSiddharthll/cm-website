@@ -7,7 +7,7 @@ import { motion, useMotionValue, useSpring, useReducedMotion } from "motion/reac
 const INTERACTIVE = 'a,button,input,textarea,select,label,summary,[role="button"],[data-cursor="hover"]';
 
 /**
- * Additive custom cursor — a lagging ring + a crisp dot that grow/merge over
+ * Additive custom cursor, a lagging ring + a crisp dot that grow/merge over
  * interactive elements. Desktop pointer only, off under reduced-motion and in
  * the admin. The native cursor stays for accessibility.
  */

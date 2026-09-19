@@ -7,7 +7,7 @@ export const SERVICE_PAGES = [
     "tagline": "Recognition that compounds, not a logo file.",
     "intro": "Brand identity and systems is the work of defining how you look, sound and behave everywhere you show up, built as a system your team can run without us. The result is an asset you own that compounds recognition instead of a one-off logo file gathering dust in a folder.",
     "overview": [
-      "Most brand work stops at a logo and a colour palette, then falls apart the moment a real deliverable needs to ship. A social post looks nothing like the deck, the website drifts from the brochure, and every new hire reinvents the wheel because there is no rule to follow. We build the opposite: a system of decisions — type, colour, logo behaviour, layout, tone — codified so tightly that anyone can produce something on-brand without asking. Recognition is the payoff, and it only compounds when the brand looks like itself in a thousand small moments.",
+      "Most brand work stops at a logo and a colour palette, then falls apart the moment a real deliverable needs to ship. A social post looks nothing like the deck, the website drifts from the brochure, and every new hire reinvents the wheel because there is no rule to follow. We build the opposite: a system of decisions, type, colour, logo behaviour, layout, tone, codified so tightly that anyone can produce something on-brand without asking. Recognition is the payoff, and it only compounds when the brand looks like itself in a thousand small moments.",
       "You leave with the identity and the system as files you own outright, not a rented template locked in someone else's account. That is the point: a one-off logo is a cost, a living identity system is an asset that makes every future piece of design cheaper, faster and more valuable. The more you use it, the harder it works, because each on-brand touchpoint reinforces the last. This is design that stops being a project and starts being infrastructure."
     ],
     "deliverables": [
@@ -64,7 +64,7 @@ export const SERVICE_PAGES = [
       },
       {
         "q": "Do we own the files, or are we locked into your tools?",
-        "a": "You own everything outright — source files, exports and the guidelines document. Nothing lives in a locked account or a subscription. The whole point is an asset you keep and run yourself."
+        "a": "You own everything outright, source files, exports and the guidelines document. Nothing lives in a locked account or a subscription. The whole point is an asset you keep and run yourself."
       },
       {
         "q": "Can our in-house team run the brand after handover?",
@@ -79,7 +79,7 @@ export const SERVICE_PAGES = [
     "tagline": "Design once, run it everywhere.",
     "intro": "Graphic design and creative is the day-to-day production of campaign, social and marketing visuals that carry your brand into the world. We build creative once and structure it to be reused everywhere, on-brand, so it becomes a library you own instead of a queue you keep refilling.",
     "overview": [
-      "Most design queues are a treadmill: a request comes in, a one-off gets made, it ships and it is forgotten, and next week the cycle restarts from zero. Nothing accumulates. We work the other way. Every piece we make is built as a modular, reusable system — templates, master files and component sets — so a single campaign concept can flex into forty formats without forty briefs. That is how creative stops being a cost centre and starts becoming an asset that lowers the cost of the next thing.",
+      "Most design queues are a treadmill: a request comes in, a one-off gets made, it ships and it is forgotten, and next week the cycle restarts from zero. Nothing accumulates. We work the other way. Every piece we make is built as a modular, reusable system, templates, master files and component sets, so a single campaign concept can flex into forty formats without forty briefs. That is how creative stops being a cost centre and starts becoming an asset that lowers the cost of the next thing.",
       "Because it all sits on your brand system, the output holds together across channels instead of pulling apart. A social series, a paid campaign, a sales one-pager and an event banner read as one brand, because they come from one source. You own the master files, so the library compounds: the more you build, the less each new deliverable costs and the faster it ships. This is production designed to make you self-sufficient, not dependent."
     ],
     "deliverables": [
@@ -151,7 +151,7 @@ export const SERVICE_PAGES = [
     "tagline": "Motion that keeps earning after the shoot.",
     "intro": "Video and motion is the production of animated and filmed content that stops the scroll and explains what static can't. We build it to be cut, reframed and reused long after the shoot is paid for, so it becomes a motion asset you own that keeps earning attention.",
     "overview": [
-      "A single hero video that airs once and dies is the most expensive way to buy attention. We plan the opposite from the first frame: shoot and build for modularity, so one production yields a hero cut, a dozen short-form edits, animated snippets, GIFs and stills. The expensive part — the concept, the footage, the motion system — is created once and then keeps working across every channel and every campaign that follows. That is how motion stops being a line item and starts being an asset.",
+      "A single hero video that airs once and dies is the most expensive way to buy attention. We plan the opposite from the first frame: shoot and build for modularity, so one production yields a hero cut, a dozen short-form edits, animated snippets, GIFs and stills. The expensive part, the concept, the footage, the motion system, is created once and then keeps working across every channel and every campaign that follows. That is how motion stops being a line item and starts being an asset.",
       "The same discipline runs through animation. We build motion on reusable rigs, templates and brand-consistent systems, so future videos are faster and cheaper because the groundwork already exists. You own the masters, the project files and the components, which means the library compounds instead of expiring. Attention is rented on every platform; owning the assets that earn it is the only way to stop paying full price for it twice."
     ],
     "deliverables": [
@@ -172,7 +172,7 @@ export const SERVICE_PAGES = [
       },
       {
         "title": "You keep the masters",
-        "desc": "Project files, footage and motion components are yours. When you want a new cut in six months, you're not starting a new project — you're drawing from an asset you already own."
+        "desc": "Project files, footage and motion components are yours. When you want a new cut in six months, you're not starting a new project, you're drawing from an asset you already own."
       }
     ],
     "process": [
@@ -203,7 +203,7 @@ export const SERVICE_PAGES = [
     },
     "faqs": [
       {
-        "q": "We only need one video — why plan for more?",
+        "q": "We only need one video, why plan for more?",
         "a": "Because the concept and footage are the costly part, and shooting for reuse is nearly free at the margin. Planning derivatives up front means the same budget yields short-form cuts, stills and snippets you'd otherwise pay to create separately. You can always use just the hero cut first."
       },
       {
@@ -224,7 +224,7 @@ export const SERVICE_PAGES = [
     "intro": "UI/UX design is the work of making a product or site clear, usable and persuasive, grounded in how real people actually behave. We build it as a permanent conversion asset backed by a design system you own, not a redesign project you'll have to repeat.",
     "overview": [
       "A redesign is a reset button, and businesses keep hitting it because the last one was decoration dressed up as strategy. Pretty screens that nobody tested, launched, and quietly underperformed. We treat experience design as an asset instead: research the real friction, design against it, and build a reusable component system so the interface can keep improving without being torn up and rebuilt. The goal is a conversion asset that appreciates, not a project you fund again in eighteen months.",
-      "Every decision ties back to a job the user is trying to do and a number the business is trying to move. We map the flows, remove the friction, and design interfaces that are as easy to use as they are on-brand — then hand over a component library and the research behind it, all owned by you. Because it's a system, the next feature or page starts from proven parts rather than a blank file. That's how UI/UX stops being a periodic cost and becomes infrastructure that compounds conversion month after month."
+      "Every decision ties back to a job the user is trying to do and a number the business is trying to move. We map the flows, remove the friction, and design interfaces that are as easy to use as they are on-brand, then hand over a component library and the research behind it, all owned by you. Because it's a system, the next feature or page starts from proven parts rather than a blank file. That's how UI/UX stops being a periodic cost and becomes infrastructure that compounds conversion month after month."
     ],
     "deliverables": [
       "UX research and audit: user flows, friction points and prioritised opportunities",
@@ -295,7 +295,7 @@ export const SERVICE_PAGES = [
     "tagline": "Visibility you own, not rent.",
     "intro": "SEO is the discipline of earning durable rankings for the searches that bring you customers, through content, technical health and authority. We build it as visibility you own in the SERP, not attention you rent for the length of a campaign.",
     "overview": [
-      "Paid traffic stops the moment you stop paying; a ranking page keeps working while you sleep. That's the whole case for SEO, and it's why we treat it as an owned asset rather than a monthly service you're renting. We build on three fronts at once — content that answers real intent, technical foundations that let search engines trust and crawl your site, and authority that proves you deserve the position. Get all three compounding and rankings become a moat, not a line item.",
+      "Paid traffic stops the moment you stop paying; a ranking page keeps working while you sleep. That's the whole case for SEO, and it's why we treat it as an owned asset rather than a monthly service you're renting. We build on three fronts at once, content that answers real intent, technical foundations that let search engines trust and crawl your site, and authority that proves you deserve the position. Get all three compounding and rankings become a moat, not a line item.",
       "We start from your margins and your buyers, not a vanity keyword list. We map the queries that sit closest to a purchase, build the pages that own them, fix the technical debt quietly bleeding your rankings, and earn the links that make it stick. The strategy, the research and the pages are yours to keep, so the engine keeps pulling qualified traffic whether we run it or your team takes over. Visibility you own is the difference between a business that has to keep buying attention and one that has banked it."
     ],
     "deliverables": [
@@ -316,7 +316,7 @@ export const SERVICE_PAGES = [
       },
       {
         "title": "An asset you keep",
-        "desc": "The strategy, research and optimised pages are yours. Stop the retainer and the rankings don't evaporate — you've banked visibility instead of renting it."
+        "desc": "The strategy, research and optimised pages are yours. Stop the retainer and the rankings don't evaporate, you've banked visibility instead of renting it."
       }
     ],
     "process": [
@@ -352,7 +352,7 @@ export const SERVICE_PAGES = [
       },
       {
         "q": "Why not just run ads instead?",
-        "a": "Ads are rented visibility — they vanish when the budget stops. SEO is an asset you keep earning from after the work is done. The two work best together, but only one of them compounds and stays."
+        "a": "Ads are rented visibility, they vanish when the budget stops. SEO is an asset you keep earning from after the work is done. The two work best together, but only one of them compounds and stays."
       },
       {
         "q": "What happens if we stop the retainer?",
@@ -367,8 +367,8 @@ export const SERVICE_PAGES = [
     "tagline": "Spend that buys assets, not just clicks.",
     "intro": "Google Ads is paid search and shopping done as a system: the right queries, the right creative, and structured testing that keeps getting cheaper. We run it so your spend buys learnings and creative assets the account keeps using, not just a burst of clicks that ends with the invoice.",
     "overview": [
-      "Most Google Ads spend evaporates twice — once on the click, and again when nobody captures what the click taught you. We run it so every pound buys two things: the traffic and the intelligence. Winning keywords, proven ad copy, negative lists, tested landing structures and audience data all get captured and compounded, so the account gets sharper and cheaper the longer it runs. That's the difference between renting clicks and building an advertising asset.",
-      "We structure campaigns around your margins and your best-converting intent, then test relentlessly and feed the winners back in. The creative and copy we prove don't just live in the ad manager — they become assets you own that inform your SEO, your landing pages and your other channels. You keep the account, the data and the learnings outright. Paid media will always cost money; the aim is to make each cycle cost less and teach you more, so the spend compounds instead of resetting."
+      "Most Google Ads spend evaporates twice, once on the click, and again when nobody captures what the click taught you. We run it so every pound buys two things: the traffic and the intelligence. Winning keywords, proven ad copy, negative lists, tested landing structures and audience data all get captured and compounded, so the account gets sharper and cheaper the longer it runs. That's the difference between renting clicks and building an advertising asset.",
+      "We structure campaigns around your margins and your best-converting intent, then test relentlessly and feed the winners back in. The creative and copy we prove don't just live in the ad manager, they become assets you own that inform your SEO, your landing pages and your other channels. You keep the account, the data and the learnings outright. Paid media will always cost money; the aim is to make each cycle cost less and teach you more, so the spend compounds instead of resetting."
     ],
     "deliverables": [
       "Restructured campaign architecture built around intent, margin and match type",
@@ -380,7 +380,7 @@ export const SERVICE_PAGES = [
     "highlights": [
       {
         "title": "Every click teaches",
-        "desc": "We capture what each campaign proves — winning terms, copy and audiences — so the account compounds. Spend stops being disposable and starts building durable intelligence."
+        "desc": "We capture what each campaign proves, winning terms, copy and audiences, so the account compounds. Spend stops being disposable and starts building durable intelligence."
       },
       {
         "title": "Structured for margin",
@@ -439,8 +439,8 @@ export const SERVICE_PAGES = [
     "tagline": "Feed-native creative that feeds your library.",
     "intro": "Meta Ads is paid social on Facebook and Instagram, built on creative that belongs in the feed rather than interrupting it. We run it so the winning creative feeds back into your owned content library, turning ad spend into assets instead of disposable impressions.",
     "overview": [
-      "On Meta, the creative is the campaign — targeting is largely automated now, so what you say and show is what wins or loses. We build feed-native creative that earns attention instead of buying its way past the scroll, then test it systematically to find what actually converts. The difference in how we run it is what happens next: the winners aren't just paused when the campaign ends, they're captured into a content library you own and reuse across organic, email and your next launch.",
-      "We structure spend around your economics and let the data pick the winners, cutting the losers fast and doubling down on proof. Every tested hook, format and angle becomes intelligence about what your audience responds to — an asset that makes the next campaign and every other channel sharper. You keep the ad account, the creative masters and the learnings. Impressions are rented by definition; the creative library and the audience insight you build alongside them are yours to compound."
+      "On Meta, the creative is the campaign, targeting is largely automated now, so what you say and show is what wins or loses. We build feed-native creative that earns attention instead of buying its way past the scroll, then test it systematically to find what actually converts. The difference in how we run it is what happens next: the winners aren't just paused when the campaign ends, they're captured into a content library you own and reuse across organic, email and your next launch.",
+      "We structure spend around your economics and let the data pick the winners, cutting the losers fast and doubling down on proof. Every tested hook, format and angle becomes intelligence about what your audience responds to, an asset that makes the next campaign and every other channel sharper. You keep the ad account, the creative masters and the learnings. Impressions are rented by definition; the creative library and the audience insight you build alongside them are yours to compound."
     ],
     "deliverables": [
       "Feed-native creative concepts produced in multiple formats and hooks for testing",
@@ -456,7 +456,7 @@ export const SERVICE_PAGES = [
       },
       {
         "title": "Winners feed your library",
-        "desc": "Proven ad creative doesn't die when the campaign ends — it enters a content library you own. Your organic, email and future ads all draw from what testing proved works."
+        "desc": "Proven ad creative doesn't die when the campaign ends, it enters a content library you own. Your organic, email and future ads all draw from what testing proved works."
       },
       {
         "title": "Insight you keep",
@@ -511,7 +511,7 @@ export const SERVICE_PAGES = [
     "tagline": "A presence that compounds, not a treadmill.",
     "intro": "Social media management is the ongoing work of showing up consistently and building a real audience across your channels. We run it as a presence asset that keeps compounding audience and authority, not a content treadmill that resets to zero every month.",
     "overview": [
-      "Most social management is a treadmill: post daily, chase the algorithm, and start again next month with nothing banked but a slightly older feed. We reject the churn. We build a content system — pillars, formats and a reusable production line — that turns effort into an audience and a brand presence that accumulate. Followers, engagement and authority are the compounding return; the point is that each month builds on the last instead of replacing it.",
+      "Most social management is a treadmill: post daily, chase the algorithm, and start again next month with nothing banked but a slightly older feed. We reject the churn. We build a content system, pillars, formats and a reusable production line, that turns effort into an audience and a brand presence that accumulate. Followers, engagement and authority are the compounding return; the point is that each month builds on the last instead of replacing it.",
       "We plan content around what actually grows your audience and moves them toward buying, not just filling a calendar. Everything is produced on your brand system and captured as owned, reusable assets, so a strong post becomes a template, a series and source material for other channels. You own the strategy, the content library and the audience relationship outright. A treadmill costs the same forever and gets you nowhere; a presence asset gets cheaper to run and more valuable to hold the longer it compounds."
     ],
     "deliverables": [
@@ -572,7 +572,7 @@ export const SERVICE_PAGES = [
       },
       {
         "q": "What do you actually measure?",
-        "a": "Engaged audience growth, meaningful engagement and audience quality against business goals — not vanity follower counts alone. We report on what's genuinely compounding so you can see the asset building."
+        "a": "Engaged audience growth, meaningful engagement and audience quality against business goals, not vanity follower counts alone. We report on what's genuinely compounding so you can see the asset building."
       }
     ]
   },
@@ -583,8 +583,8 @@ export const SERVICE_PAGES = [
     "tagline": "Write once, run it everywhere.",
     "intro": "Content and copywriting is the craft of writing words that rank, persuade and sound like you, produced as a system rather than one-off pieces. We build words once into a system tuned for SEO and brand voice, so they can be reused across every channel instead of rewritten each time.",
     "overview": [
-      "Most copy is written once, used once and thrown away, which is a strange thing to do with your most reusable asset. We treat words as a system. A single piece of pillar content is built to fuel a blog post, an email sequence, social captions, ad copy and landing-page sections — all carrying the same intent, keywords and voice. The expensive part, the thinking and the writing, is done once and then earns across every channel it touches. That's the difference between renting sentences and building a content asset.",
-      "Everything sits on two foundations: search intent, so the words get found, and a documented brand voice, so they sound unmistakably like you no matter who's writing. We hand over the messaging framework, the voice guide and the content itself as owned assets, so your team can extend the system without starting from scratch. A well-built page keeps pulling traffic and warming buyers long after it ships — attention you own, not attention you rent. Words built as a system compound; words written in isolation just expire."
+      "Most copy is written once, used once and thrown away, which is a strange thing to do with your most reusable asset. We treat words as a system. A single piece of pillar content is built to fuel a blog post, an email sequence, social captions, ad copy and landing-page sections, all carrying the same intent, keywords and voice. The expensive part, the thinking and the writing, is done once and then earns across every channel it touches. That's the difference between renting sentences and building a content asset.",
+      "Everything sits on two foundations: search intent, so the words get found, and a documented brand voice, so they sound unmistakably like you no matter who's writing. We hand over the messaging framework, the voice guide and the content itself as owned assets, so your team can extend the system without starting from scratch. A well-built page keeps pulling traffic and warming buyers long after it ships, attention you own, not attention you rent. Words built as a system compound; words written in isolation just expire."
     ],
     "deliverables": [
       "A messaging and tone-of-voice framework your team can write from",
@@ -600,7 +600,7 @@ export const SERVICE_PAGES = [
       },
       {
         "title": "SEO and voice, together",
-        "desc": "Every piece is built to be found and to sound like you. Ranking and brand aren't a trade-off here — the words satisfy the search engine and the reader in the same breath."
+        "desc": "Every piece is built to be found and to sound like you. Ranking and brand aren't a trade-off here, the words satisfy the search engine and the reader in the same breath."
       },
       {
         "title": "A system you own",
@@ -640,7 +640,7 @@ export const SERVICE_PAGES = [
       },
       {
         "q": "Can copy really rank and sound human at the same time?",
-        "a": "Yes — that's the whole discipline. We start from search intent so it gets found, and write to a documented voice so it reads like a person. Density tricks and keyword stuffing do neither well; relevance and craft do both."
+        "a": "Yes, that's the whole discipline. We start from search intent so it gets found, and write to a documented voice so it reads like a person. Density tricks and keyword stuffing do neither well; relevance and craft do both."
       },
       {
         "q": "Do we own the voice guide and content?",
@@ -655,8 +655,8 @@ export const SERVICE_PAGES = [
     "tagline": "The asset every campaign points back to.",
     "intro": "Websites and landing pages are the destinations your marketing sends people to and the place decisions actually get made. We build them as the asset every campaign points back to and improves, not a static brochure that's obsolete the day it launches.",
     "overview": [
-      "Your website is the one asset every other channel feeds — ads, SEO, email and social all point here, and this is where the conversion happens or doesn't. Yet most sites are built once as a fixed brochure and left to rot, so all that upstream spend leaks out at the final step. We build the opposite: a fast, conversion-focused site engineered to be measured and improved, with landing pages structured so every campaign can point at them and make them better over time.",
-      "We build on clean, owned foundations — your CMS, your code, your analytics — so you're never renting your own storefront or waiting on us to change a headline. Pages are componentised, so new campaigns spin up landing pages from proven blocks instead of starting from zero. And because everything is instrumented, each campaign that points back teaches the page how to convert better. The site stops being a one-time build and becomes a compounding asset: the more traffic and testing it sees, the harder it works."
+      "Your website is the one asset every other channel feeds, ads, SEO, email and social all point here, and this is where the conversion happens or doesn't. Yet most sites are built once as a fixed brochure and left to rot, so all that upstream spend leaks out at the final step. We build the opposite: a fast, conversion-focused site engineered to be measured and improved, with landing pages structured so every campaign can point at them and make them better over time.",
+      "We build on clean, owned foundations, your CMS, your code, your analytics, so you're never renting your own storefront or waiting on us to change a headline. Pages are componentised, so new campaigns spin up landing pages from proven blocks instead of starting from zero. And because everything is instrumented, each campaign that points back teaches the page how to convert better. The site stops being a one-time build and becomes a compounding asset: the more traffic and testing it sees, the harder it works."
     ],
     "deliverables": [
       "A fast, responsive, conversion-focused website built on owned foundations",
@@ -676,7 +676,7 @@ export const SERVICE_PAGES = [
       },
       {
         "title": "Owned, not rented",
-        "desc": "You own the code, the CMS and the assets. No lock-in, no waiting on us for a headline change — the storefront your business runs on belongs to you."
+        "desc": "You own the code, the CMS and the assets. No lock-in, no waiting on us for a headline change, the storefront your business runs on belongs to you."
       }
     ],
     "process": [
@@ -727,8 +727,8 @@ export const SERVICE_PAGES = [
     "tagline": "A storefront that improves every cycle.",
     "intro": "E-commerce is the build and optimisation of the store where your customers actually buy, from product pages to checkout. We engineer it to get better with every cycle of data, so it's an owned asset that compounds revenue rather than a storefront you rebuild each time it stalls.",
     "overview": [
-      "An online store is a machine with a hundred dials — product pages, search, cart, checkout, shipping, upsells — and revenue lives in how well they're tuned. Most stores are launched once and left, so growth stalls and the reflex is an expensive rebuild that resets everything you learned. We build the opposite: a store instrumented end to end, engineered so each cycle of real purchase data tells us exactly which dial to turn next. The storefront gets better because it's designed to learn, not because you keep starting over.",
-      "We build on owned, scalable foundations — your platform, your data, your code — and structure the store in components so improvements ship without a teardown. Every optimisation cycle compounds: a better product page lifts the whole funnel, a smoother checkout recovers revenue that keeps recovering. You own the store, the data and the roadmap outright. A rebuilt-every-two-years store is a recurring cost that keeps forgetting; a store engineered to compound is an asset that turns every cycle of data into more revenue than the last."
+      "An online store is a machine with a hundred dials, product pages, search, cart, checkout, shipping, upsells, and revenue lives in how well they're tuned. Most stores are launched once and left, so growth stalls and the reflex is an expensive rebuild that resets everything you learned. We build the opposite: a store instrumented end to end, engineered so each cycle of real purchase data tells us exactly which dial to turn next. The storefront gets better because it's designed to learn, not because you keep starting over.",
+      "We build on owned, scalable foundations, your platform, your data, your code, and structure the store in components so improvements ship without a teardown. Every optimisation cycle compounds: a better product page lifts the whole funnel, a smoother checkout recovers revenue that keeps recovering. You own the store, the data and the roadmap outright. A rebuilt-every-two-years store is a recurring cost that keeps forgetting; a store engineered to compound is an asset that turns every cycle of data into more revenue than the last."
     ],
     "deliverables": [
       "A scalable, conversion-focused store built on an owned, maintainable platform",
@@ -779,7 +779,7 @@ export const SERVICE_PAGES = [
     },
     "faqs": [
       {
-        "q": "We already have a store — do we need to rebuild?",
+        "q": "We already have a store, do we need to rebuild?",
         "a": "Usually not from scratch. We often re-instrument and componentise an existing store so it can be optimised continuously instead of replatformed. The goal is a store that improves each cycle, not another expensive teardown."
       },
       {
@@ -799,7 +799,7 @@ export const SERVICE_PAGES = [
     "tagline": "Tuned to your margins, not a rented list.",
     "intro": "Lead generation and funnels is the design of the path that turns a stranger into a qualified enquiry, end to end. We build it as a system tuned to your margins and owned by you, not a rented list of leads that dries up the moment you stop paying.",
     "overview": [
-      "Buying a list of leads is renting other people's attention, and it stops the instant the invoice does. We build a funnel instead: a repeatable system that attracts the right people, qualifies them and converts them into enquiries you own. Every stage — the offer, the capture, the nurture, the handoff to sales — is designed around your economics, so you're generating leads at a cost that actually works against your margins rather than chasing volume that doesn't convert.",
+      "Buying a list of leads is renting other people's attention, and it stops the instant the invoice does. We build a funnel instead: a repeatable system that attracts the right people, qualifies them and converts them into enquiries you own. Every stage, the offer, the capture, the nurture, the handoff to sales, is designed around your economics, so you're generating leads at a cost that actually works against your margins rather than chasing volume that doesn't convert.",
       "The funnel is instrumented and owned, so it improves with every cycle and belongs to you outright. We build the pages, the offers, the sequences and the tracking as assets in your accounts, not ours, and tune them to your cost-per-acquisition targets. A rented list is a recurring cost with nothing left behind; a funnel is an asset that gets cheaper and more predictable the longer it runs. You end up with a machine that produces qualified enquiries on demand, tuned to your numbers, not dependent on anyone else's."
     ],
     "deliverables": [
@@ -852,7 +852,7 @@ export const SERVICE_PAGES = [
     "faqs": [
       {
         "q": "Why not just buy leads?",
-        "a": "Bought lists are rented attention — they stop when you stop paying and leave you nothing to build on. A funnel is an owned system that produces qualified enquiries and gets cheaper over time. It's the difference between a recurring cost and a compounding asset."
+        "a": "Bought lists are rented attention, they stop when you stop paying and leave you nothing to build on. A funnel is an owned system that produces qualified enquiries and gets cheaper over time. It's the difference between a recurring cost and a compounding asset."
       },
       {
         "q": "What does 'tuned to your margins' mean in practice?",
@@ -871,8 +871,8 @@ export const SERVICE_PAGES = [
     "tagline": "The loop that makes everything compound.",
     "intro": "Analytics and CRO is the discipline of measuring what actually happens and systematically improving it through testing. It's the feedback loop that makes every other asset compound month over month, turning guesswork into a machine that keeps getting better.",
     "overview": [
-      "Every asset you own — your site, your ads, your funnel, your content — is only as good as your ability to see what it's doing and improve it. Without a feedback loop, they all plateau. Analytics and CRO is that loop: clean measurement so you know what's really happening, and structured experimentation so you improve it deliberately instead of guessing. It's the connective layer that turns a collection of assets into a system that compounds, because every test feeds a learning that makes the next one smarter.",
-      "We build trustworthy tracking first — proper events, funnels and attribution — then run a disciplined testing programme against the pages and flows that matter most. Every experiment produces a documented learning you own: what converts, what doesn't, and why. Those learnings compound across the whole business, so a win on the checkout informs the landing pages and the ad creative too. The result isn't a one-off conversion bump; it's an owned engine of continuous improvement that makes every other investment work harder, month after month."
+      "Every asset you own, your site, your ads, your funnel, your content, is only as good as your ability to see what it's doing and improve it. Without a feedback loop, they all plateau. Analytics and CRO is that loop: clean measurement so you know what's really happening, and structured experimentation so you improve it deliberately instead of guessing. It's the connective layer that turns a collection of assets into a system that compounds, because every test feeds a learning that makes the next one smarter.",
+      "We build trustworthy tracking first, proper events, funnels and attribution, then run a disciplined testing programme against the pages and flows that matter most. Every experiment produces a documented learning you own: what converts, what doesn't, and why. Those learnings compound across the whole business, so a win on the checkout informs the landing pages and the ad creative too. The result isn't a one-off conversion bump; it's an owned engine of continuous improvement that makes every other investment work harder, month after month."
     ],
     "deliverables": [
       "A trustworthy analytics setup with clean events, funnels and attribution",
@@ -924,11 +924,11 @@ export const SERVICE_PAGES = [
     "faqs": [
       {
         "q": "Isn't CRO just changing button colours?",
-        "a": "No — that caricature is why most CRO fails. Real CRO starts with trustworthy data, then tests meaningful hypotheses about how people decide and where they drop off. The button-colour stuff is noise; the loop is about compounding, documented learnings that move revenue."
+        "a": "No, that caricature is why most CRO fails. Real CRO starts with trustworthy data, then tests meaningful hypotheses about how people decide and where they drop off. The button-colour stuff is noise; the loop is about compounding, documented learnings that move revenue."
       },
       {
         "q": "How does this make our other work compound?",
-        "a": "A learning from one test — say, what messaging converts on checkout — informs your landing pages, ads and content too. Instead of isolated wins, you build a shared library of what works. Every asset improves off the same loop, month over month."
+        "a": "A learning from one test, say, what messaging converts on checkout, informs your landing pages, ads and content too. Instead of isolated wins, you build a shared library of what works. Every asset improves off the same loop, month over month."
       },
       {
         "q": "Do we own the data and learnings?",
@@ -943,8 +943,8 @@ export const SERVICE_PAGES = [
     "tagline": "One team, one engine, no hand-offs.",
     "intro": "The 360 Growth System is our flagship retainer: the full Listen, Shape, Make and Compound engine run by one team across strategy, design, marketing, development and analytics. It's built as a single compounding growth asset you own, not a stack of disconnected services with a hand-off tax at every seam.",
     "overview": [
-      "Most agencies sell you slices — a bit of design here, some ads there, SEO from another team — and every seam between them leaks time, money and consistency. Briefs get lost in translation, channels contradict each other, and nobody owns the whole outcome. The 360 Growth System removes the seams. One team runs the entire engine: research and strategy, brand and design, marketing and media, web and development, analytics and CRO, all under a single roof with a shared plan and no hand-offs. The result is a growth machine where every part reinforces the others instead of fighting them.",
-      "Because it runs the full Listen, Shape, Make, Compound loop continuously, everything we build feeds everything else. Ad learnings sharpen the content, the content feeds SEO, the site converts the traffic, and analytics tells the whole system where to push next. Every asset — brand, pages, funnels, creative, data — is owned by you and compounds together month over month. This is the difference between renting a stack of monthly outputs and owning one integrated engine that gets more valuable the longer it runs. It's the flagship because it's where the compounding is greatest."
+      "Most agencies sell you slices, a bit of design here, some ads there, SEO from another team, and every seam between them leaks time, money and consistency. Briefs get lost in translation, channels contradict each other, and nobody owns the whole outcome. The 360 Growth System removes the seams. One team runs the entire engine: research and strategy, brand and design, marketing and media, web and development, analytics and CRO, all under a single roof with a shared plan and no hand-offs. The result is a growth machine where every part reinforces the others instead of fighting them.",
+      "Because it runs the full Listen, Shape, Make, Compound loop continuously, everything we build feeds everything else. Ad learnings sharpen the content, the content feeds SEO, the site converts the traffic, and analytics tells the whole system where to push next. Every asset, brand, pages, funnels, creative, data, is owned by you and compounds together month over month. This is the difference between renting a stack of monthly outputs and owning one integrated engine that gets more valuable the longer it runs. It's the flagship because it's where the compounding is greatest."
     ],
     "deliverables": [
       "A unified growth strategy across brand, marketing, web, product and data",
@@ -1015,7 +1015,7 @@ export const SERVICE_PAGES = [
     "tagline": "Efficiency baked into the loop.",
     "intro": "AI-powered marketing and automation is the work of wiring intelligent systems into your marketing operations so the repetitive work runs itself. We build it as compounding efficiency baked into the Make and Compound loop, an owned system that keeps freeing time and sharpening decisions rather than a tool you rent by the seat.",
     "overview": [
-      "Marketing teams lose most of their hours to work that doesn't need a human — routing leads, personalising sends, moving data between tools, reporting the same numbers every week. AI and automation are how you win those hours back, but only if they're built into your process rather than bolted on as another subscription. We design automations and AI workflows that live inside your operating loop, so the efficiency compounds: every process we automate frees capacity that goes into the work that actually moves growth.",
+      "Marketing teams lose most of their hours to work that doesn't need a human, routing leads, personalising sends, moving data between tools, reporting the same numbers every week. AI and automation are how you win those hours back, but only if they're built into your process rather than bolted on as another subscription. We design automations and AI workflows that live inside your operating loop, so the efficiency compounds: every process we automate frees capacity that goes into the work that actually moves growth.",
       "We build on your systems and your data, so the automations are owned assets you keep, not rented seats that hold your process hostage. Lead scoring, nurture personalisation, reporting, content assistance and data hygiene all get wired into the Make and Compound stages of your engine, where they make every cycle faster and better informed. The gain isn't a one-time productivity bump; it's a system that keeps compounding, doing more of the routine work each quarter so your team and your budget concentrate on what humans do best."
     ],
     "deliverables": [
@@ -1028,7 +1028,7 @@ export const SERVICE_PAGES = [
     "highlights": [
       {
         "title": "Built into the loop",
-        "desc": "Automations live inside your Make and Compound cadence, not off to the side. That's what makes the efficiency compound — every cycle runs faster and better informed than the last."
+        "desc": "Automations live inside your Make and Compound cadence, not off to the side. That's what makes the efficiency compound, every cycle runs faster and better informed than the last."
       },
       {
         "title": "Owned, not rented seats",
@@ -1068,7 +1068,7 @@ export const SERVICE_PAGES = [
     "faqs": [
       {
         "q": "Will AI automation replace our marketing team?",
-        "a": "No — it removes the repetitive work so your team spends time where humans add the most value. The point is redeploying capacity to strategy and creative, not cutting headcount. The system amplifies your people rather than replacing them."
+        "a": "No, it removes the repetitive work so your team spends time where humans add the most value. The point is redeploying capacity to strategy and creative, not cutting headcount. The system amplifies your people rather than replacing them."
       },
       {
         "q": "Do we own the automations, or are they locked to a tool?",
@@ -1076,7 +1076,7 @@ export const SERVICE_PAGES = [
       },
       {
         "q": "Is our data safe in these workflows?",
-        "a": "Yes — we design for it. Your data stays in systems you control, we use providers' no-training options and secure connections, and sensitive cases can run on models in your own environment. Security is part of the design, not an afterthought."
+        "a": "Yes, we design for it. Your data stays in systems you control, we use providers' no-training options and secure connections, and sensitive cases can run on models in your own environment. Security is part of the design, not an afterthought."
       }
     ]
   },
@@ -1087,8 +1087,8 @@ export const SERVICE_PAGES = [
     "tagline": "Scale the library, not the headcount.",
     "intro": "AI content and creative tools is the work of building AI-assisted production systems that multiply what your team can make. We build it as production capacity that scales your owned asset library without scaling headcount, so output grows while your brand and quality stay firmly in your hands.",
     "overview": [
-      "Content demand always outgrows content capacity, and the usual answers are hiring more people or lowering the bar. AI changes the maths, but only when it's built into a real system rather than let loose to produce generic filler. We build AI-assisted production tools — trained on your brand voice, your assets and your guidelines — so your team can produce more of the content that feeds your owned library without proportionally more people or hours. The capacity scales; the headcount doesn't have to.",
-      "The guardrails are the whole point. We wire in your voice, your brand system and human review, so speed never costs you consistency or quality. Every piece the system helps produce still lands on-brand and still becomes an owned, reusable asset — the library grows faster, not sloppier. You keep the tools, the prompts and the workflows as assets you control, so the production capacity is yours to run and extend. It's how you scale an asset library on your terms, instead of renting output or diluting the brand to hit volume."
+      "Content demand always outgrows content capacity, and the usual answers are hiring more people or lowering the bar. AI changes the maths, but only when it's built into a real system rather than let loose to produce generic filler. We build AI-assisted production tools, trained on your brand voice, your assets and your guidelines, so your team can produce more of the content that feeds your owned library without proportionally more people or hours. The capacity scales; the headcount doesn't have to.",
+      "The guardrails are the whole point. We wire in your voice, your brand system and human review, so speed never costs you consistency or quality. Every piece the system helps produce still lands on-brand and still becomes an owned, reusable asset, the library grows faster, not sloppier. You keep the tools, the prompts and the workflows as assets you control, so the production capacity is yours to run and extend. It's how you scale an asset library on your terms, instead of renting output or diluting the brand to hit volume."
     ],
     "deliverables": [
       "AI-assisted content and creative workflows trained on your brand voice and assets",
@@ -1144,7 +1144,7 @@ export const SERVICE_PAGES = [
       },
       {
         "q": "Does this replace our writers and designers?",
-        "a": "No — it multiplies them. Your team directs and reviews the output, spending less time on the mechanical parts and more on craft and strategy. The goal is scaling the library without scaling headcount, with your people still in control."
+        "a": "No, it multiplies them. Your team directs and reviews the output, spending less time on the mechanical parts and more on craft and strategy. The goal is scaling the library without scaling headcount, with your people still in control."
       },
       {
         "q": "Do we own the tools and prompts?",

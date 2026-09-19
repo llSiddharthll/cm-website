@@ -12,7 +12,7 @@ const STUDIO_FACTS: [string, string][] = [
 ];
 
 /**
- * STUDIO / ABOUT — Swiss bold-minimal.
+ * STUDIO / ABOUT, Swiss bold-minimal.
  * (1) A statement on the 12-col grid: small eyebrow left, oversized
  *     low-contrast statement right with key monk-metaphor phrases lifted to
  *     full ink. One quiet supporting paragraph.
@@ -29,7 +29,7 @@ export function About() {
             <Reveal>
               <Eyebrow index="04">The studio</Eyebrow>
             </Reveal>
-            {/* studio facts — Swiss data list */}
+            {/* studio facts, Swiss data list */}
             <Reveal delay={0.12}>
               <dl className="mt-10 hidden md:block">
                 {STUDIO_FACTS.map(([k, v]) => (
@@ -48,7 +48,7 @@ export function About() {
           <div className="col-span-6 md:col-span-8 md:col-start-5">
             <Reveal>
               <p className="display text-[length:var(--text-h3)] leading-[1.08] text-ink-3">
-                We work the way a monk works — with{" "}
+                We work the way a monk works, with{" "}
                 <span className="text-ink">focus</span>,{" "}
                 <span className="text-ink">patience</span>, and a quiet
                 obsession with <span className="text-ink">mastery</span>.
@@ -62,7 +62,7 @@ export function About() {
               <p className="mt-8 max-w-xl text-[length:var(--text-body)] leading-relaxed text-ink-2">
                 Founded in {SITE.founded} in {SITE.city}, we are a small,
                 deliberate team that treats every brand like a long game.
-                Decisions, not decoration — built to compound.
+                Decisions, not decoration, built to compound.
               </p>
             </Reveal>
           </div>
@@ -102,5 +102,5 @@ export function About() {
   );
 }
 
-/** Compatibility alias — this section also serves as the Process block. */
+/** Compatibility alias, this section also serves as the Process block. */
 export const Process = About;

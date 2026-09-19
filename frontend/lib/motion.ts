@@ -54,5 +54,5 @@ export const spring: Transition = {
   mass: 0.9,
 };
 
-/** Default viewport config — trigger once, slightly early. */
+/** Default viewport config, trigger once, slightly early. */
 export const VIEWPORT = { once: true, amount: 0.3, margin: "0px 0px -10% 0px" };

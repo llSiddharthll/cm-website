@@ -57,7 +57,7 @@ export function WorkGrid({ cases = CASES }: { cases?: typeof CASES }) {
             </Reveal>
           </div>
 
-          {/* Live count — mono data texture */}
+          {/* Live count, mono data texture */}
           <Reveal delay={0.1} className="col-span-6 md:col-span-4 md:text-right">
             <span className="mono text-on-ink-3">
               [ {String(total).padStart(2, "0")} ] case
@@ -66,7 +66,7 @@ export function WorkGrid({ cases = CASES }: { cases?: typeof CASES }) {
           </Reveal>
         </div>
 
-        {/* ---- Filter bar — sharp pills, active bg slides via layoutId --- */}
+        {/* ---- Filter bar, sharp pills, active bg slides via layoutId --- */}
         <Reveal delay={0.12}>
           <div
             role="tablist"
@@ -129,7 +129,7 @@ export function WorkGrid({ cases = CASES }: { cases?: typeof CASES }) {
                 <Link
                   href={`/work/${c.id}`}
                   className="block focus:outline-none"
-                  aria-label={`${c.client} — ${c.title}`}
+                  aria-label={`${c.client}, ${c.title}`}
                 >
                   {/* Visual + caption share one elevated dark card, crisp lift on hover */}
                   <div className="border border-line-invert-2 bg-dark-2 p-3 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1.5 group-hover:border-orange/50">
@@ -137,7 +137,7 @@ export function WorkGrid({ cases = CASES }: { cases?: typeof CASES }) {
                       <div className="relative aspect-[3/2] overflow-hidden bg-dark-3">
                         <Image
                           src={c.cover}
-                          alt={`${c.client} — ${c.title}`}
+                          alt={`${c.client}, ${c.title}`}
                           fill
                           sizes="(min-width: 768px) 46vw, 92vw"
                           className="object-cover transition duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
@@ -152,7 +152,7 @@ export function WorkGrid({ cases = CASES }: { cases?: typeof CASES }) {
                       />
                     )}
 
-                    {/* Caption — hairline rule, internal grid */}
+                    {/* Caption, hairline rule, internal grid */}
                     <div className="mt-6 grid12 gap-y-6 border-t border-line-invert-2 px-1 pb-1 pt-6">
                       <div className="col-span-6 md:col-span-8">
                         <div className="flex items-baseline justify-between gap-4">
@@ -166,7 +166,7 @@ export function WorkGrid({ cases = CASES }: { cases?: typeof CASES }) {
 
                         <p className="mt-3 max-w-prose text-on-ink-2">{c.result}</p>
 
-                        {/* Category chips — sharp hairline */}
+                        {/* Category chips, sharp hairline */}
                         <div className="mt-5 flex flex-wrap gap-2">
                           {c.category.map((cat) => (
                             <span
@@ -179,7 +179,7 @@ export function WorkGrid({ cases = CASES }: { cases?: typeof CASES }) {
                         </div>
                       </div>
 
-                      {/* Metric callout — the single bold orange moment */}
+                      {/* Metric callout, the single bold orange moment */}
                       <div className="col-span-6 min-w-0 md:col-span-4 md:text-right">
                         <span className="display block text-[clamp(1.6rem,2.6vw,2.4rem)] leading-[0.95] text-orange [overflow-wrap:anywhere] [hyphens:none]">
                           {c.metric.value}

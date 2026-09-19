@@ -70,7 +70,7 @@ export function MediaLibrary() {
         <div className="mt-8 flex h-48 items-center justify-center"><Spinner /></div>
       ) : items.length === 0 ? (
         <Card className="mt-6 flex h-48 items-center justify-center text-sm text-zinc-400">
-          No media yet — upload images to use them across the site.
+          No media yet, upload images to use them across the site.
         </Card>
       ) : (
         <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
