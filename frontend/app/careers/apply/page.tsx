@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { getCareers } from "@/lib/cms";
+import { getCareers, getRoles } from "@/lib/cms";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { Reveal } from "@/components/ui/Reveal";
@@ -21,8 +21,18 @@ export const metadata: Metadata = buildMetadata({
 const ENV_EMBED_URL = process.env.NEXT_PUBLIC_CAREERS_EMBED_URL || "";
 const ENV_EMBED_CODE = process.env.NEXT_PUBLIC_CAREERS_EMBED_CODE || "";
 
-export default async function ApplyPage() {
-  const careers = await getCareers();
+export default async function ApplyPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ role?: string }>;
+}) {
+  const [careers, roles, sp] = await Promise.all([
+    getCareers(),
+    getRoles(),
+    searchParams,
+  ]);
+  const roleParam = sp.role || "";
+  const roleOptions = roles.map((r) => ({ slug: r.slug, title: r.title }));
 
   // CMS wins; env is the fallback. Either replaces the built-in form.
   const embedUrl = careers.applyEmbedUrl || ENV_EMBED_URL;
@@ -86,7 +96,7 @@ export default async function ApplyPage() {
                   referrerPolicy="strict-origin-when-cross-origin"
                 />
               ) : (
-                <ApplicationForm />
+                <ApplicationForm roles={roleOptions} defaultRole={roleParam} />
               )}
             </div>
           </div>

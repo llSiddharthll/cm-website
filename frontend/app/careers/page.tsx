@@ -28,7 +28,6 @@ import { Footer } from "@/components/agency/Footer";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
-import { Prose } from "@/components/ui/Prose";
 import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 import { Aurora } from "@/components/fx/Aurora";
 
@@ -131,66 +130,56 @@ export default async function CareersPage() {
 
               <div className="mt-12 divide-y divide-line-invert border-y border-line-invert">
                 {roles.map((role, i) => {
-                  const applyHref = role.applyUrl || "/careers/apply";
                   const meta = [role.type, role.location, role.experience, role.salary].filter(
                     Boolean,
                   );
                   return (
                     <Reveal key={role.slug ?? role.title} delay={(i % 6) * 0.04}>
-                      <details className="group/role">
-                        <summary className="flex cursor-pointer list-none flex-col gap-3 py-7 md:flex-row md:items-center md:gap-8">
-                          <div className="min-w-0 flex-1">
-                            <div className="flex items-center gap-3">
-                              {role.team && (
-                                <span className="mono text-orange">{role.team}</span>
-                              )}
-                              <h3 className="display text-[length:var(--text-h3)] leading-tight text-on-ink transition-colors group-open/role:text-orange">
-                                {role.title}
-                              </h3>
-                            </div>
-                            {role.summary && (
-                              <p className="mt-2 max-w-2xl text-on-ink-2">{role.summary}</p>
+                      <Link
+                        href={`/careers/${role.slug}`}
+                        className="group/role flex flex-col gap-3 py-7 md:flex-row md:items-center md:gap-8"
+                      >
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center gap-3">
+                            {role.team && (
+                              <span className="mono text-orange">{role.team}</span>
                             )}
-                            {meta.length > 0 && (
-                              <div className="mono mt-3 flex flex-wrap items-center gap-x-5 gap-y-1.5 text-on-ink-3">
-                                {role.type && (
-                                  <span className="inline-flex items-center gap-1.5">
-                                    <Briefcase className="size-3.5" />
-                                    {role.type}
-                                  </span>
-                                )}
-                                {role.location && (
-                                  <span className="inline-flex items-center gap-1.5">
-                                    <MapPin className="size-3.5" />
-                                    {role.location}
-                                  </span>
-                                )}
-                                {role.experience && (
-                                  <span className="inline-flex items-center gap-1.5">
-                                    <Clock className="size-3.5" />
-                                    {role.experience}
-                                  </span>
-                                )}
-                                {role.salary && <span>{role.salary}</span>}
-                              </div>
-                            )}
+                            <h3 className="display text-[length:var(--text-h3)] leading-tight text-on-ink transition-colors group-hover/role:text-orange">
+                              {role.title}
+                            </h3>
                           </div>
-                          <span className="label inline-flex shrink-0 items-center gap-1.5 text-on-ink-2 transition-colors group-hover/role:text-orange">
-                            <span className="group-open/role:hidden">View details</span>
-                            <span className="hidden group-open/role:inline">Hide details</span>
-                            <ArrowRight className="size-4 transition-transform duration-300 group-open/role:rotate-90" />
-                          </span>
-                        </summary>
-
-                        {role.description && (
-                          <Prose html={role.description} className="max-w-3xl pb-6" />
-                        )}
-                        <div className="pb-8">
-                          <Button href={applyHref} variant="primary">
-                            Apply for this role
-                          </Button>
+                          {role.summary && (
+                            <p className="mt-2 max-w-2xl text-on-ink-2">{role.summary}</p>
+                          )}
+                          {meta.length > 0 && (
+                            <div className="mono mt-3 flex flex-wrap items-center gap-x-5 gap-y-1.5 text-on-ink-3">
+                              {role.type && (
+                                <span className="inline-flex items-center gap-1.5">
+                                  <Briefcase className="size-3.5" />
+                                  {role.type}
+                                </span>
+                              )}
+                              {role.location && (
+                                <span className="inline-flex items-center gap-1.5">
+                                  <MapPin className="size-3.5" />
+                                  {role.location}
+                                </span>
+                              )}
+                              {role.experience && (
+                                <span className="inline-flex items-center gap-1.5">
+                                  <Clock className="size-3.5" />
+                                  {role.experience}
+                                </span>
+                              )}
+                              {role.salary && <span>{role.salary}</span>}
+                            </div>
+                          )}
                         </div>
-                      </details>
+                        <span className="label inline-flex shrink-0 items-center gap-1.5 text-on-ink-2 transition-colors group-hover/role:text-orange">
+                          View role
+                          <ArrowRight className="size-4 transition-transform duration-300 group-hover/role:translate-x-1" />
+                        </span>
+                      </Link>
                     </Reveal>
                   );
                 })}

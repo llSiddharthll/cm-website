@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Check, Loader2 } from "lucide-react";
 import { Magnetic } from "@/components/fx/Magnetic";
 import { Turnstile, turnstileEnabled } from "@/components/ui/Turnstile";
+import { DriveUploadButton } from "@/components/careers/DriveUploadButton";
 
 const API = "https://34-172-180-194.nip.io".replace(/\/$/, "");
 const inputCls =
@@ -12,10 +13,25 @@ const labelCls = "label text-on-ink-3 mb-2 block";
 
 const OPEN = "Open application";
 
-export function ApplicationForm() {
+type RoleOption = { slug?: string; title: string };
+
+export function ApplicationForm({
+  roles = [],
+  defaultRole = "",
+}: {
+  roles?: RoleOption[];
+  defaultRole?: string;
+}) {
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [error, setError] = useState("");
   const [token, setToken] = useState("");
+
+  // Preselect the role passed via ?role=<slug|title>; fall back to open application.
+  const matched = roles.find(
+    (r) => r.slug === defaultRole || r.title === defaultRole,
+  );
+  const [role, setRole] = useState(matched?.title || OPEN);
+  const [resume, setResume] = useState("");
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -28,7 +44,6 @@ export function ApplicationForm() {
     setError("");
     const fd = new FormData(e.currentTarget);
     const get = (k: string) => String(fd.get(k) || "").trim();
-    const role = OPEN;
     const application = {
       name: get("name"),
       email: get("email"),
@@ -36,7 +51,7 @@ export function ApplicationForm() {
       role,
       portfolio: get("portfolio"),
       linkedin: get("linkedin"),
-      resume: get("resume"),
+      resume,
       message: get("message"),
       source: "careers-apply",
       turnstileToken: token,
@@ -106,6 +121,25 @@ export function ApplicationForm() {
 
   return (
     <form onSubmit={onSubmit} className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div className="sm:col-span-2">
+        <label htmlFor="af-role" className={labelCls}>
+          Role you&rsquo;re applying for
+        </label>
+        <select
+          id="af-role"
+          name="role"
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
+          className={`${inputCls} appearance-none`}
+        >
+          {roles.map((r) => (
+            <option key={r.slug ?? r.title} value={r.title}>
+              {r.title}
+            </option>
+          ))}
+          <option value={OPEN}>{OPEN} (don&rsquo;t see a fit)</option>
+        </select>
+      </div>
       <div>
         <label htmlFor="af-name" className={labelCls}>
           Full name <span className="text-orange" aria-hidden="true">*</span>
@@ -138,12 +172,15 @@ export function ApplicationForm() {
       </div>
       <div className="sm:col-span-2">
         <label htmlFor="af-resume" className={labelCls}>
-          Resume / CV link
+          Resume / CV
         </label>
+        <DriveUploadButton onUploaded={(url) => setResume(url)} />
         <input
           id="af-resume"
           name="resume"
           type="url"
+          value={resume}
+          onChange={(e) => setResume(e.target.value)}
           placeholder="Link to your resume (Google Drive, Dropbox, PDF URL…)"
           className={inputCls}
         />
