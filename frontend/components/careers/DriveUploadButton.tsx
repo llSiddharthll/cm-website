@@ -55,6 +55,7 @@ export function DriveUploadButton({
   const tokenRef = useRef("");
   const tokenClientRef = useRef<any>(null);
   const afterAuthRef = useRef<((token: string) => void) | null>(null);
+  const silentRef = useRef(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -67,7 +68,10 @@ export function DriveUploadButton({
           client_id: CLIENT_ID,
           scope: SCOPE,
           callback: (resp: any) => {
+            const wasSilent = silentRef.current;
+            silentRef.current = false;
             if (resp.error || !resp.access_token) {
+              if (wasSilent) return; // silent attempt failed — stay signed out quietly
               setState("error");
               setError("Google sign-in was cancelled. Click to try again.");
               afterAuthRef.current = null;
@@ -81,12 +85,23 @@ export function DriveUploadButton({
             else setState("idle");
           },
           error_callback: () => {
+            const wasSilent = silentRef.current;
+            silentRef.current = false;
+            if (wasSilent) return;
             setState("error");
             setError("Sign-in popup was blocked — allow pop-ups for this site, then click again.");
             afterAuthRef.current = null;
           },
         });
         setReady(true);
+        // Reuse an existing Drive grant silently (no popup) so returning users
+        // get a token up front → a single click uploads.
+        try {
+          silentRef.current = true;
+          tokenClientRef.current.requestAccessToken({ prompt: "none" });
+        } catch {
+          silentRef.current = false;
+        }
       })
       .catch(() => alive && setError("Couldn't load Google sign-in."));
     return () => {
