@@ -62,7 +62,7 @@ export async function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
         {/* ── Columns ── */}
         <div className="grid12 gap-x-8 gap-y-12 py-[clamp(3rem,5vw,4.5rem)]">
           {/* brand + newsletter + socials + contact */}
-          <div className="col-span-12 md:col-span-4">
+          <div className="col-span-12 md:col-span-6">
             <Logo invert />
             <p className="mt-5 max-w-xs text-on-ink-2">
               {SITE.tagline}, a full-service creative &amp; growth studio from{" "}
@@ -107,76 +107,71 @@ export async function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
             </ul>
           </div>
 
-          {/* right: quick nav + service directories (by city / by industry) */}
-          <div className="col-span-12 md:col-span-8">
-            {/* quick nav */}
-            <div className="grid max-w-md grid-cols-2 gap-x-8 gap-y-10">
-              {footerGroups.map((group) => (
-                <div key={group.title}>
-                  <span className="label mb-5 block text-on-ink-3">{group.title}</span>
-                  <ul className="space-y-3">
-                    {group.links.map((l) => (
-                      <li key={l.label}>
-                        <Link
-                          href={l.href}
-                          className="text-on-ink-2 transition-colors hover:text-on-ink"
-                        >
-                          {l.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-
-            {/* services by city */}
-            <div className="mt-12 border-t border-line-invert pt-10">
-              <span className="label block text-on-ink-3">Services by city</span>
-              <div className="mt-6 grid grid-cols-2 gap-x-8 gap-y-9 sm:grid-cols-4">
-                {PSEO_PLACES.map((place) => (
-                  <div key={place.slug}>
-                    <span className="mono mb-4 block text-on-ink">{place.name}</span>
-                    <ul className="space-y-2.5">
-                      {FOOTER_SVCS.map((s) => (
-                        <li key={s.slug}>
-                          <Link
-                            href={`/${s.slug}-in-${place.slug}`}
-                            className="text-sm text-on-ink-3 transition-colors hover:text-orange"
-                          >
-                            {s.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+          {/* quick nav */}
+          {footerGroups.map((group) => (
+            <div key={group.title} className="col-span-6 md:col-span-3">
+              <span className="label mb-5 block text-on-ink-3">{group.title}</span>
+              <ul className="space-y-3">
+                {group.links.map((l) => (
+                  <li key={l.label}>
+                    <Link
+                      href={l.href}
+                      className="text-on-ink-2 transition-colors hover:text-on-ink"
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
+          ))}
+        </div>
 
-            {/* services by industry */}
-            <div className="mt-12 border-t border-line-invert pt-10">
-              <span className="label block text-on-ink-3">Services by industry</span>
-              <div className="mt-6 grid grid-cols-2 gap-x-8 gap-y-9 sm:grid-cols-3">
-                {PSEO_INDUSTRIES.map((ind) => (
-                  <div key={ind.slug}>
-                    <span className="mono mb-4 block text-on-ink">{ind.name}</span>
-                    <ul className="space-y-2.5">
-                      {FOOTER_SVCS.map((s) => (
-                        <li key={s.slug}>
-                          <Link
-                            href={`/${s.slug}-for-${ind.slug}`}
-                            className="text-sm text-on-ink-3 transition-colors hover:text-orange"
-                          >
-                            {s.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+        {/* ── Services by city (full width) ── */}
+        <div className="border-t border-line-invert py-[clamp(2.5rem,4vw,3.5rem)]">
+          <span className="label block text-on-ink-3">Services by city</span>
+          <div className="mt-7 grid grid-cols-2 gap-x-8 gap-y-9 sm:grid-cols-4">
+            {PSEO_PLACES.map((place) => (
+              <div key={place.slug}>
+                <span className="mono mb-4 block text-on-ink">{place.name}</span>
+                <ul className="space-y-2.5">
+                  {FOOTER_SVCS.map((s) => (
+                    <li key={s.slug}>
+                      <Link
+                        href={`/${s.slug}-in-${place.slug}`}
+                        className="text-sm text-on-ink-3 transition-colors hover:text-orange"
+                      >
+                        {s.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Services by industry (full width) ── */}
+        <div className="border-t border-line-invert py-[clamp(2.5rem,4vw,3.5rem)]">
+          <span className="label block text-on-ink-3">Services by industry</span>
+          <div className="mt-7 grid grid-cols-2 gap-x-8 gap-y-9 sm:grid-cols-3 lg:grid-cols-6">
+            {PSEO_INDUSTRIES.map((ind) => (
+              <div key={ind.slug}>
+                <span className="mono mb-4 block text-on-ink">{ind.name}</span>
+                <ul className="space-y-2.5">
+                  {FOOTER_SVCS.map((s) => (
+                    <li key={s.slug}>
+                      <Link
+                        href={`/${s.slug}-for-${ind.slug}`}
+                        className="text-sm text-on-ink-3 transition-colors hover:text-orange"
+                      >
+                        {s.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>
