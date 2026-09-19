@@ -4,7 +4,8 @@ import { useState } from "react";
 import { Check, Loader2 } from "lucide-react";
 import { Magnetic } from "@/components/fx/Magnetic";
 import { Turnstile, turnstileEnabled } from "@/components/ui/Turnstile";
-import { DriveUploadButton } from "@/components/careers/DriveUploadButton";
+import { DriveUploadButton, driveUploadEnabled } from "@/components/careers/DriveUploadButton";
+import { CvUpload } from "@/components/careers/CvUpload";
 
 const API = "https://34-172-180-194.nip.io".replace(/\/$/, "");
 const inputCls =
@@ -174,7 +175,11 @@ export function ApplicationForm({
         <label htmlFor="af-resume" className={labelCls}>
           Resume / CV
         </label>
-        <DriveUploadButton onUploaded={(url) => setResume(url)} />
+        {driveUploadEnabled ? (
+          <DriveUploadButton onUploaded={(url) => setResume(url)} />
+        ) : (
+          <CvUpload onUploaded={(url) => setResume(url)} />
+        )}
         <input
           id="af-resume"
           name="resume"

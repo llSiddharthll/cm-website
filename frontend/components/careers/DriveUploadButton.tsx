@@ -16,8 +16,11 @@ import { Loader2, UploadCloud, Check } from "lucide-react";
  *   NEXT_PUBLIC_GOOGLE_APP_ID      — (optional) GCP project number
  */
 const CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || "";
-const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY || "";
-const APP_ID = process.env.NEXT_PUBLIC_GOOGLE_APP_ID || "";
+// API key + project number are provisioned; only the OAuth Client ID (console-
+// only) is still needed to enable the applicant's-own-Drive path.
+const API_KEY =
+  process.env.NEXT_PUBLIC_GOOGLE_API_KEY || "AIzaSyALdKlFVrT3zPMmL5CMxh82H_Sgw8zREFQ";
+const APP_ID = process.env.NEXT_PUBLIC_GOOGLE_APP_ID || "596691896133";
 const SCOPE = "https://www.googleapis.com/auth/drive.file";
 
 export const driveUploadEnabled = Boolean(CLIENT_ID && API_KEY);
