@@ -178,35 +178,45 @@ export function Header({ dark = true }: { dark?: boolean }) {
               transition={{ duration: reduce ? 0 : 0.25, ease: EASE.outQuart }}
               className="hidden border-t border-line-invert bg-dark/95 backdrop-blur-xl md:block"
             >
-              <div className="shell grid12 gap-x-8 gap-y-10 py-10">
-                {categories.map((cat) => (
-                  <div key={cat.slug} className="col-span-3">
-                    <Link
-                      href={`/services/${cat.slug}`}
-                      onClick={() => setServices(false)}
-                      className="group/cat flex items-baseline gap-2"
+              <div className="shell py-9">
+                <div className="grid grid-cols-2 gap-x-8 gap-y-8 lg:grid-cols-3">
+                  {categories.map((cat) => (
+                    <div
+                      key={cat.slug}
+                      className="min-w-0 border-t border-line-invert pt-4"
                     >
-                      <span className="mono text-orange">{cat.index}</span>
-                      <span className="display text-[length:var(--text-h3)] text-on-ink transition-colors group-hover/cat:text-orange">
-                        {cat.name}
-                      </span>
-                    </Link>
-                    <p className="label mt-1 text-on-ink-3">{cat.tagline}</p>
-                    <ul className="mt-5 space-y-2.5">
-                      {cat.items.map((it) => (
-                        <li key={it.slug}>
-                          <Link
-                            href={`/services/${cat.slug}/${it.slug}`}
-                            onClick={() => setServices(false)}
-                            className="text-sm text-on-ink-2 transition-colors hover:text-orange"
-                          >
-                            {it.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+                      <Link
+                        href={`/services/${cat.slug}`}
+                        onClick={() => setServices(false)}
+                        className="group/cat flex items-baseline gap-2"
+                      >
+                        <span className="mono shrink-0 text-xs text-orange">
+                          {cat.index}
+                        </span>
+                        <span className="display text-base leading-tight text-on-ink transition-colors group-hover/cat:text-orange lg:text-lg">
+                          {cat.name}
+                        </span>
+                      </Link>
+                      <p className="mt-1 line-clamp-1 pl-7 text-xs text-on-ink-3">
+                        {cat.tagline}
+                      </p>
+                      <ul className="mt-4 space-y-2 pl-7">
+                        {cat.items.map((it) => (
+                          <li key={it.slug}>
+                            <Link
+                              href={`/services/${cat.slug}/${it.slug}`}
+                              onClick={() => setServices(false)}
+                              className="group/it inline-flex items-center gap-2 text-[15px] leading-snug text-on-ink-2 transition-colors hover:text-orange"
+                            >
+                              <span className="h-px w-0 bg-orange transition-all duration-300 group-hover/it:w-3" />
+                              {it.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
               </div>
               <div className="border-t border-line-invert">
                 <div className="shell flex items-center justify-between py-4">
@@ -288,16 +298,29 @@ export function Header({ dark = true }: { dark?: boolean }) {
                       )}
                     </div>
                     {isServices && mobileServices && (
-                      <ul className="mb-4 ml-9 space-y-2">
+                      <ul className="mb-5 ml-9 space-y-4">
                         {categories.map((cat) => (
                           <li key={cat.slug}>
                             <Link
                               href={`/services/${cat.slug}`}
                               onClick={() => setOpen(false)}
-                              className="mono text-on-ink-2 transition-colors hover:text-orange"
+                              className="label text-on-ink transition-colors hover:text-orange"
                             >
                               {cat.name}
                             </Link>
+                            <ul className="mt-2 space-y-1.5 border-l border-line-invert pl-3">
+                              {cat.items.map((it) => (
+                                <li key={it.slug}>
+                                  <Link
+                                    href={`/services/${cat.slug}/${it.slug}`}
+                                    onClick={() => setOpen(false)}
+                                    className="text-sm text-on-ink-2 transition-colors hover:text-orange"
+                                  >
+                                    {it.name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
                           </li>
                         ))}
                       </ul>

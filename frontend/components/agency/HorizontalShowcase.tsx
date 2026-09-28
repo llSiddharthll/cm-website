@@ -84,10 +84,10 @@ export function HorizontalShowcase({ categories }: { categories: Cat[] }) {
             key={c.slug}
             className="flex w-full shrink-0 flex-col justify-center border-t border-line-invert px-6 py-16 sm:px-12 md:h-screen md:w-[60vw] md:border-l md:border-t-0 md:py-0 md:pr-[6vw]"
           >
-            <span className="display text-[clamp(4rem,10vw,9rem)] leading-none text-on-ink/10">
+            <span className="display text-[clamp(3rem,7vw,6.5rem)] leading-none text-on-ink/10">
               {c.index}
             </span>
-            <h3 className="display-tight -mt-4 break-words text-[clamp(2.5rem,5.5vw,6rem)] leading-[0.95] text-on-ink">
+            <h3 className="display-tight -mt-4 break-words text-[clamp(2.25rem,4.2vw,4.5rem)] leading-[0.95] text-on-ink">
               {c.name}
             </h3>
             {c.tagline && <p className="label mt-4 text-orange">{c.tagline}</p>}
