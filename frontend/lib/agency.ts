@@ -229,11 +229,12 @@ export const FOOTER_LINKS: Record<string, { label: string; href: string }[]> = {
     { label: "Contact", href: "/contact" },
   ],
   Services: [
-    { label: "Design", href: "/services/design" },
-    { label: "Market", href: "/services/market" },
-    { label: "Develop", href: "/services/develop" },
-    { label: "Growth", href: "/services/growth" },
-    { label: "AI", href: "/services/ai" },
+    { label: "Get Found", href: "/services/get-found" },
+    { label: "Get Chosen", href: "/services/get-chosen" },
+    { label: "Get Leads", href: "/services/get-leads" },
+    { label: "Get Remembered", href: "/services/get-remembered" },
+    { label: "Get Better Every Month", href: "/services/get-better" },
+    { label: "Get It All", href: "/services/get-it-all" },
   ],
 };
 
@@ -361,69 +362,78 @@ export type ServiceCategory = {
 
 export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {
-    slug: "design",
+    slug: "get-found",
     index: "01",
-    name: "Design",
-    tagline: "The identity and creative assets you own, not rent",
+    name: "Get Found",
+    tagline: "Visibility and demand generation",
     intro:
-      "Identity, design and motion built as assets you own outright, a system that compounds recognition across every surface, from the first logo to the last frame of the reel.",
-    items: [
-      { slug: "brand-identity-systems", name: "Brand Identity & Systems", desc: "A system that compounds recognition, not a one-off logo file." },
-      { slug: "graphic-design-creative", name: "Graphic Design & Creative", desc: "Campaign and social creative built once, reused everywhere on-brand." },
-      { slug: "video-motion", name: "Video & Motion", desc: "Motion assets that keep earning attention after the shoot is paid for." },
-      { slug: "ui-ux-design", name: "UI/UX Design", desc: "Experience design that becomes a permanent conversion asset, not a redesign project." },
-    ],
-  },
-  {
-    slug: "market",
-    index: "02",
-    name: "Market",
-    tagline: "Demand that compounds instead of resetting every month",
-    intro:
-      "Search, paid and social that turn spend into owned learnings, audience and content, demand that builds on itself instead of resetting when the campaign ends.",
+      "Your business shows up where buyers are already looking. Search, paid and social run together so demand compounds instead of resetting the moment a campaign ends.",
     items: [
       { slug: "seo", name: "SEO", desc: "Visibility you own in the SERP, not rented for the length of a campaign." },
-      { slug: "google-ads", name: "Google Ads", desc: "Spend that buys learnings and creative assets the account keeps using, not just clicks." },
+      { slug: "google-ads", name: "Google Ads", desc: "Spend that buys learnings and creative the account keeps using, not just clicks." },
       { slug: "meta-ads", name: "Meta Ads", desc: "Feed-native creative that feeds back into your owned content library." },
-      { slug: "social-media-management", name: "Social Media Management", desc: "A presence asset that keeps compounding audience, not a content treadmill." },
-      { slug: "content-copywriting", name: "Content & Copywriting", desc: "Words built once into a system, SEO and brand voice, reused across every channel." },
+      { slug: "social-media-marketing", name: "Social Media Marketing", desc: "A presence asset that keeps compounding audience, not a content treadmill." },
     ],
   },
   {
-    slug: "develop",
+    slug: "get-chosen",
+    index: "02",
+    name: "Get Chosen",
+    tagline: "Brand and identity that converts trust into sales",
+    intro:
+      "Prospects pick you over competitors before they ever talk to you. Identity and creative built as assets you own outright, so recognition compounds across every surface.",
+    items: [
+      { slug: "branding", name: "Branding", desc: "A system that compounds recognition, not a one-off logo file." },
+      { slug: "graphic-design", name: "Graphic Design", desc: "Campaign and social creative built once, reused everywhere on-brand." },
+    ],
+  },
+  {
+    slug: "get-leads",
     index: "03",
-    name: "Develop",
-    tagline: "The infrastructure your growth runs on",
+    name: "Get Leads",
+    tagline: "Websites and funnels built to convert",
     intro:
-      "Fast, conversion-shaped sites, stores and landing pages, the asset every campaign points back to, engineered to get better with each cycle of data.",
+      "Traffic turns into qualified leads and bookings, not just visits. The site and funnel every campaign points back to, engineered to get better with each cycle of data.",
     items: [
-      { slug: "websites-landing-pages", name: "Websites & Landing Pages", desc: "The asset every campaign points back to and improves." },
-      { slug: "ecommerce", name: "E-commerce", desc: "A storefront engineered to get better with every cycle of data, not rebuilt each time." },
+      { slug: "web-development", name: "Web Development", desc: "The asset every campaign points back to and improves." },
+      { slug: "ui-ux", name: "UI/UX Design", desc: "Experience design that becomes a permanent conversion asset, not a redesign project." },
+      { slug: "lead-generation", name: "Lead Generation", desc: "A funnel tuned to your margins, not a rented list of leads." },
     ],
   },
   {
-    slug: "growth",
+    slug: "get-remembered",
     index: "04",
-    name: "Growth",
-    tagline: "Where Make becomes Compound",
+    name: "Get Remembered",
+    tagline: "Content and storytelling",
     intro:
-      "Funnels, analytics and CRO wired into one feedback loop, the engine that makes every other asset compound month over month, run by one team with no hand-offs.",
+      "Audiences stay engaged between purchases and recall you first. Words, video and social built once into a system and reused across every channel you own.",
     items: [
-      { slug: "lead-generation-funnels", name: "Lead Generation & Funnels", desc: "A system tuned to your margins, not a rented list of leads." },
-      { slug: "analytics-cro", name: "Analytics & CRO", desc: "The feedback loop that makes every other asset compound month over month." },
-      { slug: "growth-system-360", name: "360 Growth System", desc: "The full Listen → Shape → Make → Compound engine, one team, no hand-offs." },
+      { slug: "content", name: "Content & Copywriting", desc: "Words built once into a system, SEO and brand voice, reused everywhere." },
+      { slug: "video-motion", name: "Video & Motion", desc: "Motion assets that keep earning attention after the shoot is paid for." },
+      { slug: "social-content", name: "Social Content", desc: "An always-on engine of posts, reels and carousels that builds recall." },
     ],
   },
   {
-    slug: "ai",
+    slug: "get-better",
     index: "05",
-    name: "AI",
-    tagline: "Intelligence, put to work",
+    name: "Get Better Every Month",
+    tagline: "Analytics, CRO and growth optimisation",
     intro:
-      "Automation and AI tooling baked into the Make/Compound loop, compounding efficiency and production capacity that scale your asset library without scaling headcount.",
+      "Continuous, measurable improvement in ROI, not a one-off campaign. The feedback loop that makes every other asset compound month over month.",
     items: [
-      { slug: "ai-marketing-automation", name: "AI-Powered Marketing & Automation", desc: "Compounding efficiency baked into the Make/Compound loop." },
-      { slug: "ai-content-tools", name: "AI Content & Creative Tools", desc: "Production capacity that scales the asset library without scaling headcount." },
+      { slug: "analytics-cro", name: "Analytics & CRO", desc: "The feedback loop that makes every other asset compound." },
+      { slug: "ai-optimization", name: "AI-Driven Optimisation", desc: "Compounding efficiency baked into the loop, without scaling headcount." },
+    ],
+  },
+  {
+    slug: "get-it-all",
+    index: "06",
+    name: "Get It All",
+    tagline: "The 360 Growth System, done for you",
+    intro:
+      "One integrated team and system replacing five fragmented vendors. Every outcome above, run as a single engine on one monthly retainer.",
+    items: [
+      { slug: "growth-system-360", name: "360 Growth System", desc: "The flagship retainer running all five outcomes as one engine." },
     ],
   },
 ];
@@ -832,99 +842,6 @@ export const LOCATION_PAGES: LocationPage[] = [
   },
 ];
 
-/* ============================================================
-   GROWTH PILLARS, outcome-first framing for the homepage
-   "disciplines" sections (bento + horizontal showcase).
-   These sit ABOVE the à-la-carte SERVICE_CATEGORIES: each pillar
-   is an outcome that rolls up several existing services. Shaped
-   like ServiceCategory so the same components render it unchanged.
-   `href` points at the /services hub (no per-pillar page yet).
-   ============================================================ */
-export type GrowthPillar = ServiceCategory & { result: string; href: string };
-
-export const GROWTH_PILLARS: GrowthPillar[] = [
-  {
-    slug: "get-found",
-    index: "01",
-    name: "Get Found",
-    tagline: "Visibility & demand generation",
-    result: "Your business shows up where buyers are already looking.",
-    intro: "Your business shows up where buyers are already looking.",
-    href: "/services",
-    items: [
-      { slug: "seo", name: "SEO", desc: "Compounding organic visibility, technical to content." },
-      { slug: "google-ads", name: "Google Ads", desc: "Search & shopping that buys profit, not clicks." },
-      { slug: "meta-ads", name: "Meta Ads", desc: "Paid social that fills the funnel at the top." },
-      { slug: "social-media-marketing", name: "Social Media Marketing", desc: "Always-on presence that earns attention." },
-    ],
-  },
-  {
-    slug: "get-chosen",
-    index: "02",
-    name: "Get Chosen",
-    tagline: "Brand & identity that converts trust into sales",
-    result: "Prospects pick you over competitors before they even talk to you.",
-    intro: "Prospects pick you over competitors before they even talk to you.",
-    href: "/services",
-    items: [
-      { slug: "branding", name: "Branding", desc: "Identity systems built to scale across every surface." },
-      { slug: "graphic-design", name: "Graphic Design", desc: "Campaigns, decks and social creative, on-brand." },
-    ],
-  },
-  {
-    slug: "get-leads",
-    index: "03",
-    name: "Get Leads",
-    tagline: "Websites & funnels built to convert",
-    result: "Traffic turns into qualified leads and bookings, not just visits.",
-    intro: "Traffic turns into qualified leads and bookings, not just visits.",
-    href: "/services",
-    items: [
-      { slug: "web-development", name: "Web Development", desc: "Fast, accessible, conversion-shaped sites & stores." },
-      { slug: "ui-ux", name: "UI/UX", desc: "Interfaces designed around how people actually decide." },
-      { slug: "lead-generation", name: "Lead Generation", desc: "Funnels engineered around your unit economics." },
-    ],
-  },
-  {
-    slug: "get-remembered",
-    index: "04",
-    name: "Get Remembered",
-    tagline: "Content & storytelling",
-    result: "Audiences stay engaged between purchases and recall you first.",
-    intro: "Audiences stay engaged between purchases and recall you first.",
-    href: "/services",
-    items: [
-      { slug: "content", name: "Content", desc: "Words that rank and read like a human wrote them." },
-      { slug: "video-motion", name: "Video & Motion", desc: "Reels, ads and brand films cut for the feed." },
-      { slug: "social-content", name: "Social Content", desc: "Captions, carousels and hooks tuned per platform." },
-    ],
-  },
-  {
-    slug: "get-better",
-    index: "05",
-    name: "Get Better Every Month",
-    tagline: "Analytics, CRO & growth optimization",
-    result: "Continuous, measurable improvement in ROI, not a one-off campaign.",
-    intro: "Continuous, measurable improvement in ROI, not a one-off campaign.",
-    href: "/services",
-    items: [
-      { slug: "analytics-cro", name: "Analytics & CRO", desc: "Track what matters, then lift the numbers that move revenue." },
-      { slug: "ai-optimization", name: "AI-driven Optimization", desc: "Models that find the next win in your data, faster." },
-    ],
-  },
-  {
-    slug: "get-it-all",
-    index: "06",
-    name: "Get It All",
-    tagline: "The 360 Growth System, done-for-you retainer",
-    result: "One integrated team and system, replacing five fragmented vendors.",
-    intro: "One integrated team and system, replacing five fragmented vendors.",
-    href: "/services",
-    items: [
-      { slug: "growth-system", name: "The 360 Growth System", desc: "The umbrella tier: every pillar, run as one retainer." },
-    ],
-  },
-];
 
 /* ============================================================
    OPEN ROLES, /careers listings. Full rich descriptions live in

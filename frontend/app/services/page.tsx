@@ -19,7 +19,7 @@ import { PageHero } from "@/components/agency/PageHero";
 export const metadata: Metadata = buildMetadata({
   title: "Services",
   description:
-    "Brand, web, content and performance, twelve disciplines, wired together to compound into an asset you own.",
+    "Six outcomes, from getting found to getting better every month, wired together to compound into an asset you own.",
   path: "/services",
 });
 
@@ -43,39 +43,47 @@ export default async function ServicesPage() {
           kicker="What we do"
           titleLines={["Everything", "under one roof"]}
           lede="Brand, web, content and performance, wired together to compound."
-          meta="12 disciplines"
+          meta="6 outcomes"
         />
 
         {/* ── Four disciplines → category pages ── */}
         <section className="bg-dark section">
           <div className="shell">
             <Reveal>
-              <Eyebrow invert>Five disciplines</Eyebrow>
+              <Eyebrow invert>Six outcomes</Eyebrow>
             </Reveal>
             <div className="grid12 mt-10 gap-5">
               {serviceCategories.map((cat, i) => (
                 <Reveal
                   key={cat.slug}
                   delay={i * 0.06}
-                  className="col-span-6 md:col-span-3"
+                  className="col-span-12 sm:col-span-6 lg:col-span-4"
                 >
                   <Link
                     href={`/services/${cat.slug}`}
-                    className="group flex h-full flex-col justify-between gap-10 border border-line-invert-2 bg-dark-2 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-orange/50"
+                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line-invert-2 bg-dark-2 transition-all duration-300 hover:-translate-y-1 hover:border-orange/50"
                   >
-                    <div className="flex items-start justify-between">
-                      <span className="mono text-on-ink-3 group-hover:text-orange">
+                    <div className="relative aspect-[16/9] overflow-hidden bg-dark-3">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`/services/${cat.slug}.webp`}
+                        alt=""
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                      />
+                      <span className="mono absolute left-4 top-4 rounded-full border border-on-ink/15 bg-dark/50 px-2.5 py-1 text-xs text-on-ink backdrop-blur-md">
                         {cat.index}
                       </span>
-                      <ArrowUpRight className="size-5 text-on-ink-3 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-orange" />
                     </div>
-                    <div>
-                      <h2 className="display text-[length:var(--text-h3)] text-on-ink">
-                        {cat.name}
-                      </h2>
+                    <div className="flex flex-1 flex-col p-6">
+                      <div className="flex items-start justify-between gap-3">
+                        <h2 className="display text-[length:var(--text-h3)] leading-tight text-on-ink transition-colors group-hover:text-orange">
+                          {cat.name}
+                        </h2>
+                        <ArrowUpRight className="mt-1 size-5 shrink-0 text-on-ink-3 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-orange" />
+                      </div>
                       <p className="mt-2 text-sm text-on-ink-2">{cat.tagline}</p>
-                      <p className="mono mt-4 text-on-ink-3">
-                        {cat.items.length} services
+                      <p className="mono mt-auto pt-4 text-on-ink-3">
+                        {cat.items.length} {cat.items.length === 1 ? "service" : "services"}
                       </p>
                     </div>
                   </Link>

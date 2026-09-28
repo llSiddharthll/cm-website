@@ -108,7 +108,7 @@ export function HorizontalShowcase({ categories }: { categories: Cat[] }) {
               href={c.href ?? `/services/${c.slug}`}
               className="group label mt-8 inline-flex items-center gap-2 text-on-ink transition-colors hover:text-orange"
             >
-              {c.href ? "Explore services" : `Explore ${c.name.toLowerCase()}`}
+              {c.href ? "Explore services" : `Explore ${c.name}`}
               <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </Link>
           </article>

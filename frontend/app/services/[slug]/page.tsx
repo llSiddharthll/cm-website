@@ -85,6 +85,18 @@ export default async function ServiceCategoryPage({
           meta={cat.tagline}
         />
 
+        {/* ── Hero image ── */}
+        <div className="shell">
+          <div className="overflow-hidden rounded-2xl border border-line-invert-2 bg-dark-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`/services/${cat.slug}.webp`}
+              alt={cat.name}
+              className="aspect-[16/9] w-full object-cover md:aspect-[2.4/1]"
+            />
+          </div>
+        </div>
+
         {/* ── What's included, the sub-services ── */}
         <section className="bg-dark section">
           <div className="shell">
