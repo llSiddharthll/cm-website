@@ -109,10 +109,9 @@ export default async function PostPage({
             </div>
 
             <h1 className="display-tight mt-8 max-w-[20ch] text-[clamp(2rem,1.2rem+2.9vw,3.5rem)] leading-[1.02] text-on-ink">
-              <RevealLines lines={[cleanTitle]} />
-              <span
-                aria-hidden
-                className="ml-[0.12em] inline-block aspect-square w-[0.34em] bg-orange align-baseline"
+              <RevealLines
+                lines={[cleanTitle]}
+                trailing={<span aria-hidden className="ml-[0.12em] inline-block aspect-square w-[0.34em] bg-orange align-baseline" />}
               />
             </h1>
 

@@ -104,10 +104,9 @@ export default async function IndustryPageView({
             <div className="mt-8 grid12 items-end gap-y-8">
               <div className="col-span-12 lg:col-span-8">
                 <h1 className="display-tight text-[length:var(--text-display)] text-on-ink">
-                  <RevealLines lines={[page.name]} />
-                  <span
-                    aria-hidden
-                    className="ml-[0.1em] inline-block aspect-square w-[0.5em] bg-orange align-baseline"
+                  <RevealLines
+                    lines={[page.name]}
+                    trailing={<span aria-hidden className="ml-[0.1em] inline-block aspect-square w-[0.5em] bg-orange align-baseline" />}
                   />
                 </h1>
                 <Reveal as="span" delay={0.12} className="mono mt-6 block text-on-ink-3">

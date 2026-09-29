@@ -43,12 +43,16 @@ export function RevealLines({
   lineClassName,
   delay = 0,
   stagger = 0.09,
+  trailing,
 }: {
   lines: string[];
   className?: string;
   lineClassName?: string;
   delay?: number;
   stagger?: number;
+  /** Inline element after the last line (e.g. the orange square). Rendered
+   *  inside the line so it sits on the baseline instead of wrapping below. */
+  trailing?: React.ReactNode;
 }) {
   // Observe the untransformed container, the child spans start translated
   // out of their clip box, so observing them directly is unreliable.
@@ -71,6 +75,7 @@ export function RevealLines({
             }}
           >
             {line}
+            {i === lines.length - 1 && trailing}
           </motion.span>
         </span>
       ))}

@@ -92,10 +92,9 @@ export default async function CasePage({
             </div>
 
             <h1 className="display-tight mt-8 text-[length:var(--text-display)] text-on-ink">
-              <RevealLines lines={[c.title]} />
-              <span
-                aria-hidden
-                className="ml-[0.1em] inline-block aspect-square w-[0.5em] bg-orange align-baseline"
+              <RevealLines
+                lines={[c.title]}
+                trailing={<span aria-hidden className="ml-[0.1em] inline-block aspect-square w-[0.5em] bg-orange align-baseline" />}
               />
             </h1>
 

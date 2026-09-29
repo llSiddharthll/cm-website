@@ -103,10 +103,9 @@ export default async function LocationPageView({
                   {page.region}
                 </span>
                 <h1 className="display-tight mt-4 text-[length:var(--text-display)] text-on-ink">
-                  <RevealLines lines={[page.city]} />
-                  <span
-                    aria-hidden
-                    className="ml-[0.1em] inline-block aspect-square w-[0.5em] bg-orange align-baseline"
+                  <RevealLines
+                    lines={[page.city]}
+                    trailing={<span aria-hidden className="ml-[0.1em] inline-block aspect-square w-[0.5em] bg-orange align-baseline" />}
                   />
                 </h1>
               </div>

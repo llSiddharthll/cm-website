@@ -261,6 +261,15 @@ export const getBenefits = () => nameList("benefits", BENEFITS);
 
 /* ───────────── Service pages (per sub-service internal pages) ───────────── */
 
+export type ServiceChapter = {
+  kicker?: string;
+  title: string;
+  body?: string[];
+  points?: string[];
+  image?: string;
+  alt?: string;
+};
+
 export type ServicePage = {
   category: string;
   slug: string;
@@ -268,7 +277,12 @@ export type ServicePage = {
   tagline?: string;
   intro?: string;
   cover?: string;
+  heroImage?: string;
   overview?: string[];
+  stats?: { value: string; label: string }[];
+  signals?: { title: string; desc: string }[];
+  chapters?: ServiceChapter[];
+  quote?: string;
   deliverables?: string[];
   highlights?: { title: string; desc: string }[];
   process?: { step: string; title: string; body: string }[];

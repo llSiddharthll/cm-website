@@ -128,10 +128,9 @@ export default async function PseoPageRoute({
                   </Eyebrow>
                 </Reveal>
                 <h1 className="display-tight mt-7 max-w-[16ch] text-[length:var(--text-h1)] leading-[0.98] text-on-ink">
-                  <RevealLines lines={[title]} />
-                  <span
-                    aria-hidden
-                    className="ml-[0.1em] inline-block aspect-square w-[0.4em] bg-orange align-baseline"
+                  <RevealLines
+                    lines={[title]}
+                    trailing={<span aria-hidden className="ml-[0.1em] inline-block aspect-square w-[0.4em] bg-orange align-baseline" />}
                   />
                 </h1>
                 <Reveal
