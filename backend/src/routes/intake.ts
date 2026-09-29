@@ -16,6 +16,31 @@ import {
 
 export const intakeRouter = Router();
 
+/**
+ * Relay a website contact submission into the Sanctum CRM (creates a lead there
+ * and notifies the team). Best-effort and fire-and-forget, a CRM hiccup must
+ * never fail the website form. No-ops when the env vars are unset.
+ */
+function relayToSanctum(input: Record<string, unknown>): void {
+  const url = process.env.SANCTUM_INTAKE_URL;
+  const key = process.env.SANCTUM_INTAKE_SECRET;
+  if (!url || !key) return;
+  fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "X-Intake-Key": key },
+    body: JSON.stringify({
+      name: input.name,
+      email: input.email,
+      phone: input.phone,
+      company: input.company,
+      budget: input.budget,
+      service: input.service,
+      message: input.message,
+      source: (input.source as string) || "website-contact",
+    }),
+  }).catch(() => {});
+}
+
 /* ── Public CV upload, applicants upload a résumé in one click; we store it in
    the studio's OWN Google Drive (owner-authorized) and return a shareable link. ── */
 const cvUpload = multer({
@@ -96,6 +121,7 @@ intakeRouter.post(
       return res.status(400).json({ error: "Captcha verification failed" });
     const col = getCollection("leads")!;
     const entry = await createEntry(col, { ...input, status: "new" });
+    relayToSanctum(input); // push the lead into Sanctum CRM (best-effort)
     res.status(201).json({ ok: true, id: entry._id });
   }),
 );
