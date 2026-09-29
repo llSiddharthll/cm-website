@@ -82,7 +82,19 @@ export function Header({ dark = true }: { dark?: boolean }) {
     closeTimer.current = window.setTimeout(() => setServices(false), 120);
   };
 
-  const solid = scrolled || services;
+  // Solid whenever something sits beneath the bar, so content never shows through.
+  const solid = scrolled || services || open;
+
+  // Lock the page behind the mobile menu; the menu scrolls on its own.
+  useEffect(() => {
+    if (!open) return;
+    const html = document.documentElement;
+    const prev = html.style.overflow;
+    html.style.overflow = "hidden";
+    return () => {
+      html.style.overflow = prev;
+    };
+  }, [open]);
 
   return (
     <>
@@ -254,8 +266,11 @@ export function Header({ dark = true }: { dark?: boolean }) {
       <AnimatePresence>
         {open && (
           <motion.div
+            // Starts below the header so items never scroll under the logo.
+            // data-lenis-prevent hands wheel/touch scrolling back to this panel.
+            data-lenis-prevent
             className={cn(
-              "fixed inset-0 z-40 flex flex-col justify-center overflow-y-auto px-[var(--gutter)] py-24 md:hidden",
+              "fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto overscroll-contain md:hidden",
               dark ? "bg-dark" : "bg-paper",
             )}
             initial={reduce ? { opacity: 0 } : { clipPath: "inset(0 0 100% 0)" }}
@@ -263,6 +278,8 @@ export function Header({ dark = true }: { dark?: boolean }) {
             exit={reduce ? { opacity: 0 } : { clipPath: "inset(0 0 100% 0)" }}
             transition={{ duration: reduce ? 0.2 : 0.5, ease: EASE.inOutQuart }}
           >
+            {/* min-h-full + justify-center: centred when short, scrolls from the top when long */}
+            <div className="flex min-h-full flex-col justify-center px-[var(--gutter)] py-10">
             <nav className="flex flex-col">
               {NAV.map((item, i) => {
                 const isServices = item.label === "Services";
@@ -298,23 +315,30 @@ export function Header({ dark = true }: { dark?: boolean }) {
                       )}
                     </div>
                     {isServices && mobileServices && (
-                      <ul className="mb-5 ml-9 space-y-4">
+                      <ul className="mb-5 ml-9 space-y-3">
                         {categories.map((cat) => (
                           <li key={cat.slug}>
                             <Link
                               href={`/services/${cat.slug}`}
                               onClick={() => setOpen(false)}
-                              className="label text-on-ink transition-colors hover:text-orange"
+                              className={cn(
+                                "label flex items-center justify-between py-2.5 transition-colors hover:text-orange",
+                                dark ? "text-on-ink" : "text-ink",
+                              )}
                             >
                               {cat.name}
+                              <ArrowUpRight className="size-3.5 text-orange" />
                             </Link>
-                            <ul className="mt-2 space-y-1.5 border-l border-line-invert pl-3">
+                            <ul className={cn("border-l pl-3", dark ? "border-line-invert" : "border-line")}>
                               {cat.items.map((it) => (
                                 <li key={it.slug}>
                                   <Link
                                     href={`/services/${cat.slug}/${it.slug}`}
                                     onClick={() => setOpen(false)}
-                                    className="text-sm text-on-ink-2 transition-colors hover:text-orange"
+                                    className={cn(
+                                      "block py-2.5 text-[15px] transition-colors hover:text-orange",
+                                      dark ? "text-on-ink-2" : "text-ink-2",
+                                    )}
                                   >
                                     {it.name}
                                   </Link>
@@ -332,6 +356,7 @@ export function Header({ dark = true }: { dark?: boolean }) {
             <div className={cn("mono mt-10 flex flex-col gap-1", dark ? "text-on-ink-3" : "text-ink-3")}>
               <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
               <a href={`tel:${SITE.phoneHref}`}>{SITE.phone}</a>
+            </div>
             </div>
           </motion.div>
         )}
