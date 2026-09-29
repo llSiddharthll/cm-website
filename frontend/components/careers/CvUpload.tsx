@@ -8,7 +8,7 @@ import { Loader2, UploadCloud, Check, FileText, X } from "lucide-react";
  * it in the studio's own Google Drive (owner-authorized) and returns a
  * shareable link. No Google sign-in for the applicant, a single click.
  */
-const API = "https://34-172-180-194.nip.io".replace(/\/$/, "");
+const API = (process.env.NEXT_PUBLIC_API_URL || "https://cms.thecreativemonk.in").replace(/\/$/, "");
 const MAX_BYTES = 10 * 1024 * 1024;
 const ACCEPT = ".pdf,.doc,.docx";
 const OK_TYPES = new Set([

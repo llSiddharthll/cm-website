@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
 
-const API = "https://34-172-180-194.nip.io".replace(/\/$/, "");
+const API = (process.env.NEXT_PUBLIC_API_URL || "https://cms.thecreativemonk.in").replace(/\/$/, "");
 
 export function NewsletterForm() {
   const [email, setEmail] = useState("");

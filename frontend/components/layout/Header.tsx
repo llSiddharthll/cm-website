@@ -20,7 +20,7 @@ import { BookingButton } from "@/components/booking/BookingButton";
 import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
 
-const API = "https://34-172-180-194.nip.io".replace(/\/$/, "");
+const API = (process.env.NEXT_PUBLIC_API_URL || "https://cms.thecreativemonk.in").replace(/\/$/, "");
 
 export function Header({ dark = true }: { dark?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
