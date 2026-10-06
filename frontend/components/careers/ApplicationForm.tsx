@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Check, Loader2 } from "lucide-react";
 import { Magnetic } from "@/components/fx/Magnetic";
 import { Turnstile, turnstileEnabled } from "@/components/ui/Turnstile";
@@ -15,14 +15,24 @@ const OPEN = "Open application";
 
 type RoleOption = { slug?: string; title: string };
 
+export type ApplyStatus = "idle" | "loading" | "done" | "error";
+
 export function ApplicationForm({
   roles = [],
   defaultRole = "",
+  formId,
+  hideSubmit = false,
+  onStatusChange,
 }: {
   roles?: RoleOption[];
   defaultRole?: string;
+  /** Lets a button elsewhere (e.g. a dialog footer) submit via form={formId}. */
+  formId?: string;
+  /** Omit the built-in submit button when the host renders its own. */
+  hideSubmit?: boolean;
+  onStatusChange?: (status: ApplyStatus) => void;
 }) {
-  const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
+  const [status, setStatus] = useState<ApplyStatus>("idle");
   const [error, setError] = useState("");
   const [token, setToken] = useState("");
 
@@ -32,6 +42,10 @@ export function ApplicationForm({
   );
   const [role, setRole] = useState(matched?.title || OPEN);
   const [resume, setResume] = useState("");
+
+  useEffect(() => {
+    onStatusChange?.(status);
+  }, [status, onStatusChange]);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -120,7 +134,7 @@ export function ApplicationForm({
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <form id={formId} onSubmit={onSubmit} className="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <div className="sm:col-span-2">
         <label htmlFor="af-role" className={labelCls}>
           Role you&rsquo;re applying for
@@ -200,6 +214,7 @@ export function ApplicationForm({
       </div>
       <Turnstile onVerify={setToken} action="careers-apply" className="sm:col-span-2" />
       <div className="flex items-center gap-4 sm:col-span-2">
+        {!hideSubmit && (
         <Magnetic>
           <button
             type="submit"
@@ -211,6 +226,7 @@ export function ApplicationForm({
             {status === "loading" ? "Sending…" : "Submit application"}
           </button>
         </Magnetic>
+        )}
         {status === "error" && (
           <span role="alert" className="mono text-sm text-red-400">
             {error}

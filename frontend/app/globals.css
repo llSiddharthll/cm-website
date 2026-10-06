@@ -426,3 +426,39 @@ html.lenis body {
     background: var(--color-orange);
   }
 }
+
+/* Thin orange scrollbar on a transparent track, for in-page scroll panels
+   (dialogs, the mobile menu). Firefox/Chromium use scrollbar-color; Safari
+   reads the ::-webkit-scrollbar rules. */
+.scrollbar-orange {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-orange) transparent;
+}
+.scrollbar-orange::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-orange::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-orange::-webkit-scrollbar-thumb {
+  background: var(--color-orange);
+  border-radius: 999px;
+}
+
+/* Prose sized for a dialog rather than a full page. */
+.cm-prose.cm-prose-compact {
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+.cm-prose.cm-prose-compact > p:first-of-type {
+  font-size: 1.06rem;
+}
+.cm-prose.cm-prose-compact h2 {
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem);
+  margin-top: 2em;
+}
+.cm-prose.cm-prose-compact h3 {
+  font-size: 1.1rem;
+  margin-top: 1.8em;
+}

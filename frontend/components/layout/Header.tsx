@@ -270,7 +270,7 @@ export function Header({ dark = true }: { dark?: boolean }) {
             // data-lenis-prevent hands wheel/touch scrolling back to this panel.
             data-lenis-prevent
             className={cn(
-              "fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto overscroll-contain md:hidden",
+              "scrollbar-orange fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto overscroll-contain md:hidden",
               dark ? "bg-dark" : "bg-paper",
             )}
             initial={reduce ? { opacity: 0 } : { clipPath: "inset(0 0 100% 0)" }}
