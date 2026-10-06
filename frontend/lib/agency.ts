@@ -358,6 +358,8 @@ export type ServiceCategory = {
   tagline: string;
   intro: string;
   items: ServiceItem[];
+  /** SEO heading, e.g. "Branding & Design Services in India". Falls back to lib/service-seo. */
+  headline?: string;
 };
 
 export const SERVICE_CATEGORIES: ServiceCategory[] = [
@@ -860,6 +862,14 @@ export type OpenRole = {
   description?: string;
   applyUrl?: string;
   image?: string;
+  /** Google Jobs fields (see jobPostingSchema). */
+  workplace?: "On-site" | "Hybrid" | "Remote";
+  salaryMin?: number;
+  salaryMax?: number;
+  salaryPeriod?: "Month" | "Year" | "Hour";
+  datePosted?: string;
+  validThrough?: string;
+  _createdAt?: string;
 };
 
 export const OPEN_ROLES: OpenRole[] = [

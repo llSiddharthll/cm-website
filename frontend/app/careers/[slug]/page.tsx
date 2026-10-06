@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Briefcase, Clock, MapPin, Wallet } from "lucide-react";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, breadcrumbSchema, jobPostingSchema } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { getRoles } from "@/lib/cms";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
@@ -61,36 +62,19 @@ export default async function RolePage({
     role.salary && { icon: Wallet, value: role.salary },
   ].filter(Boolean) as { icon: typeof Briefcase; value: string }[];
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    title: role.title,
-    description: role.description || role.summary || "",
-    employmentType: (role.type || "Full-time").toUpperCase().replace(/-/g, "_"),
-    hiringOrganization: {
-      "@type": "Organization",
-      name: "Creative Monk",
-      sameAs: "https://thecreativemonk.in",
-    },
-    jobLocation: {
-      "@type": "Place",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: role.location || "Zirakpur",
-        addressRegion: "Punjab",
-        addressCountry: "IN",
-      },
-    },
-    directApply: true,
-  };
-
   return (
     <>
       <span id="top" className="absolute top-0" aria-hidden />
       <Header dark />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      <JsonLd
+        data={[
+          jobPostingSchema(role),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Careers", path: "/careers" },
+            { name: role.title, path: `/careers/${slug}` },
+          ]),
+        ]}
       />
       <main className="bg-dark text-on-ink">
         {/* ── Hero ── */}

@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUp } from "lucide-react";
+import { ArrowRight, ArrowUp, Plus } from "lucide-react";
 import { getSite, getFooterGroups } from "@/lib/cms";
-import { PSEO_SERVICES, PSEO_PLACES, PSEO_INDUSTRIES } from "@/lib/pseo";
+import { PSEO_SERVICES, PSEO_PLACES, PSEO_INDUSTRIES, pseoLabel } from "@/lib/pseo";
 import { Logo } from "@/components/layout/Logo";
 import { Magnetic } from "@/components/fx/Magnetic";
 import { NewsletterForm } from "./NewsletterForm";
@@ -12,6 +12,52 @@ const YEAR = 2026;
 const FOOTER_SVCS = ["digital-marketing", "seo", "google-ads", "social-media-marketing", "web-development", "branding"]
   .map((slug) => PSEO_SERVICES.find((s) => s.slug === slug)!)
   .filter(Boolean);
+
+/**
+ * A titled list of collapsible rows (one per city or industry). Native
+ * <details> keeps it JS-free, and the links stay in the HTML for crawlers.
+ */
+function DirectoryGroup({
+  title,
+  rows,
+}: {
+  title: string;
+  rows: { key: string; name: string; links: { href: string; label: string }[] }[];
+}) {
+  return (
+    <div>
+      <span className="label mb-4 block text-on-ink-3">{title}</span>
+      <div className="border-t border-line-invert">
+        {rows.map((row) => (
+          <details key={row.key} className="group border-b border-line-invert">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-3.5 transition-colors hover:text-orange [&::-webkit-details-marker]:hidden">
+              <span className="text-on-ink-2 transition-colors group-open:text-on-ink">{row.name}</span>
+              <span className="flex items-center gap-3">
+                <span className="mono text-on-ink-3">{row.links.length}</span>
+                <Plus
+                  aria-hidden
+                  className="size-4 text-orange transition-transform duration-300 group-open:rotate-45"
+                />
+              </span>
+            </summary>
+            <ul className="grid gap-x-6 gap-y-1 pb-5 sm:grid-cols-2">
+              {row.links.map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="block py-1.5 text-sm text-on-ink-3 transition-colors hover:text-orange"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </details>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 /**
  * Site footer.
@@ -127,52 +173,30 @@ export async function Footer({ hideCta = false }: { hideCta?: boolean } = {}) {
           ))}
         </div>
 
-        {/* ── Services by city (full width) ── */}
-        <div className="border-t border-line-invert py-[clamp(2.5rem,4vw,3.5rem)]">
-          <span className="label block text-on-ink-3">Services by city</span>
-          <div className="mt-7 grid grid-cols-2 gap-x-8 gap-y-9 sm:grid-cols-4">
-            {PSEO_PLACES.map((place) => (
-              <div key={place.slug}>
-                <span className="mono mb-4 block text-on-ink">{place.name}</span>
-                <ul className="space-y-2.5">
-                  {FOOTER_SVCS.map((s) => (
-                    <li key={s.slug}>
-                      <Link
-                        href={`/${s.slug}-in-${place.slug}`}
-                        className="text-sm text-on-ink-3 transition-colors hover:text-orange"
-                      >
-                        {s.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* ── Services by industry (full width) ── */}
-        <div className="border-t border-line-invert py-[clamp(2.5rem,4vw,3.5rem)]">
-          <span className="label block text-on-ink-3">Services by industry</span>
-          <div className="mt-7 grid grid-cols-2 gap-x-8 gap-y-9 sm:grid-cols-3 lg:grid-cols-6">
-            {PSEO_INDUSTRIES.map((ind) => (
-              <div key={ind.slug}>
-                <span className="mono mb-4 block text-on-ink">{ind.name}</span>
-                <ul className="space-y-2.5">
-                  {FOOTER_SVCS.map((s) => (
-                    <li key={s.slug}>
-                      <Link
-                        href={`/${s.slug}-for-${ind.slug}`}
-                        className="text-sm text-on-ink-3 transition-colors hover:text-orange"
-                      >
-                        {s.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+        {/* ── Service directory: by city and by industry, each row collapsible ── */}
+        <div className="grid gap-x-12 gap-y-10 border-t border-line-invert py-[clamp(2.5rem,4vw,3.5rem)] md:grid-cols-2">
+          <DirectoryGroup
+            title="Services by city"
+            rows={PSEO_PLACES.map((place) => ({
+              key: place.slug,
+              name: place.name,
+              links: FOOTER_SVCS.map((s) => ({
+                href: `/${s.slug}-in-${place.slug}`,
+                label: pseoLabel(s, { kind: "location", place }),
+              })),
+            }))}
+          />
+          <DirectoryGroup
+            title="Services by industry"
+            rows={PSEO_INDUSTRIES.map((industry) => ({
+              key: industry.slug,
+              name: industry.name,
+              links: FOOTER_SVCS.map((s) => ({
+                href: `/${s.slug}-for-${industry.slug}`,
+                label: pseoLabel(s, { kind: "industry", industry }),
+              })),
+            }))}
+          />
         </div>
       </div>
 

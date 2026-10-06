@@ -9,6 +9,9 @@ export type PseoService = {
   slug: string;
   name: string; // "Digital Marketing"
   short: string; // "digital marketing" (lowercase, mid-sentence)
+  provider: string; // "Digital Marketing Agency", the keyword-led heading noun
+  providerShort: string; // "digital marketing agency" (mid-sentence)
+  article: "a" | "an"; // for providerShort: "an SEO company"
   blurb: string; // one line
   deliverables: string[];
   outcomes: string[]; // what the client walks away with
@@ -34,6 +37,9 @@ export const PSEO_SERVICES: PseoService[] = [
     slug: "digital-marketing",
     name: "Digital Marketing",
     short: "digital marketing",
+    provider: "Digital Marketing Agency",
+    providerShort: "digital marketing agency",
+    article: "a",
     blurb: "A full-funnel growth engine, run by one in-house team.",
     deliverables: [
       "Channel strategy mapped to your funnel and margins",
@@ -52,6 +58,9 @@ export const PSEO_SERVICES: PseoService[] = [
     slug: "seo",
     name: "SEO",
     short: "SEO",
+    provider: "SEO Company",
+    providerShort: "SEO company",
+    article: "an",
     blurb: "Compounding organic visibility, technical to content.",
     deliverables: [
       "Technical audit and Core Web Vitals fixes",
@@ -70,6 +79,9 @@ export const PSEO_SERVICES: PseoService[] = [
     slug: "google-ads",
     name: "Google Ads",
     short: "Google Ads",
+    provider: "Google Ads Agency",
+    providerShort: "Google Ads agency",
+    article: "a",
     blurb: "Search and shopping that buys profit, not clicks.",
     deliverables: [
       "Account structure built around your economics",
@@ -88,6 +100,9 @@ export const PSEO_SERVICES: PseoService[] = [
     slug: "meta-ads",
     name: "Meta Ads",
     short: "Meta Ads",
+    provider: "Meta Ads Agency",
+    providerShort: "Meta Ads agency",
+    article: "a",
     blurb: "Feed-native creative that fills the top of the funnel.",
     deliverables: [
       "Full-funnel Meta and Instagram ad strategy",
@@ -106,6 +121,9 @@ export const PSEO_SERVICES: PseoService[] = [
     slug: "social-media-marketing",
     name: "Social Media Marketing",
     short: "social media marketing",
+    provider: "Social Media Marketing Agency",
+    providerShort: "social media marketing agency",
+    article: "a",
     blurb: "An always-on presence that compounds audience.",
     deliverables: [
       "Monthly content calendar and strategy",
@@ -124,6 +142,9 @@ export const PSEO_SERVICES: PseoService[] = [
     slug: "web-development",
     name: "Web Development",
     short: "web development",
+    provider: "Web Development Company",
+    providerShort: "web development company",
+    article: "a",
     blurb: "Fast, accessible, conversion-shaped sites and stores.",
     deliverables: [
       "Design and build on a modern, fast stack",
@@ -142,6 +163,9 @@ export const PSEO_SERVICES: PseoService[] = [
     slug: "branding",
     name: "Branding",
     short: "branding",
+    provider: "Branding Agency",
+    providerShort: "branding agency",
+    article: "a",
     blurb: "Identity systems that turn trust into sales.",
     deliverables: [
       "Brand strategy and positioning",
@@ -160,6 +184,9 @@ export const PSEO_SERVICES: PseoService[] = [
     slug: "content-marketing",
     name: "Content Marketing",
     short: "content marketing",
+    provider: "Content Marketing Agency",
+    providerShort: "content marketing agency",
+    article: "a",
     blurb: "Words built once into a system, reused everywhere.",
     deliverables: [
       "Content strategy mapped to search and buyer intent",
@@ -291,23 +318,31 @@ export const heroFor = (service: PseoService) => `/pseo/${service.slug}.webp`;
 
 /* ── Composed, human copy (no em-dashes) ── */
 
-export function pseoTitle(page: PseoPage): string {
-  return page.kind === "location"
-    ? `${page.service.name} in ${page.place.name}`
-    : `${page.service.name} for ${page.industry.name}`;
+/** Keyword-led label, e.g. "SEO Company in Chandigarh", "Digital Marketing Agency for Real Estate". */
+export function pseoLabel(
+  service: PseoService,
+  where: { kind: "location"; place: PseoPlace } | { kind: "industry"; industry: PseoIndustry },
+): string {
+  return where.kind === "location"
+    ? `${service.provider} in ${where.place.name}`
+    : `${service.provider} for ${where.industry.name}`;
 }
 
+export function pseoTitle(page: PseoPage): string {
+  return pseoLabel(page.service, page);
+}
+
+/** The layout's title template appends the brand, so this must not. */
 export function pseoMetaTitle(page: PseoPage): string {
-  return page.kind === "location"
-    ? `${page.service.name} Company in ${page.place.name} | Creative Monk`
-    : `${page.service.name} for ${page.industry.name} | Creative Monk`;
+  return pseoTitle(page);
 }
 
 export function pseoLede(page: PseoPage): string {
+  const s = page.service;
   if (page.kind === "location") {
-    return `Creative Monk is a ${page.service.short} team working with ambitious brands across ${page.place.name} and ${page.place.region}. ${page.service.blurb} Everything in-house, engineered to compound into growth you own.`;
+    return `Creative Monk is ${s.article} ${s.providerShort} working with ambitious brands across ${page.place.name} and ${page.place.region}. ${s.blurb} Everything in-house, engineered to compound into growth you own.`;
   }
-  return `We run ${page.service.short} for ${page.industry.noun} that want ${page.industry.angle}. ${page.service.blurb} Built by one in-house team, with no hand-offs.`;
+  return `Creative Monk is ${s.article} ${s.providerShort} for ${page.industry.noun}, built around ${page.industry.angle}. ${s.blurb} One in-house team, with no hand-offs.`;
 }
 
 export function pseoOverview(page: PseoPage): string[] {

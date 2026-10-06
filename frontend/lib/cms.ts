@@ -278,6 +278,8 @@ export type ServicePage = {
   intro?: string;
   cover?: string;
   heroImage?: string;
+  /** SEO heading, e.g. "SEO Company in India". Falls back to lib/service-seo. */
+  headline?: string;
   overview?: string[];
   stats?: { value: string; label: string }[];
   signals?: { title: string; desc: string }[];

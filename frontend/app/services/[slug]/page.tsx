@@ -11,6 +11,7 @@ import {
   getSite,
 } from "@/lib/cms";
 import { buildMetadata, breadcrumbSchema, serviceSchema } from "@/lib/seo";
+import { categoryHeadline } from "@/lib/service-seo";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { ContactForm } from "@/components/agency/ContactForm";
@@ -34,9 +35,10 @@ export async function generateMetadata({
   const { slug } = await params;
   const cat = await getServiceCategory(slug);
   if (!cat) return { title: "Services" };
+  const headline = categoryHeadline(cat);
   return buildMetadata({
-    title: `${cat.name}, Services`,
-    description: cat.intro,
+    title: headline,
+    description: `${headline}. ${cat.intro}`,
     path: `/services/${cat.slug}`,
   });
 }
@@ -57,13 +59,15 @@ export default async function ServiceCategoryPage({
   ]);
   if (!cat) notFound();
   const others = categories.filter((c) => c.slug !== cat.slug);
+  const headline = categoryHeadline(cat);
 
   return (
     <>
       <JsonLd
         data={[
           serviceSchema({
-            name: cat.name,
+            name: headline,
+            serviceType: cat.name,
             description: cat.intro,
             path: `/services/${cat.slug}`,
           }),
@@ -79,7 +83,7 @@ export default async function ServiceCategoryPage({
       <main className="bg-dark text-on-ink">
         <PageHero
           index={`/ ${cat.index}`}
-          kicker="Services"
+          kicker={headline}
           titleLines={[cat.name]}
           lede={cat.intro}
           meta={cat.tagline}

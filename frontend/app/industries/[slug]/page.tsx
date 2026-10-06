@@ -41,7 +41,7 @@ export async function generateMetadata({
   const page = await getIndustryPage(slug);
   if (!page) return { title: "Industries" };
   return buildMetadata({
-    title: `${page.name}, Creative & Growth Studio`,
+    title: `${page.name} Marketing Agency`,
     description: page.intro,
     path: `/industries/${page.slug}`,
   });
@@ -70,7 +70,8 @@ export default async function IndustryPageView({
       <JsonLd
         data={[
           serviceSchema({
-            name: `${page.name} Marketing & Growth`,
+            name: `${page.name} Marketing Agency`,
+            serviceType: "Digital Marketing",
             description: page.intro,
             path: `/industries/${page.slug}`,
           }),
@@ -103,9 +104,9 @@ export default async function IndustryPageView({
 
             <div className="mt-8 grid12 items-end gap-y-8">
               <div className="col-span-12 lg:col-span-8">
-                <h1 className="display-tight text-[length:var(--text-display)] text-on-ink">
+                <h1 className="display-tight text-[clamp(2.5rem,1.1rem+4.2vw,5.25rem)] leading-[0.98] text-on-ink">
                   <RevealLines
-                    lines={[page.name]}
+                    lines={[page.name, "Marketing Agency"]}
                     trailing={<span aria-hidden className="ml-[0.1em] inline-block aspect-square w-[0.5em] bg-orange align-baseline" />}
                   />
                 </h1>

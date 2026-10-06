@@ -7,6 +7,7 @@ import {
   getPseoPage,
   heroFor,
   pseoTitle,
+  pseoLabel,
   pseoMetaTitle,
   pseoLede,
   pseoOverview,
@@ -66,17 +67,21 @@ function related(page: PseoPage) {
   const svc = page.service.slug;
   const links: { href: string; label: string }[] = [];
   if (page.kind === "location") {
-    const { slug: p, name: pn } = page.place;
+    const p = page.place.slug;
     for (const s of PSEO_SERVICES)
-      if (s.slug !== svc) links.push({ href: `/${s.slug}-in-${p}`, label: `${s.name} in ${pn}` });
+      if (s.slug !== svc)
+        links.push({ href: `/${s.slug}-in-${p}`, label: pseoLabel(s, { kind: "location", place: page.place }) });
     for (const pl of PSEO_PLACES)
-      if (pl.slug !== p) links.push({ href: `/${svc}-in-${pl.slug}`, label: `${page.service.name} in ${pl.name}` });
+      if (pl.slug !== p)
+        links.push({ href: `/${svc}-in-${pl.slug}`, label: pseoLabel(page.service, { kind: "location", place: pl }) });
   } else {
-    const { slug: i, name: inm } = page.industry;
+    const i = page.industry.slug;
     for (const s of PSEO_SERVICES)
-      if (s.slug !== svc) links.push({ href: `/${s.slug}-for-${i}`, label: `${s.name} for ${inm}` });
+      if (s.slug !== svc)
+        links.push({ href: `/${s.slug}-for-${i}`, label: pseoLabel(s, { kind: "industry", industry: page.industry }) });
     for (const ind of PSEO_INDUSTRIES)
-      if (ind.slug !== i) links.push({ href: `/${svc}-for-${ind.slug}`, label: `${page.service.name} for ${ind.name}` });
+      if (ind.slug !== i)
+        links.push({ href: `/${svc}-for-${ind.slug}`, label: pseoLabel(page.service, { kind: "industry", industry: ind }) });
   }
   return links;
 }
@@ -101,7 +106,7 @@ export default async function PseoPageRoute({
     <>
       <JsonLd
         data={[
-          serviceSchema({ name: title, description: lede, path: `/${slug}`, areaServed }),
+          serviceSchema({ name: title, description: lede, path: `/${slug}`, areaServed, serviceType: page.service.name }),
           faqSchema(faqs),
           breadcrumbSchema([
             { name: "Home", path: "/" },
@@ -127,7 +132,7 @@ export default async function PseoPageRoute({
                     {page.kind === "location" ? page.place.name : page.industry.name}
                   </Eyebrow>
                 </Reveal>
-                <h1 className="display-tight mt-7 max-w-[16ch] text-[length:var(--text-h1)] leading-[0.98] text-on-ink">
+                <h1 className="display-tight mt-7 max-w-[20ch] text-[clamp(2.3rem,1.1rem+3.4vw,4.25rem)] leading-[1] text-on-ink">
                   <RevealLines
                     lines={[title]}
                     trailing={<span aria-hidden className="ml-[0.1em] inline-block aspect-square w-[0.4em] bg-orange align-baseline" />}

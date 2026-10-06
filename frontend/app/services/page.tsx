@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { SERVICES_HUB_HEADLINE } from "@/lib/service-seo";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import {
@@ -17,9 +18,9 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { PageHero } from "@/components/agency/PageHero";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Services",
+  title: SERVICES_HUB_HEADLINE,
   description:
-    "Six outcomes, from getting found to getting better every month, wired together to compound into an asset you own.",
+    "Digital marketing services in India from Creative Monk: SEO, Google and Meta Ads, branding, web development and content, organised around six outcomes that compound into an asset you own.",
   path: "/services",
 });
 
@@ -40,7 +41,7 @@ export default async function ServicesPage() {
       <main className="bg-dark text-on-ink">
         <PageHero
           index="/ 02"
-          kicker="What we do"
+          kicker={SERVICES_HUB_HEADLINE}
           titleLines={["Everything", "under one roof"]}
           lede="Brand, web, content and performance, wired together to compound."
           meta="6 outcomes"

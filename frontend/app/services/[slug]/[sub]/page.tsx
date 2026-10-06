@@ -13,6 +13,7 @@ import {
   getSite,
 } from "@/lib/cms";
 import { buildMetadata, breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/seo";
+import { serviceHeadline } from "@/lib/service-seo";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { ContactForm } from "@/components/agency/ContactForm";
@@ -42,9 +43,10 @@ export async function generateMetadata({
   const { slug, sub } = await params;
   const page = await getServicePage(slug, sub);
   if (!page) return { title: "Services" };
+  const headline = serviceHeadline(page);
   return buildMetadata({
-    title: `${page.name}, Services`,
-    description: page.intro || page.tagline,
+    title: headline,
+    description: [`${headline}.`, page.tagline, page.intro].filter(Boolean).join(" "),
     path: `/services/${slug}/${sub}`,
     image: page.cover,
   });
@@ -73,6 +75,7 @@ export default async function ServicePageView({
   const overview = page.overview?.length ? page.overview : page.intro ? [page.intro] : [];
   const heroImage = page.heroImage || page.cover;
   const chapters = page.chapters ?? [];
+  const headline = serviceHeadline(page);
 
   // Only list sections that actually render.
   const nav = [
@@ -89,7 +92,8 @@ export default async function ServicePageView({
       <JsonLd
         data={[
           serviceSchema({
-            name: page.name,
+            name: headline,
+            serviceType: page.name,
             description: page.intro || page.tagline,
             path: `/services/${slug}/${sub}`,
           }),
@@ -117,9 +121,9 @@ export default async function ServicePageView({
                 <span className="text-orange">{page.name}</span>
               </nav>
 
-              <h1 className="display-tight mt-7 text-[clamp(2.75rem,1rem+5.2vw,6rem)] leading-[0.95] text-on-ink">
+              <h1 className="display-tight mt-7 text-[clamp(2.4rem,1rem+3.7vw,4.6rem)] leading-[0.98] text-on-ink">
                 <RevealLines
-                  lines={[page.name]}
+                  lines={[headline]}
                   trailing={<span aria-hidden className="ml-[0.1em] inline-block aspect-square w-[0.45em] bg-orange align-baseline" />}
                 />
               </h1>
