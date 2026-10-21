@@ -39,3 +39,6 @@ yarn-error.log*
 # agent / local config
 .claude/
 .vercel
+
+# generated at build from frontend/lib/legacy-redirects.json
+frontend/public/_redirects

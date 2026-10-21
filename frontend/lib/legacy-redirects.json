@@ -1,5 +1,80 @@
 [
   {
+    "source": "/services/packaging-design-company-in-chandigarh",
+    "destination": "/services/get-chosen/graphic-design",
+    "permanent": true
+  },
+  {
+    "source": "/wordpress-development-in-chandigarh",
+    "destination": "/web-development-in-chandigarh",
+    "permanent": true
+  },
+  {
+    "source": "/services/shopify-web-development-company-in-chandigarh",
+    "destination": "/web-development-in-chandigarh",
+    "permanent": true
+  },
+  {
+    "source": "/services/logo-designer-in-chandigarh-expert-services-the-creative-monk",
+    "destination": "/branding-in-chandigarh",
+    "permanent": true
+  },
+  {
+    "source": "/seo-company-in-mohali",
+    "destination": "/seo-in-mohali",
+    "permanent": true
+  },
+  {
+    "source": "/services/static-website-in-india",
+    "destination": "/services/get-leads/web-development",
+    "permanent": true
+  },
+  {
+    "source": "/digital-marketing-agency-in-india",
+    "destination": "/services/get-it-all/growth-system-360",
+    "permanent": true
+  },
+  {
+    "source": "/services/social-media-management-company-in-chandigarh",
+    "destination": "/social-media-marketing-in-chandigarh",
+    "permanent": true
+  },
+  {
+    "source": "/services/landing-page-design-services-in-chandigarh",
+    "destination": "/services/get-leads/web-development",
+    "permanent": true
+  },
+  {
+    "source": "/services/conversion-rate-optimization-in-chandigarh",
+    "destination": "/services/get-better/analytics-cro",
+    "permanent": true
+  },
+  {
+    "source": "/return-refund-policy",
+    "destination": "/terms",
+    "permanent": true
+  },
+  {
+    "source": "/terms-conditions",
+    "destination": "/terms",
+    "permanent": true
+  },
+  {
+    "source": "/category/:slug*",
+    "destination": "/blog",
+    "permanent": true
+  },
+  {
+    "source": "/tag/:slug*",
+    "destination": "/blog",
+    "permanent": true
+  },
+  {
+    "source": "/author/:slug*",
+    "destination": "/blog",
+    "permanent": true
+  },
+  {
     "source": "/review-is-elementor-top-wordpress-page-builder",
     "destination": "/blog/review-is-elementor-top-wordpress-page-builder",
     "permanent": true
