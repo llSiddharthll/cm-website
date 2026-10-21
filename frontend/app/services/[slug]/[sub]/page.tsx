@@ -27,6 +27,19 @@ import { Parallax } from "@/components/fx/Parallax";
 import { BookingButton } from "@/components/booking/BookingButton";
 import { SectionNav } from "@/components/services/SectionNav";
 import { cn } from "@/lib/utils";
+import { PSEO_SERVICES, PSEO_PLACES, PSEO_INDUSTRIES, pseoLabel } from "@/lib/pseo";
+
+/** Sub-service → its city/industry landing pages in lib/pseo. */
+const LOCAL_SERVICE: Record<string, string> = {
+  "get-found/seo": "seo",
+  "get-found/google-ads": "google-ads",
+  "get-found/meta-ads": "meta-ads",
+  "get-found/social-media-marketing": "social-media-marketing",
+  "get-chosen/branding": "branding",
+  "get-leads/web-development": "web-development",
+  "get-remembered/content": "content-marketing",
+  "get-it-all/growth-system-360": "digital-marketing",
+};
 
 export const revalidate = 60;
 export const dynamicParams = true;
@@ -76,6 +89,7 @@ export default async function ServicePageView({
   const heroImage = page.heroImage || page.cover;
   const chapters = page.chapters ?? [];
   const headline = serviceHeadline(page);
+  const local = PSEO_SERVICES.find((s) => s.slug === LOCAL_SERVICE[`${slug}/${sub}`]);
 
   // Only list sections that actually render.
   const nav = [
@@ -519,6 +533,45 @@ export default async function ServicePageView({
             </div>
           </section>
         ) : null}
+
+        {/* ── Local and industry versions: crawlable links from this national page ── */}
+        {local && (
+          <section className="border-t border-line-invert bg-dark py-[clamp(3rem,6vw,5rem)]">
+            <div className="shell grid12 gap-y-8">
+              <div className="col-span-12 md:col-span-4">
+                <Reveal>
+                  <Eyebrow invert>Near you</Eyebrow>
+                  <h2 className="display mt-5 text-[length:var(--text-h3)] leading-tight text-on-ink">
+                    {local.provider} in the Tricity and for your industry
+                  </h2>
+                </Reveal>
+              </div>
+              <div className="col-span-12 grid gap-8 sm:grid-cols-2 md:col-span-7 md:col-start-6">
+                {[
+                  { title: "By city", links: PSEO_PLACES.map((place) => ({ href: `/${local.slug}-in-${place.slug}`, label: pseoLabel(local, { kind: "location", place }) })) },
+                  { title: "By industry", links: PSEO_INDUSTRIES.map((industry) => ({ href: `/${local.slug}-for-${industry.slug}`, label: pseoLabel(local, { kind: "industry", industry }) })) },
+                ].map((col) => (
+                  <Reveal key={col.title}>
+                    <span className="label text-on-ink-3">{col.title}</span>
+                    <ul className="mt-4 border-t border-line-invert">
+                      {col.links.map((l) => (
+                        <li key={l.href}>
+                          <Link
+                            href={l.href}
+                            className="group flex items-center justify-between gap-3 border-b border-line-invert py-3 text-sm text-on-ink-2 transition-colors hover:text-orange"
+                          >
+                            {l.label}
+                            <ArrowUpRight className="size-3.5 shrink-0 text-on-ink-3 transition-colors group-hover:text-orange" />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* ── Related in this category ── */}
         {related.length > 0 && (
