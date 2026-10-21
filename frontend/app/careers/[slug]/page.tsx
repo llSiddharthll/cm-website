@@ -36,8 +36,12 @@ export async function generateMetadata({
   const role = await findRole(slug);
   if (!role) return buildMetadata({ title: "Role not found", path: `/careers/${slug}` });
   return buildMetadata({
-    title: `${role.title}, Careers`,
-    description: role.summary || stripHtml(role.description).slice(0, 160),
+    title: `${role.title} Job in Zirakpur, Chandigarh`,
+    description: [
+      role.summary || stripHtml(role.description),
+      `${role.type || "Full-time"} role at Creative Monk in Zirakpur, near Chandigarh${role.salary && /\d/.test(role.salary) ? `, ${role.salary}` : ""}.`,
+      "Apply online.",
+    ].join(" "),
     path: `/careers/${slug}`,
   });
 }

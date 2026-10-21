@@ -8,9 +8,9 @@ import { ContactForm } from "@/components/agency/ContactForm";
 import { getCases, getSite, getServicesGrid } from "@/lib/cms";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Work",
+  title: "Digital Marketing Case Studies & Client Results",
   description:
-    "Selected work from Creative Monk, brand, web, performance marketing and motion built for compounding growth.",
+    "Digital marketing case studies from Creative Monk: branding, websites, social media and ads for real estate, D2C, hospitality and more in Chandigarh.",
   path: "/work",
 });
 

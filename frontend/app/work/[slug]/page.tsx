@@ -4,6 +4,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { getCases, getCase, getCaseSectionsFor, getSite, getServicesGrid } from "@/lib/cms";
+import { absoluteUrl, breadcrumbSchema, buildMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { ContactForm } from "@/components/agency/ContactForm";
@@ -27,8 +29,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const c = await getCase(slug);
-  if (!c) return { title: "Work" };
-  return { title: `${c.client}, ${c.title}`, description: c.result };
+  if (!c) return buildMetadata({ title: "Case Studies", path: "/work" });
+  // Without a path the page inherited no canonical of its own; every case
+  // study must canonicalise to itself.
+  return buildMetadata({
+    title: `${c.client} Case Study: ${c.category.slice(0, 2).join(" & ") || c.title}`,
+    description: `${c.client} case study by Creative Monk, a digital marketing agency in Chandigarh. ${c.category.join(", ")}. ${c.result}`,
+    path: `/work/${c.id}`,
+    image: c.cover,
+  });
 }
 
 export default async function CasePage({
@@ -67,6 +76,26 @@ export default async function CasePage({
   return (
     <>
       <span id="top" className="absolute top-0" aria-hidden />
+      <JsonLd
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            name: `${c.client}: ${c.title}`,
+            description: c.result,
+            url: absoluteUrl(`/work/${c.id}`),
+            ...(c.cover ? { image: absoluteUrl(c.cover) } : {}),
+            ...(c.year ? { dateCreated: String(c.year) } : {}),
+            keywords: c.category.join(", "),
+            creator: { "@id": absoluteUrl("/#organization") },
+          },
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Work", path: "/work" },
+            { name: c.client, path: `/work/${c.id}` },
+          ]),
+        ]}
+      />
       <Header dark />
       <main className="bg-dark text-on-ink">
         {/* ── Case hero ── */}

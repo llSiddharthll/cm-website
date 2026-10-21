@@ -7,9 +7,9 @@ import { PageHero } from "@/components/agency/PageHero";
 import { BlogIndex } from "@/components/blog/BlogIndex";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Blog",
+  title: "Digital Marketing Blog: SEO, Ads & Social Media Guides",
   description:
-    "Guides on digital marketing, SEO, Google Ads, social media and growth, from the Creative Monk studio in Chandigarh.",
+    "Practical digital marketing guides on SEO, Google Ads, Meta Ads, social media and websites, from the Creative Monk team in Chandigarh.",
   path: "/blog",
 });
 

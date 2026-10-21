@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, studioSchema } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/agency/Footer";
 import { PageHero } from "@/components/agency/PageHero";
@@ -9,9 +10,9 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { getSite, getLocations, getServicesGrid } from "@/lib/cms";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact",
+  title: "Contact Us: Digital Marketing Agency in Zirakpur, Chandigarh",
   description:
-    "Tell us where you want to grow. We come back with a clear, honest next step, not a hard sell. Replies within one business day.",
+    "Contact Creative Monk, a digital marketing agency in Zirakpur near Chandigarh. Call +91 94634 45566, email info@thecreativemonk.in or book a free call.",
   path: "/contact",
 });
 
@@ -43,6 +44,7 @@ export default async function ContactPage() {
   return (
     <>
       <span id="top" className="absolute top-0" aria-hidden />
+      <JsonLd data={studioSchema()} />
       <Header dark />
       <main className="bg-dark text-on-ink">
         <PageHero

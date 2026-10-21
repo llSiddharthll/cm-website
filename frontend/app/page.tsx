@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import { buildMetadata, studioSchema } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Header } from "@/components/layout/Header";
 import { Hero } from "@/components/agency/Hero";
 import { Tools } from "@/components/agency/Tools";
@@ -35,6 +38,14 @@ import {
   getCultureStats,
   getFaqs,
 } from "@/lib/cms";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Digital Marketing Agency in Chandigarh | Creative Monk",
+  absoluteTitle: true,
+  description:
+    "Creative Monk is a digital marketing company in Chandigarh Tricity: SEO, Google & Meta Ads, social media, website design and branding. Free strategy call.",
+  path: "/",
+});
 
 export default async function HomePage() {
   const [
@@ -77,6 +88,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <JsonLd data={studioSchema()} />
       <span id="top" className="absolute top-0" aria-hidden />
       <Header dark />
       <main className="bg-dark">

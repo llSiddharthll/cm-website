@@ -107,7 +107,10 @@ async function singleton<T>(slug: string, fallback: T): Promise<T & Meta> {
 export type SiteData = typeof SITE;
 export const getSite = () => singleton<SiteData>("site", SITE);
 
-export type HomeHero = typeof AGENCY_HERO;
+export type HomeHero = typeof AGENCY_HERO & {
+  /** The page's H1, shown as the small line above the statement. */
+  seoHeading?: string;
+};
 export const getHomeHero = () => singleton<HomeHero>("home_hero", AGENCY_HERO);
 
 export type Story = typeof AGENCY_STORY;

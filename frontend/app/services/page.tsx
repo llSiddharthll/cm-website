@@ -68,7 +68,7 @@ export default async function ServicesPage() {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={`/services/${cat.slug}.webp`}
-                        alt=""
+                        alt={`${cat.name}: ${cat.tagline}`}
                         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                       />
                       <span className="mono absolute left-4 top-4 rounded-full border border-on-ink/15 bg-dark/50 px-2.5 py-1 text-xs text-on-ink backdrop-blur-md">

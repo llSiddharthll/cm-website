@@ -126,6 +126,7 @@ export const SCHEMA: Collection[] = [
     titleField: "accentWord",
     fields: [
       { name: "eyebrow", label: "Eyebrow", type: "text" },
+      { name: "seoHeading", label: "SEO heading (H1)", type: "text", help: "The small line above the headline, and the page's H1 for Google. Default: \"Digital marketing agency in Chandigarh · since 2017\"." },
       { name: "headline", label: "Headline lines", type: "tags", help: "Each entry is a line in the animated headline." },
       { name: "accentWord", label: "Accent word", type: "text" },
       { name: "sub", label: "Sub-headline", type: "textarea" },

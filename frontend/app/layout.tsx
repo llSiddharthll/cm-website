@@ -33,11 +33,11 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Creative Monk, Growth, with intention.",
+    default: "Digital Marketing Agency in Chandigarh | Creative Monk",
     template: "%s · Creative Monk",
   },
   description:
-    "A full-service creative & digital growth studio from Chandigarh, India. Brand, web, performance marketing and motion under one roof.",
+    "Creative Monk is a digital marketing company in Chandigarh Tricity: SEO, Google & Meta Ads, social media, website design and branding. Free strategy call.",
   keywords: [
     "digital marketing agency India",
     "creative studio Chandigarh",
@@ -46,9 +46,10 @@ export const metadata: Metadata = {
     "performance marketing",
     "Creative Monk",
   ],
-  alternates: { canonical: "/" },
+  // No site-wide canonical: a default here is inherited by every page that
+  // forgets its own, silently pointing it at the homepage. buildMetadata sets one per page.
   openGraph: {
-    title: "Creative Monk, Growth, with intention.",
+    title: "Digital Marketing Agency in Chandigarh | Creative Monk",
     description:
       "Brand, web, performance marketing and motion, engineered for compounding growth.",
     type: "website",
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Creative Monk, Growth, with intention.",
+    title: "Digital Marketing Agency in Chandigarh | Creative Monk",
     description:
       "Brand, web, performance marketing and motion, engineered for compounding growth.",
     images: ["/opengraph-image"],

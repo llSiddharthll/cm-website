@@ -11,9 +11,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Industries",
+  title: "Industries We Serve: Real Estate, Healthcare, E-commerce",
   description:
-    "Brand, web, content and performance, tuned to the way your industry actually buys, real estate, D2C, hospitality, FMCG, healthcare and SaaS.",
+    "Digital marketing for real estate, healthcare, e-commerce and D2C, hospitality, FMCG and SaaS brands, by Creative Monk in Chandigarh.",
   path: "/industries",
 });
 

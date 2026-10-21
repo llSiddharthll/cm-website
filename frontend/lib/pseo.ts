@@ -12,6 +12,11 @@ export type PseoService = {
   provider: string; // "Digital Marketing Agency", the keyword-led heading noun
   providerShort: string; // "digital marketing agency" (mid-sentence)
   article: "a" | "an"; // for providerShort: "an SEO company"
+  /** Search-title wording for city pages when it out-searches `provider`,
+   *  e.g. "PPC Company" (210/mo in Chandigarh) vs "Google Ads Agency" (~0). */
+  titleProvider?: string;
+  /** Second keyword appended to the city-page title, e.g. " | SEO Services". */
+  titleSuffix?: string;
   blurb: string; // one line
   deliverables: string[];
   outcomes: string[]; // what the client walks away with
@@ -22,6 +27,7 @@ export type PseoPlace = {
   name: string; // "Chandigarh"
   region: string; // "the Tricity"
   angle: string; // local market flavour
+  areas: string[]; // real localities, so each city page is genuinely local
 };
 
 export type PseoIndustry = {
@@ -40,6 +46,7 @@ export const PSEO_SERVICES: PseoService[] = [
     provider: "Digital Marketing Agency",
     providerShort: "digital marketing agency",
     article: "a",
+    titleProvider: "Digital Marketing Company",
     blurb: "A full-funnel growth engine, run by one in-house team.",
     deliverables: [
       "Channel strategy mapped to your funnel and margins",
@@ -61,6 +68,7 @@ export const PSEO_SERVICES: PseoService[] = [
     provider: "SEO Company",
     providerShort: "SEO company",
     article: "an",
+    titleSuffix: " | SEO Services",
     blurb: "Compounding organic visibility, technical to content.",
     deliverables: [
       "Technical audit and Core Web Vitals fixes",
@@ -82,6 +90,8 @@ export const PSEO_SERVICES: PseoService[] = [
     provider: "Google Ads Agency",
     providerShort: "Google Ads agency",
     article: "a",
+    titleProvider: "PPC Company",
+    titleSuffix: " | Google Ads Agency",
     blurb: "Search and shopping that buys profit, not clicks.",
     deliverables: [
       "Account structure built around your economics",
@@ -142,9 +152,10 @@ export const PSEO_SERVICES: PseoService[] = [
     slug: "web-development",
     name: "Web Development",
     short: "web development",
-    provider: "Web Development Company",
-    providerShort: "web development company",
+    provider: "Web Design & Development Company",
+    providerShort: "web design and development company",
     article: "a",
+    titleProvider: "Website Designing & Development Company",
     blurb: "Fast, accessible, conversion-shaped sites and stores.",
     deliverables: [
       "Design and build on a modern, fast stack",
@@ -166,6 +177,7 @@ export const PSEO_SERVICES: PseoService[] = [
     provider: "Branding Agency",
     providerShort: "branding agency",
     article: "a",
+    titleProvider: "Branding & Logo Design Agency",
     blurb: "Identity systems that turn trust into sales.",
     deliverables: [
       "Brand strategy and positioning",
@@ -210,6 +222,7 @@ export const PSEO_PLACES: PseoPlace[] = [
     region: "the Tricity",
     angle:
       "Chandigarh's market spans established retail, real estate and a fast-growing base of D2C and service brands, all competing for the same attention.",
+    areas: ["Sector 17", "Sector 22", "Sectors 34 & 35", "Sector 43", "Industrial Area Phase I & II", "Chandigarh IT Park", "Manimajra"],
   },
   {
     slug: "mohali",
@@ -217,6 +230,7 @@ export const PSEO_PLACES: PseoPlace[] = [
     region: "the Tricity",
     angle:
       "Mohali blends a booming IT and startup scene with real estate and hospitality, so buyers here research online before they ever call.",
+    areas: ["Phase 3B2", "Phase 7", "Sector 70", "Sector 82 (JLPL)", "Industrial Area Phase 8", "Aerocity", "Airport Road"],
   },
   {
     slug: "panchkula",
@@ -224,6 +238,7 @@ export const PSEO_PLACES: PseoPlace[] = [
     region: "the Tricity",
     angle:
       "Panchkula's mix of local businesses, healthcare and premium retail rewards brands that show up first and look the part.",
+    areas: ["Sector 5", "Sector 8", "Sector 11", "Sector 20", "MDC Sector 4", "Industrial Area Phase I & II", "Pinjore and Kalka"],
   },
   {
     slug: "zirakpur",
@@ -231,6 +246,7 @@ export const PSEO_PLACES: PseoPlace[] = [
     region: "the Tricity",
     angle:
       "Zirakpur is one of the fastest-growing belts in the region, with real estate, F&B and retail all fighting for local search visibility.",
+    areas: ["VIP Road", "Patiala Road", "PR-7 Airport Road", "Dhakoli", "Lohgarh", "Baltana", "Peer Muchalla"],
   },
 ];
 
@@ -332,9 +348,41 @@ export function pseoTitle(page: PseoPage): string {
   return pseoLabel(page.service, page);
 }
 
-/** The layout's title template appends the brand, so this must not. */
+/** Industry pages whose searchers phrase it differently from "<X> Agency for <Y>". */
+const INDUSTRY_TITLES: Record<string, string> = {
+  "digital-marketing-for-d2c-ecommerce": "Digital Marketing Agency for Ecommerce & D2C Brands", // 1,900/mo
+  "digital-marketing-for-healthcare": "Healthcare Digital Marketing Agency for Doctors & Clinics", // 720 + 720
+  "digital-marketing-for-hospitality": "Digital Marketing for Hotels, Restaurants & Hospitality",
+  "digital-marketing-for-saas": "SaaS Marketing Agency: Digital Marketing for Tech Companies", // 480
+};
+
+/** <title>. The layout's template appends the brand, so this must not. */
 export function pseoMetaTitle(page: PseoPage): string {
+  if (INDUSTRY_TITLES[page.slug]) return INDUSTRY_TITLES[page.slug];
+  if (page.kind === "location") {
+    const s = page.service;
+    return `${s.titleProvider ?? s.provider} in ${page.place.name}${s.titleSuffix ?? ""}`;
+  }
   return pseoTitle(page);
+}
+
+/** Meta description: keyword first, what we do, where, then a call to action.
+ *  Steps down to shorter phrasing so the CTA always fits in ~155 characters. */
+export function pseoMetaDescription(page: PseoPage): string {
+  const s = page.service;
+  const what = s.blurb.replace(/\.$/, "").toLowerCase();
+  const variants =
+    page.kind === "location"
+      ? [
+          `${s.provider} in ${page.place.name}: ${what}. Studio in Zirakpur, serving all of the Tricity. Free strategy call.`,
+          `${s.provider} in ${page.place.name}: ${what}. Free strategy call with our Zirakpur team.`,
+          `${s.provider} in ${page.place.name}: ${what}. Free strategy call.`,
+        ]
+      : [
+          `${pseoTitle(page)}: ${what}. Built for ${page.industry.noun}. Free strategy call.`,
+          `${pseoTitle(page)}: ${what}. Free strategy call.`,
+        ];
+  return variants.find((v) => v.length <= 155) ?? variants[variants.length - 1];
 }
 
 export function pseoLede(page: PseoPage): string {
@@ -384,6 +432,17 @@ export function pseoFaqs(page: PseoPage): { q: string; a: string }[] {
           ? `We are based in the Tricity and love working with ${where} brands, but our system travels. We ship work for clients across India and beyond.`
           : `No. We work across categories, and the fundamentals of ${s.short} for ${where} apply whether you are local or national.`,
     },
+    ...(page.kind === "location"
+      ? [
+          {
+            q: `Can we meet your team in person in ${where}?`,
+            a:
+              page.place.slug === "zirakpur"
+                ? `Yes. Our studio is in Zirakpur itself, at Sushma Infinium, so strategy sessions can happen at our office or yours, and shoots are planned on location anywhere from ${page.place.areas[0]} to ${page.place.areas[page.place.areas.length - 1]}.`
+                : `Yes. Our studio is at Sushma Infinium in Zirakpur, a short drive from ${page.place.areas[0]} and the rest of ${where}. We hold strategy sessions at our office or yours, and plan shoots on location across ${page.place.region}.`,
+          },
+        ]
+      : []),
     {
       q: `What makes Creative Monk different?`,
       a: `Everything is in-house, brand, web, content and performance. Nothing gets lost between agencies, and your spend builds an asset instead of renting attention.`,

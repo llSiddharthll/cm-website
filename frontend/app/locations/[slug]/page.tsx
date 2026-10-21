@@ -38,7 +38,7 @@ export async function generateMetadata({
   const page = await getLocationPage(slug);
   if (!page) return { title: "Locations" };
   return buildMetadata({
-    title: `Creative Agency in ${page.city}`,
+    title: `Advertising & Marketing Agency in ${page.city}`,
     description: page.intro,
     path: `/locations/${page.slug}`,
   });
@@ -104,7 +104,7 @@ export default async function LocationPageView({
                 </span>
                 <h1 className="display-tight mt-4 text-[clamp(2.5rem,1.1rem+4.2vw,5.25rem)] leading-[0.98] text-on-ink">
                   <RevealLines
-                    lines={["Creative Agency", `in ${page.city}`]}
+                    lines={["Advertising & Marketing", `Agency in ${page.city}`]}
                     trailing={<span aria-hidden className="ml-[0.1em] inline-block aspect-square w-[0.5em] bg-orange align-baseline" />}
                   />
                 </h1>

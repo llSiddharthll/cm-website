@@ -34,9 +34,9 @@ import { Aurora } from "@/components/fx/Aurora";
 export const revalidate = 60;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Careers",
+  title: "Digital Marketing Jobs in Chandigarh & Mohali",
   description:
-    "Join Creative Monk, a small, in-house studio in Chandigarh that values craft, ownership and the long game. Send us an application.",
+    "Digital marketing jobs at Creative Monk in Zirakpur, near Chandigarh and Mohali: design, video, content, social and media buying roles. Apply online.",
   path: "/careers",
 });
 

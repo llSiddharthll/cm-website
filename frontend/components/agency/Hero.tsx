@@ -13,7 +13,7 @@ export function Hero({
   hero = AGENCY_HERO,
   statBar = STAT_BAR,
 }: {
-  hero?: typeof AGENCY_HERO;
+  hero?: typeof AGENCY_HERO & { seoHeading?: string };
   statBar?: readonly { value: string; suffix?: string; label: string }[];
 }) {
   const reduce = useReducedMotion() ?? false;
@@ -38,10 +38,11 @@ export function Hero({
         transition={{ duration: 0.6, ease: EASE.outQuart, delay: 0.1 }}
         className="shell relative z-10 flex items-center justify-between"
       >
-        <span className="label flex items-center gap-2.5 text-on-ink-2">
-          <span className="size-2 animate-pulse rounded-full bg-orange" />
-          {hero.eyebrow}
-        </span>
+        {/* The H1 carries the search keyword; the big statement below is the brand line. */}
+        <h1 className="label flex items-center gap-2.5 text-on-ink-2">
+          <span aria-hidden className="size-2 shrink-0 animate-pulse rounded-full bg-orange" />
+          {hero.seoHeading || "Digital marketing agency in Chandigarh · since 2017"}
+        </h1>
         <span className="label hidden text-on-ink-2 sm:block">
           {SITE.city}
         </span>
@@ -49,7 +50,7 @@ export function Hero({
 
       {/* Statement + actions */}
       <div className="shell relative z-10">
-        <h1 className="display-tight text-[length:var(--text-display)] leading-[0.94] text-on-ink">
+        <p className="display-tight text-[length:var(--text-display)] leading-[0.94] text-on-ink">
           {hero.headline.map((line, i) => {
             const last = i === hero.headline.length - 1;
             return (
@@ -80,7 +81,7 @@ export function Hero({
               </span>
             );
           })}
-        </h1>
+        </p>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}

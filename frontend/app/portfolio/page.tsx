@@ -10,9 +10,9 @@ import { getPortfolio, getSite, getServicesGrid } from "@/lib/cms";
 export const revalidate = 60;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Portfolio",
+  title: "Portfolio: Branding, Website & Social Media Design",
   description:
-    "Selected creative work by Creative Monk, branding, social, packaging, print, UI and full websites across industries.",
+    "Creative Monk's portfolio of branding, logo design, social media creatives, packaging, print and websites for brands across Chandigarh and India.",
   path: "/portfolio",
 });
 

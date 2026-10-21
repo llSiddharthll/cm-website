@@ -92,7 +92,7 @@ export function BlogIndex({ posts }: { posts: Post[] }) {
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={featured.cover}
-                    alt=""
+                    alt={featured.title}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                   />
                 )}
@@ -132,7 +132,7 @@ export function BlogIndex({ posts }: { posts: Post[] }) {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={p.cover}
-                    alt=""
+                    alt={p.title}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                   />
                 </div>

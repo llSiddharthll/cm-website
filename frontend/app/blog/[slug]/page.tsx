@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { getPosts, getPost, getSite, getServicesGrid } from "@/lib/cms";
-import { buildMetadata, articleSchema, breadcrumbSchema } from "@/lib/seo";
+import { buildMetadata, articleSchema, breadcrumbSchema, postBodyHtml, postDescription, withImageAlts } from "@/lib/seo";
 import { stripHtml } from "@/lib/admin/html";
 import { Prose } from "@/components/ui/Prose";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -30,7 +30,7 @@ export async function generateMetadata({
   if (!post) return { title: "Blog" };
   return buildMetadata({
     title: post.title,
-    description: post.excerpt,
+    description: postDescription(post),
     path: `/blog/${post.slug}`,
     image: post.cover,
     type: "article",
@@ -55,9 +55,7 @@ export default async function PostPage({
   const site = await getSite();
 
   // body may arrive as rich-text HTML (new) or a paragraph array (legacy data), normalise.
-  const bodyHtml = Array.isArray(post.body)
-    ? (post.body as unknown as string[]).map((p) => `<p>${p}</p>`).join("")
-    : (post.body ?? "");
+  const bodyHtml = withImageAlts(postBodyHtml(post.body), post.title);
   const servicesGrid = await getServicesGrid();
 
   const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
@@ -226,7 +224,7 @@ export default async function PostPage({
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={p.cover}
-                            alt=""
+                            alt={p.title}
                             className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/card:scale-105"
                           />
                         </div>

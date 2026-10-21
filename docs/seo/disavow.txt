@@ -1,0 +1,75 @@
+# Disavow file for thecreativemonk.in
+# Upload at https://search.google.com/search-console/disavow-links (Domain property).
+# Built from Semrush referring domains, 2026-10-22. Only clear spam: adult/gambling sites and
+# foreign junk domains sending thousands of sitewide links at authority <= 16.
+# NOT included, review by hand (may be client sites with a 'designed by' credit):
+#   myhsim.in  (80792 links, authority 4)
+#   greatindiainteriors.com  (6952 links, authority 2)
+
+domain:funlink.site
+domain:frine.org
+domain:ces.com.mt
+domain:screensketch.app
+domain:neatdrop.com
+domain:mageserver.com.br
+domain:bestrategic.asia
+domain:pentesterdiaries.com
+domain:rajeshdaikojokes.com
+domain:happyboxlabels.com
+domain:playas.casa
+domain:ecunationedirne.com
+domain:sex-studentki.eu
+domain:sex-studentski.com
+domain:porno365.cv
+domain:xtapo.org
+domain:vodeq.com
+domain:epique.ro
+domain:ki-cafe.ca
+domain:codinser.com
+domain:akhdiar.id
+domain:tourcovers.com
+domain:workix.it
+domain:dmcarselections.co.uk
+domain:ecofarmvillagehotel.com
+domain:sdbcameroon.com
+domain:myfirstpicturebook.com
+domain:innovatesolutionseg.com
+domain:stepout2play.com
+domain:simplecrypto.io
+domain:thebacklabel.com
+domain:kofc8157.org
+domain:recipestasteful.com
+domain:kofc16202.org
+domain:pospix.com
+domain:starlightpromotion.it
+domain:storytelling.org.hk
+domain:petnews.store
+domain:accesstolondon.co.uk
+domain:caftan-fatimazahra.com
+domain:tech247.online
+domain:tmagkw.com
+domain:game247.online
+domain:study-more.com
+domain:gamedota.net
+domain:westernartpaintings.com
+domain:karlarecipes.com
+domain:kockulda.hu
+domain:vilamilreu.com
+domain:oticasmariajose.com.br
+domain:knightconnect.app
+domain:timelessmusic.online
+domain:focologistico.com.br
+domain:ekspedisidunia.click
+domain:countrymelodies.com
+domain:acasadikiko.it
+domain:tourflag.com
+domain:litoralpropiedades.com.ar
+domain:cepitashop.com
+domain:grannyeasyrecipes.com
+domain:makaweb.co.uk
+domain:cctransformation.org
+domain:tressguide.com
+domain:horsjeu.online
+domain:firstnewsa.com
+domain:mullasadradoo.ba
+domain:bangmafiaxxx.com

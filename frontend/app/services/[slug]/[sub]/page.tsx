@@ -547,7 +547,7 @@ export default async function ServicePageView({
                             <div className="relative aspect-[16/10] overflow-hidden">
                               <Image
                                 src={thumb}
-                                alt=""
+                                alt={o.name}
                                 fill
                                 sizes="(min-width: 768px) 33vw, 100vw"
                                 className="object-cover transition-transform duration-700 group-hover:scale-105"

@@ -9,6 +9,7 @@ import {
   pseoTitle,
   pseoLabel,
   pseoMetaTitle,
+  pseoMetaDescription,
   pseoLede,
   pseoOverview,
   pseoFaqs,
@@ -50,7 +51,7 @@ export async function generateMetadata({
   if (!page) return {};
   return buildMetadata({
     title: pseoMetaTitle(page),
-    description: pseoLede(page),
+    description: pseoMetaDescription(page),
     path: `/${slug}`,
     image: heroFor(page.service),
   });
@@ -180,6 +181,11 @@ export default async function PseoPageRoute({
               <Eyebrow index="01" invert>
                 Overview
               </Eyebrow>
+              <h2 className="display mt-6 text-[length:var(--text-h3)] leading-tight text-on-ink">
+                {page.kind === "location"
+                  ? `Why ${page.place.name} businesses choose Creative Monk for ${page.service.short}`
+                  : `${page.service.provider} built for ${page.industry.noun}`}
+              </h2>
             </Reveal>
             <div className="col-span-12 space-y-6 md:col-span-7 md:col-start-6">
               {overview.map((p, i) => (
@@ -190,6 +196,32 @@ export default async function PseoPageRoute({
             </div>
           </div>
         </section>
+
+        {/* ── Areas served (city pages): real localities, not a swapped place name ── */}
+        {page.kind === "location" && (
+          <section className="border-t border-line-invert bg-dark py-[clamp(3rem,6vw,5rem)]">
+            <div className="shell grid12 gap-y-6">
+              <Reveal className="col-span-12 md:col-span-5">
+                <h2 className="display text-[length:var(--text-h3)] leading-tight text-on-ink">
+                  {page.service.provider} serving all of {page.place.name}
+                </h2>
+                <p className="mt-4 max-w-md text-on-ink-2">
+                  Our studio is at Sushma Infinium in Zirakpur, close to every part of {page.place.name}, so
+                  strategy sessions and shoots happen in person whenever that helps.
+                </p>
+              </Reveal>
+              <Reveal delay={0.08} className="col-span-12 md:col-span-6 md:col-start-7">
+                <ul className="flex flex-wrap gap-2.5" aria-label={`Areas of ${page.place.name} we serve`}>
+                  {page.place.areas.map((a) => (
+                    <li key={a} className="rounded-full border border-line-invert px-4 py-2 text-sm text-on-ink-2">
+                      {a}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            </div>
+          </section>
+        )}
 
         {/* ── What's included ── */}
         <section className="bg-dark-2 section">

@@ -33,7 +33,14 @@ type BuildMeta = {
   publishedTime?: string;
   modifiedTime?: string;
   noIndex?: boolean;
+  /** Use the title as-is, without the layout's " · Creative Monk" suffix. */
+  absoluteTitle?: boolean;
 };
+
+/** Must match the title template in app/layout.tsx. */
+const BRAND_SUFFIX = " · Creative Monk";
+/** Google shows roughly 60 characters of a title before truncating. */
+const TITLE_MAX = 60;
 
 /**
  * Metadata with canonical + OpenGraph + Twitter, all consistent. Titles/
@@ -50,14 +57,22 @@ export function buildMetadata({
   publishedTime,
   modifiedTime,
   noIndex,
+  absoluteTitle,
 }: BuildMeta): Metadata {
   const url = absoluteUrl(path);
-  const cleanTitle = title ? stripHtml(title) : undefined;
+  // Imported WordPress titles sometimes end in a full stop; titles shouldn't.
+  const cleanTitle = title ? stripHtml(title).trim().replace(/[.!]+$/, "") : undefined;
+  // Drop the brand suffix when it would push the title past what Google shows,
+  // so the keyword survives instead of being cut off mid-word.
+  const pageTitle =
+    cleanTitle && (absoluteTitle || cleanTitle.length + BRAND_SUFFIX.length > TITLE_MAX)
+      ? { absolute: cleanTitle }
+      : cleanTitle;
   const desc = description ? metaDescription(description) : undefined;
   const img = absoluteUrl(image || "/opengraph-image");
 
   return {
-    ...(cleanTitle ? { title: cleanTitle } : {}),
+    ...(pageTitle ? { title: pageTitle } : {}),
     ...(desc ? { description: desc } : {}),
     alternates: { canonical: url },
     openGraph: {
@@ -206,6 +221,48 @@ export function serviceSchema(opts: {
 }
 
 /** Location landing page → a local business entity for that city. */
+/** The studio itself as a local business, for the homepage and contact page. */
+export function studioSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": `${SITE_URL}/#studio`,
+    name: SITE.name,
+    description:
+      "Digital marketing agency in Chandigarh Tricity: SEO, Google and Meta Ads, social media, website design and branding.",
+    url: SITE_URL,
+    image: `${SITE_URL}/opengraph-image`,
+    logo: `${SITE_URL}/icon.png`,
+    telephone: SITE.phoneHref,
+    email: SITE.email,
+    priceRange: "₹₹",
+    foundingDate: String(SITE.founded),
+    parentOrganization: { "@id": ORG_ID },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Office 11–12, 9th Floor, Sushma Infinium",
+      addressLocality: "Zirakpur",
+      addressRegion: "Punjab",
+      postalCode: "140603",
+      addressCountry: "IN",
+    },
+    areaServed: [
+      ...["Chandigarh", "Mohali", "Panchkula", "Zirakpur"].map((name) => ({ "@type": "City", name })),
+      { "@type": "Country", name: "India" },
+    ],
+    knowsAbout: [
+      "Digital marketing",
+      "Search engine optimisation",
+      "Google Ads",
+      "Meta Ads",
+      "Social media marketing",
+      "Website design and development",
+      "Branding",
+    ],
+    sameAs: SITE.socials.map((s) => s.href),
+  };
+}
+
 export function localBusinessSchema(opts: {
   city: string;
   region?: string;
@@ -378,4 +435,30 @@ export function jobPostingSchema(role: {
     directApply: !role.applyUrl,
     url: absoluteUrl(`/careers/${role.slug}`),
   };
+}
+
+/* ───────────── Blog helpers ───────────── */
+
+/** Body HTML for a post (rich text, or a legacy array of paragraphs). */
+export function postBodyHtml(body: unknown): string {
+  return Array.isArray(body) ? (body as string[]).map((p) => `<p>${p}</p>`).join("") : String(body ?? "");
+}
+
+/** The excerpt, or the article's opening when an imported post has none. */
+export function postDescription(post: { excerpt?: string; body?: unknown }): string {
+  return post.excerpt?.trim() || stripHtml(postBodyHtml(post.body));
+}
+
+/**
+ * Gives every in-article <img> without alt text a descriptive one. Imported
+ * WordPress posts often have none, which costs image search and accessibility.
+ */
+export function withImageAlts(html: string, title: string): string {
+  let n = 0;
+  return html.replace(/<img\b[^>]*>/gi, (tag) => {
+    if (/\balt="[^"]+"/i.test(tag)) return tag;
+    n += 1;
+    const alt = `${title.replace(/"/g, "&quot;")}${n > 1 ? `, image ${n}` : ""}`;
+    return /\balt=""/i.test(tag) ? tag.replace(/\balt=""/i, `alt="${alt}"`) : tag.replace(/<img\b/i, `<img alt="${alt}"`);
+  });
 }

@@ -11,9 +11,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Locations",
+  title: "Digital Marketing Agency Across Chandigarh Tricity",
   description:
-    "A creative and digital growth studio serving Chandigarh, Mohali, Panchkula and Zirakpur, brand, web, content and performance across the Tricity.",
+    "Creative Monk serves businesses in Chandigarh, Mohali, Panchkula and Zirakpur with SEO, ads, social media, websites and branding.",
   path: "/locations",
 });
 

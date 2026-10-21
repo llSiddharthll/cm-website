@@ -22,9 +22,9 @@ import {
 } from "@/lib/cms";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About",
+  title: "About Creative Monk: Digital Marketing Agency in Zirakpur",
   description:
-    "The in-house creative & growth studio from Chandigarh behind the work, our why, our team and how we think.",
+    "Meet Creative Monk, the in-house digital marketing and branding team in Zirakpur serving Chandigarh, Mohali and Panchkula since 2017.",
   path: "/about",
 });
 
